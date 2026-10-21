@@ -1,0 +1,15 @@
+caso,hora,horas,p10,mediana,p90,sin_holgura
+manana_hacia_santa_cruz,6,207,0.083985,0.132926,0.220594,0
+manana_hacia_santa_cruz,7,205,-0.048185,0.005727,0.097874,0.443902
+manana_hacia_santa_cruz,8,145,0.083193,0.139391,0.25617,0
+manana_hacia_santa_cruz,9,33,0.112199,0.254027,0.374476,0
+manana_hacia_santa_cruz,10,14,0.287954,0.367095,0.419752,0
+manana_hacia_santa_cruz,11,14,0.20396,0.383662,0.462435,0
+tarde_hacia_el_norte,13,124,0.092291,0.17401,0.258346,0
+tarde_hacia_el_norte,14,219,0.035231,0.100024,0.160643,0.031963
+tarde_hacia_el_norte,15,219,-0.006268,0.027561,0.097947,0.136986
+tarde_hacia_el_norte,16,216,0.002593,0.038861,0.100603,0.078704
+tarde_hacia_el_norte,17,97,0.080989,0.122098,0.231372,0.010309
+tarde_hacia_el_norte,18,67,0.114276,0.209574,0.277646,0
+tarde_hacia_el_norte,19,39,0.177457,0.277421,0.397702,0
+tarde_hacia_el_norte,20,34,0.218574,0.329024,0.508044,0

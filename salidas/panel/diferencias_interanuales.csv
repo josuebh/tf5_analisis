@@ -1,0 +1,67 @@
+estacion_id,estacion,orden,variable,indicador,mes,mes_antes,tipo_mes,valor_antes,valor,dif,ic_inf,ic_sup,dias_antes,dias
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2025-09,2024-09,Septiembre de 2025 (arranque de curso),0.190476,0.227273,0.036797,-0.283566,0.357159,21,22
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),0.26087,0.391304,0.130435,-0.15174,0.41261,23,23
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),1.15,1.157895,0.007895,-0.405326,0.421116,20,19
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-01,2025-01,Enero de 2026 (exámenes),0.285714,1.111111,0.825397,0.383558,1.267236,21,18
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),0.777778,1.055556,0.277778,-0.219319,0.774875,18,18
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),0.8,1.25,0.45,-0.128152,1.028152,20,20
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),0.9,1.052632,0.152632,-0.309214,0.614477,20,19
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),0.85,1,0.15,-0.2056,0.5056,20,19
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),0.571429,0.619048,0.047619,-0.265725,0.360963,21,21
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),0.086957,0,-0.086957,-0.267293,0.09338,23,23
+93,Campus Guajara,4,cola,Horas de cola por día (de 5 a 12 h),2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),0.227273,0.095238,-0.132035,-0.397122,0.133053,22,21
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2025-09,2024-09,Septiembre de 2025 (arranque de curso),8949.190476,8658.954545,-290.235931,-615.129011,34.657149,21,22
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),9318.913043,9031.217391,-287.695652,-477.230636,-98.160668,23,23
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),9580.35,8885.789474,-694.560526,-971.493442,-417.627611,20,19
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-01,2025-01,Enero de 2026 (exámenes),8610.52381,8880,269.47619,-307.342854,846.295235,21,18
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),9029.888889,8753.5,-276.388889,-853.756076,300.978298,18,18
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),8899.7,9122.7,223,-367.369711,813.369711,20,20
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),8530.55,9100,569.45,-190.814705,1329.714705,20,19
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),8900.55,8980.105263,79.555263,-665.837643,824.948169,20,19
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),8914.095238,9008.333333,94.238095,-238.506465,426.982655,21,21
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),8051.347826,8522.304348,470.956522,75.175701,866.737342,23,23
+93,Campus Guajara,4,veh,Vehículos de 7 a 9 h por día,2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),8658.954545,8647.190476,-11.764069,-351.33098,327.802842,22,21
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2025-09,2024-09,Septiembre de 2025 (arranque de curso),0.428571,0.952381,0.52381,0.1043,0.943319,21,21
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),1.173913,0.956522,-0.217391,-0.695492,0.260709,23,23
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),1.5,0.8,-0.7,-1.119752,-0.280248,20,20
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-01,2025-01,Enero de 2026 (exámenes),0.619048,0.894737,0.275689,-0.340251,0.891629,21,19
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),1.368421,1.277778,-0.090643,-0.771081,0.589794,19,18
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),0.7,1.2,0.5,-0.291722,1.291722,20,20
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),1.105263,1.25,0.144737,-0.492049,0.781523,19,20
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),1.166667,0.85,-0.316667,-0.843058,0.209725,18,20
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),1.05,0.619048,-0.430952,-0.963297,0.101392,20,21
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),1,0,-1,-1.319373,-0.680627,23,23
+99,Bomberos La Laguna,6,cola,Horas de cola por día (de 5 a 12 h),2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),0.952381,0.363636,-0.588745,-0.997684,-0.179805,21,22
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2025-09,2024-09,Septiembre de 2025 (arranque de curso),8616.47619,9122.952381,506.47619,232.427574,780.524807,21,21
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),8771.347826,9353.869565,582.521739,337.004208,828.03927,23,23
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),8736.25,9153.3,417.05,102.062344,732.037656,20,20
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-01,2025-01,Enero de 2026 (exámenes),8465.809524,8204.631579,-261.177945,-826.249675,303.893785,21,19
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),8936.947368,8304.444444,-632.502924,-1091.665665,-173.340183,19,18
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),8761.95,8457.5,-304.45,-874.79274,265.89274,20,20
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),8372.421053,8778.45,406.028947,-69.924047,881.981942,19,20
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),8412.277778,8712.85,300.572222,-244.462323,845.606767,18,20
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),8765.4,8860.619048,95.219048,-266.459832,456.897927,20,21
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),8667.565217,8590.478261,-77.086957,-374.61294,220.439027,23,23
+99,Bomberos La Laguna,6,veh,Vehículos de 7 a 9 h por día,2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),9122.952381,8580.409091,-542.54329,-913.565056,-171.521524,21,22
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2025-09,2024-09,Septiembre de 2025 (arranque de curso),2.285714,2.590909,0.305195,-0.199341,0.80973,21,22
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),3.130435,3.26087,0.130435,-0.335544,0.596414,23,23
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),3,3.210526,0.210526,-0.174881,0.595934,20,19
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-01,2025-01,Enero de 2026 (exámenes),2.666667,2.947368,0.280702,-0.435129,0.996533,21,19
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),3.055556,3.277778,0.222222,-0.413324,0.857769,18,18
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),2.9,3.3,0.4,-0.391728,1.191728,20,20
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),2.95,2.8,-0.15,-0.757115,0.457115,20,20
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),2.5,2.5,0,-0.487625,0.487625,20,20
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),2.190476,2.666667,0.47619,-0.054502,1.006883,21,21
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),1.826087,1.304348,-0.521739,-1.382037,0.338558,23,23
+103,Ermita Cruz Chica,7,cola,Horas de cola por día (de 5 a 12 h),2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),2.590909,2.454545,-0.136364,-0.751878,0.479151,22,22
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2025-09,2024-09,Septiembre de 2025 (arranque de curso),6445.857143,6383,-62.857143,-269.053971,143.339685,21,22
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2025-10,2024-10,Meses lectivos del curso 2025-26 (horarios escalonados),6427.521739,6254.26087,-173.26087,-364.330569,17.80883,23,23
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2025-11,2024-11,Meses lectivos del curso 2025-26 (horarios escalonados),6282.7,6281.736842,-0.963158,-322.459964,320.533648,20,19
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-01,2025-01,Enero de 2026 (exámenes),6259.428571,5968.842105,-290.586466,-651.832862,70.65993,21,19
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-02,2025-02,Meses lectivos del curso 2025-26 (horarios escalonados),6338.111111,6055.888889,-282.222222,-550.222294,-14.22215,18,18
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-03,2025-03,Meses lectivos del curso 2025-26 (horarios escalonados),6249,6049.25,-199.75,-553.077126,153.577126,20,20
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-04,2025-04,Meses lectivos del curso 2025-26 (horarios escalonados),6069.95,6233.1,163.15,-179.91468,506.21468,20,20
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-05,2025-05,Meses lectivos del curso 2025-26 (horarios escalonados),6318.95,6270.7,-48.25,-387.007735,290.507735,20,20
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-06,2025-06,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),6709.571429,6461.333333,-248.238095,-436.552353,-59.923838,21,21
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-07,2025-07,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),6354.73913,6659.73913,305,-5.950249,615.950249,23,23
+103,Ermita Cruz Chica,7,veh,Vehículos de 7 a 9 h por día,2026-09,2025-09,Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta),6383,6414.272727,31.272727,-237.848268,300.393723,22,22

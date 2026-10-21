@@ -1,0 +1,112 @@
+anio,estacion_id,estacion,orden,zona,imd_ascendentes,imd_descendentes,imd_total,imd_pesados,velocidad_media
+2025,82,Túnel 3 de Mayo,1,Santa Cruz,21618,1429,23047,1015,47.18
+2025,83,Somosierra,2,Santa Cruz,44356,42126,86482,1121,91.14
+2025,85,Hospital Residencia,3,Santa Cruz - La Laguna,51871,51049,102920,2575,83.73
+2025,93,Campus Guajara,4,La Laguna,58109,47121,105230,1880,93.18
+2025,97,Padre Anchieta,5,La Laguna,59286,58505,117791,12600,94.23
+2025,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,51486,57742,109228,3777,84.54
+2025,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,44563,45347,89910,2451,96.34
+2025,111,La Matanza,8,Acentejo,38791,36432,75223,2858,73.1
+2025,123,La Orotava,9,Valle de La Orotava,33673,36353,70026,1933,92.1
+2025,131,Bco. El Patronato,10,Fin de autovía,13782,16484,30266,1056,78.1
+2025,133,Los Realejos-Socorro,11,Isla Baja,16322,16275,32597,1071,68.18
+2025,134,Santa Catalina,12,Isla Baja,15368,15672,31040,996,69.33
+2025,136,El Pedregal,13,Isla Baja,5617,5265,10882,1014,123.55
+2025,138,El Amparo,14,Isla Baja,3901,4344,8245,850,114.11
+2024,82,Túnel 3 de Mayo,1,Santa Cruz,22367,1745,24112,873,44.95
+2024,83,Somosierra,2,Santa Cruz,44269,36915,81184,1063,91.23
+2024,85,Hospital Residencia,3,Santa Cruz - La Laguna,50209,50507,100716,2034,85.75
+2024,93,Campus Guajara,4,La Laguna,58946,47956,106902,1969,92.75
+2024,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,52133,57340,109473,3640,84.87
+2024,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,44366,45054,89420,2480,97.28
+2024,111,La Matanza,8,Acentejo,38160,35611,73771,2788,74.51
+2024,123,La Orotava,9,Valle de La Orotava,33376,35808,69184,1842,93.33
+2024,131,Bco. El Patronato,10,Fin de autovía,14698,16087,30785,1000,79.71
+2024,133,Los Realejos-Socorro,11,Isla Baja,18139,18120,36259,1392,71.22
+2024,134,Santa Catalina,12,Isla Baja,17032,17384,34416,979,72.86
+2024,136,El Pedregal,13,Isla Baja,5519,5125,10644,926,118.97
+2024,138,El Amparo,14,Isla Baja,4445,4418,8863,812,109.17
+2023,82,Túnel 3 de Mayo,1,Santa Cruz,23524,1374,24898,398,41.74
+2023,83,Somosierra,2,Santa Cruz,44477,41383,85860,1289,93.41
+2023,85,Hospital Residencia,3,Santa Cruz - La Laguna,53066,50461,103527,2039,86.41
+2023,93,Campus Guajara,4,La Laguna,60371,47454,107825,1824,92.33
+2023,97,Padre Anchieta,5,La Laguna,54795,51307,106102,3136,82.52
+2023,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,51425,56052,107477,3571,85.56
+2023,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,43286,44069,87355,2214,97.8
+2023,111,La Matanza,8,Acentejo,35829,36094,71923,2446,74.78
+2023,123,La Orotava,9,Valle de La Orotava,32623,34307,66930,1796,92.53
+2023,131,Bco. El Patronato,10,Fin de autovía,15219,16906,32125,1043,78.99
+2023,133,Los Realejos-Socorro,11,Isla Baja,14806,14885,29691,870,70.39
+2023,134,Santa Catalina,12,Isla Baja,13871,14213,28084,572,145.34
+2023,136,El Pedregal,13,Isla Baja,5271,4903,10174,881,120.6
+2023,138,El Amparo,14,Isla Baja,4253,4190,8443,749,107.78
+2022,82,Túnel 3 de Mayo,1,Santa Cruz,24555,1163,25718,397,42.41
+2022,83,Somosierra,2,Santa Cruz,44076,43260,87336,1112,91.31
+2022,85,Hospital Residencia,3,Santa Cruz - La Laguna,53647,45537,99184,1940,99.43
+2022,93,Campus Guajara,4,La Laguna,61221,46165,107386,1858,92.11
+2022,97,Padre Anchieta,5,La Laguna,56614,52491,109105,3633,82.85
+2022,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,51845,56056,107901,3333,85.89
+2022,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,42330,43007,85337,2069,97
+2022,111,La Matanza,8,Acentejo,34118,35675,69793,2353,74.68
+2022,123,La Orotava,9,Valle de La Orotava,32720,33782,66502,1835,91.71
+2022,131,Bco. El Patronato,10,Fin de autovía,15216,16945,32161,683,70.91
+2022,133,Los Realejos-Socorro,11,Isla Baja,,,29478,626,
+2022,134,Santa Catalina,12,Isla Baja,,,27750,589,
+2022,136,El Pedregal,13,Isla Baja,5004,4725,9729,974,123.93
+2022,138,El Amparo,14,Isla Baja,4156,3979,8135,780,108.56
+2021,82,Túnel 3 de Mayo,1,Santa Cruz,23827,1166,24993,628,45.99
+2021,83,Somosierra,2,Santa Cruz,42763,50780,93543,1040,92.86
+2021,85,Hospital Residencia,3,Santa Cruz - La Laguna,49019,53967,102986,2449,112.29
+2021,93,Campus Guajara,4,La Laguna,59591,37059,96650,1743,91.65
+2021,97,Padre Anchieta,5,La Laguna,53875,51251,105126,3883,82.36
+2021,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,47354,50581,97935,2517,86.7
+2021,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,38918,38979,77897,1712,98.77
+2021,111,La Matanza,8,Acentejo,35516,35140,70656,2842,74.81
+2021,123,La Orotava,9,Valle de La Orotava,31472,32322,63794,1762,93.78
+2021,131,Bco. El Patronato,10,Fin de autovía,11703,15182,26885,726,69.81
+2021,133,Los Realejos-Socorro,11,Isla Baja,,,27699,748,
+2021,134,Santa Catalina,12,Isla Baja,,,26301,710,
+2021,136,El Pedregal,13,Isla Baja,4605,4294,8899,195,72.74
+2021,138,El Amparo,14,Isla Baja,3785,3629,7414,697,108.34
+2020,82,Túnel 3 de Mayo,1,Santa Cruz,20756,1048,21804,522,45.83
+2020,83,Somosierra,2,Santa Cruz,36546,34760,71306,891,94.48
+2020,85,Hospital Residencia,3,Santa Cruz - La Laguna,41140,39261,80401,1963,112.72
+2020,93,Campus Guajara,4,La Laguna,49251,36790,86041,1418,94.22
+2020,97,Padre Anchieta,5,La Laguna,44389,41805,86194,3202,84.61
+2020,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,41265,43833,85098,2295,86.88
+2020,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,35176,36171,71347,1638,100.99
+2020,111,La Matanza,8,Acentejo,27234,28122,55356,2422,76.54
+2020,123,La Orotava,9,Valle de La Orotava,26155,26592,52747,1349,93.75
+2020,131,Bco. El Patronato,10,Fin de autovía,10595,12110,22705,611,70.91
+2020,133,Los Realejos-Socorro,11,Isla Baja,,,21796,587,
+2020,134,Santa Catalina,12,Isla Baja,,,28962,779,
+2020,136,El Pedregal,13,Isla Baja,3629,3344,6973,25,61.31
+2020,138,El Amparo,14,Isla Baja,2934,2810,5744,554,108
+2019,82,Túnel 3 de Mayo,1,Santa Cruz,26627,1314,27941,674,45.6
+2019,83,Somosierra,2,Santa Cruz,48530,46384,94914,1138,92.15
+2019,85,Hospital Residencia,3,Santa Cruz - La Laguna,57484,47581,105065,2375,109.11
+2019,93,Campus Guajara,4,La Laguna,62658,50449,113107,1766,90.35
+2019,97,Padre Anchieta,5,La Laguna,58036,55072,113108,3788,80.86
+2019,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,52054,53931,105985,2877,76.92
+2019,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,44527,44564,89091,2241,97.25
+2019,111,La Matanza,8,Acentejo,37959,36991,74950,3251,75.77
+2019,123,La Orotava,9,Valle de La Orotava,34268,35092,69360,1873,91.15
+2019,131,Bco. El Patronato,10,Fin de autovía,12732,16514,29246,785,69.81
+2019,133,Los Realejos-Socorro,11,Isla Baja,,,29003,765,
+2019,134,Santa Catalina,12,Isla Baja,,,28128,755,
+2019,136,El Pedregal,13,Isla Baja,4989,4654,9643,52,61.84
+2019,138,El Amparo,14,Isla Baja,4220,4043,8263,771,107.01
+2018,82,Túnel 3 de Mayo,1,Santa Cruz,26816,1212,28028,581,45.22
+2018,83,Somosierra,2,Santa Cruz,47337,45783,93120,994,92.46
+2018,85,Hospital Residencia,3,Santa Cruz - La Laguna,56919,45650,102569,2274,108.81
+2018,93,Campus Guajara,4,La Laguna,64749,49984,114733,1567,90.19
+2018,97,Padre Anchieta,5,La Laguna,57362,53479,110841,3888,80.2
+2018,99,Bomberos La Laguna,6,La Laguna - Los Rodeos,52922,52885,105807,2788,76.53
+2018,103,Ermita Cruz Chica,7,Los Rodeos - Guamasa - El Sauzal,45156,44352,89508,1848,92.94
+2018,111,La Matanza,8,Acentejo,33130,37238,70368,4405,80.43
+2018,123,La Orotava,9,Valle de La Orotava,29721,34728,64449,1702,88.41
+2018,131,Bco. El Patronato,10,Fin de autovía,13551,16458,30009,667,70.52
+2018,133,Los Realejos-Socorro,11,Isla Baja,,,29116,617,
+2018,134,Santa Catalina,12,Isla Baja,,,28038,588,
+2018,136,El Pedregal,13,Isla Baja,4839,4574,9413,387,82.17
+2018,138,El Amparo,14,Isla Baja,4136,4094,8230,757,106.98

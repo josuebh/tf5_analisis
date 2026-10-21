@@ -1,0 +1,50 @@
+anio,estacion_id,regla,detalle,gravedad,etiqueta,orden
+2018,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,05",info,Túnel 3 de Mayo,1
+2019,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,05",info,Túnel 3 de Mayo,1
+2020,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,05",info,Túnel 3 de Mayo,1
+2021,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,05",info,Túnel 3 de Mayo,1
+2022,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,05",info,Túnel 3 de Mayo,1
+2023,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,06",info,Túnel 3 de Mayo,1
+2024,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,08",info,Túnel 3 de Mayo,1
+2025,82,R9 asimetría extrema entre sentidos,"ratio menor/mayor = 0,07",info,Túnel 3 de Mayo,1
+2024,97,R6 estación sin datos ese año,fila ausente en el CSV oficial,error,Padre Anchieta,5
+2025,97,R5 % de pesados atípico,"10,7% de pesados (mediana de la estación 3,5%)",aviso,Padre Anchieta,5
+2018,111,R5 % de pesados atípico,"6,3% de pesados (mediana de la estación 3,9%)",aviso,La Matanza,8
+2019,131,R8 velocidad idéntica en otro año,"69,81 km/h repetido",info,Bco. El Patronato,10
+2020,131,R8 velocidad idéntica en otro año,"70,91 km/h repetido",info,Bco. El Patronato,10
+2021,131,R8 velocidad idéntica en otro año,"69,81 km/h repetido",info,Bco. El Patronato,10
+2022,131,R8 velocidad idéntica en otro año,"70,91 km/h repetido",info,Bco. El Patronato,10
+2018,133,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Los Realejos-Socorro,11
+2018,133,R3 velocidad no medida (0),velocidad_media = 0,aviso,Los Realejos-Socorro,11
+2019,133,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Los Realejos-Socorro,11
+2019,133,R3 velocidad no medida (0),velocidad_media = 0,aviso,Los Realejos-Socorro,11
+2020,133,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Los Realejos-Socorro,11
+2020,133,R3 velocidad no medida (0),velocidad_media = 0,aviso,Los Realejos-Socorro,11
+2021,133,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Los Realejos-Socorro,11
+2021,133,R3 velocidad no medida (0),velocidad_media = 0,aviso,Los Realejos-Socorro,11
+2022,133,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Los Realejos-Socorro,11
+2022,133,R3 velocidad no medida (0),velocidad_media = 0,aviso,Los Realejos-Socorro,11
+2024,133,R7 salto interanual > 15 %,"+22,1% vs 2023",aviso,Los Realejos-Socorro,11
+2018,134,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Santa Catalina,12
+2018,134,R3 velocidad no medida (0),velocidad_media = 0,aviso,Santa Catalina,12
+2019,134,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Santa Catalina,12
+2019,134,R3 velocidad no medida (0),velocidad_media = 0,aviso,Santa Catalina,12
+2020,134,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Santa Catalina,12
+2020,134,R3 velocidad no medida (0),velocidad_media = 0,aviso,Santa Catalina,12
+2021,134,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Santa Catalina,12
+2021,134,R3 velocidad no medida (0),velocidad_media = 0,aviso,Santa Catalina,12
+2022,134,R2 sin desglose por sentido,IMD total sin ascendente/descendente,aviso,Santa Catalina,12
+2022,134,R3 velocidad no medida (0),velocidad_media = 0,aviso,Santa Catalina,12
+2023,134,R4 velocidad media > 120 km/h,"145,34 km/h",aviso,Santa Catalina,12
+2024,134,R7 salto interanual > 15 %,"+22,5% vs 2023",aviso,Santa Catalina,12
+2018,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2019,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2020,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2021,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2022,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2022,136,R4 velocidad media > 120 km/h,"123,93 km/h",aviso,El Pedregal,13
+2023,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2023,136,R4 velocidad media > 120 km/h,"120,60 km/h",aviso,El Pedregal,13
+2024,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2025,136,R10 % de pesados inestable entre años,"CV = 0,75 (rango 0,4% - 10,0%)",aviso,El Pedregal,13
+2025,136,R4 velocidad media > 120 km/h,"123,55 km/h",aviso,El Pedregal,13

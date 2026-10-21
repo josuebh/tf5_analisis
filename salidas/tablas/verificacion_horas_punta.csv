@@ -1,0 +1,11 @@
+estacion_id,sentido,horas_mitad_dias,horas_cuarto_dias,prob_max,etiqueta,orden
+85,ascendente,,,0.021929824561403508,Hospital Residencia,3
+93,ascendente,"14 h, 15 h","14 h, 15 h, 16 h",0.7300884955752213,Campus Guajara,4
+99,ascendente,"13 h, 14 h, 15 h, 16 h","13 h, 14 h, 15 h, 16 h, 17 h, 18 h",0.9866071428571429,Bomberos La Laguna,6
+103,ascendente,,,0.07929515418502203,Ermita Cruz Chica,7
+123,ascendente,,,0.004405286343612335,La Orotava,9
+85,descendente,,,0.00881057268722467,Hospital Residencia,3
+93,descendente,,07 h,0.4911504424778761,Campus Guajara,4
+99,descendente,07 h,"07 h, 08 h",0.5650224215246636,Bomberos La Laguna,6
+103,descendente,"06 h, 07 h, 08 h","06 h, 07 h, 08 h",0.915929203539823,Ermita Cruz Chica,7
+123,descendente,,,0.07017543859649122,La Orotava,9

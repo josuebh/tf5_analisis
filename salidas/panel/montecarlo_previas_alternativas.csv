@@ -1,0 +1,118 @@
+caso,previa,aceptadas,tamano_efectivo,escenario,etiqueta,p10,mediana,p90
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,escalonamiento_corto,Escalonamiento horario (1er año),0.069802,0.159062,0.260478
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,escalonamiento_largo,Escalonamiento horario (a 10 años),0.040016,0.114484,0.201187
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,escalonamiento_medio,Escalonamiento horario (a 5 años),0.045763,0.122508,0.2083
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.303642,0.405372,0.684169
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.231118,0.329215,0.524371
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.24525,0.347354,0.557831
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,ramp_metering_corto,Regulación de accesos (1er año),0.186786,0.263905,0.529265
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,ramp_metering_largo,Regulación de accesos (a 10 años),0.155239,0.222959,0.423469
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,ramp_metering_medio,Regulación de accesos (a 5 años),0.165075,0.23281,0.439077
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,tarificacion,Tarificación de la punta,0.326437,0.577281,0.979661
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,tercer_carril_corto,Tercer carril (1er año),0.214326,0.398406,0.878428
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,tercer_carril_largo,Tercer carril (a 10 años),0.181477,0.332094,0.715305
+manana_hacia_santa_cruz,Uniformes en el mismo rango,378,35.932033,tercer_carril_medio,Tercer carril (a 5 años),0.186084,0.352948,0.745348
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,escalonamiento_corto,Escalonamiento horario (1er año),0.089662,0.14212,0.315593
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,escalonamiento_largo,Escalonamiento horario (a 10 años),0.056711,0.097323,0.204932
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,escalonamiento_medio,Escalonamiento horario (a 5 años),0.067314,0.106741,0.223168
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.237817,0.437349,0.688418
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.170743,0.350909,0.577715
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.18165,0.371374,0.59359
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,ramp_metering_corto,Regulación de accesos (1er año),0.136119,0.314543,0.523435
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,ramp_metering_largo,Regulación de accesos (a 10 años),0.102802,0.243317,0.436178
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,ramp_metering_medio,Regulación de accesos (a 5 años),0.106696,0.260711,0.464474
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,tarificacion,Tarificación de la punta,0.416712,0.595783,0.986812
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,tercer_carril_corto,Tercer carril (1er año),0.179336,0.359926,0.70872
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,tercer_carril_largo,Tercer carril (a 10 años),0.114654,0.295543,0.582014
+manana_hacia_santa_cruz,Más demanda inducida (moda de las elasticidades en su extremo),378,61.20992,tercer_carril_medio,Tercer carril (a 5 años),0.128895,0.304675,0.600756
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,escalonamiento_corto,Escalonamiento horario (1er año),0.100232,0.165155,0.319002
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,escalonamiento_largo,Escalonamiento horario (a 10 años),0.066084,0.116204,0.218727
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,escalonamiento_medio,Escalonamiento horario (a 5 años),0.070545,0.129363,0.233976
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.310479,0.452788,0.725621
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.23806,0.358071,0.58873
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.256984,0.375293,0.615324
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,ramp_metering_corto,Regulación de accesos (1er año),0.182328,0.312596,0.526655
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,ramp_metering_largo,Regulación de accesos (a 10 años),0.146282,0.24959,0.41778
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,ramp_metering_medio,Regulación de accesos (a 5 años),0.161214,0.263702,0.440452
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,tarificacion,Tarificación de la punta,0.356302,0.605107,0.993652
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,tercer_carril_corto,Tercer carril (1er año),0.228964,0.403314,0.70872
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,tercer_carril_largo,Tercer carril (a 10 años),0.181477,0.330995,0.582014
+manana_hacia_santa_cruz,Regulación menos eficaz (moda de la eficacia en el mínimo),378,157.639015,tercer_carril_medio,Tercer carril (a 5 años),0.19066,0.347281,0.600756
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,escalonamiento_corto,Escalonamiento horario (1er año),0.091548,0.172577,0.298952
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,escalonamiento_largo,Escalonamiento horario (a 10 años),0.064902,0.118824,0.20652
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,escalonamiento_medio,Escalonamiento horario (a 5 años),0.072714,0.133508,0.225002
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.288772,0.452524,0.700866
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.231118,0.360093,0.561954
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.24525,0.379828,0.592729
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,ramp_metering_corto,Regulación de accesos (1er año),0.159928,0.31206,0.526655
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,ramp_metering_largo,Regulación de accesos (a 10 años),0.122889,0.240605,0.422829
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,ramp_metering_medio,Regulación de accesos (a 5 años),0.130714,0.258381,0.440723
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,tarificacion,Tarificación de la punta,0.383903,0.610673,0.985487
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,tercer_carril_corto,Tercer carril (1er año),0.208547,0.390975,0.70872
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,tercer_carril_largo,Tercer carril (a 10 años),0.167875,0.320391,0.568921
+manana_hacia_santa_cruz,Caída de capacidad más pequeña (moda en el mínimo),378,270.925776,tercer_carril_medio,Tercer carril (a 5 años),0.176188,0.336107,0.600619
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,escalonamiento_corto,Escalonamiento horario (1er año),0.102118,0.172941,0.313556
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,escalonamiento_largo,Escalonamiento horario (a 10 años),0.066257,0.1186,0.218727
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,escalonamiento_medio,Escalonamiento horario (a 5 años),0.073245,0.133508,0.231782
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.315115,0.488502,0.721013
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.239122,0.383115,0.591224
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.256178,0.400486,0.61471
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,ramp_metering_corto,Regulación de accesos (1er año),0.188737,0.332362,0.534908
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,ramp_metering_largo,Regulación de accesos (a 10 años),0.154551,0.271605,0.436178
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,ramp_metering_medio,Regulación de accesos (a 5 años),0.164693,0.282538,0.456432
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,tarificacion,Tarificación de la punta,0.380797,0.619822,0.985487
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,tercer_carril_corto,Tercer carril (1er año),0.220015,0.403553,0.733979
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,tercer_carril_largo,Tercer carril (a 10 años),0.177491,0.323207,0.59632
+manana_hacia_santa_cruz,"Pesados con más peso (moda de la equivalencia en 3,5)",378,242.793668,tercer_carril_medio,Tercer carril (a 5 años),0.186084,0.337222,0.610086
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,escalonamiento_corto,Escalonamiento horario (1er año),0.035655,0.076463,0.171581
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,escalonamiento_largo,Escalonamiento horario (a 10 años),0.026856,0.057713,0.136901
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,escalonamiento_medio,Escalonamiento horario (a 5 años),0.029006,0.061864,0.142265
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.380713,0.51953,0.744682
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.320033,0.47745,0.669241
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.335151,0.487284,0.677431
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,ramp_metering_corto,Regulación de accesos (1er año),0.323065,0.473321,0.670081
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,ramp_metering_largo,Regulación de accesos (a 10 años),0.279506,0.424042,0.604383
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,ramp_metering_medio,Regulación de accesos (a 5 años),0.291255,0.438605,0.616447
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,tarificacion,Tarificación de la punta,0.207909,0.415975,1
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.392371,0.576959,0.93969
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.339627,0.525821,0.889274
+tarde_hacia_el_norte,Uniformes en el mismo rango,1369,24.235744,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.351005,0.542663,0.904297
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,escalonamiento_corto,Escalonamiento horario (1er año),0.051807,0.091676,0.180282
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,escalonamiento_largo,Escalonamiento horario (a 10 años),0.037905,0.070563,0.131179
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,escalonamiento_medio,Escalonamiento horario (a 5 años),0.040323,0.076227,0.140188
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.403044,0.608144,0.806233
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.344635,0.530135,0.713036
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.358502,0.549727,0.727228
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,ramp_metering_corto,Regulación de accesos (1er año),0.34175,0.540205,0.741768
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,ramp_metering_largo,Regulación de accesos (a 10 años),0.298656,0.46984,0.653739
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,ramp_metering_medio,Regulación de accesos (a 5 años),0.309274,0.489446,0.675566
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,tarificacion,Tarificación de la punta,0.253613,0.465818,1
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.390166,0.741925,0.985776
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.330557,0.661304,0.95707
+tarde_hacia_el_norte,Más demanda inducida (moda de las elasticidades en su extremo),1369,116.844295,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.346545,0.679454,0.964736
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,escalonamiento_corto,Escalonamiento horario (1er año),0.059036,0.102928,0.191665
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,escalonamiento_largo,Escalonamiento horario (a 10 años),0.043094,0.076716,0.145363
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,escalonamiento_medio,Escalonamiento horario (a 5 años),0.046581,0.082227,0.152418
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.35232,0.577815,0.776157
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.302631,0.50757,0.695134
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.318143,0.525528,0.712383
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,ramp_metering_corto,Regulación de accesos (1er año),0.264029,0.503316,0.708552
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,ramp_metering_largo,Regulación de accesos (a 10 años),0.224911,0.44739,0.634918
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,ramp_metering_medio,Regulación de accesos (a 5 años),0.232978,0.45726,0.651261
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,tarificacion,Tarificación de la punta,0.277167,0.473162,1
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.304564,0.700362,0.982806
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.265163,0.625234,0.94524300000000006
+tarde_hacia_el_norte,Regulación menos eficaz (moda de la eficacia en el mínimo),1369,382.404251,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.277496,0.646988,0.955337
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,escalonamiento_corto,Escalonamiento horario (1er año),0.058843,0.10326,0.184362
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,escalonamiento_largo,Escalonamiento horario (a 10 años),0.041693,0.079661,0.142265
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,escalonamiento_medio,Escalonamiento horario (a 5 años),0.045123,0.0843,0.150423
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.303861,0.570156,0.785699
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.263851,0.503967,0.708302
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.275206,0.520893,0.727228
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,ramp_metering_corto,Regulación de accesos (1er año),0.225282,0.493857,0.722208
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,ramp_metering_largo,Regulación de accesos (a 10 años),0.197765,0.440903,0.6512
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,ramp_metering_medio,Regulación de accesos (a 5 años),0.201275,0.452116,0.66734
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,tarificacion,Tarificación de la punta,0.278575,0.462187,1
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.304564,0.709525,0.993994
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.259024,0.633904,0.97301
+tarde_hacia_el_norte,Caída de capacidad más pequeña (moda en el mínimo),1369,658.892156,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.277033,0.656612,0.978208

@@ -1,0 +1,2358 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TF-5 · Diagnóstico y alternativas de movilidad</title>
+<link rel="stylesheet" href="assets/base.css">
+<script src="assets/d3.min.js"></script>
+<script src="assets/datos.js"></script>
+<script src="assets/runtime.js"></script>
+</head>
+<body>
+<p id="estado-panel" role="status">Cargando el panel…</p>
+<noscript>Activa JavaScript para ver los gráficos. Los resultados también están en README.md y salidas/tablas.</noscript>
+<div id="dash-root">
+<style>
+  #dash-root { --dash-gutter: clamp(12px, 3vw, 32px); }
+  .tf5 { font-family: var(--font-sans); color: var(--color-fg); max-width: 1180px; margin-inline: auto; }
+  .tf5 h1 { font-family: var(--font-serif); font-weight: 400; font-size: var(--panel-font-size-title); margin: 0 0 var(--panel-gap-xs); line-height: 1.2; }
+  .tf5 .subtitle { color: var(--color-fg-muted); font-size: var(--panel-font-size-caption); margin: 0 0 var(--panel-gap-sm); }
+  .tf5 h2 { font-size: var(--panel-font-size-heading); font-weight: var(--panel-font-weight-medium); margin: var(--panel-gap-xl) 0 var(--panel-gap-xs); }
+  .tf5 .block { margin-top: var(--panel-gap-xl); padding-top: var(--panel-gap-sm); border-top: 1px solid var(--color-border-line); }
+  .tf5 .block-label { font-size: var(--panel-font-size-caption); color: var(--color-fg-muted); text-transform: uppercase; letter-spacing: .06em; }
+  .tf5 h3 { font-size: var(--panel-font-size-body); font-weight: var(--panel-font-weight-medium); margin: 0 0 2px; }
+  .tf5 p { margin: 0 0 var(--panel-gap-sm); line-height: 1.5; }
+  .tf5 .take { font-size: var(--panel-font-size-body); color: var(--color-fg); max-width: 75ch; }
+  .tf5 .lead { color: var(--color-fg-muted); font-size: var(--panel-font-size-body); max-width: 78ch; }
+  .tf5 .note { color: var(--color-fg-muted); font-size: var(--panel-font-size-caption); margin: 0 0 var(--panel-gap-sm); line-height: 1.4; }
+  .tf5 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); gap: var(--panel-gap-md); margin: var(--panel-gap-lg) 0; }
+  .tf5 .kpi, .tf5 .card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--panel-radius); padding: var(--panel-pad-lg); }
+  .tf5 .kpi-label { font-size: var(--panel-font-size-caption); color: var(--color-fg-muted); line-height: 1.3; min-height: 2.6em; }
+  .tf5 .kpi-value { font-family: var(--font-serif); font-weight: 400; font-size: var(--panel-font-size-title); line-height: 1.15; margin-top: var(--panel-gap-xs); font-variant-numeric: tabular-nums; }
+  .tf5 .kpi-note { font-size: var(--panel-font-size-caption); color: var(--color-fg-muted); margin-top: var(--panel-gap-xs); line-height: 1.3; }
+  .tf5 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr)); gap: var(--panel-gap-md); }
+  .tf5 .card { margin-bottom: var(--panel-gap-md); position: relative; }
+  .tf5 .chart { position: relative; width: 100%; }
+  .tf5 .chart svg { display: block; overflow: visible; }
+  .tf5 .chart text { font-family: var(--font-sans); }
+  .tf5 .tick text, .tf5 .lbl { fill: var(--color-fg-muted); font-size: var(--panel-font-size-caption); }
+  .tf5 .lbl-strong { fill: var(--color-fg); font-size: var(--panel-font-size-caption); }
+  .tf5 .legend { display: flex; flex-wrap: wrap; gap: var(--panel-gap-xs) var(--panel-gap-md); font-size: var(--panel-font-size-caption); color: var(--color-fg-muted); margin: 0 0 var(--panel-gap-sm); }
+  .tf5 .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .tf5 .sw { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  .tf5 .multiples { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: var(--panel-gap-md); }
+  .tf5 .tf5-tip { position: absolute; pointer-events: none; background: var(--panel-surface-popover); border: 1px solid var(--panel-border); border-radius: var(--panel-radius); box-shadow: var(--panel-shadow-popover); padding: var(--panel-pad-xs) var(--panel-pad-sm); font-size: var(--panel-font-size-caption); line-height: 1.4; z-index: 5; max-width: 280px; }
+  .tf5 .tf5-tip .t-h { color: var(--panel-text-secondary); }
+  .tf5 .tf5-tip .t-row { display: flex; align-items: center; gap: 6px; }
+  .tf5 .table-wrap { max-height: 32rem; overflow: auto; border-top: 1px solid var(--color-border-line); }
+  .tf5 table { width: 100%; border-collapse: collapse; font-size: var(--panel-font-size-caption); }
+  .tf5 th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--panel-font-weight-medium); padding: var(--panel-pad-xs) var(--panel-pad-sm); border-bottom: 1px solid var(--color-border-line); color: var(--color-fg-muted); }
+  .tf5 td { padding: var(--panel-pad-xs) var(--panel-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; line-height: 1.4; font-variant-numeric: tabular-nums; }
+  .tf5 td a { color: var(--color-fg-muted); }
+  .tf5 .pill { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .tf5 .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+  .tf5 .search { width: 100%; max-width: 22rem; padding: var(--panel-pad-xs) var(--panel-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--panel-radius); background: var(--color-bg); color: var(--color-fg); font: inherit; font-size: var(--panel-font-size-caption); margin-bottom: var(--panel-gap-sm); }
+  .tf5 .filters { display: flex; flex-wrap: wrap; gap: var(--panel-gap-xs); margin-bottom: var(--panel-gap-sm); }
+  .tf5 .filters button { font: inherit; font-size: var(--panel-font-size-caption); border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+  .tf5 .filters button[aria-pressed="true"] { background: var(--color-fg); color: var(--color-bg); }
+  .tf5 ul.points { margin: 0; padding-left: 1.1em; line-height: 1.5; font-size: var(--panel-font-size-body); }
+  .tf5 ul.points li { margin-bottom: var(--panel-gap-xs); }
+  .tf5 .points b, .tf5 td b { font-weight: var(--panel-font-weight-medium); }
+  .tf5 .verdict-bar { display: flex; height: 22px; border-radius: var(--panel-radius); overflow: hidden; gap: 2px; margin: var(--panel-gap-xs) 0 var(--panel-gap-sm); }
+  .tf5 .toc { display: flex; flex-wrap: wrap; gap: var(--panel-gap-xs) var(--panel-gap-md); font-size: var(--panel-font-size-caption); margin-top: var(--panel-gap-sm); }
+  .tf5 .toc a { color: var(--color-fg-muted); }
+  .tf5 .toc b { color: var(--color-fg); font-weight: var(--panel-font-weight-medium); }
+  .tf5 .fail { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 120px; color: var(--color-fg-muted); font-size: var(--panel-font-size-caption); }
+  .tf5 .fail::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+  .tf5 .heat-cell { shape-rendering: crispEdges; }
+  .tf5 .conf { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  [data-dash-source-state=empty] { color: transparent; }
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--panel-dur-slow); }
+</style>
+
+<div class="tf5">
+  <header id="resumen">
+    <h1>TF-5: diagnóstico, evolución y alternativas</h1>
+    <p class="subtitle">Análisis integral y modelización predictiva de la congestión de la autopista TF-5 en Tenerife: diagnóstico, evolución y evaluación de alternativas de mejora</p>
+    <p class="take">Los aforos hora a hora del Cabildo muestran dos colas diarias junto a Los Rodeos: de mañana hacia Santa Cruz, donde se hará el tercer carril, y de tarde hacia el Norte, donde la autopista pasa de tres a dos carriles y ningún proyecto actúa. En el modelo calibrado con esos aforos, el tercer carril reduciría la demora de la mañana un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span> el primer año, limitado por la capacidad libre del tramo de La Laguna, casi nula en la hora central, y gestionar la demanda (regular los accesos y escalonar horarios), un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span>, por una fracción del coste. Comparadas combinación a combinación, <span class="v" data-source="lecturas" data-field="frase" data-where="caso=manana_hacia_santa_cruz">—</span>. Son escenarios condicionados a sus supuestos, no efectos comprobados. Si la demanda sigue creciendo, las colas se alargan y las mejoras se erosionan.</p>
+    <nav class="toc" aria-label="Secciones">
+      <b>Qué sabemos:</b><a href="#datos">Aforos</a><a href="#horarios">Dónde y cuándo</a><a href="#capacidad">Capacidad libre</a><a href="#cambios">¿Ha cambiado algo?</a>
+      <b>Qué estimamos:</b><a href="#modelo">Modelo y validación</a><a href="#alternativas">Alternativas</a><a href="#bus-vao">Bus-VAO y guagua</a>
+      <b>Qué prevemos:</b><a href="#prevision">Sin actuar</a><a href="#robustez">2030 y escenarios adversos</a>
+      <b>Contexto:</b><a href="#proyectos">Proyectos</a><a href="#transporte">Transporte público</a><a href="#apuntes">Apuntes</a><a href="#metodo">Método y fuentes</a>
+    </nav>
+  </header>
+
+  <section class="kpis" aria-label="Cifras clave">
+    <div class="kpi" id="kpi-cola-manana">
+      <div class="kpi-label">Horas de cola por día laborable, mañana hacia Santa Cruz (Los Rodeos-Guamasa)</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="congestion" data-field="horas_mediana" data-where="estacion_id=103&amp;sentido=descendente" data-fmt="dec01">—</span> h</div>
+      <div class="kpi-note">mediana de 2025, de las <span class="v" data-source="horario_cola" data-field="inicio_mediana" data-where="cuello=Mañana hacia Santa Cruz (Ermita Cruz Chica), 2025" data-fmt="hora">—</span> a las <span class="v" data-source="horario_cola" data-field="fin_mediana" data-where="cuello=Mañana hacia Santa Cruz (Ermita Cruz Chica), 2025" data-fmt="hora">—</span></div>
+    </div>
+    <div class="kpi" id="kpi-cola-tarde">
+      <div class="kpi-label">Horas de cola por día laborable, tarde hacia el Norte (Bomberos La Laguna)</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="congestion" data-field="horas_mediana" data-where="estacion_id=99&amp;sentido=ascendente" data-fmt="dec01">—</span> h</div>
+      <div class="kpi-note"><span class="v" data-source="congestion" data-field="dias_sin_congestion" data-where="estacion_id=99&amp;sentido=ascendente" data-fmt="int">—</span> días laborables de 2025 sin cola</div>
+    </div>
+    <div class="kpi" id="kpi-holgura">
+      <div class="kpi-label">Capacidad libre estimada del tramo de La Laguna a las 7 h, con cola en Los Rodeos</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span></div>
+      <div class="kpi-note">mediana de 2025 (p10-p90: <span class="v" data-source="holgura_hora" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span> a <span class="v" data-source="holgura_hora" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span>); sin capacidad libre el <span class="v" data-source="holgura_hora" data-field="sin_holgura" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct">—</span> de los días</div>
+    </div>
+    <div class="kpi" id="kpi-tercer">
+      <div class="kpi-label">Tercer carril (simulado): reducción de la demora de la mañana, primer año</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span></div>
+      <div class="kpi-note">p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>; <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span> (<span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span>) a 10 años, con demanda inducida (mediana y p10-p90 del modelo)</div>
+    </div>
+    <div class="kpi" id="kpi-2035">
+      <div class="kpi-label">Si no se hace nada (simulado): horas de cola de la tarde hacia el Norte en 2035</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="evolucion" data-field="horas_cola_sin_adaptacion" data-where="caso=tarde_hacia_el_norte&amp;anio=2035&amp;crecimiento_anual=0.005" data-fmt="dec1">—</span> h</div>
+      <div class="kpi-note">media; p10-p90: <span class="v" data-source="evolucion" data-field="horas_cola_sin_p10" data-where="caso=tarde_hacia_el_norte&amp;anio=2035&amp;crecimiento_anual=0.005" data-fmt="dec01">—</span>-<span class="v" data-source="evolucion" data-field="horas_cola_sin_p90" data-where="caso=tarde_hacia_el_norte&amp;anio=2035&amp;crecimiento_anual=0.005" data-fmt="dec01">—</span> h, con la demanda creciendo un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> al año (hoy, <span class="v" data-source="evolucion" data-field="horas_cola_sin_adaptacion" data-where="caso=tarde_hacia_el_norte&amp;anio=2025&amp;crecimiento_anual=0.005" data-fmt="dec1">—</span> h en el modelo)</div>
+    </div>
+    <div class="kpi" id="kpi-apuntes">
+      <div class="kpi-label">Afirmaciones de los apuntes falsas o sin fuente</div>
+      <div class="kpi-value dash-skeleton"><span class="v" data-source="apuntes_dudosos" data-field="dudosas" data-row="0" data-fmt="int">—</span></div>
+      <div class="kpi-note">de <span class="v" data-source="apuntes_dudosos" data-field="total" data-row="0" data-fmt="int">—</span> revisadas</div>
+    </div>
+  </section>
+
+  <div class="block"><span class="block-label">Qué sabemos · datos observados</span></div>
+
+  <h2 id="datos">1. Lo que dicen los aforos oficiales</h2>
+  <p class="lead">Intensidad media diaria (IMD) de las estaciones de aforo de la TF-5, publicada por el Cabildo de Tenerife. «Ascendente» es el sentido de kilometraje creciente: de Santa Cruz hacia el Norte.</p>
+  <div class="card" id="card-corredor">
+    <h3>Tráfico medio diario por estación y sentido, 2025</h3>
+    <p class="note">De Santa Cruz (arriba) hacia el oeste. Sombreado: tramo de la obra del tercer carril.</p>
+    <div class="legend" id="leg-corredor"></div>
+    <div class="chart dash-skeleton" id="ch-corredor" data-source="imd" style="min-height:420px"></div>
+  </div>
+  <div class="card" id="card-evolucion">
+    <h3>Evolución 2018-2025 en las estaciones más cargadas</h3>
+    <p class="note">IMD total en miles de vehículos/día. El tráfico apenas ha cambiado desde 2019, mientras la población de Tenerife creció un <span class="v" data-source="crecimiento_poblacion" data-field="crecimiento_anual" data-row="0" data-fmt="pct2">—</span> anual entre <span class="v" data-source="crecimiento_poblacion" data-field="desde" data-row="0">—</span> y <span class="v" data-source="crecimiento_poblacion" data-field="hasta" data-row="0">—</span> (INE): en los tramos saturados el aforo mide lo que cabe, no lo que se querría circular. Hueco en 2024: Padre Anchieta no publicó datos.</p>
+    <div class="multiples dash-skeleton" id="ch-evolucion" data-source="imd" style="min-height:220px"></div>
+  </div>
+
+  <h2 id="horarios">2. Dónde y cuándo se atasca: aforos hora a hora</h2>
+  <p class="lead">Registros horarios por carril del Cabildo, días laborables de 2025 sin agosto. Una hora cuenta como congestionada cuando al menos el 60 % de los vehículos pasa a menos de 80 km/h y 30 puntos más que de madrugada. El color es ese aumento respecto a la madrugada de cada estación: donde se oscurece, hay cola.</p>
+  <div class="card" id="card-mapa">
+    <h3>Velocidad por estación y hora</h3>
+    <p class="note">Número: % de días con esa hora congestionada, si es la mitad o más. Gris: Padre Anchieta, con velocidades negativas y meses sin datos, y La Matanza, donde tres de cada cuatro vehículos o más van a menos de 80 km/h también de madrugada, así que el indicador no detecta la cola.</p>
+    <div class="legend" id="leg-mapa"></div>
+    <div class="chart dash-skeleton" id="ch-mapa" data-source="perfil_horario" style="min-height:520px"></div>
+  </div>
+  <div class="grid">
+    <div class="card" id="card-horario">
+      <h3>Horario de la cola en cada cuello</h3>
+      <p class="note">Primera hora congestionada y fin de la última, por día laborable (mediana de los días con cola). 2026: enero-septiembre, sin agosto.</p>
+      <div class="table-wrap">
+        <table id="tb-horario" data-source="horario_cola" data-row-key="cuello">
+          <thead><tr>
+            <th data-field="cuello">Cuello y año</th>
+            <th data-field="dias_con_cola">Días con cola</th>
+            <th data-field="dias">Días laborables</th>
+            <th data-field="inicio_mediana">Empieza</th>
+            <th data-field="fin_mediana">Acaba</th>
+            <th data-field="horas_cola_mediana">Horas de cola</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card" id="card-medido">
+      <h3>Lo que se mide</h3>
+      <ul class="points">
+        <li><b>Mañana hacia Santa Cruz.</b> La cola se forma en Ermita Cruz Chica (Los Rodeos-Guamasa, 2 carriles) a las <span class="v" data-source="congestion" data-field="hora_inicio_tipica" data-where="estacion_id=103&amp;sentido=descendente" data-fmt="hh">—</span> h y dura <span class="v" data-source="congestion" data-field="horas_mediana" data-where="estacion_id=103&amp;sentido=descendente" data-fmt="dec01">—</span> horas (mediana). A las 7 h se congestionan también Bomberos La Laguna (el <span class="v" data-source="perfil_horario" data-field="prob_congestion" data-where="estacion_id=99&amp;sentido=descendente&amp;hora=7" data-fmt="pct">—</span> de los días) y Campus Guajara (el <span class="v" data-source="perfil_horario" data-field="prob_congestion" data-where="estacion_id=93&amp;sentido=descendente&amp;hora=7" data-fmt="pct">—</span>): son dos cuellos encadenados.</li>
+        <li><b>Tarde hacia el Norte.</b> Es la cola más persistente: en Bomberos La Laguna, justo antes de pasar de 3 a 2 carriles, dura <span class="v" data-source="congestion" data-field="horas_mediana" data-where="estacion_id=99&amp;sentido=ascendente" data-fmt="dec01">—</span> horas (mediana) y hubo <span class="v" data-source="congestion" data-field="dias_sin_congestion" data-where="estacion_id=99&amp;sentido=ascendente" data-fmt="int">—</span> días laborables sin ella.</li>
+        <li><b>Estable de un año a otro.</b> En 2026 la cola empieza y acaba a las mismas horas que en 2025.</li>
+        <li><b>La obra contratada solo actúa en el primero.</b> El tercer carril Guamasa-Aeropuerto Norte es solo hacia Santa Cruz.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" id="card-cobertura">
+    <h3>Calidad de los aforos (septiembre de 2024 a septiembre de 2026, sin diciembre de 2024)</h3>
+    <p class="note">Parte de las horas con todos los carriles aforados y con velocidades utilizables, y días laborables válidos (24 horas completas, sin festivos ni agosto). Los días de cambio de hora y el 27 de enero de 2026, que el fichero oficial trae casi vacío, no entran en el análisis.</p>
+    <div class="table-wrap">
+      <table id="tb-cobertura" data-source="cobertura" data-row-key="estacion_id,sentido">
+        <thead><tr>
+          <th data-field="etiqueta">Estación</th>
+          <th data-field="sentido">Sentido</th>
+          <th data-field="pct_horas_completas">Horas completas</th>
+          <th data-field="pct_horas_velocidad">Con velocidad</th>
+          <th data-field="dias_validos">Días válidos</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="capacidad">3. ¿Hay capacidad libre en la hora punta?</h2>
+  <p class="lead">«k crítico»: qué parte del tráfico diario de un sentido llenaría la capacidad del tramo en una sola hora. Si es menor que la cuota habitual de la hora punta en autovías urbanas (banda gris), el tramo se satura en la punta de un día laborable normal.</p>
+  <div class="card" id="card-kcrit">
+    <h3>k crítico por estación y sentido, con los carriles aforados</h3>
+    <p class="note">Punto: capacidad central por carril; línea: rango de capacidad. Los Rodeos-Guamasa (Ermita Cruz Chica) queda a la izquierda de la banda en los dos sentidos.</p>
+    <div class="legend" id="leg-kcrit"></div>
+    <div class="chart dash-skeleton" id="ch-kcrit" data-source="capacidad parametros" style="min-height:420px"></div>
+  </div>
+  <div class="card" id="card-holgura-texto">
+    <h3>Lo que admitiría el tramo siguiente (estimación)</h3>
+    <p class="note">Capacidad libre estimada = (capacidad de la estación de abajo − su caudal) / caudal del cuello, en cada hora con cola; la capacidad de abajo es el p99 de su caudal horario de 2025. No es una medida directa: no hay aforos de los ramales y la capacidad sale de los caudales de la misma punta (ver la sensibilidad más abajo).</p>
+    <ul class="points">
+      <li><b>Mañana, La Laguna.</b> Mientras hay cola en Los Rodeos, la capacidad libre estimada del tramo de Bomberos La Laguna y Campus Guajara es del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;hora=6" data-fmt="pct1">—</span> a las 6 h, solo del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span> a las 7 h (p10-p90: <span class="v" data-source="holgura_hora" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span> a <span class="v" data-source="holgura_hora" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;hora=7" data-fmt="pct1">—</span>) y del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;hora=8" data-fmt="pct1">—</span> a las 8 h (medianas de 2025).</li>
+      <li><b>Tarde, La Matanza.</b> Hacia el Norte, la del tramo de 2 carriles de La Matanza es del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;hora=14" data-fmt="pct1">—</span> a las 14 h, del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;hora=15" data-fmt="pct1">—</span> a las 15 h y del <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;hora=16" data-fmt="pct1">—</span> a las 16 h.</li>
+      <li><b>Por qué importa.</b> Un carril más en el cuello solo sirve si el tramo siguiente puede recibir el tráfico que deja pasar: si no, la cola se traslada (sección 6).</li>
+    </ul>
+  </div>
+
+  <div class="card" id="card-geometria">
+    <h3>Carriles por tramo: catálogo de los aforos frente al inventario de 2006</h3>
+    <p class="note">Catálogo oficial de carriles de las estaciones de aforo (julio de 2026) frente al inventario de la TF-5 del Plan Territorial Especial de Ordenación del Sistema Viario del Área Metropolitana de Tenerife (PTEOSVAM), aprobado en 2006, que advierte de que en los enlaces suele haber un carril adicional. Las diferencias quedan pendientes de confirmación; las que afectan al modelo se prueban como escenario.</p>
+    <div class="table-wrap">
+      <table id="tb-geometria" data-source="geometria" data-row-key="estacion_id,sentido">
+        <thead><tr>
+          <th data-field="estacion">Estación</th>
+          <th data-field="sentido">Sentido</th>
+          <th data-field="seccion_inventario_2006">Sección del inventario</th>
+          <th data-field="carriles_aforados">Aforados (2026)</th>
+          <th data-field="carriles_inventario_2006">Inventario (2006)</th>
+          <th data-field="estado">Estado</th>
+          <th data-field="papel_en_el_modelo">Papel en el modelo</th>
+          <th data-field="escenario_alternativo">Escenario alternativo</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-balance">
+    <h3>Balance entre estaciones</h3>
+    <p class="note">Diferencia de caudal entre dos estaciones seguidas, por día laborable con las 24 horas en las dos: es lo que entra menos lo que sale por los ramales intermedios, que no tienen aforo publicado. Es descriptivo y no entra en el modelo: la columna «Lectura» dice si es estable de un día a otro, y los pares que tocan Padre Anchieta, cuyo aforador falla buena parte del tiempo, están entre los más inestables. Ningún caudal es negativo.</p>
+    <div class="table-wrap">
+      <table id="tb-balance" data-source="balance" data-row-key="sentido,tramo">
+        <thead><tr>
+          <th data-field="sentido">Sentido</th>
+          <th data-field="tramo">Tramo</th>
+          <th data-field="neto_dia_mediana">Diferencia diaria (mediana)</th>
+          <th data-field="neto_dia_p10">p10</th>
+          <th data-field="neto_dia_p90">p90</th>
+          <th data-field="cv_neto_dia">Variación (CV)</th>
+          <th data-field="dias_completos">Días</th>
+          <th data-field="lectura">Lectura</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-holgura-sens">
+    <h3>¿Cuánto cambia el tercer carril con otra estimación de la capacidad libre?</h3>
+    <p class="note">Reducción de la demora el primer año (mediana y p10-p90 de una submuestra de las simulaciones calibradas) con distintas formas de estimar la capacidad libre del tramo siguiente: capacidad de abajo más baja o más alta, solo con horas sin cola, ramales con más entradas o salidas que no se ven, sin holgura cuando la estación de abajo también tiene cola (cuello desplazado) y con los carriles del inventario de 2006. Holgura a las 7 h por la mañana y a las 15 h por la tarde. Última columna: parte de las combinaciones calibradas cuya cola de hoy queda dentro del rango medido en 2025; con la propagación de la cola, una estimación con menos capacidad abajo alarga también la cola de hoy, y si la saca de ese rango no es compatible con los aforos.</p>
+    <div class="table-wrap">
+      <table id="tb-holgura-sens" data-source="holgura_sens_tabla" data-row-key="caso,variante">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="variante">Estimación de la capacidad libre</th>
+          <th data-field="holgura_clave">Holgura (mediana)</th>
+          <th data-field="mediana">Tercer carril, 1er año</th>
+          <th data-field="p10">p10</th>
+          <th data-field="p90">p90</th>
+          <th data-field="horas_cola_hoy">Horas de cola hoy</th>
+          <th data-field="horas_cola_con_tercer_carril">Con tercer carril</th>
+          <th data-field="parte_cola_hoy_en_rango_medido">Cola de hoy en el rango medido</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="cambios">4. ¿Ha cambiado algo ya?</h2>
+  <p class="lead">Dos cambios recientes se pueden medir con los aforos: los horarios escalonados de la Universidad de La Laguna (ULL) desde el 9 de septiembre de 2025 y la pasarela del Padre Anchieta, abierta el 18 de mayo de 2026, con el cierre de los 11 pasos de peatones de la glorieta dos días después.</p>
+  <div class="card" id="card-interanual">
+    <h3>Mañana hacia Santa Cruz: cambio frente al mismo mes del año anterior</h3>
+    <p class="note">Punto: diferencia de medias por día laborable; línea: intervalo de confianza del 95 %. Arriba, horas de cola de 5 a 12 h; abajo, vehículos de 7 a 9 h. Comparación de control: en noviembre de 2025, antes de la pasarela, la cola de Bomberos La Laguna ya bajó de <span class="v" data-source="interanual" data-field="valor_antes" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span> a <span class="v" data-source="interanual" data-field="valor" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span> h/día frente a noviembre de 2024 (IC 95 % de la diferencia: <span class="v" data-source="interanual" data-field="ic_inf" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span> a <span class="v" data-source="interanual" data-field="ic_sup" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span>), tanto como después de abrirla. Bajadas así aparecen también sin pasarela: es una asociación, no un efecto demostrado.</p>
+    <div class="legend" id="leg-interanual"></div>
+    <div class="chart dash-skeleton" id="ch-interanual" data-source="interanual" style="min-height:440px"></div>
+  </div>
+  <div class="grid">
+    <div class="card" id="card-ull">
+      <h3>Horarios escalonados de la ULL: curso 2025-26 frente al 2024-25</h3>
+      <p class="note">Meses lectivos (octubre, noviembre y febrero a mayo). Tres comparaciones con su intervalo del 95 % (bootstrap por semanas). Ninguna mide un efecto causal: junio y julio de 2026, que sirven de control en las diferencias en diferencias, son posteriores a la apertura de la pasarela del Padre Anchieta, así que esos controles no son limpios. Un intervalo que no cruza el cero indica una diferencia entre periodos, no su causa. La comparación principal es el antes y después, descriptiva.</p>
+      <div class="legend" id="leg-ull"></div>
+      <div class="chart dash-skeleton" id="ch-ull" data-source="ull" style="min-height:360px"></div>
+    </div>
+    <div class="card" id="card-2026">
+      <h3>Enero-septiembre de 2026 frente a 2025 (sin agosto)</h3>
+      <p class="note">Vehículos de 7 a 9 h por día laborable. Gris y hueco: el reparto del tráfico entre carriles cambió más de 4 puntos, señal de un cambio o avería del aforador.</p>
+      <div class="legend" id="leg-comparaciones"></div>
+      <div class="chart dash-skeleton" id="ch-2026" data-source="comparaciones" style="min-height:360px"></div>
+    </div>
+  </div>
+  <div class="card" id="card-lectura-cambios">
+    <ul class="points">
+      <li><b>Horarios de la ULL: sin cambio medible en los cuellos (comparación descriptiva).</b> En los meses lectivos, el tráfico de 7 a 9 h hacia Santa Cruz cambia <span class="v" data-source="ull" data-field="dif_lectivo" data-where="control=julio&amp;estacion_id=93&amp;variable=v" data-fmt="int">—</span> vehículos al día en Campus Guajara y <span class="v" data-source="ull" data-field="dif_lectivo" data-where="control=julio&amp;estacion_id=103&amp;variable=v" data-fmt="int">—</span> en Ermita Cruz Chica, sin diferencia significativa; la cola de Los Rodeos pasa de <span class="v" data-source="ull" data-field="lectivo_antes" data-where="control=julio&amp;estacion_id=103&amp;variable=cola" data-fmt="dec1">—</span> a <span class="v" data-source="ull" data-field="lectivo_despues" data-where="control=julio&amp;estacion_id=103&amp;variable=cola" data-fmt="dec1">—</span> horas al día. La bajada de octubre y noviembre de 2025 junto al campus no se mantiene de febrero a mayo. Retrasar una hora la entrada sacaría a esos coches de la hora más cargada de La Laguna, pero no de la cola de Los Rodeos, que dura hasta las <span class="v" data-source="horario_cola" data-field="fin_mediana" data-where="cuello=Mañana hacia Santa Cruz (Ermita Cruz Chica), 2025" data-fmt="hora">—</span>.</li>
+      <li><b>Pasarela del Padre Anchieta: menos cola en La Laguna después de abrirla (asociación, no efecto demostrado).</b> Desde que se cerraron los pasos de peatones de la glorieta, la cola de la mañana en Bomberos La Laguna hacia Santa Cruz es menor que un año antes: <span class="v" data-source="interanual" data-field="valor" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-06" data-fmt="dec2">—</span> horas al día en junio (<span class="v" data-source="interanual" data-field="valor_antes" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-06" data-fmt="dec2">—</span> en 2025), <span class="v" data-source="interanual" data-field="valor" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-07" data-fmt="dec2">—</span> en julio (<span class="v" data-source="interanual" data-field="valor_antes" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-07" data-fmt="dec2">—</span>) y <span class="v" data-source="interanual" data-field="valor" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-09" data-fmt="dec2">—</span> en septiembre (<span class="v" data-source="interanual" data-field="valor_antes" data-where="estacion_id=99&amp;variable=cola&amp;mes=2026-09" data-fmt="dec2">—</span>). En Los Rodeos no cambia. Son solo tres meses, dos de verano, y sin grupo de control: puede coincidir con otros cambios, así que hay que confirmarlo. De hecho, en noviembre de 2025, antes de la pasarela, la cola ya bajó de <span class="v" data-source="interanual" data-field="valor_antes" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span> a <span class="v" data-source="interanual" data-field="valor" data-where="estacion_id=99&amp;variable=cola&amp;mes=2025-11" data-fmt="dec2">—</span> horas frente a un año antes.</li>
+      <li><b>2026 frente a 2025.</b> Sin obras ni semáforos de acceso en servicio, la cola de la mañana en Los Rodeos dura <span class="v" data-source="comparaciones" data-field="horas_cola_antes" data-where="comparacion=ene_sep_2026_vs_2025&amp;estacion_id=103&amp;sentido=descendente" data-fmt="dec2">—</span> horas al día en 2025 y <span class="v" data-source="comparaciones" data-field="horas_cola_despues" data-where="comparacion=ene_sep_2026_vs_2025&amp;estacion_id=103&amp;sentido=descendente" data-fmt="dec2">—</span> en 2026, y la de la tarde en Bomberos La Laguna, <span class="v" data-source="comparaciones" data-field="horas_cola_antes" data-where="comparacion=ene_sep_2026_vs_2025&amp;estacion_id=99&amp;sentido=ascendente" data-fmt="dec2">—</span> y <span class="v" data-source="comparaciones" data-field="horas_cola_despues" data-where="comparacion=ene_sep_2026_vs_2025&amp;estacion_id=99&amp;sentido=ascendente" data-fmt="dec2">—</span>.</li>
+    </ul>
+  </div>
+
+  <div class="block"><span class="block-label">Qué estimamos · modelo calibrado con los aforos</span></div>
+
+  <h2 id="modelo">5. El modelo y su validación</h2>
+  <p class="lead">Cola minuto a minuto durante un día laborable completo en cada cuello. Fuera de la punta, la demanda es el tráfico aforado; dentro, el caudal está topado por la capacidad, así que se reparten los vehículos aforados con una forma de punta que se calibra. Hay caída de capacidad cuando se forma cola y demanda inducida que crece con los años. De <span class="v" data-source="mc_filtros" data-field="simuladas" data-where="caso=manana_hacia_santa_cruz&amp;regla=Todas (calibración principal)" data-fmt="int">—</span> combinaciones de parámetros por la mañana y <span class="v" data-source="mc_filtros" data-field="simuladas" data-where="caso=tarde_hacia_el_norte&amp;regla=Todas (calibración principal)" data-fmt="int">—</span> por la tarde solo se usan las que reproducen lo que miden los aforos de 2025: cuántas horas dura la cola, cuándo empieza y acaba, y cuántos vehículos pasan con cola. La forma de la descarga se elige antes, por validación cruzada dentro de 2025, y enero-septiembre de 2026 solo se usa como prueba final.</p>
+  <div class="card" id="card-validacion">
+    <h3>¿Reproduce el modelo lo medido? 2025 calibra; 2026 no se ha usado</h3>
+    <p class="note">Cinco indicadores por cuello. Cuatro se miden en el modelo igual que en el aforo (una hora cuenta como congestionada si al menos el 60 % de los vehículos que pasan en ella lo hace con cola); el quinto es el parámetro de descarga del modelo, que no se mide así. Banda: p10-p90 de las simulaciones calibradas para un día típico (no es un intervalo predictivo). Las dos filas de la descarga miden el mismo fenómeno de dos formas (columna «Fenómeno»): el parámetro de descarga del modelo y el caudal que sale del modelo en las horas que el aforo cuenta con cola; no son dos contrastes independientes. Error: mediana del modelo menos la mediana aforada. Es una validación parcial: no hay tiempos de recorrido medidos para contrastar la espera.</p>
+    <div class="table-wrap">
+      <table id="tb-validacion" data-source="validacion" data-row-key="caso,indicador">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="indicador">Indicador</th>
+          <th data-field="fenomeno">Fenómeno</th>
+          <th data-field="observado_2025">Aforos 2025</th>
+          <th data-field="observado_2026">Aforos 2026</th>
+          <th data-field="simulado_mediana">Modelo (mediana)</th>
+          <th data-field="simulado_p10">Modelo p10</th>
+          <th data-field="simulado_p90">Modelo p90</th>
+          <th data-field="dentro_2026">2026 en la banda</th>
+          <th data-field="error_mediana_2026">Error de la mediana, 2026</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" id="card-valdia">
+    <h3>Validación día a día: cada día laborable de 2025 (calibración) y de 2026 (no usado)</h3>
+    <p class="note">Sesgo: mediana del modelo menos la media de lo aforado; error absoluto medio; parte de los días dentro de la banda de parámetros p10-p90 y dentro del intervalo predictivo del 80 %, que suma a la banda la variabilidad de un día a otro y el error de observación (residuos de los días de calibración). La banda describe un día típico, así que su cobertura es baja; la del intervalo predictivo es la que debe acercarse al 80 %. Por trimestres, días de la semana y horas, en validacion_diaria.csv y validacion_diaria_por_hora.csv.</p>
+    <div class="table-wrap">
+      <table id="tb-valdia" data-source="validacion_diaria" data-row-key="caso,indicador,periodo">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="indicador">Indicador</th>
+          <th data-field="periodo">Periodo</th>
+          <th data-field="observaciones">Observaciones</th>
+          <th data-field="observado_mediana">Aforo (mediana)</th>
+          <th data-field="simulado_mediana">Modelo (mediana)</th>
+          <th data-field="sesgo">Sesgo</th>
+          <th data-field="sesgo_relativo">Sesgo (%)</th>
+          <th data-field="mae">Error absoluto medio</th>
+          <th data-field="cobertura_p10_p90">Dentro de la banda</th>
+          <th data-field="cobertura_intervalo_predictivo">Dentro del intervalo predictivo (80 %)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-descarga">
+    <h3>La descarga de la mañana: qué se probó y qué se eligió</h3>
+    <ul class="points">
+      <li><b>Medida igual en el modelo y en el aforo.</b> La descarga del aforo es la mediana del caudal de Ermita Cruz Chica en las horas que cuenta con cola, y el modelo se mide igual. Así medida, el aforo da <span class="v" data-source="validacion" data-field="observado_2025" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias)" data-fmt="int">—</span> veh/h en 2025 y <span class="v" data-source="validacion" data-field="observado_2026" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias)" data-fmt="int">—</span> en 2026, y el modelo, <span class="v" data-source="validacion" data-field="simulado_mediana" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias)" data-fmt="int">—</span> (<span class="v" data-source="validacion" data-field="simulado_p10" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias)" data-fmt="int">—</span>-<span class="v" data-source="validacion" data-field="simulado_p90" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias)" data-fmt="int">—</span> en la banda de parámetros).</li>
+      <li><b>Dieciséis formas de la descarga, elegidas sin mirar 2026.</b> Con y sin propagación de la cola del tramo siguiente, con descarga constante o dependiente de la hora, con y sin mezcla de pesados, y con la descarga calibrada como parámetro o medida igual que en el aforo. Cada una se calibró con una mitad de los días de 2025 (semanas alternas) y se midió en la otra. Regla fijada de antemano: reducir al menos un 20 % el sesgo absoluto de la descarga del día sin empeorar más de un 10 % el RMSE de ningún indicador. Se eligió «<span class="v" data-source="espec" data-field="descripcion" data-where="caso=manana_hacia_santa_cruz">—</span>»: sesgo absoluto de <span class="v" data-source="espec" data-field="sesgo_descarga" data-where="caso=manana_hacia_santa_cruz" data-fmt="int">—</span> veh/h en la validación cruzada, frente a <span class="v" data-source="espec" data-field="sesgo_descarga_referencia" data-where="caso=manana_hacia_santa_cruz" data-fmt="int">—</span> con la forma más simple (tabla).</li>
+      <li><b>Prueba final en 2026</b>, un periodo que no intervino en la calibración ni en la elección (cifras de la rejilla de formas, como la tabla; la validación día a día de más arriba usa el Monte Carlo principal y da cifras algo distintas): sesgo de la descarga del día de <span class="v" data-source="prueba_2026" data-field="sesgo" data-where="caso=manana_hacia_santa_cruz&amp;variante=elegida" data-fmt="int">—</span> veh/h con la forma elegida y de <span class="v" data-source="prueba_2026" data-field="sesgo" data-where="caso=manana_hacia_santa_cruz&amp;variante=referencia" data-fmt="int">—</span> con la más simple; RMSE de <span class="v" data-source="prueba_2026" data-field="rmse" data-where="caso=manana_hacia_santa_cruz&amp;variante=elegida" data-fmt="int">—</span> y <span class="v" data-source="prueba_2026" data-field="rmse" data-where="caso=manana_hacia_santa_cruz&amp;variante=referencia" data-fmt="int">—</span>; días dentro del intervalo predictivo del 80 %: <span class="v" data-source="prueba_2026" data-field="cobertura_intervalo_predictivo" data-where="caso=manana_hacia_santa_cruz&amp;variante=elegida" data-fmt="pct">—</span> y <span class="v" data-source="prueba_2026" data-field="cobertura_intervalo_predictivo" data-where="caso=manana_hacia_santa_cruz&amp;variante=referencia" data-fmt="pct">—</span>. Las bandas no se han ensanchado para cubrir el sesgo.</li>
+      <li><b>Forma de la descarga dentro de la cola.</b> El modelo cuadra la mediana del día, que es lo que se calibra, pero no su forma: con la cola plena da <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Por posición en la cola&amp;grupo=plena&amp;fuente=modelo (calibrado)" data-fmt="int">—</span> veh/h frente a <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Por posición en la cola&amp;grupo=plena&amp;fuente=aforo 2025" data-fmt="int">—</span> en el aforo de 2025, y en 2026 da en esas horas <span class="v" data-source="validacion_diaria" data-field="sesgo" data-where="caso=manana_hacia_santa_cruz&amp;indicador=Descarga en las horas de cola plena&amp;periodo=2026 (validación, no usado)" data-fmt="int">—</span> veh/h más que la media aforada. La regla de calibración que exigiría ese caudal no la cumple casi ninguna combinación (tabla de la sensibilidad a la calibración).</li>
+      <li><b>Por hora y según haya cola abajo</b> (segunda tabla). A las 8 h, con cola también en Bomberos La Laguna o Campus Guajara, pasan <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=08 h, con cola abajo&amp;fuente=aforo 2025" data-fmt="int">—</span> veh/h, y sin cola abajo, <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=08 h, sin cola abajo&amp;fuente=aforo 2025" data-fmt="int">—</span> (en 2026, <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=08 h, con cola abajo&amp;fuente=aforo 2026" data-fmt="int">—</span> y <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=08 h, sin cola abajo&amp;fuente=aforo 2026" data-fmt="int">—</span>). A las 7 h la diferencia no aparece en 2025 (<span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=07 h, con cola abajo&amp;fuente=aforo 2025" data-fmt="int">—</span> y <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=07 h, sin cola abajo&amp;fuente=aforo 2025" data-fmt="int">—</span>) y sí en 2026 (<span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=07 h, con cola abajo&amp;fuente=aforo 2026" data-fmt="int">—</span> y <span class="v" data-source="diagnostico" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;bloque=Según haya cola aguas abajo&amp;grupo=07 h, sin cola abajo&amp;fuente=aforo 2026" data-fmt="int">—</span>). Es compatible con un segundo cuello aguas abajo que frena la descarga, lo que la propagación de la cola del tramo siguiente representa en parte.</li>
+    </ul>
+    <div class="table-wrap">
+      <table id="tb-eleccion" data-source="eleccion_tabla" data-row-key="caso,variante">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="variante">Forma de la descarga</th>
+          <th data-field="aceptadas">Combinaciones</th>
+          <th data-field="sesgo_descarga">Sesgo absoluto (veh/h)</th>
+          <th data-field="mejora_sesgo_descarga">Mejora frente a la más simple</th>
+          <th data-field="peor_rmse_relativo">Peor RMSE relativo</th>
+          <th data-field="indicador_que_mas_empeora">Indicador que más empeora</th>
+          <th data-field="admisible">Admisible</th>
+          <th data-field="elegida">Elegida</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table id="tb-diag" data-source="diag_horas" data-row-key="grupo">
+        <thead><tr>
+          <th data-field="grupo">Horas con cola, mañana hacia Santa Cruz</th>
+          <th data-field="aforo_2025">Aforo 2025</th>
+          <th data-field="aforo_2026">Aforo 2026</th>
+          <th data-field="modelo">Modelo (calibrado)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-sens-cal">
+    <h3>Con y sin filtro: sensibilidad a la regla de calibración</h3>
+    <p class="note">La misma muestra de combinaciones con distintas reglas de aceptación. Las reglas distintas de la principal se resumen con una submuestra uniforme de las simulaciones, para que las combinaciones de la regla principal no queden sobrerrepresentadas. «Sin calibrar» es una muestra al azar de combinaciones con cola (alguien espera al menos un minuto): sin el filtro de los aforos, los resultados cambian mucho, así que lo que se presenta describe las combinaciones compatibles con lo medido en 2025, no probabilidades de lo que pasará en la TF-5.</p>
+    <div class="table-wrap">
+      <table id="tb-sens-cal" data-source="sens_cal_tabla" data-row-key="caso,regla">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="regla">Regla de calibración</th>
+          <th data-field="n_validas">Combinaciones</th>
+          <th data-field="descarga_mediana">Descarga (veh/h)</th>
+          <th data-field="tercer_carril">Tercer carril, 1er año (p10-p90)</th>
+          <th data-field="paquete">Regulación + escalonamiento, 1er año (p10-p90)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-mc">
+    <h3>Diseño del Monte Carlo: reglas de aceptación y descartes</h3>
+    <p class="note">Cada parámetro se toma de una distribución triangular (mínimo, moda, máximo) independiente, salvo tres dependencias: la elasticidad a 10 años nunca es menor que la del primer año, la de 5 años se deduce de las otras dos y la holgura de abajo toma un mismo cuantil de su distribución estimada en todas las horas. Semillas fijas (2026 para los parámetros, la misma en los dos casos) y reglas de aceptación con los aforos de 2025; se descarta lo que no las cumple.</p>
+    <div class="table-wrap">
+      <table id="tb-mc" data-source="mc_filtros" data-row-key="caso,regla">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="regla">Regla</th>
+          <th data-field="umbral">Aceptado si</th>
+          <th data-field="pasan">Pasan</th>
+          <th data-field="tasa">Parte</th>
+          <th data-field="descartadas">Descartadas</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-mc-auditoria">
+    <h3>Auditoría del Monte Carlo: otras semillas, otras previas y correlaciones</h3>
+    <p class="note">Otras semillas: el Monte Carlo completo repetido con la misma previa y la misma regla. Otras previas: las combinaciones aceptadas se pesan con la densidad de la previa alternativa dividida por la de la usada; un tamaño efectivo pequeño indica que esa previa se aleja de la usada y que su resultado es poco preciso. Reducción de la demora el primer año (mediana).</p>
+    <div class="table-wrap">
+      <table id="tb-mc-semillas" data-source="mc_semillas_tabla" data-row-key="caso,semilla">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="semilla">Semilla</th>
+          <th data-field="aceptadas">Aceptadas</th>
+          <th data-field="tercer_carril">Tercer carril</th>
+          <th data-field="paquete">Regulación + escalonamiento</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table id="tb-mc-previas" data-source="mc_previas_tabla" data-row-key="caso,previa">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="previa">Previa alternativa</th>
+          <th data-field="tamano_efectivo">Tamaño efectivo</th>
+          <th data-field="tercer_carril">Tercer carril</th>
+          <th data-field="paquete">Regulación + escalonamiento</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="note">Correlaciones de rangos (Spearman) entre parámetros: casi nulas en la previa, la calibración empareja los que se compensan. Las tres que más cambian en cada cuello:</p>
+    <div class="table-wrap">
+      <table id="tb-mc-corr" data-source="mc_corr_top" data-row-key="caso,par">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="par">Parámetros</th>
+          <th data-field="rho_previa">Previa</th>
+          <th data-field="rho_aceptadas">Aceptadas</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="alternativas">6. ¿Cuánto mejora cada alternativa y cuánto dura?</h2>
+  <div class="grid">
+    <div class="card" id="card-caso1">
+      <h3>Punta de mañana hacia Santa Cruz</h3>
+      <p class="note">Ermita Cruz Chica, 2 carriles. Reducción de la demora total frente a no hacer nada, el primer año, a 5 y a 10 años: punto = mediana, línea = del p10 al p90 de las simulaciones calibradas (no es una probabilidad).</p>
+      <div class="chart dash-skeleton" id="ch-caso1" data-source="modelo" style="min-height:480px"></div>
+    </div>
+    <div class="card" id="card-caso2">
+      <h3>Regreso de tarde hacia el Norte</h3>
+      <p class="note">El estrechamiento de 3 a 2 carriles entre Bomberos La Laguna y Ermita Cruz Chica. El tercer carril hacia el Norte en Los Rodeos-Guamasa es hipotético: no lo incluye ningún proyecto.</p>
+      <div class="chart dash-skeleton" id="ch-caso2" data-source="modelo" style="min-height:480px"></div>
+    </div>
+  </div>
+  <div class="card" id="card-diferencias">
+    <h3>¿Cuál reduce más? Diferencias emparejadas, el primer año</h3>
+    <p class="note">Cada combinación calibrada se usa para todas las alternativas, así que la diferencia se mide combinación a combinación: diferencia mediana en puntos de reducción de la demora (A − B), su banda p10-p90 y su error de muestreo. Una diferencia de menos de 2 puntos, umbral fijado de antemano, no es material, y solo se dice que una reduce más si lo hace en al menos el 90 % de las combinaciones. El coste, el plazo y los riesgos se valoran aparte.</p>
+    <div class="table-wrap">
+      <table id="tb-diferencias" data-source="dif_tabla" data-row-key="caso,pareja">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="pareja">A − B</th>
+          <th data-field="dif_mediana">Diferencia (p10 a p90)</th>
+          <th data-field="ee_dif_mediana">Error de muestreo</th>
+          <th data-field="parte_a_mayor">Combinaciones en que A reduce más</th>
+          <th data-field="lectura">Lectura</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="note">Con cada regla de calibración, la diferencia mediana entre el tercer carril y la regulación + escalonamiento por la mañana va de <span class="v" data-source="dif_regla_resumen" data-field="min_puntos" data-row="0" data-fmt="dec1">—</span> a <span class="v" data-source="dif_regla_resumen" data-field="max_puntos" data-row="0" data-fmt="dec1">—</span> puntos; con <span class="v" data-source="dif_regla_resumen" data-field="sin_diferencia_material" data-row="0" data-fmt="int">—</span> de <span class="v" data-source="dif_regla_resumen" data-field="reglas" data-row="0" data-fmt="int">—</span> reglas la diferencia mediana es menor de 2 puntos, pero con bandas anchas.</p>
+  </div>
+  <div class="grid">
+    <div class="card" id="card-holgura1">
+      <h3>En el modelo, el tercer carril de la mañana rendiría lo que deje La Laguna</h3>
+      <p class="note">Reducción de la demora si el tramo siguiente tuviera esa capacidad libre todo el rato. Líneas discontinuas: la estimada a las 6, 7 y 8 h; el modelo la aplica hora a hora. La curva no aplica la propagación de la cola de la especificación de la mañana: orienta sobre cuánto pesa la capacidad libre, y el resultado principal sí la aplica.</p>
+      <div class="legend" id="leg-holgura1"></div>
+      <div class="chart dash-skeleton" id="ch-holgura1" data-source="tercer_carril_holgura holgura_hora" style="min-height:300px"></div>
+    </div>
+    <div class="card" id="card-holgura2">
+      <h3>Hacia el Norte, rendiría lo que deje La Matanza</h3>
+      <p class="note">Tercer carril hipotético hacia el Norte en Los Rodeos-Guamasa. Si continuara hasta La Orotava (el proyecto Guamasa-La Orotava, en tramitación), en el modelo La Matanza tendría 3 carriles y dejaría de limitar.</p>
+      <div class="legend" id="leg-holgura2"></div>
+      <div class="chart dash-skeleton" id="ch-holgura2" data-source="tercer_carril_holgura holgura_hora" style="min-height:300px"></div>
+    </div>
+  </div>
+  <div class="card" id="card-confianza">
+    <h3>Cuánto rendiría y con qué confianza</h3>
+    <p class="note">Reducción de la demora: mediana y, el primer año, p10-p90 (los rangos a 10 años y en los escenarios adversos están en la ficha de cada alternativa, más abajo). Confianza: media de cuatro criterios (alta = 3, media = 2, baja = 1): evidencia local, si la cola puntual representa bien el mecanismo, si depende de que los conductores cambien de hábitos y cuánto aguanta en los escenarios adversos (sección 9).</p>
+    <div class="table-wrap">
+      <table id="tb-confianza" data-source="confianza" data-row-key="caso,alternativa">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="nombre">Alternativa</th>
+          <th data-field="reduccion_1er_anio">1er año</th>
+          <th data-field="p10_1er_anio">p10</th>
+          <th data-field="p90_1er_anio">p90</th>
+          <th data-field="reduccion_10_anios">A 10 años</th>
+          <th data-field="peor_supuesto">Escenario más desfavorable</th>
+          <th data-field="reduccion_peor_supuesto">Reducción en él</th>
+          <th data-field="confianza">Confianza</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-donde">
+    <h3>Dónde, cuándo y a qué coste</h3>
+    <div class="table-wrap">
+      <table id="tb-donde" data-source="confianza" data-row-key="caso,alternativa">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="nombre">Alternativa</th>
+          <th data-field="tramo">Tramo</th>
+          <th data-field="horario">Horario</th>
+          <th data-field="coste">Coste</th>
+          <th data-field="estado">Situación</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-coste-riesgo">
+    <h3>Coste, plazo y riesgos, aparte del efecto simulado</h3>
+    <p class="note">Dato documental y valoración cualitativa, con su fuente en coste_plazo_riesgo.csv. No se combinan con la reducción de la demora en un índice.</p>
+    <div class="table-wrap">
+      <table id="tb-coste-riesgo" data-source="coste_riesgo" data-row-key="caso,alternativa">
+        <thead><tr>
+          <th data-field="nombre">Alternativa</th>
+          <th data-field="coste">Coste</th>
+          <th data-field="plazo">Plazo</th>
+          <th data-field="servicio_previsto">En servicio</th>
+          <th data-field="riesgos_principales">Riesgos principales</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-cola-remanente">
+    <h3>Dos cuellos en serie: cola remanente y ramales bloqueados (comprobación)</h3>
+    <p class="note">El cuello de Los Rodeos y el tramo de La Laguna simulados minuto a minuto, con un almacenamiento finito entre los dos (longitud supuesta × 3 carriles × 140 veh/km: no hay puntos kilométricos publicados) y las entradas de los ramales, que se bloquean en proporción cuando el almacenamiento se llena. Tercer carril, primer año, en una submuestra de combinaciones calibradas; se conservan los vehículos en cada minuto. Con almacenamiento, parte de la cola que el tercer carril quita en Los Rodeos queda entre los dos cuellos y retiene a los vehículos de los ramales.</p>
+    <div class="table-wrap">
+      <table id="tb-cola-remanente" data-source="cola_remanente" data-row-key="longitud_km">
+        <thead><tr>
+          <th data-field="longitud_km">Almacenamiento</th>
+          <th data-field="almacenamiento_veh">Vehículos que caben</th>
+          <th data-field="reduccion_mediana">Reducción de la demora (p10-p90)</th>
+          <th data-field="reduccion_modelo_principal">Modelo principal</th>
+          <th data-field="cola_remanente_max_mediana">Cola remanente máxima (veh)</th>
+          <th data-field="minutos_rebose_mediana">Minutos con el almacenamiento lleno</th>
+          <th data-field="demora_ramales_tercer_carril_vh">Demora en los ramales (veh·h; hoy)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-fichas">
+    <h3>Ficha de cada alternativa</h3>
+    <p class="note">Indicador: reducción de los vehículos·hora de demora del día laborable frente a no actuar, simulada. 1er año y 10 años tras ponerla en marcha; 2030 con la demanda de ese año creciendo de 0 a 1 % anual; escenarios adversos: la menor y la mayor mediana de los cuatro supuestos desfavorables de cada cuello de la sección 9 (sin la referencia ni la cota favorable sin demanda inducida). Son escenarios condicionados a su supuesto clave, no efectos comprobados.</p>
+    <div class="table-wrap">
+      <table id="tb-fichas" data-source="fichas" data-row-key="caso,alternativa">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="nombre">Alternativa</th>
+          <th data-field="tramo">Tramo</th>
+          <th data-field="horario">Horario</th>
+          <th data-field="mediana_1er_anio">1er año (p10-p90)</th>
+          <th data-field="mediana_10_anios">10 años (p10-p90)</th>
+          <th data-field="min_2030_crecimiento">2030, según el crecimiento</th>
+          <th data-field="min_escenarios_adversos">Escenarios adversos</th>
+          <th data-field="confianza">Confianza</th>
+          <th data-field="supuesto_clave">Supuesto clave</th>
+          <th data-field="limitacion_principal">Limitación principal</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-lectura">
+    <h3>Cómo leerlo</h3>
+    <ul class="points">
+      <li><b>El tercer carril está bien situado, pero depende de La Laguna.</b> Amplía el cuello de la mañana, pero en la hora central la capacidad libre estimada del tramo siguiente es casi nula: en el modelo reduciría la demora un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>) el primer año y un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tercer_carril_largo" data-fmt="pct">—</span>) a los diez, con la demanda inducida. Con las estimaciones de esa capacidad libre compatibles con las colas medidas, el primer año va de nada, si no queda capacidad libre (un caso que los aforos no descartan), al <span class="v" data-source="holgura_compatibles" data-field="maximo" data-row="0" data-fmt="pct">—</span>; si queda alguna, del <span class="v" data-source="holgura_compatibles" data-field="minimo" data-row="0" data-fmt="pct">—</span> al <span class="v" data-source="holgura_compatibles" data-field="maximo" data-row="0" data-fmt="pct">—</span> (sección 3). Si el paso por Padre Anchieta tuviera en la práctica 2 carriles efectivos (como da el inventario de 2006; el catálogo de los aforos cuenta 3), el tramo siguiente no tendría capacidad libre y la reducción sería del <span class="v" data-source="tercer_carril_holgura" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;holgura=0&amp;horizonte=corto" data-fmt="pct">—</span>.</li>
+      <li><b>Gestionar la demanda: una alternativa al tercer carril por la mañana y lo único a corto plazo por la tarde.</b> Regular los accesos y escalonar horarios reduciría la demora un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span>) por la mañana el primer año (comparada combinación a combinación con el tercer carril, <span class="v" data-source="lecturas" data-field="frase" data-where="caso=manana_hacia_santa_cruz">—</span>) y un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=tarde_hacia_el_norte&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=tarde_hacia_el_norte&amp;escenario=paquete_gestion_corto" data-fmt="pct">—</span>) por la tarde, donde ninguna obra actúa. Su efecto depende de una caída de capacidad que los aforos horarios no permiten medir y de que el tramo siguiente tenga capacidad libre: por eso su confianza es baja.</li>
+      <li><b>Por la tarde no hay obra prevista.</b> Un tercer carril hacia el Norte solo en Los Rodeos-Guamasa (hipotético) reduciría la demora un <span class="v" data-source="modelo" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=tarde_hacia_el_norte&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=tarde_hacia_el_norte&amp;escenario=tercer_carril_corto" data-fmt="pct">—</span>) el primer año, pero lo limitaría La Matanza, que a las 15 h, según la estimación, solo admitiría un <span class="v" data-source="holgura_hora" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;hora=15" data-fmt="pct1">—</span> más de tráfico (p10-p90: <span class="v" data-source="holgura_hora" data-field="p10" data-where="caso=tarde_hacia_el_norte&amp;hora=15" data-fmt="pct1">—</span> a <span class="v" data-source="holgura_hora" data-field="p90" data-where="caso=tarde_hacia_el_norte&amp;hora=15" data-fmt="pct1">—</span>); continuo hasta La Orotava (3 carriles en La Matanza), la reducción llegaría al <span class="v" data-source="tercer_carril_holgura" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;holgura=0.5&amp;horizonte=corto" data-fmt="pct">—</span> (p10: <span class="v" data-source="tercer_carril_holgura" data-field="p10" data-where="caso=tarde_hacia_el_norte&amp;holgura=0.5&amp;horizonte=corto" data-fmt="pct">—</span>).</li>
+      <li><b>Tarificar la punta</b> daría <span class="v" data-source="modelo" data-field="mediana" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tarificacion" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tarificacion" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=manana_hacia_santa_cruz&amp;escenario=tarificacion" data-fmt="pct">—</span>) por la mañana y <span class="v" data-source="modelo" data-field="mediana" data-where="caso=tarde_hacia_el_norte&amp;escenario=tarificacion" data-fmt="pct">—</span> (p10-p90: <span class="v" data-source="modelo" data-field="p10" data-where="caso=tarde_hacia_el_norte&amp;escenario=tarificacion" data-fmt="pct">—</span>-<span class="v" data-source="modelo" data-field="p90" data-where="caso=tarde_hacia_el_norte&amp;escenario=tarificacion" data-fmt="pct">—</span>) por la tarde, pero la ley canaria no lo permite y la presidenta del Cabildo lo ha descartado. El modelo no representa los desvíos a otras vías que provocaría.</li>
+      <li><b>Las mejoras se erosionan con los años</b> porque el tiempo ahorrado atrae tráfico nuevo a la punta; el escalonamiento horario es el que menos rendiría, pero no necesita obra.</li>
+    </ul>
+  </div>
+
+  <h2 id="bus-vao">7. Bus-VAO y transporte público</h2>
+  <div class="card" id="card-busvao">
+    <h3>Espera del tráfico general en Padre Anchieta (hacia el Norte) si el carril izquierdo se reserva en punta</h3>
+    <p class="note">El proyecto del Cabildo reserva el carril izquierdo en hora punta a guaguas, taxis, motos y coches con 2 o más ocupantes. Con 3 carriles quedan 2 para el resto: hace falta que <span class="v" data-source="bus_vao" data-field="mediana" data-where="objetivo=no_empeorar" data-fmt="pct">—</span> de los vehículos pueda usar el carril reservado para que los demás no vayan peor, y <span class="v" data-source="bus_vao" data-field="mediana" data-where="objetivo=reducir_a_la_mitad" data-fmt="pct">—</span> (<span class="v" data-source="bus_vao" data-field="p10" data-where="objetivo=reducir_a_la_mitad" data-fmt="pct">—</span>-<span class="v" data-source="bus_vao" data-field="p90" data-where="objetivo=reducir_a_la_mitad" data-fmt="pct">—</span>) para bajar su espera a la mitad. Nadie ha publicado cuántos vehículos llevan 2 o más ocupantes.</p>
+    <div class="legend" id="leg-busvao"></div>
+    <div class="chart dash-skeleton" id="ch-busvao" data-source="bus_vao_curva" style="min-height:300px"></div>
+  </div>
+  <div class="card" id="card-trasvase">
+    <h3>¿Cuánto tendría que pasarse a la guagua o al tranvía?</h3>
+    <p class="note">Reducción de la demora si una parte de la punta (los vehículos por encima del tráfico de fondo) deja el coche. Sin rebote, y con el rebote del primer año y a 10 años: el hueco atrae viajes nuevos en coche, con las mismas elasticidades que el resto de alternativas.</p>
+    <div class="table-wrap">
+      <table id="tb-trasvase" data-source="trasvase_tp" data-row-key="caso,trasvase">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="trasvase">Parte de la punta</th>
+          <th data-field="veh_dia_trasvasados">Vehículos al día</th>
+          <th data-field="reduccion_sin_rebote">Sin rebote (p10-p90)</th>
+          <th data-field="reduccion_1er_anio">1er año (p10-p90)</th>
+          <th data-field="reduccion_10_anios">10 años (p10-p90)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block"><span class="block-label">Qué prevemos · escenarios a 2030 y 2035</span></div>
+
+  <h2 id="prevision">8. Si no se hace nada</h2>
+  <p class="lead">La demanda de fondo crece: la población de Tenerife, un <span class="v" data-source="crecimiento_poblacion" data-field="crecimiento_anual" data-row="0" data-fmt="pct2">—</span> anual entre <span class="v" data-source="crecimiento_poblacion" data-field="desde" data-row="0">—</span> y <span class="v" data-source="crecimiento_poblacion" data-field="hasta" data-row="0">—</span> (INE), y el tráfico de las estaciones que todavía tienen margen, alrededor de un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> anual entre 2019 y 2025. Se simulan tres ritmos (<span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Sin crecimiento" data-fmt="pct1">—</span>, <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> y <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Alto" data-fmt="pct1">—</span> al año) con los mismos parámetros calibrados, y la cola se mide como la mide el aforo (horas enteras).</p>
+  <div class="card" id="card-evolucion-sin">
+    <h3>Horas de cola por día laborable sin actuar</h3>
+    <p class="note">Media de las simulaciones calibradas. Línea continua: toda la demanda nueva intenta pasar en la punta; discontinua: parte se adapta (cambia de hora o no viaja) con la elasticidad a 10 años. Supuesto que pesa: por la mañana, el factor horario de la descarga solo se aplica en las horas con datos de 2025; si la descarga reducida de la última hora con datos se mantuviera el resto del día, la cola de 2035 con la demanda creciendo un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> al año sería de <span class="v" data-source="descarga_sin_datos" data-field="sensibilidad" data-row="0" data-fmt="dec1">—</span> h en lugar de <span class="v" data-source="descarga_sin_datos" data-field="principal" data-row="0" data-fmt="dec1">—</span> h. Los aforos de 2025 no permiten decidir entre los dos supuestos, porque la cola casi nunca llega a esas horas.</p>
+    <div class="legend" id="leg-evolucion-sin" data-source="evolucion"></div>
+    <div class="multiples dash-skeleton" id="ch-evolucion-sin" data-source="evolucion" style="min-height:300px"></div>
+  </div>
+
+  <h2 id="robustez">9. Alternativas en 2030 y escenarios adversos</h2>
+  <div class="card" id="card-2030">
+    <h3>Reducción de la demora el primer año: con la demanda de hoy y con la de 2030</h3>
+    <p class="note">2030: primer año completo del tercer carril según el plazo del contrato firmado en octubre de 2026 (sección 10), con la demanda creciendo un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> al año y la capacidad libre del tramo siguiente recalculada. Mediana de las simulaciones calibradas.</p>
+    <div class="legend" id="leg-2030"></div>
+    <div class="multiples dash-skeleton" id="ch-2030" data-source="modelo alternativas_2030" style="min-height:260px"></div>
+  </div>
+  <div class="card" id="card-2030-crec">
+    <h3>2030 según el crecimiento de la demanda</h3>
+    <p class="note">Reducción de la demora el primer año en 2030 (mediana) con la demanda creciendo un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Sin crecimiento" data-fmt="pct1">—</span>, un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Central" data-fmt="pct1">—</span> o un <span class="v" data-source="escenarios_demanda" data-field="crecimiento_anual" data-where="escenario=Alto" data-fmt="pct1">—</span> al año, con su p10-p90.</p>
+    <div class="table-wrap">
+      <table id="tb-2030-crec" data-source="crec_2030_tabla" data-row-key="caso,escenario">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="alternativa">Alternativa</th>
+          <th data-field="bajo">Sin crecimiento (p10-p90)</th>
+          <th data-field="central">Central (p10-p90)</th>
+          <th data-field="alto">Alto (p10-p90)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-retraso">
+    <h3>Si la obra del tercer carril se retrasa</h3>
+    <p class="note">Reducción de la demora de la mañana el primer año según el año en que entre en servicio, con la demanda de ese año creciendo al ritmo central o alto (mediana y p10-p90), y horas de cola sin actuar ese año.</p>
+    <div class="table-wrap">
+      <table id="tb-retraso" data-source="retraso_tabla" data-row-key="anio">
+        <thead><tr>
+          <th data-field="anio">En servicio en</th>
+          <th data-field="central">Crecimiento central (p10-p90)</th>
+          <th data-field="horas_central">Cola sin actuar (h)</th>
+          <th data-field="alto">Crecimiento alto (p10-p90)</th>
+          <th data-field="horas_alto">Cola sin actuar (h)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-adversos">
+    <h3>¿Cambia el orden de las alternativas si las cosas van peor?</h3>
+    <p class="note">Reducción de la demora el primer año (mediana; al pasar por cada punto, también el p10-p90) con el modelo calibrado y con cada supuesto: sin demanda inducida (cota favorable), tramo siguiente sin capacidad libre, demanda inducida alta, caída de capacidad pequeña (lo que más perjudica a la regulación de accesos) y un carril cortado 30 minutos en lo más alto de la punta.</p>
+    <div class="legend" id="leg-adversos"></div>
+    <div class="multiples dash-skeleton" id="ch-adversos" data-source="adversos" style="min-height:300px"></div>
+  </div>
+
+  <div class="card" id="card-previsiones">
+    <h3>Previsiones condicionadas: cada componente con su rango y su condición</h3>
+    <p class="note">Crecimiento de la demanda sin actuar (2030 y 2035), cambio de red y gestión en 2030 con tres ritmos de crecimiento, trasvase al transporte público y demanda inducida a 1, 5 y 10 años. Todo es simulado y vale solo si se cumple su condición.</p>
+    <div class="table-wrap">
+      <table id="tb-previsiones" data-source="previsiones" data-row-key="caso,componente,horizonte,escenario">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="componente">Componente</th>
+          <th data-field="horizonte">Horizonte</th>
+          <th data-field="escenario">Escenario</th>
+          <th data-field="valor">Valor</th>
+          <th data-field="p10">p10</th>
+          <th data-field="p90">p90</th>
+          <th data-field="indicador">Indicador</th>
+          <th data-field="condicion">Condición de validez</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block"><span class="block-label">Contexto</span></div>
+
+  <h2 id="proyectos">10. Qué hay realmente en marcha</h2>
+  <p class="lead">Coste y situación a 20 de octubre de 2026, con la fuente de cada fila. La TF-5 es de la Comunidad Autónoma: el Gobierno de Canarias contrata las ampliaciones y el Cabildo la explota.</p>
+  <div class="card" id="card-proyectos">
+    <div class="table-wrap">
+      <table id="tb-proyectos" data-source="proyectos" data-row-key="proyecto">
+        <thead><tr>
+          <th data-field="proyecto">Actuación</th>
+          <th data-field="promotor">Promotor</th>
+          <th data-field="coste_txt">Coste</th>
+          <th data-field="hito">Situación</th>
+          <th data-field="fuente">Fuente</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-fallos">
+    <h3>Fallos y riesgos de ejecución detectados</h3>
+    <ul class="points">
+      <li><b>Retrasos encadenados.</b> El tercer carril se anunció en 2024 para licitar en el primer trimestre de 2025; salió en diciembre de 2025 y se firmó en octubre de 2026; el Cabildo anunció el 20 de octubre de 2026 que las obras empiezan en noviembre, con el acta de replanteo prevista para la última semana de octubre, y durarán casi tres años. Los semáforos de acceso se anunciaron para otoño de 2025 y solo hubo pruebas de la DGT en enero de 2026. La pasarela del Padre Anchieta abrió con años de retraso y más cara de lo presupuestado.</li>
+      <li><b>Ningún proyecto actúa sobre la cola de la tarde.</b> El estrechamiento de 3 a 2 carriles hacia el Norte está entre Los Rodeos y Guamasa; el tercer carril contratado va hacia Santa Cruz y el de Guamasa-La Orotava, sin fecha, empieza en Guamasa.</li>
+      <li><b>El cuello puede desplazarse.</b> En la hora central de la mañana la capacidad libre estimada del tramo de La Laguna es casi nula, y en medio está Padre Anchieta, con 3 carriles aforados hacia Santa Cruz y 2 en el inventario de 2006: hay que aclararlo antes de esperar grandes mejoras del tercer carril.</li>
+      <li><b>Bus-VAO sin datos de ocupación.</b> El proyecto anuncia ahorros de tiempo con simulaciones que no se han publicado, y nadie ha publicado cuántos coches llevan 2 o más ocupantes.</li>
+      <li><b>Resultados sin evaluación independiente.</b> Las mejoras anunciadas con los horarios escalonados de la ULL se miden con el GPS de las guaguas, sin publicar la base ni el método; los aforos abiertos del propio Cabildo no las muestran en los cuellos (sección 4).</li>
+      <li><b>Peajes en el plan, no en la ley.</b> El PIMSIT aprobado incluye peajes por congestión como opción mientras la presidenta los descarta y la ley no los permite.</li>
+      <li><b>Datos con huecos donde más importa.</b> Padre Anchieta, la estación más cargada, solo tiene completas el <span class="v" data-source="cobertura" data-field="pct_horas_completas" data-where="estacion_id=97&amp;sentido=descendente" data-fmt="pct">—</span> de sus horas hacia Santa Cruz, y con velocidades utilizables, el <span class="v" data-source="cobertura" data-field="pct_horas_velocidad" data-where="estacion_id=97&amp;sentido=descendente" data-fmt="pct">—</span>.</li>
+    </ul>
+  </div>
+
+  <h2 id="transporte">11. Transporte público frente a tráfico</h2>
+  <div class="card" id="card-transporte">
+    <h3>Índice 2019 = 100</h3>
+    <p class="note">Con la gratuidad para residentes (desde 2023), los viajeros de TITSA llegaron en 2025 a <span class="v" data-source="indice_movilidad" data-field="indice" data-where="serie=Viajeros TITSA&amp;anio=2025" data-fmt="int">—</span>, pero el tráfico de la TF-5 se quedó en <span class="v" data-source="indice_movilidad" data-field="indice" data-where="serie=Tráfico TF-5&amp;anio=2025" data-fmt="int">—</span>. Dos series no dicen por qué: es compatible con que el hueco que deja quien se pasa a la guagua lo ocupe tráfico que antes no cabía (demanda latente), pero es una coincidencia, no un efecto medido.</p>
+    <div class="legend" id="leg-transporte"></div>
+    <div class="chart dash-skeleton" id="ch-transporte" data-source="indice_movilidad" style="min-height:300px"></div>
+  </div>
+
+  <h2 id="apuntes">12. Verificación de los apuntes de partida</h2>
+  <div class="card" id="card-veredictos">
+    <h3>Veredicto por afirmación</h3>
+    <p class="note">Cada afirmación del texto generado por IA se contrastó con fuentes oficiales o prensa con fuente identificable.</p>
+    <div class="legend" id="leg-veredictos" data-source="veredictos"></div>
+    <div class="verdict-bar dash-skeleton" id="ch-veredictos" data-source="veredictos"></div>
+  </div>
+  <div class="card" id="card-afirmaciones">
+    <div class="filters" id="flt-veredicto" role="group" aria-label="Filtrar por veredicto"></div>
+    <input class="search" id="q-afirmaciones" type="search" placeholder="Buscar en las afirmaciones" aria-label="Buscar en las afirmaciones">
+    <div class="table-wrap">
+      <table id="tb-afirmaciones" data-source="afirmaciones" data-row-key="id">
+        <thead><tr>
+          <th data-field="id">N.º</th>
+          <th data-field="categoria">Tema</th>
+          <th data-field="afirmacion">Afirmación de los apuntes</th>
+          <th data-field="veredicto">Veredicto</th>
+          <th data-field="dato_real">Dato contrastado</th>
+          <th data-field="fuente">Fuente</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2 id="metodo">13. Método, lagunas y fuentes</h2>
+  <div class="card" id="card-metodo">
+    <ul class="points">
+      <li><b>Datos y procedencia.</b> IMD anual 2018-2025, aforos horarios por carril de septiembre de 2024 a septiembre de 2026 y catálogo oficial de carriles, del portal de datos abiertos del Cabildo; población del INE (Censo anual). Copias íntegras (huella SHA-256 igual a la registrada al descargar): <span class="v" data-source="procedencia_resumen" data-field="integras" data-row="0" data-fmt="int">—</span> de <span class="v" data-source="procedencia_resumen" data-field="ficheros" data-row="0" data-fmt="int">—</span>; extractos horarios con los totales del TXT original: <span class="v" data-source="procedencia_resumen" data-field="meses_conservados" data-row="0" data-fmt="int">—</span> de <span class="v" data-source="procedencia_resumen" data-field="meses" data-row="0" data-fmt="int">—</span>; ficheros con el mismo tamaño y fecha que el recurso en la instantánea del catálogo del portal guardada el 16 de octubre de 2026: <span class="v" data-source="procedencia_resumen" data-field="coinciden" data-row="0" data-fmt="int">—</span>. Las huellas prueban integridad, no autenticidad, y el contenido no se ha vuelto a descargar después del 16 de octubre de 2026. Recursos publicados que no se han descargado: <span class="v" data-source="procedencia_resumen" data-field="huecos" data-row="0">—</span>.</li>
+      <li><b>Validación de datos.</b> Reglas para la IMD y para los aforos horarios (huecos, duplicados, rangos y coherencia entre sentidos y carriles); cobertura por estación, sentido, mes y hora; días de cambio de hora (en marzo falta la marca de la 1 h y la de las 2 h sale dos veces; en octubre se pierde una hora) y días incompletos, fuera del análisis; puentes, Navidad, Semana Santa y días con la punta anómala se marcan y se prueba a quitarlos (tabla de días atípicos, más abajo).</li>
+      <li><b>Modelo.</b> Cola puntual de un día completo que conserva los vehículos, con esperas por cohortes, caída de capacidad, perfil de demanda híbrido (aforos fuera de la punta), demanda inducida a 1, 5 y 10 años y calibración por rechazo con la duración, el horario y la descarga de la cola medidos en 2025 (diseño y descartes en la sección 5). La forma de la descarga (propagación de la cola del tramo siguiente, factor por hora, mezcla de pesados y cómo se mide) se elige por validación cruzada dentro de 2025; enero-septiembre de 2026 solo se usa como prueba final, con un intervalo predictivo del 80 %.</li>
+      <li><b>Reproducibilidad.</b> Versiones de R y de los paquetes fijadas (renv.lock), zona horaria y semillas fijas, registro de la sesión y de todos los avisos, manifiesto con la huella de cada fichero de código, datos y resultados, dos ejecuciones completas en copias limpias (<span class="v" data-source="repro_resumen" data-field="dentro" data-row="0" data-fmt="int">—</span> de <span class="v" data-source="repro_resumen" data-field="comparados" data-row="0" data-fmt="int">—</span> ficheros de salidas iguales dentro de la tolerancia) y pruebas automáticas: <span class="v" data-source="pruebas_resumen" data-field="superadas" data-row="0" data-fmt="int">—</span> comprobaciones superadas en <span class="v" data-source="pruebas_resumen" data-field="bloques" data-row="0" data-fmt="int">—</span> bloques, con <span class="v" data-source="pruebas_resumen" data-field="fallos" data-row="0" data-fmt="int">—</span> fallos (invariantes físicos, casos extremos, balance, procedencia y no regresión).</li>
+      <li><b>Límites.</b> Es una cola puntual: no sustituye a una microsimulación con datos de 15 minutos, tiempos de recorrido, ramales y matrices origen-destino, y no da la longitud de la cola: la propagación entre tramos se aproxima con el límite del tramo siguiente y se comprueba con dos cuellos en serie (sección 6). Sirve para comparar alternativas con los mismos supuestos y ver qué decide el resultado.</li>
+    </ul>
+  </div>
+  <div class="card" id="card-categorias">
+    <h3>Qué tipo de resultado es cada cifra</h3>
+    <p class="note">Observado: sale de los aforos o de documentos. Estimado: derivado o calibrado con los aforos. Supuesto: valor o regla que no sale de los datos y se declara. Simulado: resultado del modelo bajo supuestos. Asociación no causal: coincidencia temporal sin un control válido.</p>
+    <div class="table-wrap">
+      <table id="tb-categorias" data-source="limitaciones" data-row-key="resultado">
+        <thead><tr>
+          <th data-field="resultado">Resultado</th>
+          <th data-field="categoria">Categoría</th>
+          <th data-field="tipo">Tipo</th>
+          <th data-field="limitaciones">Limitaciones</th>
+          <th data-field="confianza">Confianza</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-demoras">
+    <h3>Indicadores de demora: todos simulados</h3>
+    <p class="note">Situación actual simulada (mediana y p10-p90 de las simulaciones calibradas), con su unidad y su denominador. Ninguno se ha medido: no hay tiempos de recorrido ni longitudes de cola publicados; la última columna dice con qué se puede contrastar de forma indirecta.</p>
+    <div class="table-wrap">
+      <table id="tb-demoras" data-source="demoras" data-row-key="caso,indicador">
+        <thead><tr>
+          <th data-field="caso">Cuello</th>
+          <th data-field="indicador">Indicador</th>
+          <th data-field="unidad">Unidad</th>
+          <th data-field="denominador">Denominador</th>
+          <th data-field="simulado_mediana">Mediana</th>
+          <th data-field="simulado_p10">p10</th>
+          <th data-field="simulado_p90">p90</th>
+          <th data-field="contraste_independiente">Contraste indirecto</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-depuracion">
+    <h3>Calidad de las series: sensibilidad a la depuración</h3>
+    <p class="note">Los originales no se tocan y no se imputa nada; los días se excluyen con reglas. Si las reglas cambian (sin el filtro del tráfico diario, con un filtro más estricto, con agosto o imputando con dos métodos las horas a las que les falta un carril), las horas de cola y la descarga de 2025 apenas cambian.</p>
+    <div class="table-wrap">
+      <table id="tb-depuracion" data-source="depuracion" data-row-key="variante,estacion_id">
+        <thead><tr>
+          <th data-field="variante">Regla</th>
+          <th data-field="etiqueta">Estación</th>
+          <th data-field="dias">Días</th>
+          <th data-field="horas_cola_mediana">Horas de cola (mediana)</th>
+          <th data-field="horas_cola_media">Media</th>
+          <th data-field="descarga_mediana">Descarga (veh/h)</th>
+          <th data-field="tasa_imputacion">Horas imputadas</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-atipicos">
+    <h3>Días atípicos: motivo de cada exclusión y de cada marca</h3>
+    <p class="note">Días laborables de 2024-2026 en los dos cuellos. Se excluyen agosto, los días incompletos (avería o corte del aforador) y los de tráfico anómalo; se usan pero se marcan los puentes, la Navidad, la Semana Santa y los días con la punta muy por debajo de lo habitual del mes (más de tres desviaciones absolutas medianas), una posible señal de incidente u obra: el registro de incidencias del Cabildo no se ha podido incorporar. Abajo, 2025 sin los días marcados.</p>
+    <div class="table-wrap">
+      <table id="tb-atipicos" data-source="dias_tabla" data-row-key="cuello,motivo">
+        <thead><tr>
+          <th data-field="cuello">Cuello</th>
+          <th data-field="motivo">Motivo</th>
+          <th data-field="tratamiento">Tratamiento</th>
+          <th data-field="dias">Días</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="table-wrap">
+      <table id="tb-sin-atipicos" data-source="sin_atipicos" data-row-key="variante,estacion_id">
+        <thead><tr>
+          <th data-field="variante">Días de 2025</th>
+          <th data-field="etiqueta">Estación</th>
+          <th data-field="dias">Días</th>
+          <th data-field="horas_cola_media">Horas de cola (media)</th>
+          <th data-field="inicio_mediana">Empieza</th>
+          <th data-field="fin_mediana">Acaba</th>
+          <th data-field="descarga_mediana">Descarga (veh/h)</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-lagunas">
+    <h3>Datos que faltan y cómo se suplen</h3>
+    <div class="table-wrap">
+      <table id="tb-lagunas" data-source="lagunas" data-row-key="id">
+        <thead><tr>
+          <th data-field="id">Id</th>
+          <th data-field="dato">Dato</th>
+          <th data-field="situacion">Situación</th>
+          <th data-field="como_se_suple_en_el_proyecto">Cómo se suple</th>
+          <th data-field="efecto_en_los_resultados">Efecto en los resultados</th>
+          <th data-field="prioridad">Prioridad</th>
+          <th data-field="estado_solicitud">Estado de la petición</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-uso-geometria">
+    <h3>Qué carriles usa cada cálculo</h3>
+    <p class="note">Cada cálculo que depende del número de carriles, con los carriles que usa, su estado (confirmado o pendiente de confirmación), su fuente y el supuesto que lo sustituye si no está confirmado.</p>
+    <div class="table-wrap">
+      <table id="tb-uso-geometria" data-source="uso_geometria" data-row-key="calculo">
+        <thead><tr>
+          <th data-field="calculo">Cálculo</th>
+          <th data-field="estacion">Estación</th>
+          <th data-field="carriles_usados">Carriles</th>
+          <th data-field="estado">Estado</th>
+          <th data-field="supuesto_explicito">Supuesto</th>
+          <th data-field="escenario_alternativo">Escenario alternativo</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-parametros">
+    <h3>Parámetros del modelo y sus fuentes</h3>
+    <div class="table-wrap">
+      <table id="tb-parametros" data-source="parametros" data-row-key="caso,parametro">
+        <thead><tr>
+          <th data-field="caso">Caso</th>
+          <th data-field="parametro">Parámetro</th>
+          <th data-field="minimo">Mínimo</th>
+          <th data-field="central">Central</th>
+          <th data-field="maximo">Máximo</th>
+          <th data-field="unidad">Unidad</th>
+          <th data-field="tipo">Tipo</th>
+          <th data-field="descripcion">Descripción</th>
+          <th data-field="transferibilidad">Contraste con datos locales</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-fuentes">
+    <h3>Registro de fuentes</h3>
+    <p class="note">Ficheros oficiales con su huella SHA-256 y fuentes documentales, con la fecha de consulta.</p>
+    <input class="search" id="q-fuentes" type="search" placeholder="Buscar en las fuentes" aria-label="Buscar en las fuentes">
+    <div class="table-wrap">
+      <table id="tb-fuentes" data-source="fuentes" data-row-key="id">
+        <thead><tr>
+          <th data-field="id">Id</th>
+          <th data-field="fuente">Fuente</th>
+          <th data-field="tipo">Tipo</th>
+          <th data-field="uso">Para qué se usa</th>
+          <th data-field="consultado">Consultado</th>
+          <th data-field="url">Enlace</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-contraste">
+    <h3>Contraste con la publicación original</h3>
+    <p class="note">Una muestra, los 12 ficheros horarios de 2025 y su diccionario, contrastada el 16 de octubre de 2026 con el catálogo nacional de datos abiertos (datos.gob.es), que federa el portal del Cabildo: URL, identificador, nombre y licencia. Contrastar los valores exige volver a descargar los ficheros, y la huella prueba la integridad de la copia, no la autenticidad del origen.</p>
+    <div class="table-wrap">
+      <table id="tb-contraste" data-source="contraste_original" data-row-key="recurso_id">
+        <thead><tr>
+          <th data-field="nombre_publicado">Recurso publicado</th>
+          <th data-field="url_publicada">Enlace</th>
+          <th data-field="en_la_instantanea_del_portal">En el portal</th>
+          <th data-field="nombre_igual">Mismo nombre</th>
+          <th data-field="licencia_igual">Misma licencia</th>
+          <th data-field="resultado">Resultado</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card" id="card-comprobaciones">
+    <h3>Comprobaciones numéricas del modelo</h3>
+    <p class="note">Se hacen en cada ejecución, con el propio modelo: área bajo la cola igual a la suma de esperas, conservación de vehículos (también al escalonar y en los cuellos en serie), límite del tramo siguiente, límites físicos, cola disipada con el perfil de cada combinación calibrada y umbral del Bus-VAO.</p>
+    <div class="table-wrap">
+      <table id="tb-comprobaciones" data-source="comprobaciones" data-row-key="id">
+        <thead><tr>
+          <th data-field="id">Id</th>
+          <th data-field="comprobacion">Comprobación</th>
+          <th data-field="resultado">Resultado</th>
+          <th data-field="cumple">Se cumple</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- Utilidades ---------- */
+window.TF5 = (() => {
+  const NBSP = ' ';
+  const num = (x) => (x === null || x === undefined || x === '') ? NaN : Number(x);
+  const fmtInt = (x) => {
+    const v0 = num(x);
+    if (!Number.isFinite(v0)) return '—';
+    const v = Number(redondear(Math.abs(v0), 0));   // misma regla que los documentos: la mitad hacia arriba
+    const s = String(v).replace(/\B(?=(\d{3})+(?!\d))/g, NBSP);
+    return (v0 < 0 && v !== 0 ? '−' : '') + s;
+  };
+  // Redondeo a d decimales sin el error binario de toFixed (0,565 -> 57 %, no 56 %)
+  const redondear = (a, d) => { const f = Math.pow(10, d); return (Math.round(a * f * (1 + 1e-12)) / f).toFixed(d); };
+  const fmtPct = (x, d = 0, signo = false) => {
+    const v = num(x);
+    if (!Number.isFinite(v)) return '—';
+    const s = redondear(Math.abs(v) * 100, d);
+    const pre = Number(s) === 0 ? '' : (v < 0 ? '−' : (signo ? '+' : ''));
+    return pre + s.replace('.', ',') + NBSP + '%';
+  };
+  const fmtDec = (x, d = 1) => {
+    const v = num(x);
+    if (!Number.isFinite(v)) return '—';
+    const s = redondear(Math.abs(v), d);
+    return (v < 0 && Number(s) !== 0 ? '−' : '') + s.replace('.', ',');
+  };
+  const fmtHora = (x) => {
+    const v = num(x);
+    if (!Number.isFinite(v)) return '—';
+    const m = Math.round(v * 60);
+    return Math.floor(m / 60) % 24 + ':' + String(m % 60).padStart(2, '0');
+  };
+  const fmt = (v, f) => {
+    switch (f) {
+      case 'pct': return fmtPct(v);
+      case 'pct1': return fmtPct(v, 1);
+      case 'pct2': return fmtPct(v, 2);
+      case 'dec01': return Number.isInteger(num(v)) ? fmtDec(v, 0) : fmtDec(v, 1);
+      case 'int': return fmtInt(v);
+      case 'dec0': return fmtDec(v, 0);
+      case 'dec1': return fmtDec(v, 1);
+      case 'dec2': return fmtDec(v, 2);
+      case 'hora': return fmtHora(v);
+      case 'hh': return Number.isFinite(num(v)) ? String(Math.round(num(v))).padStart(2, '0') : '—';
+      default: return (v === null || v === undefined || v === '') ? '—' : String(v);
+    }
+  };
+  const ok = (id) => dash.data(id).status === 'ok';
+  const rows = (id) => (ok(id) ? dash.data(id).data : []);
+  const color = (i) => dash.colors[i % dash.colors.length];
+  const casoLbl = { manana_hacia_santa_cruz: 'Mañana hacia Santa Cruz', tarde_hacia_el_norte: 'Tarde hacia el Norte' };
+  const casoTxt = (c) => casoLbl[c] || (c === 'referencia' ? 'Referencia (literatura)' : c);
+
+  function state(el, ids) {
+    const st = ids.map((id) => dash.data(id).status);
+    el.classList.toggle('dash-skeleton', st.some((s) => s === 'loading'));
+    const failed = st.some((s) => s === 'error' || s === 'missing' || s === 'declined' || s === 'connect');
+    return { ready: st.every((s) => s === 'ok'), failed };
+  }
+  function failBox(el) {
+    el.replaceChildren();
+    const d = document.createElement('div');
+    d.className = 'fail';
+    d.textContent = 'Failed to load';
+    el.appendChild(d);
+  }
+  function measure(svg, texts, cls = 'lbl') {
+    const g = svg.append('g').attr('opacity', 0);
+    let w = 0;
+    texts.forEach((t) => {
+      const n = g.append('text').attr('class', cls).text(t).node();
+      w = Math.max(w, n.getComputedTextLength());
+    });
+    g.remove();
+    return Math.ceil(w);
+  }
+  function tip(box) {
+    let t = box.querySelector(':scope > .tf5-tip');
+    if (!t) { t = document.createElement('div'); t.className = 'tf5-tip'; t.hidden = true; box.appendChild(t); }
+    return {
+      show(event, header, lines) {
+        t.replaceChildren();
+        const h = document.createElement('div'); h.className = 't-h'; h.textContent = header; t.appendChild(h);
+        lines.forEach(([c, label, value]) => {
+          const r = document.createElement('div'); r.className = 't-row';
+          if (c) { const s = document.createElement('span'); s.className = 'sw'; s.style.background = c; r.appendChild(s); }
+          const l = document.createElement('span'); l.textContent = label + (value !== undefined ? ': ' : ''); r.appendChild(l);
+          if (value !== undefined) { const v = document.createElement('b'); v.textContent = value; r.appendChild(v); }
+          t.appendChild(r);
+        });
+        t.hidden = false;
+        const bb = box.getBoundingClientRect();
+        const x = event.clientX - bb.left, y = event.clientY - bb.top;
+        const tw = t.offsetWidth, th = t.offsetHeight;
+        let left = x + 12, top = y - th - 10;
+        if (left + tw > bb.width) left = Math.max(0, x - tw - 12);
+        if (top < 0) top = y + 14;
+        t.style.left = left + 'px'; t.style.top = top + 'px';
+      },
+      hide() { t.hidden = true; },
+    };
+  }
+  function legend(el, items) {
+    el.replaceChildren();
+    items.forEach(([c, label]) => {
+      const s = document.createElement('span');
+      const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = c;
+      const tx = document.createElement('span'); tx.textContent = label;
+      s.append(sw, tx); el.appendChild(s);
+    });
+  }
+  // En pantallas estrechas los gráficos se dibujan con un ancho mínimo y se desplazan dentro de su caja
+  // (.chart tiene overflow-x: auto) en vez de encogerse hasta cortar etiquetas.
+  const ANCHO_MINIMO_MOVIL = 520;
+  function ancho(el, minimo, ampliarEnMovil = true) {
+    return Math.max(minimo, el.clientWidth, ampliarEnMovil && window.innerWidth <= 520 ? ANCHO_MINIMO_MOVIL : 0);
+  }
+  // Nombre accesible del gráfico: el título de su tarjeta (h3 o h2 más cercanos)
+  function nombreAccesible(el) {
+    const tarjeta = el.closest('.card, section') || document;
+    const titulo = tarjeta.querySelector('h3, h2');
+    return titulo ? titulo.textContent.trim() : 'Gráfico';
+  }
+  function svgEn(el, width, height) {
+    const encaja = width <= el.clientWidth + 1;
+    return d3.select(el).append('svg').attr('width', encaja ? '100%' : width).attr('viewBox', `0 0 ${width} ${height}`)
+      .attr('height', height).attr('role', 'img').attr('aria-label', nombreAccesible(el));
+  }
+  function newSvg(el, width, height) {
+    el.replaceChildren();
+    return svgEn(el, width, height);
+  }
+  function addSvg(box, width, height) {
+    return svgEn(box, width, height);
+  }
+  // Pequeños múltiplos: crea todas las cajas antes de dibujar, para que el ancho que mide cada gráfico sea el de la
+  // rejilla completa (si se midiera al crear la primera caja, ocuparía todo el ancho y el gráfico saldría encogido)
+  function cajas(el, n) {
+    el.replaceChildren();
+    return Array.from({ length: n }, () => { const b = document.createElement('div'); b.className = 'chart'; el.appendChild(b); return b; });
+  }
+  function clean(axisG) {
+    axisG.attr('font-size', null).attr('font-family', null);
+    axisG.selectAll('.domain').style('stroke', 'var(--panel-chart-axis)');
+    axisG.selectAll('.tick line').style('stroke', 'var(--panel-chart-grid)');
+    return axisG;
+  }
+  // Busca la fila que cumple data-where (valores exactos, como texto)
+  function find(id, where) {
+    const w = new URLSearchParams(where || '');
+    return rows(id).find((r) => [...w.entries()].every(([k, v]) => String(r[k]) === v));
+  }
+  // Tabla a partir de filas: cols = [[campo, formato o función]]; clave = columnas que distinguen las filas
+  function table(tbId, data, cols, clave) {
+    const tb = document.querySelector('#' + tbId + ' tbody');
+    tb.replaceChildren(...data.map((r) => {
+      const tr = document.createElement('tr');
+      if (clave && clave.length) {
+        tr.dataset.key = clave.length === 1 ? String(r[clave[0]]) : clave.map((k) => encodeURIComponent(String(r[k]))).join(',');
+      }
+      cols.forEach(([campo, f]) => {
+        const td = document.createElement('td');
+        const v = typeof f === 'function' ? f(r) : fmt(r[campo], f);
+        if (v instanceof Node) td.appendChild(v); else td.textContent = v;
+        tr.appendChild(td);
+      });
+      return tr;
+    }));
+  }
+  function link(url) {
+    if (!url || !/^https?:\/\//.test(url)) { const s = document.createElement('span'); s.textContent = url || '—'; return s; }
+    const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    try { a.textContent = new URL(url).hostname.replace(/^www3?\./, ''); } catch (e) { a.textContent = 'fuente'; }
+    return a;
+  }
+  return { num, fmtInt, fmtPct, fmtDec, fmtHora, fmt, ok, rows, color, casoLbl, casoTxt, state, failBox, measure, tip, legend, newSvg, addSvg, cajas, clean, find, table, link, ancho };
+})();
+
+/* ---------- Cálculos a partir de los datos ---------- */
+dash.calc('indice_movilidad', {
+  inputs: ['imd', 'transporte'],
+  title: 'Índice 2019 = 100: guagua, tranvía y TF-5',
+  description: 'Viajeros de TITSA y del tranvía y media de la IMD total de cuatro estaciones de la TF-5 (93, 99, 103 y 111), cada serie dividida por su valor de 2019.',
+  fn: (imd, transporte) => {
+    const estaciones = [93, 99, 103, 111];
+    const out = [];
+    const anios = [...new Set(imd.map((r) => Number(r.anio)))].sort();
+    const media = (a) => {
+      const f = imd.filter((r) => Number(r.anio) === a && estaciones.includes(Number(r.estacion_id)));
+      return f.length === estaciones.length ? f.reduce((s, r) => s + Number(r.imd_total), 0) / f.length : null;
+    };
+    const base = media(2019);
+    anios.forEach((a) => { const m = media(a); if (m !== null) out.push({ anio: a, serie: 'Tráfico TF-5', indice: 100 * m / base }); });
+    ['TITSA', 'Tranvía (Metrotenerife)'].forEach((op) => {
+      const f = transporte.filter((r) => r.operador === op);
+      const b = Number(f.find((r) => Number(r.anio) === 2019).viajeros);
+      f.forEach((r) => out.push({ anio: Number(r.anio), serie: op === 'TITSA' ? 'Viajeros TITSA' : 'Viajeros tranvía', indice: 100 * Number(r.viajeros) / b }));
+    });
+    return out;
+  },
+});
+
+dash.calc('holgura_sens_tabla', {
+  inputs: ['holgura_sens', 'holgura_sens_hora'],
+  title: 'Tercer carril según la estimación de la holgura',
+  description: 'Para cada cuello y forma de estimar la capacidad libre del tramo siguiente: holgura mediana en la hora clave (7 h por la mañana, 15 h por la tarde) y reducción de la demora del tercer carril el primer año (mediana, p10 y p90), con las horas de cola de hoy y con el tercer carril, y la parte de las combinaciones con la cola de hoy en el rango medido en 2025.',
+  fn: (sens, hora) => sens.filter((r) => r.escenario === 'tercer_carril_corto').map((r) => {
+    const h = r.caso === 'manana_hacia_santa_cruz' ? 7 : 15;
+    const x = hora.find((y) => y.caso === r.caso && y.variante === r.variante && Number(y.hora) === h);
+    return { caso: r.caso, variante: r.variante, holgura_clave: x ? Number(x.holgura_mediana) : null, mediana: Number(r.mediana),
+             p10: Number(r.p10), p90: Number(r.p90), horas_cola_hoy: Number(r.horas_cola_hoy),
+             horas_cola_con_tercer_carril: Number(r.horas_cola_con_tercer_carril), parte_cola_hoy_en_rango_medido: Number(r.parte_cola_hoy_en_rango_medido) };
+  }),
+});
+
+dash.calc('sens_cal_tabla', {
+  inputs: ['sens_calibracion'],
+  title: 'Resultados según la regla de calibración',
+  description: 'Para cada cuello y regla de calibración: combinaciones aceptadas, descarga calibrada (mediana) y reducción de la demora el primer año (mediana y p10-p90) del tercer carril y de la regulación de accesos con escalonamiento.',
+  fn: (s) => {
+    const out = [];
+    s.forEach((r) => {
+      let o = out.find((x) => x.caso === r.caso && x.regla === r.regla);
+      if (!o) { o = { caso: r.caso, regla: r.regla, n_validas: Number(r.n_validas), descarga_mediana: r.descarga_mediana === '' ? null : Number(r.descarga_mediana), tercer_carril: null, tercer_p10: null, tercer_p90: null, paquete: null, paquete_p10: null, paquete_p90: null }; out.push(o); }
+      if (r.escenario === 'tercer_carril_corto') { o.tercer_carril = Number(r.mediana); o.tercer_p10 = Number(r.p10); o.tercer_p90 = Number(r.p90); }
+      if (r.escenario === 'paquete_gestion_corto') { o.paquete = Number(r.mediana); o.paquete_p10 = Number(r.p10); o.paquete_p90 = Number(r.p90); }
+    });
+    return out;
+  },
+});
+
+dash.calc('diag_horas', {
+  inputs: ['diagnostico'],
+  title: 'Caudal con cola por hora: aforo y modelo',
+  description: 'Mediana del caudal en las horas con cola de la mañana hacia Santa Cruz, por hora del día y por posición en la cola: aforos de 2025 y de 2026 y modelo calibrado medido como el aforo.',
+  fn: (d) => {
+    const out = [];
+    d.filter((r) => r.caso === 'manana_hacia_santa_cruz' && (r.bloque === 'Por hora del día' || r.bloque === 'Por posición en la cola')).forEach((r) => {
+      const g = r.bloque === 'Por hora del día' ? r.grupo : 'cola ' + r.grupo;
+      let o = out.find((x) => x.grupo === g);
+      if (!o) { o = { grupo: g, aforo_2025: null, aforo_2026: null, modelo: null, n_2025: 0 }; out.push(o); }
+      const v = r.mediana === '' ? null : Number(r.mediana);
+      if (r.fuente === 'aforo 2025') { o.aforo_2025 = v; o.n_2025 = Number(r.n); }
+      if (r.fuente === 'aforo 2026') o.aforo_2026 = v;
+      if (r.fuente === 'modelo (calibrado)') o.modelo = v;
+    });
+    return out.filter((o) => o.n_2025 >= 10);
+  },
+});
+
+dash.calc('crec_2030_tabla', {
+  inputs: ['crecimiento_2030'],
+  title: 'Alternativas en 2030 según el crecimiento',
+  description: 'Reducción de la demora el primer año en 2030 (mediana y p10-p90) de cada alternativa con la demanda creciendo un 0, un 0,5 o un 1 % al año.',
+  fn: (a) => {
+    const out = [];
+    a.filter((r) => r.escenario !== 'base' && /_corto$|^tarificacion$/.test(r.escenario)).forEach((r) => {
+      let o = out.find((x) => x.caso === r.caso && x.escenario === r.escenario);
+      if (!o) { o = { caso: r.caso, escenario: r.escenario, alternativa: r.etiqueta, bajo: null, bajo_p10: null, bajo_p90: null, central: null, central_p10: null, central_p90: null, alto: null, alto_p10: null, alto_p90: null }; out.push(o); }
+      const g = Number(r.crecimiento_anual);
+      const k = g === 0 ? 'bajo' : Math.abs(g - 0.005) < 1e-9 ? 'central' : 'alto';
+      o[k] = Number(r.reduccion_mediana); o[k + '_p10'] = Number(r.reduccion_p10); o[k + '_p90'] = Number(r.reduccion_p90);
+    });
+    return out;
+  },
+});
+
+dash.calc('procedencia_resumen', {
+  inputs: ['procedencia'],
+  title: 'Procedencia: resumen',
+  description: 'Número de ficheros oficiales con copia íntegra, de extractos horarios que conservan las sumas de control registradas del TXT original, de ficheros iguales en tamaño y fecha al recurso de la instantánea del catálogo del portal guardada en el proyecto y recursos publicados que no se han descargado.',
+  fn: (p) => {
+    const f = p.filter((r) => /^[HO]-/.test(r.id));
+    const h = p.filter((r) => /^H-/.test(r.id));
+    return [{
+      ficheros: f.length, integras: f.filter((r) => /^Copia íntegra/.test(r.integridad)).length,
+      meses: h.length, meses_conservados: h.filter((r) => /^Totales del extracto/.test(r.conservacion_totales)).length,
+      coinciden: f.filter((r) => /^Coincide/.test(r.contraste_catalogo)).length,
+      huecos: p.filter((r) => /^F-/.test(r.id)).map((r) => (/\d{4}/.test(r.recurso) ? r.recurso : r.recurso + ' de ' + r.conjunto.replace(/^.*\((\d{4})\)$/, '$1'))).join('; '),
+    }];
+  },
+});
+
+dash.calc('pruebas_resumen', {
+  inputs: ['pruebas'],
+  title: 'Pruebas automáticas: resumen',
+  description: 'Bloques de pruebas, comprobaciones superadas y fallos de la última ejecución de tests/ejecutar_pruebas.R.',
+  fn: (t) => [{
+    bloques: t.length, superadas: t.reduce((s, r) => s + Number(r.passed), 0),
+    fallos: t.reduce((s, r) => s + Number(r.failed), 0) + t.filter((r) => String(r.error).toUpperCase() === 'TRUE').length,
+  }],
+});
+
+dash.calc('crecimiento_poblacion', {
+  inputs: ['poblacion'],
+  title: 'Crecimiento anual de la población',
+  description: 'Tasa anual compuesta de crecimiento de la población de Tenerife entre el primer y el último año del Censo anual del INE.',
+  fn: (poblacion) => {
+    const f = poblacion.map((r) => ({ anio: Number(r.anio), p: Number(r.poblacion) })).sort((a, b) => a.anio - b.anio);
+    const a = f[0], b = f[f.length - 1];
+    return [{ desde: a.anio, hasta: b.anio, crecimiento_anual: Math.pow(b.p / a.p, 1 / (b.anio - a.anio)) - 1 }];
+  },
+});
+
+dash.calc('lecturas', {
+  inputs: ['dif_emp'],
+  title: 'Tercer carril frente a gestión: lectura',
+  description: 'Lectura de la diferencia emparejada entre el tercer carril y la regulación de accesos con escalonamiento, el primer año, en cada cuello.',
+  fn: (dif_emp) => dif_emp.filter((r) => r.horizonte === 'corto' && r.alternativa_a === 'tercer_carril' && r.alternativa_b === 'paquete_gestion').map((r) => {
+    const l = String(r.lectura);
+    const frase = l.startsWith('Sin diferencia material') ? 'no hay una diferencia material entre los dos'
+      : l.startsWith('Sin diferencia distinguible') ? 'la diferencia entre los dos no se distingue del error de muestreo'
+      : l.startsWith('A reduce') ? 'el tercer carril reduce más en al menos el 90 % de las combinaciones'
+      : l.startsWith('B reduce') ? 'la gestión reduce más en al menos el 90 % de las combinaciones'
+      : 'cuál de los dos reduce más depende de los parámetros';
+    return { caso: r.caso, frase, lectura: l, dif_mediana: Number(r.dif_mediana) };
+  }),
+});
+
+dash.calc('espec', {
+  inputs: ['eleccion'],
+  title: 'Forma de la descarga elegida',
+  description: 'Forma de la descarga elegida por validación cruzada en 2025 en cada cuello, con su sesgo absoluto y el de la forma más simple.',
+  fn: (eleccion) => {
+    const desc = (r) => [['propagacion', 'propagación de la cola del tramo siguiente'], ['horario', 'descarga dependiente de la hora'], ['pesados', 'mezcla de pesados']]
+      .filter(([k]) => String(r[k]).toUpperCase() === 'TRUE').map(([, d]) => d).join(' + ').replace(/^$/, 'descarga constante') + (r.medida_descarga === 'como_aforo' ? '; medida igual que en el aforo' : '; como parámetro');
+    return eleccion.filter((r) => String(r.elegida).toUpperCase() === 'TRUE').map((r) => ({
+    caso: r.caso, descripcion: desc(r), sesgo_descarga: Number(r.sesgo_descarga), sesgo_descarga_referencia: Number(r.sesgo_descarga_referencia),
+    mejora_sesgo_descarga: Number(r.mejora_sesgo_descarga),
+  }));
+  },
+});
+
+dash.calc('eleccion_tabla', {
+  inputs: ['eleccion'],
+  title: 'Las dieciséis formas de la descarga',
+  description: 'Cada forma de la descarga probada en la validación cruzada de 2025: combinaciones aceptadas, sesgo absoluto de la descarga del día, mejora frente a la forma más simple, peor RMSE relativo y si es admisible y la elegida.',
+  fn: (eleccion) => {
+    const desc = (r) => [['propagacion', 'propagación de la cola del tramo siguiente'], ['horario', 'descarga dependiente de la hora'], ['pesados', 'mezcla de pesados']]
+      .filter(([k]) => String(r[k]).toUpperCase() === 'TRUE').map(([, d]) => d).join(' + ').replace(/^$/, 'descarga constante') + (r.medida_descarga === 'como_aforo' ? '; medida igual que en el aforo' : '; como parámetro');
+    return eleccion.map((r) => ({
+    caso: r.caso, variante: desc(r), aceptadas: Number(r.aceptadas), sesgo_descarga: Number(r.sesgo_descarga),
+    mejora_sesgo_descarga: Number(r.mejora_sesgo_descarga), peor_rmse_relativo: Number(r.peor_rmse_relativo),
+    indicador_que_mas_empeora: r.indicador_que_mas_empeora, admisible: String(r.admisible).toUpperCase() === 'TRUE' ? 'Sí' : 'No',
+    elegida: String(r.elegida).toUpperCase() === 'TRUE' ? 'Sí' : '', orden: (String(r.elegida).toUpperCase() === 'TRUE' ? 0 : String(r.admisible).toUpperCase() === 'TRUE' ? 1 : 2),
+  })).sort((a, b) => (a.caso === b.caso ? a.orden - b.orden || a.sesgo_descarga - b.sesgo_descarga : (a.caso < b.caso ? -1 : 1)));
+  },
+});
+
+dash.calc('prueba_2026', {
+  inputs: ['val_cruzada', 'eleccion'],
+  title: 'Prueba final en 2026',
+  description: 'Descarga del día medida igual en el modelo y en el aforo en enero-septiembre de 2026, con la forma elegida y con la más simple: sesgo, RMSE y parte de los días dentro del intervalo predictivo del 80 %.',
+  fn: (val_cruzada, eleccion) => {
+    const out = [];
+    const igual = (a, b) => ['propagacion', 'horario', 'pesados'].every((k) => String(a[k]).toUpperCase() === String(b[k]).toUpperCase()) && a.medida_descarga === b.medida_descarga;
+    [['elegida', 'elegida'], ['referencia', 'referencia']].forEach(([campo, nombre]) => {
+      eleccion.filter((e) => String(e[campo]).toUpperCase() === 'TRUE').forEach((e) => {
+        const v = val_cruzada.find((r) => r.caso === e.caso && String(r.prueba) === '2026' && r.indicador === 'Descarga del día (medida igual en el modelo y en el aforo)' && igual(r, e));
+        if (v) out.push({ caso: e.caso, variante: nombre, sesgo: Number(v.sesgo), rmse: Number(v.rmse), cobertura_intervalo_predictivo: Number(v.cobertura_intervalo_predictivo) });
+      });
+    });
+    return out;
+  },
+});
+
+dash.calc('holgura_compatibles', {
+  inputs: ['holgura_sens'],
+  title: 'Tercer carril con estimaciones compatibles',
+  description: 'Menor y mayor mediana del tercer carril de la mañana el primer año entre las estimaciones de la capacidad libre que dejan alguna holgura y con las que al menos la mitad de las combinaciones calibradas da una cola de hoy dentro del rango medido en 2025 (la holgura nula también lo es y da cero).',
+  fn: (holgura_sens) => {
+    const v = holgura_sens.filter((r) => r.caso === 'manana_hacia_santa_cruz' && r.escenario === 'tercer_carril_corto' && !String(r.variante).startsWith('Holgura nula') && Number(r.parte_cola_hoy_en_rango_medido) >= 0.5).map((r) => Number(r.mediana));
+    return [{ minimo: Math.min(...v), maximo: Math.max(...v), variantes: v.length }];
+  },
+});
+
+dash.calc('dif_tabla', {
+  inputs: ['dif_emp'],
+  title: 'Diferencias emparejadas, primer año',
+  description: 'Para cada pareja de alternativas y cuello, el primer año: diferencia mediana de la reducción de la demora combinación a combinación, su p10 y p90, su error de muestreo, la parte de las combinaciones en que A reduce más y la lectura.',
+  fn: (dif_emp) => dif_emp.filter((r) => r.horizonte === 'corto').map((r) => ({
+    caso: r.caso, pareja: String(r.etiqueta_a).replace(/ \(.*\)$/, '') + ' − ' + String(r.etiqueta_b).replace(/ \(.*\)$/, ''),
+    dif_mediana: Number(r.dif_mediana), dif_p10: Number(r.dif_p10), dif_p90: Number(r.dif_p90), ee_dif_mediana: Number(r.ee_dif_mediana),
+    parte_a_mayor: Number(r.parte_a_mayor), lectura: String(r.lectura).replace('cruza el 0', 'incluye el 0'),
+  })),
+});
+
+dash.calc('dif_regla_resumen', {
+  inputs: ['dif_regla'],
+  title: 'Tercer carril frente a gestión según la regla',
+  description: 'Menor y mayor diferencia mediana (en puntos) entre el tercer carril y la regulación con escalonamiento por la mañana, el primer año, con cada regla de calibración salvo la muestra sin calibrar, y reglas sin diferencia material.',
+  fn: (dif_regla) => {
+    const f = dif_regla.filter((r) => r.caso === 'manana_hacia_santa_cruz' && r.horizonte === 'corto' && !String(r.regla).startsWith('Sin calibrar'));
+    const v = f.map((r) => 100 * Number(r.dif_mediana));
+    return [{ min_puntos: Math.min(...v), max_puntos: Math.max(...v), reglas: f.length, sin_diferencia_material: f.filter((r) => String(r.lectura).startsWith('Sin diferencia material')).length }];
+  },
+});
+
+dash.calc('mc_semillas_tabla', {
+  inputs: ['mc_semillas'],
+  title: 'Monte Carlo con otras semillas',
+  description: 'Combinaciones aceptadas y reducción de la demora el primer año (mediana) del tercer carril y de la regulación con escalonamiento con cada semilla.',
+  fn: (mc_semillas) => {
+    const out = [];
+    mc_semillas.filter((r) => r.escenario === 'tercer_carril_corto' || r.escenario === 'paquete_gestion_corto').forEach((r) => {
+      let o = out.find((x) => x.caso === r.caso && x.semilla === r.semilla);
+      if (!o) { o = { caso: r.caso, semilla: r.semilla, aceptadas: Number(r.aceptadas), tercer_carril: null, paquete: null }; out.push(o); }
+      if (r.escenario === 'tercer_carril_corto') o.tercer_carril = Number(r.mediana); else o.paquete = Number(r.mediana);
+    });
+    return out;
+  },
+});
+
+dash.calc('mc_previas_tabla', {
+  inputs: ['mc_previas'],
+  title: 'Monte Carlo con otras previas',
+  description: 'Tamaño efectivo de la reponderación y reducción de la demora el primer año (mediana ponderada) del tercer carril y de la regulación con escalonamiento con cada previa alternativa.',
+  fn: (mc_previas) => {
+    const out = [];
+    mc_previas.filter((r) => r.escenario === 'tercer_carril_corto' || r.escenario === 'paquete_gestion_corto').forEach((r) => {
+      let o = out.find((x) => x.caso === r.caso && x.previa === r.previa);
+      if (!o) { o = { caso: r.caso, previa: r.previa, tamano_efectivo: Number(r.tamano_efectivo), aceptadas: Number(r.aceptadas), tercer_carril: null, paquete: null }; out.push(o); }
+      if (r.escenario === 'tercer_carril_corto') o.tercer_carril = Number(r.mediana); else o.paquete = Number(r.mediana);
+    });
+    return out;
+  },
+});
+
+dash.calc('mc_corr_top', {
+  inputs: ['mc_correlaciones'],
+  title: 'Correlaciones que crea la calibración',
+  description: 'Las tres parejas de parámetros cuya correlación de Spearman más cambia entre la previa y las combinaciones aceptadas, en cada cuello.',
+  fn: (mc_correlaciones) => {
+    const out = [];
+    ['manana_hacia_santa_cruz', 'tarde_hacia_el_norte'].forEach((c) => {
+      mc_correlaciones.filter((r) => r.caso === c).sort((a, b) => Math.abs(Number(b.cambio)) - Math.abs(Number(a.cambio))).slice(0, 3)
+        .forEach((r) => out.push({ caso: c, par: r.parametro_1 + ' · ' + r.parametro_2, rho_previa: Number(r.rho_previa), rho_aceptadas: Number(r.rho_aceptadas) }));
+    });
+    return out;
+  },
+});
+
+dash.calc('retraso_tabla', {
+  inputs: ['retraso'],
+  title: 'Tercer carril según el año de servicio',
+  description: 'Reducción de la demora de la mañana el primer año (mediana, p10 y p90) del tercer carril según el año en que entre en servicio, con crecimiento central (0,5 % anual) y alto (1 %), y horas de cola sin actuar ese año.',
+  fn: (retraso) => {
+    const out = [];
+    retraso.filter((r) => r.caso === 'manana_hacia_santa_cruz' && (r.escenario === 'tercer_carril_corto' || r.escenario === 'base')).forEach((r) => {
+      let o = out.find((x) => x.anio === Number(r.anio));
+      if (!o) { o = { anio: Number(r.anio) }; out.push(o); }
+      const k = Math.abs(Number(r.crecimiento_anual) - 0.005) < 1e-9 ? 'central' : 'alto';
+      if (r.escenario === 'base') o['horas_' + k] = Number(r.horas_cola_mediana);
+      else { o[k] = Number(r.reduccion_mediana); o[k + '_p10'] = Number(r.reduccion_p10); o[k + '_p90'] = Number(r.reduccion_p90); }
+    });
+    return out.sort((a, b) => a.anio - b.anio);
+  },
+});
+
+dash.calc('dias_tabla', {
+  inputs: ['dias_atipicos'],
+  title: 'Días atípicos en los dos cuellos',
+  description: 'Días laborables excluidos y marcados, con su motivo, en Ermita Cruz Chica hacia Santa Cruz y en Bomberos La Laguna hacia el Norte.',
+  fn: (dias_atipicos) => dias_atipicos.filter((r) => (r.etiqueta === 'Ermita Cruz Chica' && r.sentido === 'descendente') || (r.etiqueta === 'Bomberos La Laguna' && r.sentido === 'ascendente'))
+    .map((r) => ({ cuello: r.etiqueta + (r.sentido === 'descendente' ? ' → Santa Cruz' : ' → Norte'), motivo: r.motivo, tratamiento: r.tratamiento, dias: Number(r.dias) })),
+});
+
+dash.calc('repro_resumen', {
+  inputs: ['reproducibilidad'],
+  title: 'Dos ejecuciones completas',
+  description: 'Ficheros de salidas comparados entre dos ejecuciones completas en copias limpias, ficheros dentro de la tolerancia, iguales byte a byte y propios de cada ejecución (sin comparar).',
+  fn: (reproducibilidad) => [{
+    comparados: reproducibilidad.filter((r) => r.dentro_de_tolerancia === 'TRUE' || r.dentro_de_tolerancia === 'FALSE').length,
+    dentro: reproducibilidad.filter((r) => r.dentro_de_tolerancia === 'TRUE').length,
+    byte: reproducibilidad.filter((r) => r.estado === 'igual (byte a byte)').length,
+    propios: reproducibilidad.filter((r) => String(r.estado).startsWith('propio')).length,
+  }],
+});
+
+dash.calc('descarga_sin_datos', {
+  inputs: ['prevision_descarga'],
+  title: 'Descarga en las horas sin datos',
+  description: 'Horas de cola de la mañana en 2035 sin actuar, con crecimiento central (0,5 % anual): con el supuesto principal (factor horario solo en las horas con datos de 2025) y con la sensibilidad que mantiene el de la última hora con datos.',
+  fn: (prevision_descarga) => {
+    const f = prevision_descarga.filter((r) => r.caso === 'manana_hacia_santa_cruz' && Math.abs(Number(r.crecimiento_anual) - 0.005) < 1e-9 && Number(r.anio) === 2035);
+    const v = (pre) => { const r = f.find((x) => String(x.supuesto).startsWith(pre)); return r ? Number(r.horas_cola_sin_adaptacion) : null; };
+    return [{ principal: v('Principal'), sensibilidad: v('Sensibilidad') }];
+  },
+});
+
+dash.calc('veredictos', {
+  inputs: ['afirmaciones'],
+  title: 'Afirmaciones por veredicto',
+  description: 'Número de afirmaciones de los apuntes en cada veredicto.',
+  fn: (afirmaciones) => {
+    const orden = ['Confirmado', 'Parcialmente cierto', 'No verificado', 'Falso o erróneo'];
+    return orden.map((v) => ({ veredicto: v, n: afirmaciones.filter((r) => r.veredicto === v).length }));
+  },
+});
+
+dash.calc('apuntes_dudosos', {
+  inputs: ['afirmaciones'],
+  title: 'Afirmaciones falsas o sin fuente',
+  description: 'Afirmaciones con veredicto «Falso o erróneo» o «No verificado», y total revisado.',
+  fn: (afirmaciones) => [{
+    dudosas: afirmaciones.filter((r) => r.veredicto === 'Falso o erróneo' || r.veredicto === 'No verificado').length,
+    total: afirmaciones.length,
+  }],
+});
+</script>
+
+<script>
+/* ---------- Cifras dentro del texto y de las tarjetas ---------- */
+dash.onData(() => {
+  document.querySelectorAll('.tf5 span.v[data-source]').forEach((el) => {
+    const id = el.dataset.source;
+    const st = dash.data(id).status;
+    const kpi = el.closest('.kpi-value');
+    if (kpi) kpi.classList.toggle('dash-skeleton', st === 'loading');
+    if (st !== 'ok') { el.textContent = '—'; return; }
+    const r = el.dataset.row !== undefined ? TF5.rows(id)[Number(el.dataset.row)] : TF5.find(id, el.dataset.where);
+    el.textContent = r ? TF5.fmt(r[el.dataset.field], el.dataset.fmt) : '—';
+  });
+});
+</script>
+
+<script>
+/* ---------- 1a. Perfil del corredor ---------- */
+(() => {
+  const el = document.getElementById('ch-corredor');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, measure, clean, tip, fmtInt, color, legend } = TF5;
+    const s = state(el, ['imd']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('imd').filter((r) => Number(r.anio) === 2025 && r.imd_ascendentes !== '' && r.imd_ascendentes !== null)
+      .map((r) => ({ est: r.estacion, orden: Number(r.orden), id: Number(r.estacion_id), asc: Number(r.imd_ascendentes), desc: Number(r.imd_descendentes), tot: Number(r.imd_total) }))
+      .sort((a, b) => a.orden - b.orden);
+    const c = [color(0), color(1)];
+    legend(document.getElementById('leg-corredor'), [[c[0], 'Hacia el Norte (ascendente)'], [c[1], 'Hacia Santa Cruz (descendente)']]);
+    const W = TF5.ancho(el, 320), rowH = 30, top = 4, bottom = 26;
+    const H = top + bottom + d.length * rowH;
+    const svg = newSvg(el, W, H);
+    const left = measure(svg, d.map((x) => x.est)) + 10, right = 54;
+    const x = d3.scaleLinear([0, d3.max(d, (r) => Math.max(r.asc, r.desc)) * 1.05], [left, W - right]).nice();
+    const y = d3.scaleBand(d.map((r) => r.est), [top, H - bottom]).paddingInner(0.25);
+    const obra = d.find((r) => r.id === 103);
+    if (obra) svg.append('rect').attr('x', 0).attr('width', W).attr('y', y(obra.est) - 3).attr('height', y.bandwidth() + 6)
+      .style('fill', 'var(--panel-chart-grid)').attr('opacity', 0.6);
+    clean(svg.append('g').attr('transform', `translate(0,${H - bottom})`)
+      .call(d3.axisBottom(x).ticks(Math.max(2, Math.floor((W - left) / 110))).tickFormat((v) => fmtInt(v)).tickSize(-(H - bottom - top))))
+      .call((g) => g.select('.domain').remove());
+    svg.append('g').selectAll('text').data(d).join('text').attr('class', 'lbl-strong')
+      .attr('x', left - 8).attr('y', (r) => y(r.est) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((r) => r.est);
+    const sub = d3.scaleBand(['asc', 'desc'], [0, y.bandwidth()]).paddingInner(0.15);
+    const bh = Math.min(sub.bandwidth(), 14);
+    const t = tip(el);
+    const g = svg.append('g');
+    d.forEach((r) => {
+      ['asc', 'desc'].forEach((k, i) => {
+        g.append('rect').attr('x', x(0)).attr('y', y(r.est) + sub(k) + (sub.bandwidth() - bh) / 2)
+          .attr('width', Math.max(0, x(r[k]) - x(0))).attr('height', bh).attr('rx', 3).style('fill', c[i])
+          .on('pointermove', (ev) => t.show(ev, r.est + ' · 2025', [[c[0], 'Hacia el Norte', fmtInt(r.asc)], [c[1], 'Hacia Santa Cruz', fmtInt(r.desc)], [null, 'Total', fmtInt(r.tot)]]))
+          .on('pointerleave', () => t.hide());
+      });
+    });
+    const mx = d.reduce((a, b) => (b.tot > a.tot ? b : a));
+    svg.append('text').attr('class', 'lbl-strong').attr('x', x(Math.max(mx.asc, mx.desc)) + 6)
+      .attr('y', y(mx.est) + y.bandwidth() / 2).attr('dy', '0.35em').text(fmtInt(mx.tot) + ' total');
+  });
+})();
+
+/* ---------- 1b. Evolución (pequeños múltiplos) ---------- */
+(() => {
+  const el = document.getElementById('ch-evolucion');
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtInt, fmtPct, color, addSvg, cajas } = TF5;
+    const s = state(el, ['imd']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const all = rows('imd').map((r) => ({ anio: Number(r.anio), id: Number(r.estacion_id), est: r.estacion, tot: Number(r.imd_total), orden: Number(r.orden) }));
+    const ids = [93, 97, 99, 103, 111, 123].filter((id) => all.some((r) => r.id === id));
+    const yDom = [40000, 125000];
+    const boxes = cajas(el, ids.length);
+    ids.forEach((id, i) => {
+      const d = all.filter((r) => r.id === id).sort((a, b) => a.anio - b.anio);
+      const box = boxes[i];
+      const v19 = d.find((r) => r.anio === 2019), v25 = d.find((r) => r.anio === 2025);
+      const h = document.createElement('div'); h.className = 'note';
+      h.style.margin = '0 0 4px'; h.style.color = 'var(--color-fg)';
+      h.textContent = d[0].est + (v19 && v25 ? '  ·  ' + fmtPct(v25.tot / v19.tot - 1, 1, true) + ' desde 2019' : '');
+      box.appendChild(h);
+      const W = TF5.ancho(box, 220, false), H = 150, m = { t: 8, r: 12, b: 22, l: 34 };
+      const svg = addSvg(box, W, H);
+      const x = d3.scaleLinear([2018, 2025], [m.l, W - m.r]);
+      const y = d3.scaleLinear(yDom, [H - m.b, m.t]);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat((v) => "'" + String(v).slice(2)).tickSize(0)).call((g) => g.select('.domain').remove()))
+        .selectAll('text').attr('dy', '1em');
+      clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => String(v / 1000)).tickSize(-(W - m.l - m.r))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('rect').attr('x', x(2019.5)).attr('width', x(2021.5) - x(2019.5)).attr('y', m.t).attr('height', H - m.b - m.t)
+        .style('fill', 'var(--panel-chart-grid)').attr('opacity', 0.5);
+      const full = []; for (let a = 2018; a <= 2025; a++) full.push(d.find((r) => r.anio === a) || { anio: a, tot: null });
+      const line = d3.line().defined((r) => r.tot !== null).x((r) => x(r.anio)).y((r) => y(r.tot));
+      svg.append('path').datum(full).style('fill', 'none').style('stroke', color(0)).attr('stroke-width', 2)
+        .attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round').attr('d', line);
+      const t = tip(box);
+      svg.append('g').selectAll('circle').data(d).join('circle').attr('cx', (r) => x(r.anio)).attr('cy', (r) => y(r.tot)).attr('r', 3.5)
+        .style('fill', color(0)).style('stroke', 'var(--color-panel)').attr('stroke-width', 2)
+        .on('pointermove', (ev, r) => t.show(ev, r.est + ' · ' + r.anio, [[null, 'IMD total', fmtInt(r.tot)]]))
+        .on('pointerleave', () => t.hide());
+    });
+  });
+})();
+
+/* ---------- 3. k crítico ---------- */
+(() => {
+  const el = document.getElementById('ch-kcrit');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, measure, clean, tip, fmtPct, fmtInt, color, legend } = TF5;
+    const s = state(el, ['capacidad', 'parametros']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const kp = rows('parametros').find((r) => r.parametro === 'k_dir_referencia');
+    if (!kp) { el.replaceChildren(); return; }
+    const band = [Number(kp.minimo), Number(kp.maximo)];
+    const c = [color(0), color(1)];
+    legend(document.getElementById('leg-kcrit'), [[c[0], 'Hacia el Norte'], [c[1], 'Hacia Santa Cruz'], ['var(--panel-chart-grid)', 'Cuota habitual de la hora punta']]);
+    const d = rows('capacidad').map((r) => ({
+      lbl: r.estacion + ' · ' + (r.sentido === 'ascendente' ? 'Norte' : 'Santa Cruz') + ' (' + r.carriles + ' carr.)',
+      orden: Number(r.orden), sentido: r.sentido, carriles: Number(r.carriles), imd: Number(r.imd_sentido),
+      lo: Number(r.k_crit_min), mid: Number(r.k_crit_central), hi: Number(r.k_crit_max),
+    })).sort((a, b) => a.orden - b.orden || (a.sentido === 'ascendente' ? -1 : 1));
+    const W = TF5.ancho(el, 320), rowH = 26, top = 6, bottom = 26;
+    const H = top + bottom + d.length * rowH;
+    const svg = newSvg(el, W, H);
+    const left = measure(svg, d.map((r) => r.lbl)) + 10;
+    const x = d3.scaleLinear([0, Math.max(0.22, d3.max(d, (r) => r.hi))], [left, W - 14]);
+    const y = d3.scaleBand(d.map((r) => r.lbl), [top, H - bottom]).padding(0.3);
+    svg.append('rect').attr('x', x(band[0])).attr('width', x(band[1]) - x(band[0])).attr('y', top).attr('height', H - bottom - top)
+      .style('fill', 'var(--panel-chart-grid)').attr('opacity', 0.8);
+    clean(svg.append('g').attr('transform', `translate(0,${H - bottom})`)
+      .call(d3.axisBottom(x).ticks(Math.max(3, Math.floor((W - left) / 90))).tickFormat((v) => fmtPct(v)).tickSize(-(H - bottom - top))))
+      .call((g) => g.select('.domain').remove());
+    svg.append('g').selectAll('text').data(d).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+      .attr('y', (r) => y(r.lbl) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((r) => r.lbl);
+    const t = tip(el);
+    const g = svg.append('g');
+    d.forEach((r) => {
+      const col = r.sentido === 'ascendente' ? c[0] : c[1];
+      const cy = y(r.lbl) + y.bandwidth() / 2;
+      g.append('line').attr('x1', x(r.lo)).attr('x2', x(r.hi)).attr('y1', cy).attr('y2', cy).style('stroke', col).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+      g.append('circle').attr('cx', x(r.mid)).attr('cy', cy).attr('r', 5).style('fill', col).style('stroke', 'var(--color-panel)').attr('stroke-width', 2)
+        .on('pointermove', (ev) => t.show(ev, r.lbl, [[col, 'k crítico', fmtPct(r.mid, 1)], [null, 'Rango', fmtPct(r.lo, 1) + ' - ' + fmtPct(r.hi, 1)], [null, 'IMD del sentido', fmtInt(r.imd)]]))
+        .on('pointerleave', () => t.hide());
+    });
+  });
+})();
+
+/* ---------- 6. Modelo: dos casos (1er año, 5 y 10 años) ---------- */
+(() => {
+  const casos = [['ch-caso1', 'manana_hacia_santa_cruz'], ['ch-caso2', 'tarde_hacia_el_norte']];
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, measure, clean, tip, fmtPct, color } = TF5;
+    casos.forEach(([id, caso]) => {
+      const el = document.getElementById(id);
+      const s = state(el, ['modelo']);
+      if (s.failed) return failBox(el);
+      if (!s.ready) { el.replaceChildren(); return; }
+      const d = rows('modelo').filter((r) => r.caso === caso)
+        .map((r) => ({ esc: r.escenario, lbl: r.alternativa, lo: Number(r.p10), mid: Number(r.mediana), hi: Number(r.p90) }));
+      const W = TF5.ancho(el, 300), rowH = 32, top = 6, bottom = 26;
+      const H = top + bottom + d.length * rowH;
+      const svg = newSvg(el, W, H);
+      // Las etiquetas largas (p. ej. «Tercer carril hacia el Norte, hipotético (1er año)») se parten en dos líneas
+      // antes del paréntesis del horizonte cuando no caben en el margen izquierdo, en vez de recortarse.
+      const cap = W * 0.55;
+      const partir = (t) => { const i = t.lastIndexOf(' ('); return i > 0 ? [t.slice(0, i), t.slice(i + 1)] : [t]; };
+      const envolver = measure(svg, d.map((r) => r.lbl)) + 10 > cap;
+      const lineas = (r) => (envolver ? partir(r.lbl) : [r.lbl]);
+      const left = Math.min(cap, measure(svg, d.flatMap((r) => lineas(r))) + 10), right = 44;
+      const x = d3.scaleLinear([0, 1], [left, W - right]);
+      const y = d3.scaleBand(d.map((r) => r.lbl), [top, H - bottom]).padding(0.35);
+      clean(svg.append('g').attr('transform', `translate(0,${H - bottom})`)
+        .call(d3.axisBottom(x).tickValues((W - left - right) < 260 ? [0, 0.5, 1] : [0, 0.25, 0.5, 0.75, 1]).tickFormat((v) => fmtPct(v)).tickSize(-(H - bottom - top))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('g').selectAll('text').data(d).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+        .attr('y', (r) => y(r.lbl) + y.bandwidth() / 2).attr('text-anchor', 'end')
+        .each(function (r) {
+          const ls = lineas(r), t = d3.select(this);
+          if (ls.length === 1) { t.attr('dy', '0.35em').text(ls[0]); return; }
+          ls.forEach((l, i) => t.append('tspan').attr('x', left - 8).attr('dy', i === 0 ? '-0.2em' : '1.1em').text(l));
+        });
+      const t = tip(el);
+      d.forEach((r) => {
+        const col = r.esc.startsWith('tercer_carril') ? color(1) : color(0);
+        const cy = y(r.lbl) + y.bandwidth() / 2;
+        svg.append('line').attr('x1', x(r.lo)).attr('x2', x(r.hi)).attr('y1', cy).attr('y2', cy).style('stroke', col).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+        svg.append('circle').attr('cx', x(r.mid)).attr('cy', cy).attr('r', 5.5).style('fill', col).style('stroke', 'var(--color-panel)').attr('stroke-width', 2)
+          .on('pointermove', (ev) => t.show(ev, r.lbl, [[col, 'Mediana', fmtPct(r.mid)], [null, 'p10-p90 de las simulaciones', fmtPct(r.lo) + ' - ' + fmtPct(r.hi)]]))
+          .on('pointerleave', () => t.hide());
+        svg.append('text').attr('class', 'lbl-strong').attr('x', Math.min(x(r.hi) + 6, W - right + 4)).attr('y', cy).attr('dy', '0.35em').text(fmtPct(r.mid));
+      });
+    });
+  });
+})();
+
+/* ---------- 6b. Tercer carril según la holgura (mañana y tarde) ---------- */
+(() => {
+  const paneles = [['ch-holgura1', 'leg-holgura1', 'manana_hacia_santa_cruz', [6, 7, 8]], ['ch-holgura2', 'leg-holgura2', 'tarde_hacia_el_norte', [14, 15, 16]]];
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, clean, tip, fmtPct, color, legend } = TF5;
+    paneles.forEach(([id, legId, caso, horas]) => {
+      const el = document.getElementById(id);
+      const s = state(el, ['tercer_carril_holgura', 'holgura_hora']);
+      if (s.failed) return failBox(el);
+      if (!s.ready) { el.replaceChildren(); return; }
+      const d = rows('tercer_carril_holgura').filter((r) => r.caso === caso)
+        .map((r) => ({ h: Number(r.holgura), hor: r.horizonte, lo: Number(r.p10), mid: Number(r.mediana), hi: Number(r.p90) }));
+      const hh = rows('holgura_hora').filter((r) => r.caso === caso && horas.includes(Number(r.hora))).map((r) => ({ hora: Number(r.hora), v: Math.max(0, Number(r.mediana)) }));
+      if (!d.length) { el.replaceChildren(); return; }
+      const cols = { corto: color(1), largo: color(0) };
+      const nombres = { corto: 'Primer año', largo: 'A 10 años' };
+      legend(document.getElementById(legId), [[cols.corto, 'Primer año (mediana y p10-p90)'], [cols.largo, 'A 10 años, con demanda inducida'], ['var(--panel-chart-reference)', 'Holgura estimada a esa hora']]);
+      const W = TF5.ancho(el, 280), H = 300, m = { t: 14, r: 16, b: 36, l: 42 };
+      const svg = newSvg(el, W, H);
+      const x = d3.scaleLinear([0, d3.max(d, (r) => r.h)], [m.l, W - m.r]);
+      const y = d3.scaleLinear([0, 1], [H - m.b, m.t]);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(5).tickFormat((v) => fmtPct(v)).tickSize(0)))
+        .call((g) => g.select('.domain').remove()).selectAll('text').attr('dy', '1em');
+      clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => fmtPct(v)).tickSize(-(W - m.l - m.r))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('text').attr('class', 'lbl').attr('x', m.l).attr('y', H - 4).text('Capacidad libre del tramo siguiente →');
+      hh.sort((a, b) => a.v - b.v).forEach((r, i) => {
+        svg.append('line').attr('x1', x(r.v)).attr('x2', x(r.v)).attr('y1', m.t).attr('y2', H - m.b)
+          .style('stroke', 'var(--panel-chart-reference)').attr('stroke-dasharray', '4 4');
+        svg.append('text').attr('class', 'lbl').attr('x', x(r.v) + 4).attr('y', H - m.b - 8 - i * 14)
+          .style('paint-order', 'stroke').style('stroke', 'var(--color-panel)').style('stroke-width', 3).text(String(r.hora).padStart(2, '0') + ' h');
+      });
+      ['corto', 'largo'].forEach((k) => {
+        const sd = d.filter((r) => r.hor === k).sort((a, b) => a.h - b.h);
+        svg.append('path').datum(sd).style('fill', cols[k]).attr('opacity', 0.12)
+          .attr('d', d3.area().x((r) => x(r.h)).y0((r) => y(r.lo)).y1((r) => y(r.hi)));
+        svg.append('path').datum(sd).style('fill', 'none').style('stroke', cols[k]).attr('stroke-width', 2)
+          .attr('stroke-linejoin', 'round').attr('d', d3.line().x((r) => x(r.h)).y((r) => y(r.mid)));
+      });
+      const t = tip(el);
+      svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+        .on('pointermove', (ev) => {
+          const [px] = d3.pointer(ev);
+          const v = x.invert(px);
+          const hs = [...new Set(d.map((r) => r.h))];
+          const h = hs.reduce((a, b) => (Math.abs(b - v) < Math.abs(a - v) ? b : a));
+          const lin = ['corto', 'largo'].map((k) => { const r = d.find((q) => q.h === h && q.hor === k); return [cols[k], nombres[k], r ? fmtPct(r.mid) + ' (' + fmtPct(r.lo) + '-' + fmtPct(r.hi) + ')' : '—']; });
+          t.show(ev, 'Holgura del ' + fmtPct(h), lin);
+        })
+        .on('pointerleave', () => t.hide());
+    });
+  });
+})();
+
+/* ---------- 7. Bus-VAO ---------- */
+(() => {
+  const el = document.getElementById('ch-busvao');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, clean, tip, fmtPct, fmtDec, color, legend } = TF5;
+    const s = state(el, ['bus_vao_curva']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('bus_vao_curva').map((r) => ({ m: Number(r.trasvase), med: Number(r.espera_bus_vao_mediana), lo: Number(r.espera_bus_vao_p10), hi: Number(r.espera_bus_vao_p90), act: Number(r.espera_actual_mediana) }));
+    const act = d[0].act;
+    legend(document.getElementById('leg-busvao'), [[color(0), 'Tráfico general con Bus-VAO (mediana y banda p10-p90)'], ['var(--panel-chart-reference)', 'Espera actual con 3 carriles (mediana)']]);
+    const W = TF5.ancho(el, 300), H = 300, m = { t: 12, r: 16, b: 34, l: 40 };
+    const svg = newSvg(el, W, H);
+    const x = d3.scaleLinear([0, d3.max(d, (r) => r.m)], [m.l, W - m.r]);
+    const y = d3.scaleLinear([0, d3.max(d, (r) => r.hi) * 1.05], [H - m.b, m.t]).nice();
+    clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(6).tickFormat((v) => fmtPct(v)).tickSize(0)))
+      .call((g) => g.select('.domain').remove()).selectAll('text').attr('dy', '1em');
+    clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r))))
+      .call((g) => g.select('.domain').remove());
+    svg.append('text').attr('class', 'lbl').attr('x', m.l).attr('y', H - 4).text('Vehículos que pasan al carril reservado →');
+    svg.append('path').datum(d).style('fill', color(0)).attr('opacity', 0.14)
+      .attr('d', d3.area().x((r) => x(r.m)).y0((r) => y(r.lo)).y1((r) => y(r.hi)));
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(act)).attr('y2', y(act))
+      .style('stroke', 'var(--panel-chart-reference)').attr('stroke-width', 2).attr('stroke-dasharray', '6 4');
+    svg.append('path').datum(d).style('fill', 'none').style('stroke', color(0)).attr('stroke-width', 2)
+      .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', d3.line().x((r) => x(r.m)).y((r) => y(r.med)));
+    svg.append('text').attr('class', 'lbl').attr('x', W - m.r).attr('y', y(act) - 6).attr('text-anchor', 'end')
+      .text('Hoy: ' + fmtDec(act) + ' min de espera media');
+    svg.append('text').attr('class', 'lbl').attr('x', m.l + 6).attr('y', m.t + 10).text('Minutos de espera en cola por vehículo');
+    const t = tip(el);
+    const dot = svg.append('circle').attr('r', 4.5).style('fill', color(0)).style('stroke', 'var(--color-panel)').attr('stroke-width', 2).attr('opacity', 0);
+    svg.append('rect').attr('x', m.l).attr('y', m.t).attr('width', W - m.l - m.r).attr('height', H - m.t - m.b).style('fill', 'transparent')
+      .on('pointermove', (ev) => {
+        const [px] = d3.pointer(ev);
+        const v = x.invert(px);
+        const r = d.reduce((a, b) => (Math.abs(b.m - v) < Math.abs(a.m - v) ? b : a));
+        dot.attr('cx', x(r.m)).attr('cy', y(r.med)).attr('opacity', 1);
+        t.show(ev, fmtPct(r.m) + ' de los vehículos en el carril reservado', [[color(0), 'Espera del tráfico general', fmtDec(r.med) + ' min'], [null, 'Hoy', fmtDec(act) + ' min']]);
+      })
+      .on('pointerleave', () => { t.hide(); dot.attr('opacity', 0); });
+  });
+})();
+
+/* ---------- 11. Transporte público vs TF-5 ---------- */
+(() => {
+  const el = document.getElementById('ch-transporte');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, clean, tip, fmtInt, color, legend } = TF5;
+    const s = state(el, ['indice_movilidad']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const series = ['Viajeros TITSA', 'Viajeros tranvía', 'Tráfico TF-5'];
+    const cols = { 'Viajeros TITSA': color(1), 'Viajeros tranvía': color(2), 'Tráfico TF-5': color(0) };
+    legend(document.getElementById('leg-transporte'), series.map((k) => [cols[k], k === 'Tráfico TF-5' ? 'Tráfico TF-5 (IMD media de 4 estaciones)' : k]));
+    const d = rows('indice_movilidad').map((r) => ({ anio: Number(r.anio), serie: r.serie, v: Number(r.indice) }));
+    const W = TF5.ancho(el, 300), H = 300, m = { t: 14, r: 46, b: 26, l: 36 };
+    const svg = newSvg(el, W, H);
+    const x = d3.scaleLinear(d3.extent(d, (r) => r.anio), [m.l, W - m.r]);
+    const y = d3.scaleLinear([50, Math.max(200, d3.max(d, (r) => r.v) * 1.05)], [H - m.b, m.t]).nice();
+    svg.append('rect').attr('x', x(2022.5)).attr('width', x(2025) - x(2022.5) + 8).attr('y', m.t).attr('height', H - m.t - m.b)
+      .style('fill', 'var(--panel-chart-grid)').attr('opacity', 0.5);
+    svg.append('text').attr('class', 'lbl').attr('x', x(2022.5) + 4).attr('y', m.t + 12).text('Gratuidad');
+    clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(9, Math.floor(W / 60))).tickFormat((v) => String(v)).tickSize(0)))
+      .call((g) => g.select('.domain').remove()).selectAll('text').attr('dy', '1em');
+    clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r))))
+      .call((g) => g.select('.domain').remove());
+    svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(100)).attr('y2', y(100)).style('stroke', 'var(--panel-chart-reference)').attr('stroke-width', 1);
+    const t = tip(el);
+    series.forEach((k) => {
+      const sd = d.filter((r) => r.serie === k).sort((a, b) => a.anio - b.anio);
+      svg.append('path').datum(sd).style('fill', 'none').style('stroke', cols[k]).attr('stroke-width', 2)
+        .attr('stroke-linejoin', 'round').attr('stroke-linecap', 'round').attr('d', d3.line().x((r) => x(r.anio)).y((r) => y(r.v)));
+      svg.append('g').selectAll('circle').data(sd).join('circle').attr('cx', (r) => x(r.anio)).attr('cy', (r) => y(r.v)).attr('r', 3.5)
+        .style('fill', cols[k]).style('stroke', 'var(--color-panel)').attr('stroke-width', 2)
+        .on('pointermove', (ev, r) => t.show(ev, String(r.anio), series.map((q) => { const z = d.find((w) => w.serie === q && w.anio === r.anio); return [cols[q], q, z ? fmtInt(z.v) : '—']; })))
+        .on('pointerleave', () => t.hide());
+      const last = sd[sd.length - 1];
+      svg.append('text').attr('class', 'lbl-strong').attr('x', x(last.anio) + 8).attr('y', y(last.v)).attr('dy', '0.35em').text(fmtInt(last.v));
+    });
+  });
+})();
+
+/* ---------- 12. Veredictos ---------- */
+(() => {
+  const el = document.getElementById('ch-veredictos');
+  const COL = { 'Confirmado': 'var(--color-ok)', 'Parcialmente cierto': 'var(--color-warn)', 'No verificado': 'var(--panel-chart-muted)', 'Falso o erróneo': 'var(--panel-chart-status-critical)' };
+  window.TF5_COL_VEREDICTO = COL;
+  dash.onData(() => {
+    const { state, failBox, rows, tip } = TF5;
+    const s = state(el, ['veredictos']);
+    const leg = document.getElementById('leg-veredictos');
+    if (s.failed) { leg.replaceChildren(); return failBox(el); }
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('veredictos').map((r) => ({ v: r.veredicto, n: Number(r.n) }));
+    const total = d3.sum(d, (r) => r.n);
+    el.replaceChildren(); leg.replaceChildren();
+    const t = tip(el.parentElement);
+    d.forEach((r) => {
+      const seg = document.createElement('div');
+      seg.style.flex = String(r.n); seg.style.background = COL[r.v];
+      seg.addEventListener('pointermove', (ev) => t.show(ev, r.v, [[COL[r.v], 'Afirmaciones', r.n + ' de ' + total]]));
+      seg.addEventListener('pointerleave', () => t.hide());
+      el.appendChild(seg);
+      const s2 = document.createElement('span');
+      const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = COL[r.v];
+      const tx = document.createElement('span'); tx.textContent = r.v + ': ' + r.n;
+      s2.append(sw, tx); leg.appendChild(s2);
+    });
+  });
+})();
+</script>
+
+<script>
+/* ---------- Color resuelto de un token (para degradados) ---------- */
+window.TF5_RESOLVER = (token, host) => {
+  const sp = document.createElement('span'); sp.style.color = token; sp.style.display = 'none';
+  (host || document.body).appendChild(sp);
+  const c = getComputedStyle(sp).color; sp.remove();
+  return c;
+};
+
+/* ---------- 2. Mapa de congestión por estación y hora ---------- */
+(() => {
+  const el = document.getElementById('ch-mapa');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, measure, tip, fmtPct, fmtInt, color } = TF5;
+    const s = state(el, ['perfil_horario']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('perfil_horario').map((r) => ({
+      id: Number(r.estacion_id), est: r.estacion + ' (' + r.carriles + ' c.)', orden: Number(r.orden), sentido: r.sentido,
+      hora: Number(r.hora), veh: Number(r.veh), lenta: Number.isFinite(TF5.num(r.cuota_lenta)) ? Number(r.cuota_lenta) : null,
+      exceso: Number.isFinite(TF5.num(r.exceso_lento)) ? Number(r.exceso_lento) : null, prob: Number(r.prob_congestion),
+    }));
+    const c0 = window.TF5_RESOLVER(color(0), el), cBg = window.TF5_RESOLVER('var(--color-panel)', el);
+    const escala = (v) => d3.interpolateRgb(cBg, c0)(Math.min(1, Math.max(0, v / 0.8)));
+    const gris = 'var(--color-border-line)';
+    const leg = document.getElementById('leg-mapa');
+    leg.replaceChildren();
+    [[0, '0'], [0.25, '25'], [0.5, '50'], [0.75, '75 puntos o más']].forEach(([v, t]) => {
+      const sp = document.createElement('span'); const sw = document.createElement('i'); sw.className = 'sw';
+      sw.style.background = escala(v); sw.style.border = '1px solid var(--color-border-line)';
+      const tx = document.createElement('span'); tx.textContent = t; sp.append(sw, tx); leg.appendChild(sp);
+    });
+    const sp = document.createElement('span'); const sw = document.createElement('i'); sw.className = 'sw'; sw.style.background = gris;
+    const tx = document.createElement('span'); tx.textContent = 'sin velocidad utilizable'; sp.append(sw, tx); leg.appendChild(sp);
+    const paneles = [['descendente', 'Hacia Santa Cruz (sentido de la obra)'], ['ascendente', 'Hacia el Norte']];
+    const W = TF5.ancho(el, 320);
+    const filasPorPanel = paneles.map(([sen]) => [...new Map(d.filter((r) => r.sentido === sen).sort((a, b) => a.orden - b.orden).map((r) => [r.est, r])).keys()]);
+    const tmp = newSvg(el, W, 10);
+    const left = measure(tmp, d.map((r) => r.est)) + 10;
+    const rowH = W < 520 ? 20 : 24, gapPanel = 34, top = 4, bottom = 24;
+    const H = top + bottom + paneles.length * gapPanel + d3.sum(filasPorPanel, (f) => f.length * rowH);
+    const svg = newSvg(el, W, H);
+    const x = d3.scaleBand(d3.range(24), [left, W - 6]).paddingInner(0.06);
+    const t = tip(el);
+    let y0 = top;
+    paneles.forEach(([sen, titulo], i) => {
+      svg.append('text').attr('class', 'lbl-strong').attr('x', left).attr('y', y0 + 14).text(titulo);
+      y0 += gapPanel - 10;
+      const filas = filasPorPanel[i];
+      const y = d3.scaleBand(filas, [y0, y0 + filas.length * rowH]).paddingInner(0.08);
+      svg.append('g').selectAll('text').data(filas).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+        .attr('y', (f) => y(f) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((f) => f);
+      const celdas = d.filter((r) => r.sentido === sen);
+      svg.append('g').selectAll('rect').data(celdas).join('rect').attr('class', 'heat-cell')
+        .attr('x', (r) => x(r.hora)).attr('y', (r) => y(r.est)).attr('width', x.bandwidth()).attr('height', y.bandwidth()).attr('rx', 2)
+        .style('fill', (r) => (r.exceso === null ? gris : escala(r.exceso)))
+        .on('pointermove', (ev, r) => t.show(ev, r.est + ' · ' + String(r.hora).padStart(2, '0') + ':00-' + String(r.hora + 1).padStart(2, '0') + ':00',
+          [[null, 'Vehículos por hora', fmtInt(r.veh)], [null, 'A menos de 80 km/h', r.lenta === null ? 'sin dato fiable' : fmtPct(r.lenta)],
+           [null, 'Días con cola a esa hora', r.exceso === null ? '—' : fmtPct(r.prob)]]))
+        .on('pointerleave', () => t.hide());
+      if (x.bandwidth() > 22) {
+        svg.append('g').selectAll('text').data(celdas.filter((r) => r.exceso !== null && r.prob >= 0.5)).join('text')
+          .attr('x', (r) => x(r.hora) + x.bandwidth() / 2).attr('y', (r) => y(r.est) + y.bandwidth() / 2).attr('dy', '0.35em')
+          .attr('text-anchor', 'middle').style('font-size', '10px').style('pointer-events', 'none')
+          .style('fill', (r) => (r.exceso > 0.45 ? 'var(--color-bg)' : 'var(--color-fg)')).text((r) => Math.round(100 * r.prob));
+      }
+      y0 += filas.length * rowH;
+    });
+    svg.append('g').selectAll('text').data(d3.range(0, 24, W < 520 ? 4 : 2)).join('text').attr('class', 'lbl')
+      .attr('x', (h) => x(h) + x.bandwidth() / 2).attr('y', H - 6).attr('text-anchor', 'middle').text((h) => String(h).padStart(2, '0') + ' h');
+  });
+})();
+
+/* ---------- 4a. Diferencias interanuales por mes ---------- */
+(() => {
+  const el = document.getElementById('ch-interanual');
+  const TIPOS = ['Meses lectivos del curso 2025-26 (horarios escalonados)', 'Junio-septiembre de 2026 (después de abrir la pasarela del Padre Anchieta)',
+                 'Septiembre de 2025 (arranque de curso)', 'Enero de 2026 (exámenes)'];
+  const CORTO = { [TIPOS[0]]: 'Meses lectivos 2025-26', [TIPOS[1]]: 'Con la pasarela abierta (jun-sep 2026)', [TIPOS[2]]: 'Septiembre 2025', [TIPOS[3]]: 'Enero 2026 (exámenes)' };
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtDec, fmtInt, color, legend, addSvg, cajas } = TF5;
+    const s = state(el, ['interanual']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const cols = { [TIPOS[0]]: color(0), [TIPOS[1]]: color(1), [TIPOS[2]]: color(2), [TIPOS[3]]: 'var(--panel-chart-muted)' };
+    legend(document.getElementById('leg-interanual'), TIPOS.map((k) => [cols[k], CORTO[k]]));
+    const d = rows('interanual').map((r) => ({ est: r.estacion, orden: Number(r.orden), variable: r.variable, mes: r.mes, fecha: new Date(r.mes + '-01T00:00:00Z'),
+      dif: Number(r.dif), lo: Number(r.ic_inf), hi: Number(r.ic_sup), tipo: r.tipo_mes, a: Number(r.valor_antes), b: Number(r.valor) }));
+    const estaciones = [...new Map(d.sort((a, b) => a.orden - b.orden).map((r) => [r.est, r.orden])).keys()];
+    el.replaceChildren();
+    el.style.display = 'grid';
+    el.style.gridTemplateColumns = 'repeat(auto-fit, minmax(min(100%, 15rem), 1fr))';
+    el.style.gap = 'var(--panel-gap-md)';
+    const xDom = d3.extent(d, (r) => r.fecha);
+    xDom[0] = d3.utcMonth.offset(xDom[0], -1); xDom[1] = d3.utcMonth.offset(xDom[1], 1);
+    const boxes = cajas(el, estaciones.length);
+    estaciones.forEach((est, i) => {
+      const box = boxes[i];
+      const h = document.createElement('div'); h.className = 'note'; h.style.margin = '0 0 4px'; h.style.color = 'var(--color-fg)';
+      h.textContent = est + ' → Santa Cruz'; box.appendChild(h);
+      const t = tip(box);
+      [['cola', 'Horas de cola por día'], ['v', 'Vehículos de 7 a 9 h']].forEach(([vr, titulo]) => {
+        const sd = d.filter((r) => r.est === est && r.variable === (vr === 'v' ? 'veh' : vr));
+        if (!sd.length) return;
+        const W = TF5.ancho(box, 220, false), H = 170, m = { t: 18, r: 8, b: 22, l: 44 };
+        const svg = addSvg(box, W, H);
+        const x = d3.scaleUtc(xDom, [m.l, W - m.r]);
+        const ext = [d3.min(sd, (r) => r.lo), d3.max(sd, (r) => r.hi)];
+        const y = d3.scaleLinear([Math.min(0, ext[0]), Math.max(0, ext[1])], [H - m.b, m.t]).nice();
+        svg.append('text').attr('class', 'lbl').attr('x', m.l).attr('y', 11).text(titulo);
+        clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(d3.utcMonth.every(6)).tickFormat(d3.utcFormat('%m-%y')).tickSize(0)))
+          .call((g) => g.select('.domain').remove()).selectAll('text').attr('dy', '1em');
+        clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(4).tickFormat((v) => (vr === 'v' ? fmtInt(v) : fmtDec(v, 1))).tickSize(-(W - m.l - m.r))))
+          .call((g) => g.select('.domain').remove());
+        svg.append('line').attr('x1', m.l).attr('x2', W - m.r).attr('y1', y(0)).attr('y2', y(0)).style('stroke', 'var(--panel-chart-reference)');
+        sd.forEach((r) => {
+          const c = cols[r.tipo] || 'var(--panel-chart-muted)';
+          svg.append('line').attr('x1', x(r.fecha)).attr('x2', x(r.fecha)).attr('y1', y(r.lo)).attr('y2', y(r.hi)).style('stroke', c).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+          svg.append('circle').attr('cx', x(r.fecha)).attr('cy', y(r.dif)).attr('r', 4).style('fill', c).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5)
+            .on('pointermove', (ev) => t.show(ev, est + ' · ' + r.mes + ' frente a un año antes', [[c, titulo, (vr === 'v' ? fmtInt(r.a) + ' → ' + fmtInt(r.b) : fmtDec(r.a, 2) + ' → ' + fmtDec(r.b, 2))],
+              [null, 'Diferencia', (r.dif > 0 ? '+' : '') + (vr === 'v' ? fmtInt(r.dif) : fmtDec(r.dif, 2))], [null, 'IC 95 %', (vr === 'v' ? fmtInt(r.lo) + ' a ' + fmtInt(r.hi) : fmtDec(r.lo, 2) + ' a ' + fmtDec(r.hi, 2))]]))
+            .on('pointerleave', () => t.hide());
+        });
+      });
+    });
+  });
+})();
+
+/* ---------- 4b. Horarios de la ULL: tres formas de medir ---------- */
+(() => {
+  const el = document.getElementById('ch-ull');
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtDec, fmtInt, color, legend, measure, addSvg, cajas } = TF5;
+    const s = state(el, ['ull']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const MED = [['lectivo', 'Antes y después (meses lectivos)', color(0)], ['julio', 'Con julio como control', color(1)], ['junio y julio', 'Con junio y julio como control', color(2)]];
+    legend(document.getElementById('leg-ull'), MED.map(([, l, c]) => [c, l]));
+    const all = rows('ull');
+    const vars = [['v', 'Vehículos de 7 a 9 h por día'], ['cola', 'Horas de cola por día (de 5 a 12 h)']]
+      .filter(([vr]) => all.some((r) => r.variable === vr && r.control === 'julio'));
+    const boxes = cajas(el, vars.length);
+    vars.forEach(([vr, titulo], i) => {
+      const base = all.filter((r) => r.variable === vr && r.control === 'julio');
+      const pts = [];
+      base.forEach((r) => pts.push({ est: r.estacion, med: 'lectivo', v: Number(r.dif_lectivo), lo: Number(r.ic_lectivo_inf), hi: Number(r.ic_lectivo_sup) }));
+      all.filter((r) => r.variable === vr).forEach((r) => pts.push({ est: r.estacion, med: r.control, v: Number(r.efecto_did), lo: Number(r.ic_inf), hi: Number(r.ic_sup) }));
+      const box = boxes[i];
+      const ests = [...new Set(base.map((r) => r.estacion))];
+      const W = TF5.ancho(box, 260, false), rowH = 54, m = { t: 20, b: 24, r: 10 };
+      const H = m.t + m.b + ests.length * rowH;
+      const svg = addSvg(box, W, H);
+      const left = measure(svg, ests) + 12;
+      const x = d3.scaleLinear([Math.min(0, d3.min(pts, (p) => p.lo)), Math.max(0, d3.max(pts, (p) => p.hi))], [left, W - m.r]).nice();
+      const y = d3.scaleBand(ests, [m.t, H - m.b]).padding(0.15);
+      const sub = d3.scaleBand(MED.map((q) => q[0]), [0, y.bandwidth()]).padding(0.2);
+      svg.append('text').attr('class', 'lbl').attr('x', left).attr('y', 11).text(titulo);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(4).tickFormat((v) => (vr === 'v' ? fmtInt(v) : fmtDec(v, 1))).tickSize(-(H - m.b - m.t))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', m.t).attr('y2', H - m.b).style('stroke', 'var(--panel-chart-reference)');
+      svg.append('g').selectAll('text').data(ests).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+        .attr('y', (e) => y(e) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((e) => e);
+      const t = tip(box);
+      pts.forEach((p) => {
+        const q = MED.find((z) => z[0] === p.med); if (!q) return;
+        const cy = y(p.est) + sub(p.med) + sub.bandwidth() / 2;
+        svg.append('line').attr('x1', x(p.lo)).attr('x2', x(p.hi)).attr('y1', cy).attr('y2', cy).style('stroke', q[2]).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+        svg.append('circle').attr('cx', x(p.v)).attr('cy', cy).attr('r', 4).style('fill', q[2]).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5)
+          .on('pointermove', (ev) => t.show(ev, p.est + ' · ' + titulo, [[q[2], q[1], (p.v > 0 ? '+' : '') + (vr === 'v' ? fmtInt(p.v) : fmtDec(p.v, 2))], [null, 'IC 95 %', (vr === 'v' ? fmtInt(p.lo) + ' a ' + fmtInt(p.hi) : fmtDec(p.lo, 2) + ' a ' + fmtDec(p.hi, 2))]]))
+          .on('pointerleave', () => t.hide());
+      });
+    });
+  });
+})();
+
+/* ---------- 4c. 2026 frente a 2025 ---------- */
+(() => {
+  const el = document.getElementById('ch-2026');
+  dash.onData(() => {
+    const { state, failBox, rows, newSvg, measure, clean, tip, fmtInt, color, legend } = TF5;
+    const COLS = { sig: color(1), nosig: color(0), alt: 'var(--panel-chart-muted)' };
+    legend(document.getElementById('leg-comparaciones'), [[COLS.sig, 'Diferencia significativa (p < 0,05)'], [COLS.nosig, 'No significativa'], [COLS.alt, 'Aforador alterado: no interpretable']]);
+    const s = state(el, ['comparaciones']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('comparaciones').filter((r) => r.comparacion === 'ene_sep_2026_vs_2025').map((r) => ({
+      lbl: r.estacion + (r.sentido === 'descendente' ? ' → S/C' : ' → Norte'), orden: Number(r.orden), sentido: r.sentido,
+      dif: Number(r.diferencia), lo: Number(r.ic_inf), hi: Number(r.ic_sup), p: Number(r.p_valor), ok: String(r.comparable).toUpperCase() === 'TRUE',
+      a: Number(r.veh_7_9_antes), b: Number(r.veh_7_9_despues),
+    })).sort((a, b) => (a.sentido === b.sentido ? a.orden - b.orden : (a.sentido === 'descendente' ? -1 : 1)));
+    const W = TF5.ancho(el, 280), rowH = 24, top = 6, bottom = 28;
+    const H = top + bottom + d.length * rowH;
+    const svg = newSvg(el, W, H);
+    const left = measure(svg, d.map((r) => r.lbl)) + 10;
+    const x = d3.scaleLinear([Math.min(-200, d3.min(d, (r) => r.lo)), Math.max(200, d3.max(d, (r) => r.hi))], [left, W - 10]).nice();
+    const y = d3.scaleBand(d.map((r) => r.lbl), [top, H - bottom]).padding(0.3);
+    clean(svg.append('g').attr('transform', `translate(0,${H - bottom})`)
+      .call(d3.axisBottom(x).ticks(Math.max(3, Math.floor((W - left) / 80))).tickFormat((v) => fmtInt(v)).tickSize(-(H - bottom - top))))
+      .call((g) => g.select('.domain').remove());
+    svg.append('line').attr('x1', x(0)).attr('x2', x(0)).attr('y1', top).attr('y2', H - bottom).style('stroke', 'var(--panel-chart-reference)');
+    svg.append('g').selectAll('text').data(d).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+      .attr('y', (r) => y(r.lbl) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((r) => r.lbl);
+    const t = tip(el);
+    d.forEach((r) => {
+      const col = !r.ok ? COLS.alt : (r.p < 0.05 ? COLS.sig : COLS.nosig);
+      const cy = y(r.lbl) + y.bandwidth() / 2;
+      svg.append('line').attr('x1', x(r.lo)).attr('x2', x(r.hi)).attr('y1', cy).attr('y2', cy).style('stroke', col).attr('stroke-width', 2).attr('stroke-linecap', 'round');
+      svg.append('circle').attr('cx', x(r.dif)).attr('cy', cy).attr('r', 5)
+        .style('fill', r.ok ? col : 'var(--color-panel)').style('stroke', r.ok ? 'var(--color-panel)' : col).attr('stroke-width', 2)
+        .on('pointermove', (ev) => t.show(ev, r.lbl, [[col, 'Diferencia', (r.dif > 0 ? '+' : '') + fmtInt(r.dif) + ' veh/día'],
+          [null, 'IC 95 %', fmtInt(r.lo) + ' a ' + fmtInt(r.hi)], [null, 'Antes / después', fmtInt(r.a) + ' / ' + fmtInt(r.b)],
+          [null, r.ok ? 'p' : 'Aforador', r.ok ? TF5.fmtDec(r.p, 3) : 'cambia el reparto entre carriles']]))
+        .on('pointerleave', () => t.hide());
+    });
+    svg.append('text').attr('class', 'lbl').attr('x', W - 10).attr('y', H - 4).attr('text-anchor', 'end').text('vehículos de 7 a 9 h (2026 − 2025)');
+  });
+})();
+
+/* ---------- 8. Evolución sin actuar ---------- */
+(() => {
+  const el = document.getElementById('ch-evolucion-sin');
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtDec, fmtPct, color, legend, casoLbl, addSvg, cajas } = TF5;
+    const s = state(el, ['evolucion']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const d = rows('evolucion').map((r) => ({ caso: r.caso, g: Number(r.crecimiento_anual), anio: Number(r.anio), sin: Number(r.horas_cola_sin_adaptacion), con: Number(r.horas_cola_con_adaptacion) }));
+    const gs = [...new Set(d.map((r) => r.g))].sort((a, b) => a - b);
+    const cols = gs.map((g, i) => (i === 0 ? 'var(--panel-chart-muted)' : color(i - 1)));
+    const lbl = (g) => '+' + fmtPct(g, 1) + ' al año';
+    legend(document.getElementById('leg-evolucion-sin'), gs.map((g, i) => [cols[i], lbl(g)]).concat([['var(--panel-chart-reference)', 'Discontinua: parte de la demanda se adapta']]));
+    const yMax = d3.max(d, (r) => Math.max(r.sin, r.con));
+    const casos = Object.keys(casoLbl).filter((caso) => d.some((r) => r.caso === caso));
+    const boxes = cajas(el, casos.length);
+    casos.forEach((caso, i) => {
+      const sd = d.filter((r) => r.caso === caso);
+      const box = boxes[i];
+      const h = document.createElement('div'); h.className = 'note'; h.style.margin = '0 0 4px'; h.style.color = 'var(--color-fg)';
+      h.textContent = casoLbl[caso]; box.appendChild(h);
+      const W = TF5.ancho(box, 240, false), H = 240, m = { t: 10, r: 40, b: 24, l: 30 };
+      const svg = addSvg(box, W, H);
+      const x = d3.scaleLinear(d3.extent(sd, (r) => r.anio), [m.l, W - m.r]);
+      const y = d3.scaleLinear([0, Math.ceil(yMax)], [H - m.b, m.t]);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickValues([...new Set(sd.map((r) => r.anio))]).tickFormat((v) => String(v)).tickSize(0)))
+        .call((g) => g.select('.domain').remove()).selectAll('text').attr('dy', '1em');
+      clean(svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r))))
+        .call((g) => g.select('.domain').remove());
+      const t = tip(box);
+      gs.forEach((g, i) => {
+        const ld = sd.filter((r) => r.g === g).sort((a, b) => a.anio - b.anio);
+        svg.append('path').datum(ld).style('fill', 'none').style('stroke', cols[i]).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round')
+          .attr('d', d3.line().x((r) => x(r.anio)).y((r) => y(r.sin)));
+        svg.append('path').datum(ld).style('fill', 'none').style('stroke', cols[i]).attr('stroke-width', 1.5).attr('stroke-dasharray', '4 3')
+          .attr('d', d3.line().x((r) => x(r.anio)).y((r) => y(r.con)));
+        svg.append('g').selectAll('circle').data(ld).join('circle').attr('cx', (r) => x(r.anio)).attr('cy', (r) => y(r.sin)).attr('r', 3.5)
+          .style('fill', cols[i]).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5)
+          .on('pointermove', (ev, r) => t.show(ev, casoLbl[caso] + ' · ' + r.anio + ' · ' + lbl(g), [[cols[i], 'Toda la demanda nueva en la punta', fmtDec(r.sin, 1) + ' h'], [null, 'Si parte se adapta', fmtDec(r.con, 1) + ' h']]))
+          .on('pointerleave', () => t.hide());
+        const last = ld[ld.length - 1];
+        svg.append('text').attr('class', 'lbl-strong').attr('x', x(last.anio) + 6).attr('y', y(last.sin)).attr('dy', '0.35em').text(fmtDec(last.sin, 1));
+      });
+      svg.append('text').attr('class', 'lbl').attr('x', m.l + 4).attr('y', m.t + 10).text('horas de cola al día');
+    });
+  });
+})();
+
+/* ---------- 9a. Hoy frente a 2030 ---------- */
+(() => {
+  const el = document.getElementById('ch-2030');
+  const ALT = { tercer_carril_corto: 'Tercer carril', ramp_metering_corto: 'Regulación de accesos', escalonamiento_corto: 'Escalonamiento horario',
+                tarificacion: 'Tarificación de la punta', paquete_gestion_corto: 'Regulación + escalonamiento' };
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtPct, color, legend, casoLbl, measure, addSvg, cajas } = TF5;
+    const s = state(el, ['modelo', 'alternativas_2030']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    legend(document.getElementById('leg-2030'), [[color(0), 'Con la demanda de hoy'], [color(1), 'Con la demanda de 2030']]);
+    const casos = Object.keys(casoLbl).filter((caso) => rows('modelo').some((r) => r.caso === caso && ALT[r.escenario]));
+    const boxes = cajas(el, casos.length);
+    casos.forEach((caso, i) => {
+      const hoy = rows('modelo').filter((r) => r.caso === caso && ALT[r.escenario]);
+      const fut = rows('alternativas_2030').filter((r) => r.caso === caso && ALT[r.escenario]);
+      const box = boxes[i];
+      const h = document.createElement('div'); h.className = 'note'; h.style.margin = '0 0 4px'; h.style.color = 'var(--color-fg)';
+      h.textContent = casoLbl[caso] + (caso === 'tarde_hacia_el_norte' ? ' (tercer carril hipotético)' : ''); box.appendChild(h);
+      const filas = Object.keys(ALT).filter((k) => hoy.some((r) => r.escenario === k));
+      const W = TF5.ancho(box, 260, false), rowH = 30, m = { t: 4, b: 24, r: 30 };   // margen derecho para la etiqueta «100 %»
+      const H = m.t + m.b + filas.length * rowH;
+      const svg = addSvg(box, W, H);
+      const left = measure(svg, filas.map((k) => ALT[k])) + 12;
+      const x = d3.scaleLinear([0, 1], [left, W - m.r]);
+      const y = d3.scaleBand(filas, [m.t, H - m.b]).padding(0.3);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickValues([0, 0.5, 1]).tickFormat((v) => fmtPct(v)).tickSize(-(H - m.b - m.t))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('g').selectAll('text').data(filas).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+        .attr('y', (k) => y(k) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((k) => ALT[k]);
+      const t = tip(box);
+      filas.forEach((k) => {
+        const a = hoy.find((r) => r.escenario === k), b = fut.find((r) => r.escenario === k);
+        const cy = y(k) + y.bandwidth() / 2;
+        const va = Number(a.mediana), vb = b ? Number(b.reduccion_mediana) : NaN;
+        if (Number.isFinite(vb)) svg.append('line').attr('x1', x(va)).attr('x2', x(vb)).attr('y1', cy).attr('y2', cy).style('stroke', 'var(--panel-chart-grid)').attr('stroke-width', 3);
+        [[va, color(0), 'Hoy'], [vb, color(1), '2030']].forEach(([v, c, n]) => {
+          if (!Number.isFinite(v)) return;
+          svg.append('circle').attr('cx', x(v)).attr('cy', cy).attr('r', 5).style('fill', c).style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5)
+            .on('pointermove', (ev) => t.show(ev, ALT[k] + ' · primer año', [[color(0), 'Demanda de hoy', fmtPct(va) + ' (' + fmtPct(a.p10) + '-' + fmtPct(a.p90) + ')'],
+              [color(1), 'Demanda de 2030', Number.isFinite(vb) ? fmtPct(vb) + ' (' + fmtPct(b.reduccion_p10) + '-' + fmtPct(b.reduccion_p90) + ')' : '—']]))
+            .on('pointerleave', () => t.hide());
+        });
+      });
+    });
+  });
+})();
+
+/* ---------- 9b. Escenarios adversos ---------- */
+(() => {
+  const el = document.getElementById('ch-adversos');
+  const ALT = { tercer_carril_corto: 'Tercer carril', ramp_metering_corto: 'Regulación de accesos', escalonamiento_corto: 'Escalonamiento',
+                tarificacion: 'Tarificación', paquete_gestion_corto: 'Regulación + escalonamiento' };
+  const CORTOS = [['Referencia', 'Modelo calibrado'], ['Sin demanda inducida', 'Sin demanda inducida'], ['Tramo siguiente sin holgura', 'Tramo siguiente lleno'],
+                  ['Demanda inducida alta', 'Demanda inducida alta'], ['Caída de capacidad pequeña', 'Caída de capacidad pequeña'], ['Incidente', 'Carril cortado 30 min']];
+  const CORTO = (s) => { const c = CORTOS.find(([p]) => String(s).startsWith(p)); return c ? c[1] : String(s); };
+  dash.onData(() => {
+    const { state, failBox, rows, clean, tip, fmtPct, color, legend, casoLbl, measure, addSvg, cajas } = TF5;
+    const s = state(el, ['adversos']);
+    if (s.failed) return failBox(el);
+    if (!s.ready) { el.replaceChildren(); return; }
+    const keys = Object.keys(ALT);
+    const cols = Object.fromEntries(keys.map((k, i) => [k, color(i)]));
+    legend(document.getElementById('leg-adversos'), keys.map((k) => [cols[k], ALT[k]]));
+    const casos = Object.keys(casoLbl).filter((caso) => rows('adversos').some((r) => r.caso === caso && ALT[r.escenario]));
+    const boxes = cajas(el, casos.length);
+    casos.forEach((caso, i) => {
+      const sd = rows('adversos').filter((r) => r.caso === caso && ALT[r.escenario]);
+      const sup = [...new Set(sd.map((r) => r.supuesto))];
+      const box = boxes[i];
+      const h = document.createElement('div'); h.className = 'note'; h.style.margin = '0 0 4px'; h.style.color = 'var(--color-fg)';
+      h.textContent = casoLbl[caso]; box.appendChild(h);
+      const W = TF5.ancho(box, 260, false), rowH = 34, m = { t: 4, b: 24, r: 30 };
+      const H = m.t + m.b + sup.length * rowH;
+      const svg = addSvg(box, W, H);
+      const left = Math.min(W * 0.5, measure(svg, sup.map(CORTO)) + 12);
+      const x = d3.scaleLinear([Math.min(0, d3.min(sd, (r) => Number(r.reduccion_mediana))), 1], [left, W - m.r]);
+      const y = d3.scaleBand(sup, [m.t, H - m.b]).padding(0.2);
+      clean(svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).tickValues([0, 0.5, 1]).tickFormat((v) => fmtPct(v)).tickSize(-(H - m.b - m.t))))
+        .call((g) => g.select('.domain').remove());
+      svg.append('g').selectAll('text').data(sup).join('text').attr('class', 'lbl-strong').attr('x', left - 8)
+        .attr('y', (k) => y(k) + y.bandwidth() / 2).attr('dy', '0.35em').attr('text-anchor', 'end').text((k) => CORTO(k));
+      const t = tip(box);
+      sup.forEach((sp) => {
+        const cy = y(sp) + y.bandwidth() / 2;
+        svg.append('line').attr('x1', left).attr('x2', W - m.r).attr('y1', cy).attr('y2', cy).style('stroke', 'var(--panel-chart-grid)');
+        const fila = sd.filter((r) => r.supuesto === sp);
+        fila.forEach((r) => {
+          svg.append('circle').attr('cx', x(Number(r.reduccion_mediana))).attr('cy', cy).attr('r', 5).style('fill', cols[r.escenario])
+            .style('stroke', 'var(--color-panel)').attr('stroke-width', 1.5).attr('opacity', 0.9)
+            .on('pointermove', (ev) => t.show(ev, sp, keys.filter((k) => fila.some((q) => q.escenario === k)).map((k) => {
+              const q = fila.find((z) => z.escenario === k); return [cols[k], ALT[k], fmtPct(q.reduccion_mediana) + ' (' + fmtPct(q.reduccion_p10) + '-' + fmtPct(q.reduccion_p90) + ')']; })))
+            .on('pointerleave', () => t.hide());
+        });
+      });
+    });
+  });
+})();
+</script>
+
+<script>
+/* ---------- Tablas ---------- */
+(() => {
+  const { table, link, fmtPct, fmtDec, fmtHora, fmtInt, casoLbl } = TF5;
+  let filtro = null;
+  const q = document.getElementById('q-afirmaciones');
+  q.addEventListener('input', () => pintarAfirmaciones());
+  const qf = document.getElementById('q-fuentes');
+  qf.addEventListener('input', () => pintarFuentes());
+  function pintarAfirmaciones() {
+    const tb = document.querySelector('#tb-afirmaciones tbody');
+    if (!TF5.ok('afirmaciones')) { tb.replaceChildren(); return; }
+    const COL = window.TF5_COL_VEREDICTO || {};
+    const texto = q.value.trim().toLowerCase();
+    const filas = TF5.rows('afirmaciones').filter((r) => (!filtro || r.veredicto === filtro) &&
+      (!texto || [r.categoria, r.afirmacion, r.dato_real, r.veredicto].join(' ').toLowerCase().includes(texto)));
+    table('tb-afirmaciones', filas, [['id'], ['categoria'], ['afirmacion'], ['veredicto', (r) => {
+      const p = document.createElement('span'); p.className = 'pill';
+      const dt = document.createElement('i'); dt.className = 'dot'; dt.style.background = COL[r.veredicto] || 'var(--panel-chart-muted)';
+      const tx = document.createElement('span'); tx.textContent = r.veredicto; p.append(dt, tx); return p;
+    }], ['dato_real'], ['fuente', (r) => link((r.fuente.match(/https?:\/\/\S+/) || [r.fuente])[0])]]);
+  }
+  function pintarFuentes() {
+    const tb = document.querySelector('#tb-fuentes tbody');
+    if (!TF5.ok('fuentes')) { tb.replaceChildren(); return; }
+    const texto = qf.value.trim().toLowerCase();
+    const filas = TF5.rows('fuentes').filter((r) => !texto || [r.id, r.fuente, r.tipo, r.uso].join(' ').toLowerCase().includes(texto));
+    table('tb-fuentes', filas, [['id'], ['fuente'], ['tipo'], ['uso'], ['consultado', (r) => (r.consultado || '—').slice(0, 10)], ['url', (r) => link(r.url)]]);
+  }
+  const flt = document.getElementById('flt-veredicto');
+  function pintarFiltros() {
+    const ops = [null, 'Confirmado', 'Parcialmente cierto', 'No verificado', 'Falso o erróneo'];
+    flt.replaceChildren(...ops.map((o) => {
+      const b = document.createElement('button'); b.type = 'button';
+      b.textContent = o || 'Todas'; b.setAttribute('aria-pressed', String(filtro === o));
+      b.addEventListener('click', () => { filtro = o; pintarFiltros(); pintarAfirmaciones(); });
+      return b;
+    }));
+  }
+  pintarFiltros();
+  const CONF = { alta: 'var(--color-ok)', media: 'var(--color-warn)', baja: 'var(--panel-chart-status-critical)' };
+  const nombreCaso = (r) => TF5.casoTxt(r.caso);
+  const nivel = (r) => {
+    const p = document.createElement('span'); p.className = 'conf';
+    const d = document.createElement('i'); d.className = 'dot'; d.style.background = CONF[r.confianza] || 'var(--panel-chart-muted)';
+    const t = document.createElement('span'); t.textContent = r.confianza || '—'; p.append(d, t); return p;
+  };
+  // Formato según la unidad del indicador de validación
+  const segunUnidad = (campo) => (r) => (r.unidad === 'hora del día' ? fmtHora(r[campo]) : r.unidad === 'veh/h' ? fmtInt(r[campo]) : fmtDec(r[campo], 1));
+  dash.onData(() => {
+    const rango = (a, b, f = 'pct') => (r) => `${TF5.fmt(r[a], f)} (${TF5.fmt(r[b[0]], f)}-${TF5.fmt(r[b[1]], f)})`;
+    const minmax = (a, b) => (r) => (r[a] === '' || r[a] === null || r[a] === undefined ? '—' : `${fmtPct(r[a])}-${fmtPct(r[b])}`);
+    pintarAfirmaciones();
+    pintarFuentes();
+    table('tb-horario', TF5.rows('horario_cola'), [['cuello'], ['dias_con_cola', 'int'], ['dias', 'int'], ['inicio_mediana', 'hora'],
+      ['fin_mediana', 'hora'], ['horas_cola_mediana', 'dec01']], ['cuello']);
+    table('tb-cobertura', TF5.rows('cobertura'), [['etiqueta'], ['sentido'], ['pct_horas_completas', 'pct1'], ['pct_horas_velocidad', 'pct1'],
+      ['dias_validos', 'int']], ['estacion_id', 'sentido']);
+    table('tb-validacion', TF5.rows('validacion'), [['caso', nombreCaso], ['indicador'], ['fenomeno'], ['observado_2025', segunUnidad('observado_2025')],
+      ['observado_2026', segunUnidad('observado_2026')], ['simulado_mediana', segunUnidad('simulado_mediana')],
+      ['simulado_p10', segunUnidad('simulado_p10')], ['simulado_p90', segunUnidad('simulado_p90')],
+      ['dentro_2026', (r) => (String(r.dentro_2026).toUpperCase() === 'TRUE' ? 'Sí' : 'No')],
+      ['error_mediana_2026', (r) => (r.unidad === 'hora del día' ? fmtDec(r.error_mediana_2026, 1) + ' h' : r.unidad === 'veh/h' ? fmtInt(r.error_mediana_2026) + ' (' + fmtPct(r.error_relativo_2026, 1) + ')' : fmtDec(r.error_mediana_2026, 1))]],
+      ['caso', 'indicador']);
+    table('tb-confianza', TF5.rows('confianza'), [['caso', nombreCaso], ['nombre'], ['reduccion_1er_anio', 'pct'], ['p10_1er_anio', 'pct'], ['p90_1er_anio', 'pct'], ['reduccion_10_anios', 'pct'],
+      ['peor_supuesto'], ['reduccion_peor_supuesto', 'pct'], ['confianza', nivel]], ['caso', 'alternativa']);
+    table('tb-donde', TF5.rows('confianza'), [['caso', nombreCaso], ['nombre'], ['tramo'], ['horario'], ['coste'], ['estado']], ['caso', 'alternativa']);
+    table('tb-trasvase', TF5.rows('trasvase_tp'), [['caso', nombreCaso], ['trasvase', 'pct'], ['veh_dia_trasvasados', 'int'],
+      ['reduccion_sin_rebote', rango('reduccion_sin_rebote', ['p10_sin_rebote', 'p90_sin_rebote'])], ['reduccion_1er_anio', rango('reduccion_1er_anio', ['p10_1er_anio', 'p90_1er_anio'])],
+      ['reduccion_10_anios', rango('reduccion_10_anios', ['p10_10_anios', 'p90_10_anios'])]], ['caso', 'trasvase']);
+    table('tb-proyectos', TF5.rows('proyectos'), [['proyecto'], ['promotor'], ['coste_txt'], ['hito'], ['fuente', (r) => link(r.fuente)]], ['proyecto']);
+    table('tb-lagunas', TF5.rows('lagunas'), [['id'], ['dato'], ['situacion'], ['como_se_suple_en_el_proyecto'], ['efecto_en_los_resultados'], ['prioridad'], ['estado_solicitud']], ['id']);
+    table('tb-parametros', TF5.rows('parametros'), [['caso', nombreCaso], ['parametro'], ['minimo'], ['central'], ['maximo'], ['unidad'], ['tipo'],
+      ['descripcion'], ['transferibilidad']], ['caso', 'parametro']);
+    table('tb-comprobaciones', TF5.rows('comprobaciones'), [['id'], ['comprobacion'], ['resultado'], ['cumple', (r) => (String(r.cumple).toUpperCase() === 'TRUE' ? 'Sí' : 'No')]], ['id']);
+    const sentidoTxt = (r) => (r.sentido === 'ascendente' ? 'Hacia el Norte' : 'Hacia Santa Cruz');
+    const sesgo = (r) => (r.unidad === 'hora del día' ? fmtDec(r.sesgo, 2) + ' h' : r.unidad === 'veh/h' ? fmtInt(r.sesgo) : fmtDec(r.sesgo, 2));
+    const segun = (campo) => (r) => (r.unidad === 'hora del día' ? fmtHora(r[campo]) : r.unidad === 'veh/h' ? fmtInt(r[campo]) : fmtDec(r[campo], 2));
+    table('tb-geometria', TF5.rows('geometria'), [['estacion'], ['sentido', sentidoTxt], ['seccion_inventario_2006'], ['carriles_aforados', 'int'],
+      ['carriles_inventario_2006', 'int'], ['estado'], ['papel_en_el_modelo'], ['escenario_alternativo']], ['estacion_id', 'sentido']);
+    table('tb-balance', TF5.rows('balance'), [['sentido', sentidoTxt], ['tramo'], ['neto_dia_mediana', 'int'], ['neto_dia_p10', 'int'], ['neto_dia_p90', 'int'],
+      ['cv_neto_dia', (r) => (r.cv_neto_dia === '' || r.cv_neto_dia === null ? 'no aplica' : fmtDec(r.cv_neto_dia, 2))], ['dias_completos', 'int'], ['lectura']],
+      ['sentido', 'tramo']);
+    table('tb-holgura-sens', TF5.rows('holgura_sens_tabla'), [['caso', nombreCaso], ['variante'], ['holgura_clave', 'pct1'], ['mediana', 'pct'], ['p10', 'pct'],
+      ['p90', 'pct'], ['horas_cola_hoy', 'dec1'], ['horas_cola_con_tercer_carril', 'dec1'], ['parte_cola_hoy_en_rango_medido', 'pct']], ['caso', 'variante']);
+    table('tb-valdia', TF5.rows('validacion_diaria').filter((r) => /^20\d\d \(/.test(String(r.periodo))), [['caso', nombreCaso], ['indicador'], ['periodo'],
+      ['observaciones', 'int'], ['observado_mediana', segun('observado_mediana')], ['simulado_mediana', segun('simulado_mediana')], ['sesgo', sesgo],
+      ['sesgo_relativo', 'pct1'], ['mae', segun('mae')], ['cobertura_p10_p90', 'pct'], ['cobertura_intervalo_predictivo', 'pct']], ['caso', 'indicador', 'periodo']);
+    table('tb-diag', TF5.rows('diag_horas'), [['grupo'], ['aforo_2025', 'int'], ['aforo_2026', 'int'], ['modelo', 'int']], ['grupo']);
+    const puntos = (x) => { const v = 100 * Number(x); return Number.isFinite(v) ? (v > 0.05 ? '+' : '') + fmtDec(v, 1) : '—'; };
+    table('tb-eleccion', TF5.rows('eleccion_tabla'), [['caso', nombreCaso], ['variante'], ['aceptadas', 'int'], ['sesgo_descarga', 'int'],
+      ['mejora_sesgo_descarga', (r) => fmtPct(r.mejora_sesgo_descarga, 0, true)], ['peor_rmse_relativo', (r) => fmtDec(r.peor_rmse_relativo, 3)],
+      ['indicador_que_mas_empeora'], ['admisible'], ['elegida']], ['caso', 'variante']);
+    table('tb-mc-semillas', TF5.rows('mc_semillas_tabla'), [['caso', nombreCaso], ['semilla'], ['aceptadas', 'int'], ['tercer_carril', 'pct1'], ['paquete', 'pct1']], ['caso', 'semilla']);
+    table('tb-mc-previas', TF5.rows('mc_previas_tabla'), [['caso', nombreCaso], ['previa'], ['tamano_efectivo', (r) => fmtInt(r.tamano_efectivo) + ' de ' + fmtInt(r.aceptadas)],
+      ['tercer_carril', 'pct1'], ['paquete', 'pct1']], ['caso', 'previa']);
+    table('tb-mc-corr', TF5.rows('mc_corr_top'), [['caso', nombreCaso], ['par'], ['rho_previa', (r) => fmtDec(r.rho_previa, 2)], ['rho_aceptadas', (r) => fmtDec(r.rho_aceptadas, 2)]], ['caso', 'par']);
+    table('tb-diferencias', TF5.rows('dif_tabla'), [['caso', nombreCaso], ['pareja'], ['dif_mediana', (r) => puntos(r.dif_mediana) + ' (' + puntos(r.dif_p10) + ' a ' + puntos(r.dif_p90) + ')'],
+      ['ee_dif_mediana', (r) => fmtDec(100 * Number(r.ee_dif_mediana), 1)], ['parte_a_mayor', 'pct'], ['lectura']], ['caso', 'pareja']);
+    table('tb-coste-riesgo', TF5.rows('coste_riesgo'), [['nombre'], ['coste'], ['plazo'], ['servicio_previsto'], ['riesgos_principales']], ['caso', 'alternativa']);
+    table('tb-cola-remanente', TF5.rows('cola_remanente'), [['longitud_km', (r) => fmtDec(r.longitud_km, 0) + ' km'], ['almacenamiento_veh', 'int'],
+      ['reduccion_mediana', rango('reduccion_mediana', ['reduccion_p10', 'reduccion_p90'])], ['reduccion_modelo_principal', 'pct'], ['cola_remanente_max_mediana', 'int'],
+      ['minutos_rebose_mediana', 'int'], ['demora_ramales_tercer_carril_vh', (r) => fmtDec(r.demora_ramales_tercer_carril_vh, 1) + ' (' + fmtDec(r.demora_ramales_actual_vh, 1) + ')']], ['longitud_km']);
+    table('tb-retraso', TF5.rows('retraso_tabla'), [['anio', (r) => String(r.anio)], ['central', rango('central', ['central_p10', 'central_p90'])], ['horas_central', 'dec1'],
+      ['alto', rango('alto', ['alto_p10', 'alto_p90'])], ['horas_alto', 'dec1']], ['anio']);
+    table('tb-atipicos', TF5.rows('dias_tabla'), [['cuello'], ['motivo'], ['tratamiento'], ['dias', 'int']], ['cuello', 'motivo']);
+    table('tb-sin-atipicos', TF5.rows('sin_atipicos'), [['variante'], ['etiqueta', (r) => r.etiqueta + (r.sentido === 'descendente' ? ' → Santa Cruz' : ' → Norte')], ['dias', 'int'],
+      ['horas_cola_media', 'dec2'], ['inicio_mediana', 'hora'], ['fin_mediana', 'hora'], ['descarga_mediana', 'int']], ['variante', 'estacion_id']);
+    table('tb-uso-geometria', TF5.rows('uso_geometria'), [['calculo'], ['estacion', (r) => r.estacion || 'varias'], ['carriles_usados'], ['estado'], ['supuesto_explicito'], ['escenario_alternativo']], ['calculo']);
+    const siNo = (campo) => (r) => (String(r[campo]).toUpperCase() === 'TRUE' ? 'Sí' : 'No');
+    table('tb-contraste', TF5.rows('contraste_original'), [['nombre_publicado'], ['url_publicada', (r) => link(r.url_publicada)], ['en_la_instantanea_del_portal', siNo('en_la_instantanea_del_portal')],
+      ['nombre_igual', siNo('nombre_igual')], ['licencia_igual', siNo('licencia_igual')], ['resultado']], ['recurso_id']);
+    table('tb-sens-cal', TF5.rows('sens_cal_tabla'), [['caso', nombreCaso], ['regla'], ['n_validas', 'int'], ['descarga_mediana', 'int'], ['tercer_carril', rango('tercer_carril', ['tercer_p10', 'tercer_p90'])],
+      ['paquete', rango('paquete', ['paquete_p10', 'paquete_p90'])]], ['caso', 'regla']);
+    table('tb-mc', TF5.rows('mc_filtros'), [['caso', nombreCaso], ['regla'], ['umbral'], ['pasan', 'int'], ['tasa', 'pct1'], ['descartadas', 'pct1']], ['caso', 'regla']);
+    table('tb-fichas', TF5.rows('fichas'), [['caso', nombreCaso], ['nombre'], ['tramo'], ['horario'], ['mediana_1er_anio', rango('mediana_1er_anio', ['p10_1er_anio', 'p90_1er_anio'])],
+      ['mediana_10_anios', (r) => (r.mediana_10_anios === '' ? 'no aplica (efecto neto)' : rango('mediana_10_anios', ['p10_10_anios', 'p90_10_anios'])(r))],
+      ['min_2030_crecimiento', minmax('min_2030_crecimiento', 'max_2030_crecimiento')], ['min_escenarios_adversos', minmax('min_escenarios_adversos', 'max_escenarios_adversos')],
+      ['confianza', nivel], ['supuesto_clave'], ['limitacion_principal']], ['caso', 'alternativa']);
+    table('tb-2030-crec', TF5.rows('crec_2030_tabla'), [['caso', nombreCaso], ['alternativa'], ['bajo', rango('bajo', ['bajo_p10', 'bajo_p90'])],
+      ['central', rango('central', ['central_p10', 'central_p90'])], ['alto', rango('alto', ['alto_p10', 'alto_p90'])]], ['caso', 'escenario']);
+    const valorPrev = (campo) => (r) => (/^Horas/.test(r.indicador) ? fmtDec(r[campo], 1) + ' h' : fmtPct(r[campo]));
+    table('tb-previsiones', TF5.rows('previsiones'), [['caso', nombreCaso], ['componente'], ['horizonte'], ['escenario'], ['valor', valorPrev('valor')],
+      ['p10', valorPrev('p10')], ['p90', valorPrev('p90')], ['indicador'], ['condicion']], ['caso', 'componente', 'horizonte', 'escenario']);
+    table('tb-categorias', TF5.rows('limitaciones'), [['resultado'], ['categoria'], ['tipo'], ['limitaciones'], ['confianza']], ['resultado']);
+    const demoraFmt = (campo) => (r) => (r.unidad === 'km' ? fmtDec(r[campo], 1) : /minutos|horas/.test(r.unidad) ? fmtDec(r[campo], 1) : fmtInt(r[campo]));
+    table('tb-demoras', TF5.rows('demoras'), [['caso', nombreCaso], ['indicador'], ['unidad'], ['denominador'], ['simulado_mediana', demoraFmt('simulado_mediana')],
+      ['simulado_p10', demoraFmt('simulado_p10')], ['simulado_p90', demoraFmt('simulado_p90')], ['contraste_independiente']], ['caso', 'indicador']);
+    table('tb-depuracion', TF5.rows('depuracion'), [['variante'], ['etiqueta'], ['dias', 'int'], ['horas_cola_mediana', 'dec1'], ['horas_cola_media', 'dec2'],
+      ['descarga_mediana', 'int'], ['tasa_imputacion', 'pct1']], ['variante', 'estacion_id']);
+  });
+})();
+
+/* ---------- Enlaces a secciones ---------- */
+(() => {
+  let hecho = false;
+  dash.onData(() => {
+    if (hecho) return;
+    const named = document.getElementById(location.hash.slice(1));
+    if (named) { named.scrollIntoView(); dash.setLink(named.id); hecho = true; }
+  });
+  document.querySelectorAll('.tf5 .toc a').forEach((a) => a.addEventListener('click', (ev) => {
+    const el = document.getElementById(a.getAttribute('href').slice(1));
+    if (el) { ev.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); dash.setLink(el.id); }
+  }));
+})();
+</script>
+
+</div>
+</body>
+</html>

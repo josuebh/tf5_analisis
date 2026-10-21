@@ -1,0 +1,15 @@
+estacion_id,sentido,horas_con_velocidad,base_noche,velocidad_fiable,motivo
+85,ascendente,1,0.08914533522531733,TRUE,fiable
+85,descendente,1,0.33703496365906277,TRUE,fiable
+93,ascendente,1,0.3664256004013126,TRUE,fiable
+93,descendente,1,0.05902813899580943,TRUE,fiable
+97,ascendente,0.21806260575296108,1,FALSE,rangos de velocidad con valores negativos o ausentes
+97,descendente,0.2259963768115942,1,FALSE,rangos de velocidad con valores negativos o ausentes
+99,ascendente,1,0.1782446036082601,TRUE,fiable
+99,descendente,1,0.1743591567454143,TRUE,fiable
+103,ascendente,1,0.060665989980681706,TRUE,fiable
+103,descendente,1,0.09791153670770633,TRUE,fiable
+111,ascendente,1,0.7639892894798722,FALSE,de madrugada ya va a menos de 80 km/h la mayoría: el indicador no detecta la cola
+111,descendente,1,0.8124989793307676,FALSE,de madrugada ya va a menos de 80 km/h la mayoría: el indicador no detecta la cola
+123,ascendente,1,0.19899891657638136,TRUE,fiable
+123,descendente,1,0.28081261978047506,TRUE,fiable

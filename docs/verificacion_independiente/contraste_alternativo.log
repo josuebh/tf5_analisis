@@ -1,0 +1,32 @@
+TOTAL valid 5759
+85-a {'valid_days': 424, 'base': 0.0891, 'fiable': True, 'd2025': 228, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 222, 'cov_complete': np.float64(0.9532), 'cov_speed': np.float64(0.9532)}
+85-d {'valid_days': 432, 'base': 0.337, 'fiable': True, 'd2025': 227, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 224, 'cov_complete': np.float64(0.9532), 'cov_speed': np.float64(0.9532)}
+93-a {'valid_days': 451, 'base': 0.3664, 'fiable': True, 'd2025': 226, 'med': 2.0, 'p25': 1.0, 'p75': 3.0, 'zero': 39, 'cov_complete': np.float64(0.9959), 'cov_speed': np.float64(0.9959)}
+93-d {'valid_days': 449, 'base': 0.059, 'fiable': True, 'd2025': 226, 'med': 1.0, 'p25': 0.0, 'p75': 1.0, 'zero': 106, 'cov_complete': np.float64(0.9958), 'cov_speed': np.float64(0.9958)}
+97-a {'valid_days': 197, 'base': 1.0, 'fiable': False, 'd2025': 54, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 41, 'cov_complete': np.float64(0.4694), 'cov_speed': np.float64(0.1159)}
+97-d {'valid_days': 184, 'base': 1.0, 'fiable': False, 'd2025': 55, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 41, 'cov_complete': np.float64(0.4694), 'cov_speed': np.float64(0.1125)}
+99-a {'valid_days': 453, 'base': 0.1782, 'fiable': True, 'd2025': 224, 'med': 4.0, 'p25': 3.0, 'p75': 6.0, 'zero': 0, 'cov_complete': np.float64(0.9932), 'cov_speed': np.float64(0.9932)}
+99-d {'valid_days': 450, 'base': 0.1744, 'fiable': True, 'd2025': 223, 'med': 1.0, 'p25': 0.0, 'p75': 2.0, 'zero': 69, 'cov_complete': np.float64(0.9928), 'cov_speed': np.float64(0.9928)}
+103-a {'valid_days': 456, 'base': 0.0607, 'fiable': True, 'd2025': 227, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 173, 'cov_complete': np.float64(0.9944), 'cov_speed': np.float64(0.9944)}
+103-d {'valid_days': 453, 'base': 0.0979, 'fiable': True, 'd2025': 226, 'med': 3.0, 'p25': 2.0, 'p75': 3.0, 'zero': 10, 'cov_complete': np.float64(0.9959), 'cov_speed': np.float64(0.9959)}
+111-a {'valid_days': 455, 'base': 0.764, 'fiable': False, 'd2025': 228, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 228, 'cov_complete': np.float64(0.9971), 'cov_speed': np.float64(0.9971)}
+111-d {'valid_days': 447, 'base': 0.8125, 'fiable': False, 'd2025': 222, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 222, 'cov_complete': np.float64(0.9944), 'cov_speed': np.float64(0.9944)}
+123-a {'valid_days': 453, 'base': 0.199, 'fiable': True, 'd2025': 227, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 222, 'cov_complete': np.float64(0.9971), 'cov_speed': np.float64(0.9971)}
+123-d {'valid_days': 455, 'base': 0.2808, 'fiable': True, 'd2025': 228, 'med': 0.0, 'p25': 0.0, 'p75': 0.0, 'zero': 204, 'cov_complete': np.float64(0.9971), 'cov_speed': np.float64(0.9971)}
+timing 103 d 2025 (226, 215, np.float64(6.0), np.float64(9.0))
+timing 103 d 2026 (163, 153, np.float64(6.0), np.float64(9.0))
+timing 99 a 2025 (224, 224, np.float64(13.0), np.float64(18.0))
+timing 99 a 2026 (165, 160, np.float64(13.0), np.float64(18.0))
+desc1 643 3337.0 2833.0 3631.6000000000004
+desc2 1046 3553.5 3020.0 3742.0
+ULL 93 121 118 9050.380165289256 8983.78813559322 0.7768595041322314 0.9661016949152542
+ULL 99 119 121 8672.302521008403 8815.380165289256 1.1680672268907564 1.0495867768595042
+ULL 103 121 120 6283.727272727273 6193.9 2.925619834710744 3.058333333333333
+pasarela 99d 2025-06 20 1.05
+pasarela 99d 2025-07 23 1.0
+pasarela 99d 2025-09 21 0.9523809523809523
+pasarela 99d 2026-06 21 0.6190476190476191
+pasarela 99d 2026-07 23 0.0
+pasarela 99d 2026-09 22 0.36363636363636365
+2026v2025 103 d 165 163 2.6545454545454548 2.8404907975460123 0.2059233566314734
+2026v2025 99 a 161 165 4.658385093167702 4.672727272727273 0.9415926524782285

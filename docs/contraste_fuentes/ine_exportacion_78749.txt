@@ -1,0 +1,211 @@
+﻿Isla;Sexo;Periodo;Total
+07 Balears, Illes;Total;2025;..
+07 Balears, Illes;Total;2024;..
+07 Balears, Illes;Total;2023;..
+07 Balears, Illes;Total;2022;..
+07 Balears, Illes;Total;2021;..
+07 Balears, Illes;Hombres;2025;..
+07 Balears, Illes;Hombres;2024;..
+07 Balears, Illes;Hombres;2023;..
+07 Balears, Illes;Hombres;2022;..
+07 Balears, Illes;Hombres;2021;..
+07 Balears, Illes;Mujeres;2025;..
+07 Balears, Illes;Mujeres;2024;..
+07 Balears, Illes;Mujeres;2023;..
+07 Balears, Illes;Mujeres;2022;..
+07 Balears, Illes;Mujeres;2021;..
+Formentera;Total;2025;11.690
+Formentera;Total;2024;11.483
+Formentera;Total;2023;11.389
+Formentera;Total;2022;11.637
+Formentera;Total;2021;11.891
+Formentera;Hombres;2025;6.010
+Formentera;Hombres;2024;5.893
+Formentera;Hombres;2023;5.860
+Formentera;Hombres;2022;6.043
+Formentera;Hombres;2021;6.211
+Formentera;Mujeres;2025;5.680
+Formentera;Mujeres;2024;5.590
+Formentera;Mujeres;2023;5.529
+Formentera;Mujeres;2022;5.594
+Formentera;Mujeres;2021;5.680
+Ibiza;Total;2025;164.265
+Ibiza;Total;2024;161.485
+Ibiza;Total;2023;159.180
+Ibiza;Total;2022;155.658
+Ibiza;Total;2021;154.186
+Ibiza;Hombres;2025;83.671
+Ibiza;Hombres;2024;82.391
+Ibiza;Hombres;2023;81.245
+Ibiza;Hombres;2022;79.506
+Ibiza;Hombres;2021;78.863
+Ibiza;Mujeres;2025;80.594
+Ibiza;Mujeres;2024;79.094
+Ibiza;Mujeres;2023;77.935
+Ibiza;Mujeres;2022;76.152
+Ibiza;Mujeres;2021;75.323
+Mallorca;Total;2025;971.068
+Mallorca;Total;2024;957.726
+Mallorca;Total;2023;940.332
+Mallorca;Total;2022;922.605
+Mallorca;Total;2021;920.605
+Mallorca;Hombres;2025;481.759
+Mallorca;Hombres;2024;475.301
+Mallorca;Hombres;2023;466.325
+Mallorca;Hombres;2022;458.299
+Mallorca;Hombres;2021;457.773
+Mallorca;Mujeres;2025;489.309
+Mallorca;Mujeres;2024;482.425
+Mallorca;Mujeres;2023;474.007
+Mallorca;Mujeres;2022;464.306
+Mallorca;Mujeres;2021;462.832
+Menorca;Total;2025;102.821
+Menorca;Total;2024;101.074
+Menorca;Total;2023;99.005
+Menorca;Total;2022;97.143
+Menorca;Total;2021;96.733
+Menorca;Hombres;2025;51.233
+Menorca;Hombres;2024;50.325
+Menorca;Hombres;2023;49.219
+Menorca;Hombres;2022;48.252
+Menorca;Hombres;2021;48.143
+Menorca;Mujeres;2025;51.588
+Menorca;Mujeres;2024;50.749
+Menorca;Mujeres;2023;49.786
+Menorca;Mujeres;2022;48.891
+Menorca;Mujeres;2021;48.590
+35 Palmas, Las;Total;2025;..
+35 Palmas, Las;Total;2024;..
+35 Palmas, Las;Total;2023;..
+35 Palmas, Las;Total;2022;..
+35 Palmas, Las;Total;2021;..
+35 Palmas, Las;Hombres;2025;..
+35 Palmas, Las;Hombres;2024;..
+35 Palmas, Las;Hombres;2023;..
+35 Palmas, Las;Hombres;2022;..
+35 Palmas, Las;Hombres;2021;..
+35 Palmas, Las;Mujeres;2025;..
+35 Palmas, Las;Mujeres;2024;..
+35 Palmas, Las;Mujeres;2023;..
+35 Palmas, Las;Mujeres;2022;..
+35 Palmas, Las;Mujeres;2021;..
+Fuerteventura;Total;2025;129.080
+Fuerteventura;Total;2024;126.676
+Fuerteventura;Total;2023;124.152
+Fuerteventura;Total;2022;119.621
+Fuerteventura;Total;2021;119.278
+Fuerteventura;Hombres;2025;66.008
+Fuerteventura;Hombres;2024;64.867
+Fuerteventura;Hombres;2023;63.663
+Fuerteventura;Hombres;2022;61.399
+Fuerteventura;Hombres;2021;61.399
+Fuerteventura;Mujeres;2025;63.072
+Fuerteventura;Mujeres;2024;61.809
+Fuerteventura;Mujeres;2023;60.489
+Fuerteventura;Mujeres;2022;58.222
+Fuerteventura;Mujeres;2021;57.879
+Gran Canaria;Total;2025;875.589
+Gran Canaria;Total;2024;869.984
+Gran Canaria;Total;2023;862.893
+Gran Canaria;Total;2022;858.475
+Gran Canaria;Total;2021;856.137
+Gran Canaria;Hombres;2025;431.792
+Gran Canaria;Hombres;2024;429.019
+Gran Canaria;Hombres;2023;425.808
+Gran Canaria;Hombres;2022;423.790
+Gran Canaria;Hombres;2021;422.766
+Gran Canaria;Mujeres;2025;443.797
+Gran Canaria;Mujeres;2024;440.965
+Gran Canaria;Mujeres;2023;437.085
+Gran Canaria;Mujeres;2022;434.685
+Gran Canaria;Mujeres;2021;433.371
+Lanzarote;Total;2025;166.878
+Lanzarote;Total;2024;163.230
+Lanzarote;Total;2023;158.798
+Lanzarote;Total;2022;155.637
+Lanzarote;Total;2021;155.944
+Lanzarote;Hombres;2025;83.943
+Lanzarote;Hombres;2024;82.178
+Lanzarote;Hombres;2023;79.999
+Lanzarote;Hombres;2022;78.574
+Lanzarote;Hombres;2021;78.995
+Lanzarote;Mujeres;2025;82.935
+Lanzarote;Mujeres;2024;81.052
+Lanzarote;Mujeres;2023;78.799
+Lanzarote;Mujeres;2022;77.063
+Lanzarote;Mujeres;2021;76.949
+38 Santa Cruz de Tenerife;Total;2025;..
+38 Santa Cruz de Tenerife;Total;2024;..
+38 Santa Cruz de Tenerife;Total;2023;..
+38 Santa Cruz de Tenerife;Total;2022;..
+38 Santa Cruz de Tenerife;Total;2021;..
+38 Santa Cruz de Tenerife;Hombres;2025;..
+38 Santa Cruz de Tenerife;Hombres;2024;..
+38 Santa Cruz de Tenerife;Hombres;2023;..
+38 Santa Cruz de Tenerife;Hombres;2022;..
+38 Santa Cruz de Tenerife;Hombres;2021;..
+38 Santa Cruz de Tenerife;Mujeres;2025;..
+38 Santa Cruz de Tenerife;Mujeres;2024;..
+38 Santa Cruz de Tenerife;Mujeres;2023;..
+38 Santa Cruz de Tenerife;Mujeres;2022;..
+38 Santa Cruz de Tenerife;Mujeres;2021;..
+Gomera, La;Total;2025;22.560
+Gomera, La;Total;2024;22.507
+Gomera, La;Total;2023;22.361
+Gomera, La;Total;2022;22.003
+Gomera, La;Total;2021;21.893
+Gomera, La;Hombres;2025;11.461
+Gomera, La;Hombres;2024;11.439
+Gomera, La;Hombres;2023;11.352
+Gomera, La;Hombres;2022;11.206
+Gomera, La;Hombres;2021;11.153
+Gomera, La;Mujeres;2025;11.099
+Gomera, La;Mujeres;2024;11.068
+Gomera, La;Mujeres;2023;11.009
+Gomera, La;Mujeres;2022;10.797
+Gomera, La;Mujeres;2021;10.740
+Hierro, El;Total;2025;11.993
+Hierro, El;Total;2024;11.786
+Hierro, El;Total;2023;11.659
+Hierro, El;Total;2022;11.417
+Hierro, El;Total;2021;11.290
+Hierro, El;Hombres;2025;6.058
+Hierro, El;Hombres;2024;5.947
+Hierro, El;Hombres;2023;5.882
+Hierro, El;Hombres;2022;5.758
+Hierro, El;Hombres;2021;5.718
+Hierro, El;Mujeres;2025;5.935
+Hierro, El;Mujeres;2024;5.839
+Hierro, El;Mujeres;2023;5.777
+Hierro, El;Mujeres;2022;5.659
+Hierro, El;Mujeres;2021;5.572
+Palma, La;Total;2025;86.297
+Palma, La;Total;2024;85.382
+Palma, La;Total;2023;84.338
+Palma, La;Total;2022;84.006
+Palma, La;Total;2021;83.812
+Palma, La;Hombres;2025;42.662
+Palma, La;Hombres;2024;42.236
+Palma, La;Hombres;2023;41.665
+Palma, La;Hombres;2022;41.520
+Palma, La;Hombres;2021;41.434
+Palma, La;Mujeres;2025;43.635
+Palma, La;Mujeres;2024;43.146
+Palma, La;Mujeres;2023;42.673
+Palma, La;Mujeres;2022;42.486
+Palma, La;Mujeres;2021;42.378
+Tenerife;Total;2025;966.469
+Tenerife;Total;2024;959.189
+Tenerife;Total;2023;948.815
+Tenerife;Total;2022;934.448
+Tenerife;Total;2021;930.570
+Tenerife;Hombres;2025;472.897
+Tenerife;Hombres;2024;469.351
+Tenerife;Hombres;2023;464.354
+Tenerife;Hombres;2022;457.997
+Tenerife;Hombres;2021;456.395
+Tenerife;Mujeres;2025;493.572
+Tenerife;Mujeres;2024;489.838
+Tenerife;Mujeres;2023;484.461
+Tenerife;Mujeres;2022;476.451
+Tenerife;Mujeres;2021;474.175

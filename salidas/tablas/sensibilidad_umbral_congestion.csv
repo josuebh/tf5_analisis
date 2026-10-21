@@ -1,0 +1,43 @@
+umbral,exceso,estacion_id,etiqueta,sentido,dias_con_velocidad,velocidad_utilizable,horas_media,horas_p25,horas_mediana,horas_p75,dias_sin_congestion,hora_inicio_tipica,hora_fin_tipica
+0.5,0.2,85,Hospital Residencia,ascendente,228,TRUE,0.15350877192982457,0,0,0,205,14,14
+0.5,0.2,93,Campus Guajara,ascendente,226,TRUE,2.849557522123894,2,3,4,20,14,15
+0.5,0.2,97,Padre Anchieta,ascendente,41,FALSE,0,0,0,0,41,,
+0.5,0.2,99,Bomberos La Laguna,ascendente,224,TRUE,5.477678571428571,4,5,7,0,13,16
+0.5,0.2,103,Ermita Cruz Chica,ascendente,227,TRUE,0.7400881057268722,0,0,1,150,16,20
+0.5,0.2,111,La Matanza,ascendente,228,FALSE,0,0,0,0,228,,
+0.5,0.2,123,La Orotava,ascendente,227,TRUE,0.09251101321585903,0,0,0,210,16,16
+0.5,0.2,85,Hospital Residencia,descendente,227,TRUE,0.2599118942731278,0,0,0,191,7,7
+0.5,0.2,93,Campus Guajara,descendente,226,TRUE,1.0530973451327434,0,1,2,62,7,7
+0.5,0.2,97,Padre Anchieta,descendente,41,FALSE,0,0,0,0,41,,
+0.5,0.2,99,Bomberos La Laguna,descendente,223,TRUE,1.5829596412556053,1,2,2,37,7,8
+0.5,0.2,103,Ermita Cruz Chica,descendente,226,TRUE,3.247787610619469,3,3,4,3,6,8
+0.5,0.2,111,La Matanza,descendente,222,FALSE,0,0,0,0,222,,
+0.5,0.2,123,La Orotava,descendente,228,TRUE,0.4605263157894737,0,0,1,169,14,14
+0.6,0.3,85,Hospital Residencia,ascendente,228,TRUE,0.043859649122807015,0,0,0,222,15,15
+0.6,0.3,93,Campus Guajara,ascendente,226,TRUE,2.185840707964602,1,2,3,39,14,15
+0.6,0.3,97,Padre Anchieta,ascendente,41,FALSE,0,0,0,0,41,,
+0.6,0.3,99,Bomberos La Laguna,ascendente,224,TRUE,4.71875,3,4,6,0,13,16
+0.6,0.3,103,Ermita Cruz Chica,ascendente,227,TRUE,0.43171806167400884,0,0,0,173,17,20
+0.6,0.3,111,La Matanza,ascendente,228,FALSE,0,0,0,0,228,,
+0.6,0.3,123,La Orotava,ascendente,227,TRUE,0.03524229074889868,0,0,0,222,1,4
+0.6,0.3,85,Hospital Residencia,descendente,227,TRUE,0.01762114537444934,0,0,0,224,7,1
+0.6,0.3,93,Campus Guajara,descendente,226,TRUE,0.6592920353982301,0,1,1,106,7,7
+0.6,0.3,97,Padre Anchieta,descendente,41,FALSE,0,0,0,0,41,,
+0.6,0.3,99,Bomberos La Laguna,descendente,223,TRUE,1.0044843049327354,0,1,2,69,7,8
+0.6,0.3,103,Ermita Cruz Chica,descendente,226,TRUE,2.8451327433628317,2,3,3,10,6,8
+0.6,0.3,111,La Matanza,descendente,222,FALSE,0,0,0,0,222,,
+0.6,0.3,123,La Orotava,descendente,228,TRUE,0.18859649122807018,0,0,0,204,14,14
+0.7,0.4,85,Hospital Residencia,ascendente,228,TRUE,0.013157894736842105,0,0,0,225,7,7
+0.7,0.4,93,Campus Guajara,ascendente,226,TRUE,1.668141592920354,0,2,2,61,14,15
+0.7,0.4,97,Padre Anchieta,ascendente,41,FALSE,0,0,0,0,41,,
+0.7,0.4,99,Bomberos La Laguna,ascendente,224,TRUE,4.236607142857143,3,4,5,1,14,16
+0.7,0.4,103,Ermita Cruz Chica,ascendente,227,TRUE,0.2555066079295154,0,0,0,192,17,16
+0.7,0.4,111,La Matanza,ascendente,228,FALSE,0,0,0,0,228,,
+0.7,0.4,123,La Orotava,ascendente,227,TRUE,0.013215859030837005,0,0,0,224,4,4
+0.7,0.4,85,Hospital Residencia,descendente,227,TRUE,0.00881057268722467,0,0,0,225,7,7
+0.7,0.4,93,Campus Guajara,descendente,226,TRUE,0.3141592920353982,0,0,0,171,7,7
+0.7,0.4,97,Padre Anchieta,descendente,41,FALSE,0,0,0,0,41,,
+0.7,0.4,99,Bomberos La Laguna,descendente,223,TRUE,0.3632286995515695,0,0,0,169,8,8
+0.7,0.4,103,Ermita Cruz Chica,descendente,226,TRUE,2.5442477876106193,2,3,3,12,6,8
+0.7,0.4,111,La Matanza,descendente,222,FALSE,0,0,0,0,222,,
+0.7,0.4,123,La Orotava,descendente,228,TRUE,0.06578947368421052,0,0,0,217,15,16

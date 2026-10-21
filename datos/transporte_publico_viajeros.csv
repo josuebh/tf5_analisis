@@ -1,0 +1,19 @@
+anio,operador,viajeros,tipo_dato,fuente
+2017,TITSA,35655283,publicado (cifra del titular de la nota de TITSA; página no accesible para lectura automática),https://blog.titsa.com/2018/01/titsa-vuelve-a-incrementar-su-cifra-de-usuarios-en-2017-y-llega-a-los-35-655-283-un-553-mas/
+2018,TITSA,39481095,"deducido (2017 x 1,1073, porcentaje del titular de la nota de TITSA)",https://blog.titsa.com/2019/02/titsa-supera-los-39-millones-de-viajeros-tras-un-aumento-del-1073-en-el-numero-de-usuarios/
+2019,TITSA,45716363,"deducido (61.271.218 TITSA+tranvía - 15.554.855 tranvía; publicado 45,7 M)",https://metrotenerife.com/wp-content/uploads/2020/01/20200120-NP-Transporte-viajeros.pdf
+2020,TITSA,29111714,deducido (36.648.611 - 7.536.897 publicados para 2021),https://rtvc.es/titsa-gana-un-26-de-pasajeros-y-supera-los-366-millones-de-viajeros
+2021,TITSA,36648611,publicado,https://rtvc.es/titsa-gana-un-26-de-pasajeros-y-supera-los-366-millones-de-viajeros
+2022,TITSA,48182000,publicado,https://metrotenerife.com/wp-content/uploads/2023/01/20230105-NP-Pasajeros-2022.pdf
+2023,TITSA,69472103,"publicado (la nota da también +44,88 %, que no cuadra exactamente con 2022: con esta serie sale +44,2 %)",https://automovilismocanario.com/2024/01/29/titsa-transporto-casi-70-millones-de-viajeros-en-2023-tras-un-aumento-del-45/
+2024,TITSA,82000000,publicado (más de 82 M),https://www.eldiario.es/canariasahora/tenerifeahora/isla/titsa-usara-guaguas-dobles-100-asientos-rutas-tenerife_1_11978324.html
+2025,TITSA,87000000,publicado (más de 87 M),https://diariodeavisos.elespanol.com/2026/02/revolucion-guaguas-tenerife/
+2017,Tranvía (Metrotenerife),14158691,publicado (cancelaciones),https://metrotenerife.com/MEMORIAS/2017/
+2018,Tranvía (Metrotenerife),14757687,deducido (15.554.855 - 797.168 publicados para 2019),https://metrotenerife.com/wp-content/uploads/2020/01/20200120-NP-Transporte-viajeros.pdf
+2019,Tranvía (Metrotenerife),15554855,publicado (cancelaciones),https://metrotenerife.com/wp-content/uploads/2020/01/20200120-NP-Transporte-viajeros.pdf
+2020,Tranvía (Metrotenerife),10313051,"deducido (12.543.182 - 2.230.131, memoria 2021)",https://metrotenerife.com/MEMORIAS/2021/wp-content/uploads/NUESTROS_CLIENTES.pdf
+2021,Tranvía (Metrotenerife),12543182,publicado (memoria 2021),https://metrotenerife.com/MEMORIAS/2021/wp-content/uploads/NUESTROS_CLIENTES.pdf
+2022,Tranvía (Metrotenerife),14990230,"deducido (22.668.132 - 7.677.902, memoria 2023; la nota de prensa daba 14,96 M)",https://metrotenerife.com/MEMORIAS/2023/wp-content/uploads/2024/07/NUESTROS-CLIENTES-METROTENERIFE-MEMORIA-2023.pdf
+2023,Tranvía (Metrotenerife),22668132,publicado (memoria 2023),https://metrotenerife.com/MEMORIAS/2023/wp-content/uploads/2024/07/NUESTROS-CLIENTES-METROTENERIFE-MEMORIA-2023.pdf
+2024,Tranvía (Metrotenerife),24949735,publicado (memoria 2024),https://metrotenerife.com/MEMORIAS/2024/pdf/nuestros-clientes.pdf
+2025,Tranvía (Metrotenerife),24953848,publicado (memoria 2025),https://metrotenerife.com/MEMORIAS/2025/pdf/nuestros-clientes.pdf

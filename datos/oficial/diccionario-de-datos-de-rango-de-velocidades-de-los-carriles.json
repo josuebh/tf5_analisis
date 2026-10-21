@@ -1,0 +1,64 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "@type": "Table",
+  "dc:description": "Diccionario de datos",
+  "dc:creator": "Servicio Técnico de Carreteras y Movilidad",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "estacion_id",
+        "datatype": "numeric",
+        "title": "estacion_id",
+        "dc:description": "Identificador de la estación de aforo. Se utiliza para consultar datos de la estación en el conjunto Estaciones de aforo por tramos de la red de carreteras de Tenerife"
+      },
+      {
+        "name": "estacion_nombre",
+        "datatype": "text",
+        "title": "estacion_nombre",
+        "dc:description": "Nombre de la estación de aforo."
+      },
+      {
+        "name": "carril_id",
+        "datatype": "numeric",
+        "title": "carril_id",
+        "dc:description": "Carril de la carretera donde se obtiene la medición. Se indican con valores positivos los carriles con sentido creciente según los puntos kilométricos y con valores negativos los decrecientes, comenzando la numeración por el carril derecho en ambos casos. Valores:1,2,3...-1.-2,-3... "
+      },
+      {
+        "name": "carril_descripcion",
+        "datatype": "text",
+        "title": "carril_descripcion",
+        "dc:description": "Descripción del carril. Incluye referencia al nombre de la carretera"
+      },
+      {
+        "name": "rango1_max",
+        "datatype": "numeric",
+        "title": "rango1_max",
+        "dc:description": "Velocidad máxima permitida en el carril para el rango 1"
+      },
+      {
+        "name": "rango2_max",
+        "datatype": "numeric",
+        "title": "rango2_max",
+        "dc:description": "Velocidad máxima permitida en el carril para el rango 2"
+      },
+      {
+        "name": "rango3_max",
+        "datatype": "numeric",
+        "title": "rango3_max",
+        "dc:description": "Velocidad máxima permitida en el carril para el rango 3"
+      },
+      {
+        "name": "rango4_max",
+        "datatype": "numeric",
+        "title": "rango4_max",
+        "dc:description": "Velocidad máxima permitida en el carril para el rango 4"
+      },
+      {
+        "name": "rango5_max",
+        "datatype": "numeric",
+        "title": "rango5_max",
+        "dc:description": "Velocidad máxima permitida en el carril para el rango 5"
+      }
+    ]
+  }
+}

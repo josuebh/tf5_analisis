@@ -1,0 +1,15 @@
+estacion_id,sentido,carriles,nota,fuente
+85,ascendente,4,"4 carriles aforados (Lento, Medio-Lento, Medio-Rápido, Rápido)",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+85,descendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+93,ascendente,4,"4 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+93,descendente,4,"4 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+97,ascendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+97,descendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+99,ascendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+99,descendente,4,"4 carriles aforados (puede incluir un carril auxiliar de incorporación)",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+103,ascendente,2,"2 carriles aforados (Lento, Rápido)",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+103,descendente,2,"2 carriles aforados; la obra adjudicada añade el tercero en este sentido",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+111,ascendente,2,"2 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+111,descendente,2,"2 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+123,ascendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv
+123,descendente,3,"3 carriles aforados",https://datos.tenerife.es/ckan/dataset/079b37ef-674e-411f-8886-f4c5a53826ae/resource/88aa0ffd-3f31-48a6-b9dc-cac97db86982/download/rango-de-velocidades-de-los-carriles.csv

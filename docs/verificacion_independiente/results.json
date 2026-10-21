@@ -1,0 +1,870 @@
+{
+ "item1": {
+  "valid_station_direction_days": 5759,
+  "by_year": {
+   "2024": 768,
+   "2025": 2821,
+   "2026": 2170
+  },
+  "by_station_direction": {
+   "85-ascendente": 424,
+   "85-descendente": 432,
+   "93-ascendente": 451,
+   "93-descendente": 449,
+   "97-ascendente": 197,
+   "97-descendente": 184,
+   "99-ascendente": 453,
+   "99-descendente": 450,
+   "103-ascendente": 456,
+   "103-descendente": 453,
+   "111-ascendente": 455,
+   "111-descendente": 447,
+   "123-ascendente": 453,
+   "123-descendente": 455
+  },
+  "workdays_24h_complete_not_august_before_85pct_rule": 5898
+ },
+ "speed_reliability": {
+  "85-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.0891,
+   "velocidad_fiable": true
+  },
+  "85-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.337,
+   "velocidad_fiable": true
+  },
+  "93-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.3664,
+   "velocidad_fiable": true
+  },
+  "93-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.059,
+   "velocidad_fiable": true
+  },
+  "97-ascendente": {
+   "horas_con_velocidad": 0.2181,
+   "base_noche": 1.0,
+   "velocidad_fiable": false
+  },
+  "97-descendente": {
+   "horas_con_velocidad": 0.226,
+   "base_noche": 1.0,
+   "velocidad_fiable": false
+  },
+  "99-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.1782,
+   "velocidad_fiable": true
+  },
+  "99-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.1744,
+   "velocidad_fiable": true
+  },
+  "103-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.0607,
+   "velocidad_fiable": true
+  },
+  "103-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.0979,
+   "velocidad_fiable": true
+  },
+  "111-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.764,
+   "velocidad_fiable": false
+  },
+  "111-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.8125,
+   "velocidad_fiable": false
+  },
+  "123-ascendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.199,
+   "velocidad_fiable": true
+  },
+  "123-descendente": {
+   "horas_con_velocidad": 1.0,
+   "base_noche": 0.2808,
+   "velocidad_fiable": true
+  }
+ },
+ "item2": {
+  "103-descendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 2.8451327433628317,
+   "p25": 2.0,
+   "mediana": 3.0,
+   "p75": 3.0,
+   "dias_sin_congestion": 10
+  },
+  "99-ascendente": {
+   "dias": 224,
+   "dias_con_velocidad": 224,
+   "horas_media": 4.71875,
+   "p25": 3.0,
+   "mediana": 4.0,
+   "p75": 6.0,
+   "dias_sin_congestion": 0
+  },
+  "99-descendente": {
+   "dias": 223,
+   "dias_con_velocidad": 223,
+   "horas_media": 1.0044843049327354,
+   "p25": 0.0,
+   "mediana": 1.0,
+   "p75": 2.0,
+   "dias_sin_congestion": 69
+  },
+  "93-descendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 0.6592920353982301,
+   "p25": 0.0,
+   "mediana": 1.0,
+   "p75": 1.0,
+   "dias_sin_congestion": 106
+  },
+  "93-ascendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 2.185840707964602,
+   "p25": 1.0,
+   "mediana": 2.0,
+   "p75": 3.0,
+   "dias_sin_congestion": 39
+  },
+  "103-ascendente": {
+   "dias": 227,
+   "dias_con_velocidad": 227,
+   "horas_media": 0.43171806167400884,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 173
+  }
+ },
+ "item2_all_station_directions": {
+  "85-ascendente": {
+   "dias": 228,
+   "dias_con_velocidad": 228,
+   "horas_media": 0.043859649122807015,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 222
+  },
+  "85-descendente": {
+   "dias": 227,
+   "dias_con_velocidad": 227,
+   "horas_media": 0.01762114537444934,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 224
+  },
+  "93-ascendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 2.185840707964602,
+   "p25": 1.0,
+   "mediana": 2.0,
+   "p75": 3.0,
+   "dias_sin_congestion": 39
+  },
+  "93-descendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 0.6592920353982301,
+   "p25": 0.0,
+   "mediana": 1.0,
+   "p75": 1.0,
+   "dias_sin_congestion": 106
+  },
+  "97-ascendente": {
+   "dias": 54,
+   "dias_con_velocidad": 41,
+   "horas_media": 0.0,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 41
+  },
+  "97-descendente": {
+   "dias": 55,
+   "dias_con_velocidad": 41,
+   "horas_media": 0.0,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 41
+  },
+  "99-ascendente": {
+   "dias": 224,
+   "dias_con_velocidad": 224,
+   "horas_media": 4.71875,
+   "p25": 3.0,
+   "mediana": 4.0,
+   "p75": 6.0,
+   "dias_sin_congestion": 0
+  },
+  "99-descendente": {
+   "dias": 223,
+   "dias_con_velocidad": 223,
+   "horas_media": 1.0044843049327354,
+   "p25": 0.0,
+   "mediana": 1.0,
+   "p75": 2.0,
+   "dias_sin_congestion": 69
+  },
+  "103-ascendente": {
+   "dias": 227,
+   "dias_con_velocidad": 227,
+   "horas_media": 0.43171806167400884,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 173
+  },
+  "103-descendente": {
+   "dias": 226,
+   "dias_con_velocidad": 226,
+   "horas_media": 2.8451327433628317,
+   "p25": 2.0,
+   "mediana": 3.0,
+   "p75": 3.0,
+   "dias_sin_congestion": 10
+  },
+  "111-ascendente": {
+   "dias": 228,
+   "dias_con_velocidad": 228,
+   "horas_media": 0.0,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 228
+  },
+  "111-descendente": {
+   "dias": 222,
+   "dias_con_velocidad": 222,
+   "horas_media": 0.0,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 222
+  },
+  "123-ascendente": {
+   "dias": 227,
+   "dias_con_velocidad": 227,
+   "horas_media": 0.03524229074889868,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 222
+  },
+  "123-descendente": {
+   "dias": 228,
+   "dias_con_velocidad": 228,
+   "horas_media": 0.18859649122807018,
+   "p25": 0.0,
+   "mediana": 0.0,
+   "p75": 0.0,
+   "dias_sin_congestion": 204
+  }
+ },
+ "item3": {
+  "103-descendente-2025": {
+   "window": "morning 103 desc, hours 3-12",
+   "dias": 226,
+   "dias_con_cola": 215,
+   "horas_cola_mediana": 3.0,
+   "horas_cola_media": 2.743362831858407,
+   "inicio_mediana": 6.0,
+   "fin_mediana": 9.0,
+   "inicio_p10": 6.0,
+   "inicio_p25": 6.0,
+   "inicio_p75": 6.0,
+   "inicio_p90": 6.0,
+   "fin_p10": 8.0,
+   "fin_p25": 8.0,
+   "fin_p75": 9.0,
+   "fin_p90": 10.599999999999994,
+   "inicio_moda": 6.0,
+   "fin_moda": 9.0
+  },
+  "103-descendente-2026": {
+   "window": "morning 103 desc, hours 3-12",
+   "dias": 163,
+   "dias_con_cola": 153,
+   "horas_cola_mediana": 3.0,
+   "horas_cola_media": 2.638036809815951,
+   "inicio_mediana": 6.0,
+   "fin_mediana": 9.0,
+   "inicio_p10": 6.0,
+   "inicio_p25": 6.0,
+   "inicio_p75": 6.0,
+   "inicio_p90": 6.0,
+   "fin_p10": 8.0,
+   "fin_p25": 8.0,
+   "fin_p75": 9.0,
+   "fin_p90": 10.0,
+   "inicio_moda": 6.0,
+   "fin_moda": 9.0
+  },
+  "99-ascendente-2025": {
+   "window": "afternoon 99 asc, hours 11-23",
+   "dias": 224,
+   "dias_con_cola": 224,
+   "horas_cola_mediana": 4.0,
+   "horas_cola_media": 4.625,
+   "inicio_mediana": 13.0,
+   "fin_mediana": 18.0,
+   "inicio_p10": 13.0,
+   "inicio_p25": 13.0,
+   "inicio_p75": 14.0,
+   "inicio_p90": 14.0,
+   "fin_p10": 17.0,
+   "fin_p25": 17.0,
+   "fin_p75": 19.0,
+   "fin_p90": 21.0,
+   "inicio_moda": 13.0,
+   "fin_moda": 17.0
+  },
+  "99-ascendente-2026": {
+   "window": "afternoon 99 asc, hours 11-23",
+   "dias": 165,
+   "dias_con_cola": 160,
+   "horas_cola_mediana": 4.0,
+   "horas_cola_media": 4.581818181818182,
+   "inicio_mediana": 13.0,
+   "fin_mediana": 18.0,
+   "inicio_p10": 13.0,
+   "inicio_p25": 13.0,
+   "inicio_p75": 14.0,
+   "inicio_p90": 14.0,
+   "fin_p10": 17.0,
+   "fin_p25": 17.0,
+   "fin_p75": 20.0,
+   "fin_p90": 21.0,
+   "inicio_moda": 13.0,
+   "fin_moda": 17.0
+  }
+ },
+ "item4": {
+  "morning_103desc_own_congested_hours": {
+   "horas": 643,
+   "mediana": 3337.0,
+   "p10": 2833.0,
+   "p90": 3631.6000000000004,
+   "media": 3255.8491446345256,
+   "definition": "veh/h at 103 desc in its congested hours, 2025 (all hours)"
+  },
+  "afternoon_103asc_when_99asc_congested": {
+   "horas": 1046,
+   "mediana": 3553.5,
+   "p10": 3020.0,
+   "p90": 3742.0,
+   "media": 3432.6797323135756,
+   "definition": "veh/h at 103 asc in hours when 99 asc congested, 2025 (103-asc valid days only)"
+  },
+  "morning_windowed_3_12": {
+   "horas": 620,
+   "mediana": 3345.0,
+   "p10": 2853.8,
+   "p90": 3632.1,
+   "media": 3274.7854838709677,
+   "definition": "as morning, congested hours restricted to 3-12 (validacion_modelo)"
+  },
+  "afternoon_windowed_11_23": {
+   "horas": 1025,
+   "mediana": 3561.0,
+   "p10": 3061.0,
+   "p90": 3744.0,
+   "media": 3456.0770731707316,
+   "definition": "as afternoon, 99 asc congested hours restricted to 11-23 (validacion_modelo)"
+  },
+  "afternoon_99asc_congested_hours_2025_total": 1057
+ },
+ "item5": {
+  "93-descendente": {
+   "dias_antes": 121,
+   "dias_despues": 118,
+   "veh_7_9_antes": 9050.380165289256,
+   "veh_7_9_despues": 8983.78813559322,
+   "dif": -66.59202969603575,
+   "dias_por_mes_antes": {
+    "2024-10": 23,
+    "2024-11": 20,
+    "2025-02": 18,
+    "2025-03": 20,
+    "2025-04": 20,
+    "2025-05": 20
+   },
+   "dias_por_mes_despues": {
+    "2025-10": 23,
+    "2025-11": 19,
+    "2026-02": 18,
+    "2026-03": 20,
+    "2026-04": 19,
+    "2026-05": 19
+   },
+   "veh_7_9_julio_2025": 8051.347826086957,
+   "veh_7_9_julio_2026": 8522.304347826086,
+   "did_veh_julio_control": -537.5485514351649,
+   "dias_cola_antes": 121,
+   "dias_cola_despues": 118,
+   "cola_5_12_antes": 0.7768595041322314,
+   "cola_5_12_despues": 0.9661016949152542
+  },
+  "99-descendente": {
+   "dias_antes": 119,
+   "dias_despues": 121,
+   "veh_7_9_antes": 8672.302521008403,
+   "veh_7_9_despues": 8815.380165289256,
+   "dif": 143.07764428085284,
+   "dias_por_mes_antes": {
+    "2024-10": 23,
+    "2024-11": 20,
+    "2025-02": 19,
+    "2025-03": 20,
+    "2025-04": 19,
+    "2025-05": 18
+   },
+   "dias_por_mes_despues": {
+    "2025-10": 23,
+    "2025-11": 20,
+    "2026-02": 18,
+    "2026-03": 20,
+    "2026-04": 20,
+    "2026-05": 20
+   },
+   "veh_7_9_julio_2025": 8667.565217391304,
+   "veh_7_9_julio_2026": 8590.478260869566,
+   "did_veh_julio_control": 220.16460080259094,
+   "dias_cola_antes": 119,
+   "dias_cola_despues": 121,
+   "cola_5_12_antes": 1.1680672268907564,
+   "cola_5_12_despues": 1.0495867768595042
+  },
+  "103-descendente": {
+   "dias_antes": 121,
+   "dias_despues": 120,
+   "veh_7_9_antes": 6283.727272727273,
+   "veh_7_9_despues": 6193.9,
+   "dif": -89.82727272727334,
+   "dias_por_mes_antes": {
+    "2024-10": 23,
+    "2024-11": 20,
+    "2025-02": 18,
+    "2025-03": 20,
+    "2025-04": 20,
+    "2025-05": 20
+   },
+   "dias_por_mes_despues": {
+    "2025-10": 23,
+    "2025-11": 19,
+    "2026-02": 18,
+    "2026-03": 20,
+    "2026-04": 20,
+    "2026-05": 20
+   },
+   "veh_7_9_julio_2025": 6354.739130434783,
+   "veh_7_9_julio_2026": 6659.739130434783,
+   "did_veh_julio_control": -394.82727272727334,
+   "dias_cola_antes": 121,
+   "dias_cola_despues": 120,
+   "cola_5_12_antes": 2.925619834710744,
+   "cola_5_12_despues": 3.058333333333333
+  }
+ },
+ "item6": {
+  "2025-06": {
+   "dias_validos": 20,
+   "dias_con_velocidad": 20,
+   "cola_media": 1.05
+  },
+  "2025-07": {
+   "dias_validos": 23,
+   "dias_con_velocidad": 23,
+   "cola_media": 1.0
+  },
+  "2025-09": {
+   "dias_validos": 21,
+   "dias_con_velocidad": 21,
+   "cola_media": 0.9523809523809523
+  },
+  "2026-06": {
+   "dias_validos": 21,
+   "dias_con_velocidad": 21,
+   "cola_media": 0.6190476190476191,
+   "welch_p_vs_2025": 0.109523926677651
+  },
+  "2026-07": {
+   "dias_validos": 23,
+   "dias_con_velocidad": 23,
+   "cola_media": 0.0,
+   "welch_p_vs_2025": 1.563858866310043e-06
+  },
+  "2026-09": {
+   "dias_validos": 22,
+   "dias_con_velocidad": 22,
+   "cola_media": 0.36363636363636365,
+   "welch_p_vs_2025": 0.005859988450184206
+  }
+ },
+ "item6_supplementary_93_103_desc": {
+  "93": {
+   "2025-06": 0.5714285714285714,
+   "2025-07": 0.08695652173913043,
+   "2025-09": 0.22727272727272727,
+   "2026-06": 0.6190476190476191,
+   "2026-07": 0.0,
+   "2026-09": 0.09523809523809523
+  },
+  "103": {
+   "2025-06": 2.1904761904761907,
+   "2025-07": 1.826086956521739,
+   "2025-09": 2.590909090909091,
+   "2026-06": 2.6666666666666665,
+   "2026-07": 1.3043478260869565,
+   "2026-09": 2.4545454545454546
+  }
+ },
+ "item7": {
+  "103-descendente": {
+   "dias_2025": 165,
+   "dias_2026": 163,
+   "horas_cong_2025": 2.6545454545454548,
+   "horas_cong_2026": 2.8404907975460123,
+   "dif": 0.18594534300055754,
+   "welch_t": 1.2676111873418086,
+   "welch_df": 298.92743903145833,
+   "welch_p": 0.2059233566314734,
+   "ic95": [
+    -0.10272970337189707,
+    0.47462038937301215
+   ],
+   "con_vel": true
+  },
+  "99-ascendente": {
+   "dias_2025": 161,
+   "dias_2026": 165,
+   "horas_cong_2025": 4.658385093167702,
+   "horas_cong_2026": 4.672727272727273,
+   "dif": 0.014342179559570845,
+   "welch_t": 0.07332542675290087,
+   "welch_df": 322.23491050916465,
+   "welch_p": 0.9415926524782285,
+   "ic95": [
+    -0.3704647521960975,
+    0.39914911131523917
+   ],
+   "con_vel": true
+  }
+ },
+ "item8": {
+  "months": 24,
+  "hours_in_period": 17496,
+  "ascendente": {
+   "horas_con_datos": 8213,
+   "pct_ausente": 0.5305784179240969,
+   "horas_completas": 8213,
+   "pct_horas_completas": 0.46942158207590307,
+   "horas_velocidad": 2027,
+   "pct_horas_velocidad": 0.11585505258344765,
+   "dias_validos": 197,
+   "pct_horas_velocidad_sobre_completas": 0.24680384755874832,
+   "monthly_pct_completas": {
+    "2024-09": 0.0,
+    "2024-10": 0.0,
+    "2024-11": 0.0,
+    "2025-01": 0.0,
+    "2025-02": 0.0,
+    "2025-03": 0.0,
+    "2025-04": 0.5903,
+    "2025-05": 0.4946,
+    "2025-06": 0.5375,
+    "2025-07": 0.1411,
+    "2025-08": 0.5228,
+    "2025-09": 0.525,
+    "2025-10": 0.164,
+    "2025-11": 0.5056,
+    "2025-12": 0.2204,
+    "2026-01": 0.3011,
+    "2026-02": 0.747,
+    "2026-03": 0.8374,
+    "2026-04": 0.8806,
+    "2026-05": 0.9731,
+    "2026-06": 0.9806,
+    "2026-07": 0.9812,
+    "2026-08": 0.8871,
+    "2026-09": 0.9833
+   },
+   "monthly_pct_velocidad": {
+    "2024-09": 0.0,
+    "2024-10": 0.0,
+    "2024-11": 0.0,
+    "2025-01": 0.0,
+    "2025-02": 0.0,
+    "2025-03": 0.0,
+    "2025-04": 0.5903,
+    "2025-05": 0.4946,
+    "2025-06": 0.5375,
+    "2025-07": 0.1411,
+    "2025-08": 0.5228,
+    "2025-09": 0.3819,
+    "2025-10": 0.0013,
+    "2025-11": 0.0069,
+    "2025-12": 0.0013,
+    "2026-01": 0.004,
+    "2026-02": 0.0089,
+    "2026-03": 0.0067,
+    "2026-04": 0.0097,
+    "2026-05": 0.0148,
+    "2026-06": 0.0125,
+    "2026-07": 0.0121,
+    "2026-08": 0.0134,
+    "2026-09": 0.0153
+   }
+  },
+  "descendente": {
+   "horas_con_datos": 8606,
+   "pct_ausente": 0.5081161408321901,
+   "horas_completas": 8213,
+   "pct_horas_completas": 0.46942158207590307,
+   "horas_velocidad": 1969,
+   "pct_horas_velocidad": 0.11254000914494741,
+   "dias_validos": 184,
+   "pct_horas_velocidad_sobre_completas": 0.2397418726409351,
+   "monthly_pct_completas": {
+    "2024-09": 0.0,
+    "2024-10": 0.0,
+    "2024-11": 0.0,
+    "2025-01": 0.0,
+    "2025-02": 0.0,
+    "2025-03": 0.0,
+    "2025-04": 0.5903,
+    "2025-05": 0.4946,
+    "2025-06": 0.5375,
+    "2025-07": 0.1411,
+    "2025-08": 0.5228,
+    "2025-09": 0.525,
+    "2025-10": 0.164,
+    "2025-11": 0.5056,
+    "2025-12": 0.2204,
+    "2026-01": 0.3011,
+    "2026-02": 0.747,
+    "2026-03": 0.8374,
+    "2026-04": 0.8806,
+    "2026-05": 0.9731,
+    "2026-06": 0.9806,
+    "2026-07": 0.9812,
+    "2026-08": 0.8871,
+    "2026-09": 0.9833
+   },
+   "monthly_pct_velocidad": {
+    "2024-09": 0.0,
+    "2024-10": 0.0,
+    "2024-11": 0.0,
+    "2025-01": 0.0,
+    "2025-02": 0.0,
+    "2025-03": 0.0,
+    "2025-04": 0.5903,
+    "2025-05": 0.4946,
+    "2025-06": 0.5375,
+    "2025-07": 0.1411,
+    "2025-08": 0.5228,
+    "2025-09": 0.3792,
+    "2025-10": 0.0,
+    "2025-11": 0.0028,
+    "2025-12": 0.0,
+    "2026-01": 0.0,
+    "2026-02": 0.0,
+    "2026-03": 0.0013,
+    "2026-04": 0.0014,
+    "2026-05": 0.0081,
+    "2026-06": 0.0056,
+    "2026-07": 0.0054,
+    "2026-08": 0.0027,
+    "2026-09": 0.0028
+   }
+  }
+ },
+ "item8_supplementary_all_corridor": {
+  "85-ascendente": {
+   "pct_completas": 0.9532,
+   "pct_velocidad": 0.9532
+  },
+  "85-descendente": {
+   "pct_completas": 0.9532,
+   "pct_velocidad": 0.9532
+  },
+  "93-ascendente": {
+   "pct_completas": 0.9959,
+   "pct_velocidad": 0.9959
+  },
+  "93-descendente": {
+   "pct_completas": 0.9958,
+   "pct_velocidad": 0.9958
+  },
+  "97-ascendente": {
+   "pct_completas": 0.4694,
+   "pct_velocidad": 0.1159
+  },
+  "97-descendente": {
+   "pct_completas": 0.4694,
+   "pct_velocidad": 0.1125
+  },
+  "99-ascendente": {
+   "pct_completas": 0.9932,
+   "pct_velocidad": 0.9932
+  },
+  "99-descendente": {
+   "pct_completas": 0.9928,
+   "pct_velocidad": 0.9928
+  },
+  "103-ascendente": {
+   "pct_completas": 0.9944,
+   "pct_velocidad": 0.9944
+  },
+  "103-descendente": {
+   "pct_completas": 0.9959,
+   "pct_velocidad": 0.9959
+  },
+  "111-ascendente": {
+   "pct_completas": 0.9971,
+   "pct_velocidad": 0.9971
+  },
+  "111-descendente": {
+   "pct_completas": 0.9944,
+   "pct_velocidad": 0.9944
+  },
+  "123-ascendente": {
+   "pct_completas": 0.9971,
+   "pct_velocidad": 0.9971
+  },
+  "123-descendente": {
+   "pct_completas": 0.9971,
+   "pct_velocidad": 0.9971
+  }
+ },
+ "item9": {
+  "top_station_2025": [
+   {
+    "estacion_id": 97,
+    "estacion_nombre": "PADRE ANCHIETA",
+    "imd_total": 117791
+   }
+  ],
+  "st103_2025": {
+   "imd_ascendentes": 44563,
+   "imd_descendentes": 45347,
+   "carriles_asc": 2,
+   "carriles_desc": 2,
+   "veh_por_carril_asc": 22281.5,
+   "veh_por_carril_desc": 22673.5
+  },
+  "official_csv_103_2025": {
+   "imd_ascendentes": "44563",
+   "imd_descendentes": "45347",
+   "imd_total": "89910"
+  },
+  "official_csv_top_tf5_2025": {
+   "estacion_id": "97",
+   "estacion_nombre": "PADRE ANCHIETA",
+   "imd_total": "117791"
+  }
+ },
+ "item10": {
+  "first_year": 2021,
+  "last_year": 2025,
+  "pop_first": 930570.0,
+  "pop_last": 966469.0,
+  "cagr": 0.009507896070023003
+ },
+ "diagnostics": {
+  "files": 24,
+  "months": [
+   "2024-09",
+   "2024-10",
+   "2024-11",
+   "2025-01",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10",
+   "2025-11",
+   "2025-12",
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09"
+  ],
+  "rows_total": 942041,
+  "rows_corridor": 671648,
+  "na_values": 0,
+  "corridor_key_duplicates": 78,
+  "corridor_duplicate_days": [
+   "2025-03-30",
+   "2026-03-29"
+  ],
+  "days_not_24_distinct_hours": {
+   "2025-03-30": 23,
+   "2026-01-27": 1,
+   "2026-03-29": 23
+  },
+  "uncatalogued_corridor_lane_rows": 0,
+  "negative_range_rows_by_station": {
+   "85": 0,
+   "93": 0,
+   "97": 33561,
+   "99": 0,
+   "103": 0,
+   "111": 0,
+   "123": 0
+  },
+  "lanes_json_vs_csv_mismatches": [],
+  "speed_threshold_kmh_corridor": [
+   80
+  ],
+  "working_holidays_in_data": [
+   "2024-11-01",
+   "2025-01-01",
+   "2025-01-06",
+   "2025-02-03",
+   "2025-04-17",
+   "2025-04-18",
+   "2025-05-01",
+   "2025-05-30",
+   "2025-08-15",
+   "2025-12-08",
+   "2025-12-25",
+   "2026-01-01",
+   "2026-01-06",
+   "2026-02-02",
+   "2026-04-02",
+   "2026-04-03",
+   "2026-05-01"
+  ],
+  "rows_veh_gt_2600": 245,
+  "rows_rsum_ne_veh": 43326
+ }
+}

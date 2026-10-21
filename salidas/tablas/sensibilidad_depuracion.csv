@@ -1,0 +1,13 @@
+variante,estacion_id,etiqueta,sentido,dias,horas_cola_mediana,horas_cola_media,inicio_mediana,fin_mediana,descarga_mediana,tasa_imputacion
+"Principal (día completo, >= 85 % de la mediana del mes, sin agosto)",103,Ermita Cruz Chica,descendente,226,3,2.743362831858407,6,9,3345,0
+"Principal (día completo, >= 85 % de la mediana del mes, sin agosto)",99,Bomberos La Laguna,ascendente,224,4,4.625,13,18,3561,0
+Sin filtro del tráfico diario,103,Ermita Cruz Chica,descendente,231,3,2.7186147186147185,6,9,3344,0
+Sin filtro del tráfico diario,99,Bomberos La Laguna,ascendente,230,4,4.530434782608696,13,18,3557,0
+Filtro del tráfico diario estricto (>= 95 %),103,Ermita Cruz Chica,descendente,219,3,2.7442922374429224,6,9,3359,0
+Filtro del tráfico diario estricto (>= 95 %),99,Bomberos La Laguna,ascendente,215,4,4.632558139534884,13,18,3576,0
+Con agosto,103,Ermita Cruz Chica,descendente,246,3,2.5284552845528454,6,9,3345,0
+Con agosto,99,Bomberos La Laguna,ascendente,243,4,4.567901234567901,13,18,3557,0
+"Imputando horas a las que les falta un carril: método A, proporcional",103,Ermita Cruz Chica,descendente,226,3,2.743362831858407,6,9,3345,0
+"Imputando horas a las que les falta un carril: método A, proporcional",99,Bomberos La Laguna,ascendente,224,4,4.625,13,18,3561,0
+"Imputando horas a las que les falta un carril: método B, mediana de la misma hora y mes",103,Ermita Cruz Chica,descendente,226,3,2.743362831858407,6,9,3345,0
+"Imputando horas a las que les falta un carril: método B, mediana de la misma hora y mes",99,Bomberos La Laguna,ascendente,224,4,4.625,13,18,3561,0

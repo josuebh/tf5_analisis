@@ -1,0 +1,76 @@
+etiqueta,sentido,motivo,dias,tratamiento
+Bomberos La Laguna,ascendente,Agosto (vacaciones; fuera del análisis por diseño),39,excluido
+Bomberos La Laguna,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",8,excluido
+Bomberos La Laguna,ascendente,Día incompleto: faltan horas o algún carril (avería o corte del aforador),2,excluido
+Bomberos La Laguna,ascendente,punta anómala (posible incidente u obra),30,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,ascendente,Navidad,8,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,ascendente,puente,4,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,descendente,Agosto (vacaciones; fuera del análisis por diseño),39,excluido
+Bomberos La Laguna,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",11,excluido
+Bomberos La Laguna,descendente,Navidad,7,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Bomberos La Laguna,descendente,puente,4,usado y marcado (se prueba sin ellos)
+Campus Guajara,ascendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Campus Guajara,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",11,excluido
+Campus Guajara,ascendente,Navidad,8,usado y marcado (se prueba sin ellos)
+Campus Guajara,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Campus Guajara,ascendente,puente,3,usado y marcado (se prueba sin ellos)
+Campus Guajara,descendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Campus Guajara,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",13,excluido
+Campus Guajara,descendente,Navidad,6,usado y marcado (se prueba sin ellos)
+Campus Guajara,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Campus Guajara,descendente,puente,3,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,ascendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Ermita Cruz Chica,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",6,excluido
+Ermita Cruz Chica,ascendente,Navidad,7,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,ascendente,puente,4,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,descendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Ermita Cruz Chica,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",9,excluido
+Ermita Cruz Chica,descendente,punta anómala (posible incidente u obra),27,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,descendente,Navidad,7,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Ermita Cruz Chica,descendente,puente,4,usado y marcado (se prueba sin ellos)
+Hospital Residencia,ascendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Hospital Residencia,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",16,excluido
+Hospital Residencia,ascendente,Navidad,7,usado y marcado (se prueba sin ellos)
+Hospital Residencia,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Hospital Residencia,ascendente,puente,3,usado y marcado (se prueba sin ellos)
+Hospital Residencia,descendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+Hospital Residencia,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",8,excluido
+Hospital Residencia,descendente,Navidad,7,usado y marcado (se prueba sin ellos)
+Hospital Residencia,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+Hospital Residencia,descendente,puente,3,usado y marcado (se prueba sin ellos)
+La Matanza,ascendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+La Matanza,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",7,excluido
+La Matanza,ascendente,Navidad,6,usado y marcado (se prueba sin ellos)
+La Matanza,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+La Matanza,ascendente,puente,3,usado y marcado (se prueba sin ellos)
+La Matanza,descendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+La Matanza,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",15,excluido
+La Matanza,descendente,Navidad,6,usado y marcado (se prueba sin ellos)
+La Matanza,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+La Matanza,descendente,puente,3,usado y marcado (se prueba sin ellos)
+La Orotava,ascendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+La Orotava,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",9,excluido
+La Orotava,ascendente,Navidad,7,usado y marcado (se prueba sin ellos)
+La Orotava,ascendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+La Orotava,ascendente,puente,4,usado y marcado (se prueba sin ellos)
+La Orotava,descendente,Agosto (vacaciones; fuera del análisis por diseño),40,excluido
+La Orotava,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",7,excluido
+La Orotava,descendente,Navidad,7,usado y marcado (se prueba sin ellos)
+La Orotava,descendente,Semana Santa,6,usado y marcado (se prueba sin ellos)
+La Orotava,descendente,puente,4,usado y marcado (se prueba sin ellos)
+Padre Anchieta,ascendente,Día incompleto: faltan horas o algún carril (avería o corte del aforador),80,excluido
+Padre Anchieta,ascendente,Agosto (vacaciones; fuera del análisis por diseño),28,excluido
+Padre Anchieta,ascendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",3,excluido
+Padre Anchieta,ascendente,Semana Santa,5,usado y marcado (se prueba sin ellos)
+Padre Anchieta,ascendente,Navidad,1,usado y marcado (se prueba sin ellos)
+Padre Anchieta,ascendente,puente,1,usado y marcado (se prueba sin ellos)
+Padre Anchieta,descendente,Día incompleto: faltan horas o algún carril (avería o corte del aforador),275,excluido
+Padre Anchieta,descendente,Agosto (vacaciones; fuera del análisis por diseño),28,excluido
+Padre Anchieta,descendente,"Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador)",16,excluido
+Padre Anchieta,descendente,Semana Santa,5,usado y marcado (se prueba sin ellos)
+Padre Anchieta,descendente,Navidad,1,usado y marcado (se prueba sin ellos)
+Padre Anchieta,descendente,puente,1,usado y marcado (se prueba sin ellos)

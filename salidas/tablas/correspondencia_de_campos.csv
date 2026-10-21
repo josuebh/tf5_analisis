@@ -1,0 +1,32 @@
+fuente,campo_original,definicion_oficial,campo_en_el_proyecto
+Intensidad diaria de tráfico (TXT horarios por carril),estacion_id,Identificador de la estación de aforo. Se utiliza para consultar datos de la estación en el conjunto Estaciones de aforo por tramos de la red de carreteras de Tenerife,estacion_id
+Intensidad diaria de tráfico (TXT horarios por carril),estacion_nombre,Nombre de la estación de aforo,no se guarda (nombre de ESTACIONES_TF5)
+Intensidad diaria de tráfico (TXT horarios por carril),carril_id,"Carril de la carretera donde se obtiene la medición. Se indican con valores positivos los carriles con sentido creciente según los puntos kilométricos y con valores negativos los decrecientes, comenzando la numeración por el carril derecho en ambos casos. Valores:1,2,3...-1.-2,-3...","carril_id; sentido = ascendente (hacia el Norte) si > 0, descendente (hacia Santa Cruz) si < 0"
+Intensidad diaria de tráfico (TXT horarios por carril),carril_descripcion,Descripción del carril en cuestión,no se guarda (tipo de carril del catálogo de carriles)
+Intensidad diaria de tráfico (TXT horarios por carril),fecha,Fecha y hora de la medición del aforo de vehículos para la carretera y carril indicados,"dia, hora (hora de inicio del registro), mes, anio"
+Intensidad diaria de tráfico (TXT horarios por carril),ligeros,Número de vehículos ligeros (menores de 6 metros) contabilizados en el aforo de tráfico,veh = ligeros + pesados
+Intensidad diaria de tráfico (TXT horarios por carril),pesados,Número de vehículos pesados (mayores de 6 metros) contabilizados en el aforo de tráfico,pesados (y veh)
+Intensidad diaria de tráfico (TXT horarios por carril),rango1_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 1,"lento (vehículos a menos de 80 km/h, rango 1) y rsum"
+Intensidad diaria de tráfico (TXT horarios por carril),rango2_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 2,rsum
+Intensidad diaria de tráfico (TXT horarios por carril),rango3_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 3,rsum
+Intensidad diaria de tráfico (TXT horarios por carril),rango4_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 4,rsum
+Intensidad diaria de tráfico (TXT horarios por carril),rango5_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 5,rsum
+Intensidad diaria de tráfico (TXT horarios por carril),rango6_vehiculos,Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 6,rsum
+"Intensidad media diaria (IMD, CSV anual)",carretera_codigo,Código de la carretera,filtro: TF-5
+"Intensidad media diaria (IMD, CSV anual)",tramo_nombre,Nombre del tramo de la carretera,tramo (descriptivo)
+"Intensidad media diaria (IMD, CSV anual)",estacion_id,Identificador de la estación de aforo,estacion_id
+"Intensidad media diaria (IMD, CSV anual)",estacion_nombre,Nombre de la estación de aforo,etiqueta (ESTACIONES_TF5)
+"Intensidad media diaria (IMD, CSV anual)",velocidad_media,Velocidad media de los vehículos registrada en la estación de aforo,velocidad_media
+"Intensidad media diaria (IMD, CSV anual)",imd_ascendentes,Intensidad media diaria de tráfico de vehículos en carriles ascendentes en el tramo de la carretera,imd_ascendentes (hacia el Norte)
+"Intensidad media diaria (IMD, CSV anual)",imd_descendentes,Intensidad media diaria de tráfico de vehículos en carriles descendentes en el tramo de la carretera,imd_descendentes (hacia Santa Cruz)
+"Intensidad media diaria (IMD, CSV anual)",imd_total,intensidad media diaria de tráfico de vehículos total en el tramo de la carretera,imd_total
+"Intensidad media diaria (IMD, CSV anual)",imd_pesados,Intensidad media diaria de tráfico de vehículos pesados en el tramo de la carretera,imd_pesados
+Rangos de velocidades de los carriles (JSON),estacion_id,Identificador de la estación de aforo. Se utiliza para consultar datos de la estación en el conjunto Estaciones de aforo por tramos de la red de carreteras de Tenerife,estacion_id
+Rangos de velocidades de los carriles (JSON),estacion_nombre,Nombre de la estación de aforo.,no se usa
+Rangos de velocidades de los carriles (JSON),carril_id,"Carril de la carretera donde se obtiene la medición. Se indican con valores positivos los carriles con sentido creciente según los puntos kilométricos y con valores negativos los decrecientes, comenzando la numeración por el carril derecho en ambos casos. Valores:1,2,3...-1.-2,-3... ",carril_id
+Rangos de velocidades de los carriles (JSON),carril_descripcion,Descripción del carril. Incluye referencia al nombre de la carretera,"tipo (principal, enlace, bus...) y carriles por sentido"
+Rangos de velocidades de los carriles (JSON),rango1_max,Velocidad máxima permitida en el carril para el rango 1,rango1_max (límite del rango 1: 80 km/h en la TF-5)
+Rangos de velocidades de los carriles (JSON),rango2_max,Velocidad máxima permitida en el carril para el rango 2,no se usa
+Rangos de velocidades de los carriles (JSON),rango3_max,Velocidad máxima permitida en el carril para el rango 3,no se usa
+Rangos de velocidades de los carriles (JSON),rango4_max,Velocidad máxima permitida en el carril para el rango 4,no se usa
+Rangos de velocidades de los carriles (JSON),rango5_max,Velocidad máxima permitida en el carril para el rango 5,no se usa

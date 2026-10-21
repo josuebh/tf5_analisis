@@ -1,0 +1,15 @@
+estacion_id,estacion,orden,sentido,carriles,imd_sentido,imd_por_carril,k_crit_min,k_crit_central,k_crit_max
+85,Hospital Residencia,3,ascendente,4,51871,12967.75,0.142662,0.150373,0.16194
+93,Campus Guajara,4,ascendente,4,58109,14527.25,0.127347,0.13423,0.144556
+97,Padre Anchieta,5,ascendente,3,59286,19762,0.093614,0.098674,0.106265
+99,Bomberos La Laguna,6,ascendente,3,51486,17162,0.107796,0.113623,0.122363
+103,Ermita Cruz Chica,7,ascendente,2,44563,22281.5,0.083029,0.087517,0.094249
+111,La Matanza,8,ascendente,2,38791,19395.5,0.095383,0.100539,0.108273
+123,La Orotava,9,ascendente,3,33673,11224.333333,0.16482,0.17373,0.187094
+85,Hospital Residencia,3,descendente,3,51049,17016.333333,0.108719,0.114596,0.123411
+93,Campus Guajara,4,descendente,4,47121,11780.25,0.157043,0.165531,0.178264
+97,Padre Anchieta,5,descendente,3,58505,19501.666667,0.094864,0.099991,0.107683
+99,Bomberos La Laguna,6,descendente,4,57742,14435.5,0.128156,0.135084,0.145475
+103,Ermita Cruz Chica,7,descendente,2,45347,22673.5,0.081593,0.086003,0.092619
+111,La Matanza,8,descendente,2,36432,18216,0.101559,0.107049,0.115283
+123,La Orotava,9,descendente,3,36353,12117.666667,0.15267,0.160922,0.173301

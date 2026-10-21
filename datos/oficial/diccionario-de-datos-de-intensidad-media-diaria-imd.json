@@ -1,0 +1,64 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "@type": "Table",
+  "dc:description": "Diccionario de datos",
+  "dc:creator": "Servicio Técnico de Carreteras y Movilidad",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "carretera_codigo",
+        "datatype": "text",
+        "title": "",
+        "dc:description": "Código de la carretera"
+      },
+      {
+        "name": "tramo_nombre",
+        "datatype": "text",
+        "title": "",
+        "dc:description": "Nombre del tramo de la carretera"
+      },
+      {
+        "name": "estacion_id",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "Identificador de la estación de aforo"
+      },
+      {
+        "name": "estacion_nombre",
+        "datatype": "text",
+        "title": "",
+        "dc:description": "Nombre de la estación de aforo"
+      },
+      {
+        "name": "velocidad_media",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "Velocidad media de los vehículos registrada en la estación de aforo"
+      },
+      {
+        "name": "imd_ascendentes",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "Intensidad media diaria de tráfico de vehículos en carriles ascendentes en el tramo de la carretera"
+      },
+      {
+        "name": "imd_descendentes",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "Intensidad media diaria de tráfico de vehículos en carriles descendentes en el tramo de la carretera"
+      },
+      {
+        "name": "imd_total",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "intensidad media diaria de tráfico de vehículos total en el tramo de la carretera"
+      },
+      {
+        "name": "imd_pesados",
+        "datatype": "numeric",
+        "title": "",
+        "dc:description": "Intensidad media diaria de tráfico de vehículos pesados en el tramo de la carretera"
+      }
+    ]
+  }
+}

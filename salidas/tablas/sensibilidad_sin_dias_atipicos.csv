@@ -1,0 +1,9 @@
+variante,estacion_id,etiqueta,sentido,dias,horas_cola_media,horas_cola_mediana,inicio_mediana,fin_mediana,descarga_mediana
+Todos los días válidos (principal),103,Ermita Cruz Chica,descendente,226,2.743362831858407,3,6,9,3345
+Todos los días válidos (principal),99,Bomberos La Laguna,ascendente,224,4.625,4,13,18,3561
+"Sin puentes, Navidad ni Semana Santa",103,Ermita Cruz Chica,descendente,217,2.769585253456221,3,6,9,3358
+"Sin puentes, Navidad ni Semana Santa",99,Bomberos La Laguna,ascendente,214,4.635514018691588,4,13,18,3566
+Sin días con la punta anómala,103,Ermita Cruz Chica,descendente,215,2.730232558139535,3,6,9,3364
+Sin días con la punta anómala,99,Bomberos La Laguna,ascendente,205,4.590243902439024,4,13,18,3574
+Sin ningún día marcado,103,Ermita Cruz Chica,descendente,207,2.748792270531401,3,6,9,3367
+Sin ningún día marcado,99,Bomberos La Laguna,ascendente,196,4.596938775510204,4,13,18,3578

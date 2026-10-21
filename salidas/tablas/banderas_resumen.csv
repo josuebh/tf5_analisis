@@ -1,0 +1,166 @@
+estacion_id,etiqueta,sentido,bandera,descripcion,horas_totales,horas_marcadas,parte
+,Corredor (todas las estaciones),todos,no_laborable,Fin de semana o festivo autonómico o insular,224457,67975,0.3028419697313962
+,Corredor (todas las estaciones),todos,incompleta,Hora a la que le falta algún carril,224457,523,0.002330067674432074
+,Corredor (todas las estaciones),todos,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),224457,12823,0.05712898238860895
+,Corredor (todas las estaciones),todos,duplicado,Registro duplicado en el fichero oficial,224457,26,1.1583510427386983e-4
+,Corredor (todas las estaciones),todos,negativos,Algún rango de velocidad negativo,224457,12429,0.055373635039228
+,Corredor (todas las estaciones),todos,caudal_implausible,Más vehículos por carril que el máximo físico,224457,0,0
+,Corredor (todas las estaciones),todos,agosto,Mes de agosto (fuera del análisis),224457,19435,0.0865867404447177
+,Corredor (todas las estaciones),todos,cambio_de_hora,Día de cambio de hora,224457,1162,0.005176938121778336
+,Corredor (todas las estaciones),todos,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",224457,86241,0.384220585680108
+,Corredor (todas las estaciones),todos,no_usada,Hora no usada en el análisis (resultado de todas las reglas),224457,86241,0.384220585680108
+,Corredor (todas las estaciones),todos,imputada,Hora imputada,224457,0,0
+85,Hospital Residencia,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,16678,5158,0.3092696966063077
+85,Hospital Residencia,ascendente,incompleta,Hora a la que le falta algún carril,16678,0,0
+85,Hospital Residencia,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),16678,0,0
+85,Hospital Residencia,ascendente,duplicado,Registro duplicado en el fichero oficial,16678,2,1.199184554502938e-4
+85,Hospital Residencia,ascendente,negativos,Algún rango de velocidad negativo,16678,0,0
+85,Hospital Residencia,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,16678,0,0
+85,Hospital Residencia,ascendente,agosto,Mes de agosto (fuera del análisis),16678,1416,0.08490226645880801
+85,Hospital Residencia,ascendente,cambio_de_hora,Día de cambio de hora,16678,94,0.005636167406163808
+85,Hospital Residencia,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",16678,6502,0.38985489866890516
+85,Hospital Residencia,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),16678,6502,0.38985489866890516
+85,Hospital Residencia,ascendente,imputada,Hora imputada,16678,0,0
+93,Campus Guajara,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,17424,5376,0.3085399449035813
+93,Campus Guajara,ascendente,incompleta,Hora a la que le falta algún carril,17424,0,0
+93,Campus Guajara,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17424,0,0
+93,Campus Guajara,ascendente,duplicado,Registro duplicado en el fichero oficial,17424,2,1.147842056932966e-4
+93,Campus Guajara,ascendente,negativos,Algún rango de velocidad negativo,17424,0,0
+93,Campus Guajara,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,17424,0,0
+93,Campus Guajara,ascendente,agosto,Mes de agosto (fuera del análisis),17424,1442,0.08275941230486684
+93,Campus Guajara,ascendente,cambio_de_hora,Día de cambio de hora,17424,94,0.00539485766758494
+93,Campus Guajara,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17424,6600,0.3787878787878788
+93,Campus Guajara,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17424,6600,0.3787878787878788
+93,Campus Guajara,ascendente,imputada,Hora imputada,17424,0,0
+97,Padre Anchieta,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,8213,1821,0.22172166078168756
+97,Padre Anchieta,ascendente,incompleta,Hora a la que le falta algún carril,8213,0,0
+97,Padre Anchieta,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),8213,6186,0.7531961524412517
+97,Padre Anchieta,ascendente,duplicado,Registro duplicado en el fichero oficial,8213,1,1.2175818823815901e-4
+97,Padre Anchieta,ascendente,negativos,Algún rango de velocidad negativo,8213,6185,0.7530743942530135
+97,Padre Anchieta,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,8213,0,0
+97,Padre Anchieta,ascendente,agosto,Mes de agosto (fuera del análisis),8213,1049,0.12772433946182882
+97,Padre Anchieta,ascendente,cambio_de_hora,Día de cambio de hora,8213,15,0.0018263728235723851
+97,Padre Anchieta,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",8213,3485,0.42432728600998415
+97,Padre Anchieta,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),8213,3485,0.42432728600998415
+97,Padre Anchieta,ascendente,imputada,Hora imputada,8213,0,0
+99,Bomberos La Laguna,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,17425,5377,0.30857962697274033
+99,Bomberos La Laguna,ascendente,incompleta,Hora a la que le falta algún carril,17425,48,0.0027546628407460545
+99,Bomberos La Laguna,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17425,0,0
+99,Bomberos La Laguna,ascendente,duplicado,Registro duplicado en el fichero oficial,17425,2,1.1477761836441894e-4
+99,Bomberos La Laguna,ascendente,negativos,Algún rango de velocidad negativo,17425,0,0
+99,Bomberos La Laguna,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,17425,0,0
+99,Bomberos La Laguna,ascendente,agosto,Mes de agosto (fuera del análisis),17425,1443,0.08281205164992826
+99,Bomberos La Laguna,ascendente,cambio_de_hora,Día de cambio de hora,17425,94,0.0053945480631276905
+99,Bomberos La Laguna,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17425,6553,0.3760688665710187
+99,Bomberos La Laguna,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17425,6553,0.3760688665710187
+99,Bomberos La Laguna,ascendente,imputada,Hora imputada,17425,0,0
+103,Ermita Cruz Chica,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,17424,5376,0.3085399449035813
+103,Ermita Cruz Chica,ascendente,incompleta,Hora a la que le falta algún carril,17424,26,0.0014921946740128558
+103,Ermita Cruz Chica,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17424,0,0
+103,Ermita Cruz Chica,ascendente,duplicado,Registro duplicado en el fichero oficial,17424,2,1.147842056932966e-4
+103,Ermita Cruz Chica,ascendente,negativos,Algún rango de velocidad negativo,17424,0,0
+103,Ermita Cruz Chica,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,17424,0,0
+103,Ermita Cruz Chica,ascendente,agosto,Mes de agosto (fuera del análisis),17424,1442,0.08275941230486684
+103,Ermita Cruz Chica,ascendente,cambio_de_hora,Día de cambio de hora,17424,94,0.00539485766758494
+103,Ermita Cruz Chica,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17424,6480,0.371900826446281
+103,Ermita Cruz Chica,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17424,6480,0.371900826446281
+103,Ermita Cruz Chica,ascendente,imputada,Hora imputada,17424,0,0
+111,La Matanza,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,17446,5398,0.309411899575834
+111,La Matanza,ascendente,incompleta,Hora a la que le falta algún carril,17446,0,0
+111,La Matanza,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17446,0,0
+111,La Matanza,ascendente,duplicado,Registro duplicado en el fichero oficial,17446,2,1.1463945890175398e-4
+111,La Matanza,ascendente,negativos,Algún rango de velocidad negativo,17446,0,0
+111,La Matanza,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,17446,0,0
+111,La Matanza,ascendente,agosto,Mes de agosto (fuera del análisis),17446,1464,0.08391608391608392
+111,La Matanza,ascendente,cambio_de_hora,Día de cambio de hora,17446,94,0.005388054568382437
+111,La Matanza,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17446,6526,0.3740685543964232
+111,La Matanza,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17446,6526,0.3740685543964232
+111,La Matanza,ascendente,imputada,Hora imputada,17446,0,0
+123,La Orotava,ascendente,no_laborable,Fin de semana o festivo autonómico o insular,17446,5398,0.309411899575834
+123,La Orotava,ascendente,incompleta,Hora a la que le falta algún carril,17446,0,0
+123,La Orotava,ascendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17446,0,0
+123,La Orotava,ascendente,duplicado,Registro duplicado en el fichero oficial,17446,2,1.1463945890175398e-4
+123,La Orotava,ascendente,negativos,Algún rango de velocidad negativo,17446,0,0
+123,La Orotava,ascendente,caudal_implausible,Más vehículos por carril que el máximo físico,17446,0,0
+123,La Orotava,ascendente,agosto,Mes de agosto (fuera del análisis),17446,1464,0.08391608391608392
+123,La Orotava,ascendente,cambio_de_hora,Día de cambio de hora,17446,94,0.005388054568382437
+123,La Orotava,ascendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17446,6574,0.37681990141006533
+123,La Orotava,ascendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17446,6574,0.37681990141006533
+123,La Orotava,ascendente,imputada,Hora imputada,17446,0,0
+85,Hospital Residencia,descendente,no_laborable,Fin de semana o festivo autonómico o insular,16678,5158,0.3092696966063077
+85,Hospital Residencia,descendente,incompleta,Hora a la que le falta algún carril,16678,0,0
+85,Hospital Residencia,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),16678,0,0
+85,Hospital Residencia,descendente,duplicado,Registro duplicado en el fichero oficial,16678,2,1.199184554502938e-4
+85,Hospital Residencia,descendente,negativos,Algún rango de velocidad negativo,16678,0,0
+85,Hospital Residencia,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,16678,0,0
+85,Hospital Residencia,descendente,agosto,Mes de agosto (fuera del análisis),16678,1416,0.08490226645880801
+85,Hospital Residencia,descendente,cambio_de_hora,Día de cambio de hora,16678,94,0.005636167406163808
+85,Hospital Residencia,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",16678,6310,0.37834272694567694
+85,Hospital Residencia,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),16678,6310,0.37834272694567694
+85,Hospital Residencia,descendente,imputada,Hora imputada,16678,0,0
+93,Campus Guajara,descendente,no_laborable,Fin de semana o festivo autonómico o insular,17424,5376,0.3085399449035813
+93,Campus Guajara,descendente,incompleta,Hora a la que le falta algún carril,17424,1,5.73921028466483e-5
+93,Campus Guajara,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17424,0,0
+93,Campus Guajara,descendente,duplicado,Registro duplicado en el fichero oficial,17424,2,1.147842056932966e-4
+93,Campus Guajara,descendente,negativos,Algún rango de velocidad negativo,17424,0,0
+93,Campus Guajara,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,17424,0,0
+93,Campus Guajara,descendente,agosto,Mes de agosto (fuera del análisis),17424,1442,0.08275941230486684
+93,Campus Guajara,descendente,cambio_de_hora,Día de cambio de hora,17424,94,0.00539485766758494
+93,Campus Guajara,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17424,6648,0.38154269972451793
+93,Campus Guajara,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17424,6648,0.38154269972451793
+93,Campus Guajara,descendente,imputada,Hora imputada,17424,0,0
+97,Padre Anchieta,descendente,no_laborable,Fin de semana o festivo autonómico o insular,8606,1988,0.23100162677201952
+97,Padre Anchieta,descendente,incompleta,Hora a la que le falta algún carril,8606,393,0.04566581454798978
+97,Padre Anchieta,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),8606,6637,0.7712061352544736
+97,Padre Anchieta,descendente,duplicado,Registro duplicado en el fichero oficial,8606,1,1.1619800139437602e-4
+97,Padre Anchieta,descendente,negativos,Algún rango de velocidad negativo,8606,6244,0.7255403207064839
+97,Padre Anchieta,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,8606,0,0
+97,Padre Anchieta,descendente,agosto,Mes de agosto (fuera del análisis),8606,1068,0.12409946548919358
+97,Padre Anchieta,descendente,cambio_de_hora,Día de cambio de hora,8606,19,0.0022077620264931443
+97,Padre Anchieta,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",8606,4190,0.4868696258424355
+97,Padre Anchieta,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),8606,4190,0.4868696258424355
+97,Padre Anchieta,descendente,imputada,Hora imputada,8606,0,0
+99,Bomberos La Laguna,descendente,no_laborable,Fin de semana o festivo autonómico o insular,17377,5377,0.30943200782643726
+99,Bomberos La Laguna,descendente,incompleta,Hora a la que le falta algún carril,17377,7,4.028313287679116e-4
+99,Bomberos La Laguna,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17377,0,0
+99,Bomberos La Laguna,descendente,duplicado,Registro duplicado en el fichero oficial,17377,2,1.1509466536226047e-4
+99,Bomberos La Laguna,descendente,negativos,Algún rango de velocidad negativo,17377,0,0
+99,Bomberos La Laguna,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,17377,0,0
+99,Bomberos La Laguna,descendente,agosto,Mes de agosto (fuera del análisis),17377,1419,0.0816596650745238
+99,Bomberos La Laguna,descendente,cambio_de_hora,Día de cambio de hora,17377,94,0.005409449272026242
+99,Bomberos La Laguna,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17377,6577,0.3784888070437935
+99,Bomberos La Laguna,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17377,6577,0.3784888070437935
+99,Bomberos La Laguna,descendente,imputada,Hora imputada,17377,0,0
+103,Ermita Cruz Chica,descendente,no_laborable,Fin de semana o festivo autonómico o insular,17424,5376,0.3085399449035813
+103,Ermita Cruz Chica,descendente,incompleta,Hora a la que le falta algún carril,17424,0,0
+103,Ermita Cruz Chica,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17424,0,0
+103,Ermita Cruz Chica,descendente,duplicado,Registro duplicado en el fichero oficial,17424,2,1.147842056932966e-4
+103,Ermita Cruz Chica,descendente,negativos,Algún rango de velocidad negativo,17424,0,0
+103,Ermita Cruz Chica,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,17424,0,0
+103,Ermita Cruz Chica,descendente,agosto,Mes de agosto (fuera del análisis),17424,1442,0.08275941230486684
+103,Ermita Cruz Chica,descendente,cambio_de_hora,Día de cambio de hora,17424,94,0.00539485766758494
+103,Ermita Cruz Chica,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17424,6552,0.3760330578512397
+103,Ermita Cruz Chica,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17424,6552,0.3760330578512397
+103,Ermita Cruz Chica,descendente,imputada,Hora imputada,17424,0,0
+111,La Matanza,descendente,no_laborable,Fin de semana o festivo autonómico o insular,17446,5398,0.309411899575834
+111,La Matanza,descendente,incompleta,Hora a la que le falta algún carril,17446,48,0.0027513470136420956
+111,La Matanza,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17446,0,0
+111,La Matanza,descendente,duplicado,Registro duplicado en el fichero oficial,17446,2,1.1463945890175398e-4
+111,La Matanza,descendente,negativos,Algún rango de velocidad negativo,17446,0,0
+111,La Matanza,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,17446,0,0
+111,La Matanza,descendente,agosto,Mes de agosto (fuera del análisis),17446,1464,0.08391608391608392
+111,La Matanza,descendente,cambio_de_hora,Día de cambio de hora,17446,94,0.005388054568382437
+111,La Matanza,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17446,6718,0.38507394245099164
+111,La Matanza,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17446,6718,0.38507394245099164
+111,La Matanza,descendente,imputada,Hora imputada,17446,0,0
+123,La Orotava,descendente,no_laborable,Fin de semana o festivo autonómico o insular,17446,5398,0.309411899575834
+123,La Orotava,descendente,incompleta,Hora a la que le falta algún carril,17446,0,0
+123,La Orotava,descendente,sin_velocidad_utilizable,Velocidades no utilizables (aforador sin rangos fiables),17446,0,0
+123,La Orotava,descendente,duplicado,Registro duplicado en el fichero oficial,17446,2,1.1463945890175398e-4
+123,La Orotava,descendente,negativos,Algún rango de velocidad negativo,17446,0,0
+123,La Orotava,descendente,caudal_implausible,Más vehículos por carril que el máximo físico,17446,0,0
+123,La Orotava,descendente,agosto,Mes de agosto (fuera del análisis),17446,1464,0.08391608391608392
+123,La Orotava,descendente,cambio_de_hora,Día de cambio de hora,17446,94,0.005388054568382437
+123,La Orotava,descendente,dia_no_valido,"Día no válido: incompleto, por debajo del 85 % de la mediana del mes, agosto o no laborable",17446,6526,0.3740685543964232
+123,La Orotava,descendente,no_usada,Hora no usada en el análisis (resultado de todas las reglas),17446,6526,0.3740685543964232
+123,La Orotava,descendente,imputada,Hora imputada,17446,0,0

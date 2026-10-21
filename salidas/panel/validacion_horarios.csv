@@ -1,0 +1,66 @@
+regla,gravedad,estacion,sentido,casos,filas
+H1 rangos de velocidad != vehículos,info,Bco. El Patronato,ascendente,1,1936
+H1 rangos de velocidad != vehículos,info,Bco. El Patronato,descendente,1,3414
+H1 rangos de velocidad != vehículos,info,Bomberos La Laguna,ascendente,1,5429
+H1 rangos de velocidad != vehículos,info,Bomberos La Laguna,descendente,1,6248
+H1 rangos de velocidad != vehículos,info,Campus Guajara,ascendente,1,2403
+H1 rangos de velocidad != vehículos,info,Campus Guajara,descendente,1,1671
+H1 rangos de velocidad != vehículos,info,El Amparo,descendente,1,1
+H1 rangos de velocidad != vehículos,info,El Pedregal,ascendente,1,8
+H1 rangos de velocidad != vehículos,info,El Pedregal,descendente,1,1
+H1 rangos de velocidad != vehículos,info,Ermita Cruz Chica,ascendente,1,3829
+H1 rangos de velocidad != vehículos,info,Ermita Cruz Chica,descendente,1,2001
+H1 rangos de velocidad != vehículos,info,Hospital Residencia,ascendente,1,14265
+H1 rangos de velocidad != vehículos,info,Hospital Residencia,descendente,1,1401
+H1 rangos de velocidad != vehículos,info,La Matanza,ascendente,1,357
+H1 rangos de velocidad != vehículos,info,La Matanza,descendente,1,2883
+H1 rangos de velocidad != vehículos,info,La Orotava,ascendente,1,2528
+H1 rangos de velocidad != vehículos,info,La Orotava,descendente,1,295
+H1 rangos de velocidad != vehículos,info,Padre Anchieta,ascendente,1,5
+H1 rangos de velocidad != vehículos,info,Padre Anchieta,descendente,1,11
+H1 rangos de velocidad != vehículos,info,Somosierra,ascendente,1,1556
+H1 rangos de velocidad != vehículos,info,Somosierra,descendente,1,9545
+H1 rangos de velocidad != vehículos,info,Túnel 3 de Mayo,ascendente,1,74
+H1 rangos de velocidad != vehículos,info,Túnel 3 de Mayo,descendente,1,172
+H2 horas incompletas (> 10 % del mes),aviso,Bco. El Patronato,descendente,1,91
+H2 horas incompletas (> 10 % del mes),aviso,Hospital Residencia,ascendente,1,720
+H2 horas incompletas (> 10 % del mes),aviso,Hospital Residencia,descendente,1,720
+H2 horas incompletas (> 10 % del mes),aviso,Padre Anchieta,ascendente,20,9223
+H2 horas incompletas (> 10 % del mes),aviso,Padre Anchieta,descendente,20,9223
+H3 carril-día sin vehículos,aviso,Padre Anchieta,descendente,20,321
+H4 registros duplicados,aviso,Bco. El Patronato,ascendente,1,1
+H4 registros duplicados,aviso,Bco. El Patronato,descendente,1,2
+H4 registros duplicados,aviso,Bomberos La Laguna,ascendente,1,6
+H4 registros duplicados,aviso,Bomberos La Laguna,descendente,1,8
+H4 registros duplicados,aviso,Campus Guajara,ascendente,1,8
+H4 registros duplicados,aviso,Campus Guajara,descendente,1,8
+H4 registros duplicados,aviso,El Amparo,ascendente,1,2
+H4 registros duplicados,aviso,El Amparo,descendente,1,1
+H4 registros duplicados,aviso,El Pedregal,ascendente,1,2
+H4 registros duplicados,aviso,El Pedregal,descendente,1,1
+H4 registros duplicados,aviso,Ermita Cruz Chica,ascendente,1,4
+H4 registros duplicados,aviso,Ermita Cruz Chica,descendente,1,4
+H4 registros duplicados,aviso,Hospital Residencia,ascendente,1,8
+H4 registros duplicados,aviso,Hospital Residencia,descendente,1,6
+H4 registros duplicados,aviso,La Matanza,ascendente,1,4
+H4 registros duplicados,aviso,La Matanza,descendente,1,4
+H4 registros duplicados,aviso,La Orotava,ascendente,1,6
+H4 registros duplicados,aviso,La Orotava,descendente,1,6
+H4 registros duplicados,aviso,Padre Anchieta,ascendente,1,3
+H4 registros duplicados,aviso,Padre Anchieta,descendente,1,3
+H4 registros duplicados,aviso,Somosierra,ascendente,1,10
+H4 registros duplicados,aviso,Somosierra,descendente,1,6
+H4 registros duplicados,aviso,Túnel 3 de Mayo,ascendente,1,4
+H4 registros duplicados,aviso,Túnel 3 de Mayo,descendente,1,2
+H6 rangos negativos,error,Padre Anchieta,ascendente,13,15834
+H6 rangos negativos,error,Padre Anchieta,descendente,13,17727
+H7 caudal implausible,aviso,Bomberos La Laguna,ascendente,1,1
+H7 caudal implausible,aviso,Campus Guajara,ascendente,1,30
+H7 caudal implausible,aviso,Hospital Residencia,ascendente,1,147
+H7 caudal implausible,aviso,La Matanza,descendente,1,67
+H7 caudal implausible,aviso,Somosierra,descendente,1,22
+H8 media horaria != IMD oficial (> 10 %),aviso,Somosierra,ascendente,1,364
+H8 media horaria != IMD oficial (> 10 %),aviso,Túnel 3 de Mayo,ascendente,1,364
+H9 perfil horario anómalo en un carril,aviso,Campus Guajara,ascendente,2,984
+H9 perfil horario anómalo en un carril,aviso,Hospital Residencia,ascendente,9,4464
+H9 perfil horario anómalo en un carril,aviso,Somosierra,descendente,11,5664

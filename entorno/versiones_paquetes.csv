@@ -1,0 +1,15 @@
+paquete,version,uso
+R,4.3.3,Intérprete
+dplyr,1.1.4,Manipulación de datos
+tidyr,1.3.1,Manipulación de datos
+readr,2.1.5,Lectura y escritura de CSV
+ggplot2,3.4.4,Gráficos
+scales,1.3.0,Escalas de los gráficos
+ggrepel,0.9.5,Etiquetas de los gráficos
+patchwork,1.2.0,Composición de gráficos
+jsonlite,1.8.8,Lectura de JSON
+digest,0.6.34,Huellas SHA-256 (recomendado)
+testthat,3.2.1,Pruebas automáticas (recomendado)
+ragg,1.2.7,Dispositivo PNG con el que ggsave dibuja los gráficos
+systemfonts,1.0.5,Fuentes del dispositivo PNG
+textshaping,0.3.7,Composición del texto del dispositivo PNG

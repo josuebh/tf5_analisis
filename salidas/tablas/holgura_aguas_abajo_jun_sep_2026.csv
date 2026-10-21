@@ -1,0 +1,9 @@
+hora,horas,mediana,sin_holgura,capacidad_abajo
+6,55,0.17450666666666637,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+7,53,0.02527501462843662,0.2641509433962264,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+8,22,0.15903838675369752,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+9,8,0.2629020222663938,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+10,2,0.31759135521636295,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+14,1,0.281636828644501,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+16,1,0.2965708488332768,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)
+17,1,0.19586379256482322,0,p99 de los caudales de 2025 (misma que holgura_aguas_abajo_por_hora)

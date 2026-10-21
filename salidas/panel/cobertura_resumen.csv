@@ -1,0 +1,15 @@
+estacion_id,etiqueta,sentido,meses,pct_ausente,pct_horas_completas,pct_horas_velocidad,dias_validos
+85,Hospital Residencia,ascendente,24,0.046754,0.953246,0.953246,424
+85,Hospital Residencia,descendente,24,0.046754,0.953246,0.953246,432
+93,Campus Guajara,ascendente,24,0.004115,0.995885,0.995885,451
+93,Campus Guajara,descendente,24,0.004115,0.995828,0.995828,449
+97,Padre Anchieta,ascendente,24,0.530578,0.469422,0.115855,197
+97,Padre Anchieta,descendente,24,0.508116,0.469422,0.11254,184
+99,Bomberos La Laguna,ascendente,24,0.004058,0.993198,0.993198,453
+99,Bomberos La Laguna,descendente,24,0.006802,0.992798,0.992798,450
+103,Ermita Cruz Chica,ascendente,24,0.004115,0.994399,0.994399,456
+103,Ermita Cruz Chica,descendente,24,0.004115,0.995885,0.995885,453
+111,La Matanza,ascendente,24,0.002858,0.997142,0.997142,455
+111,La Matanza,descendente,24,0.002858,0.994399,0.994399,447
+123,La Orotava,ascendente,24,0.002858,0.997142,0.997142,453
+123,La Orotava,descendente,24,0.002858,0.997142,0.997142,455

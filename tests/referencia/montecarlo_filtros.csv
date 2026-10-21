@@ -1,0 +1,15 @@
+caso,regla,umbral,pasan,simuladas,tasa,descartadas,coincide_con_calibracion
+manana_hacia_santa_cruz,Duración de la cola (horas como el aforo),"1,5-3,5 h",6420,20000,0.321,0.679,
+manana_hacia_santa_cruz,Caudal de descarga,3.242-3.463 veh/h (medida como en el aforo),6512,20000,0.3256,0.6744,
+manana_hacia_santa_cruz,Inicio de la cola,05:30-06:30,2167,20000,0.10835,0.89165,
+manana_hacia_santa_cruz,Fin de la cola,07:30-09:30,4188,20000,0.2094,0.7906,
+manana_hacia_santa_cruz,La cola se disipa dentro del día,"cola final < 0,5 veh",20000,20000,1,0,
+manana_hacia_santa_cruz,Todas salvo la descarga,,1347,20000,0.06735,0.93265,
+manana_hacia_santa_cruz,Todas (calibración principal),,378,20000,0.0189,0.9811,TRUE
+tarde_hacia_el_norte,Duración de la cola (horas como el aforo),"2,5-6,5 h",4753,10000,0.4753,0.5246999999999999,
+tarde_hacia_el_norte,Caudal de descarga,3.061-3.744 veh/h (parámetro),9226,10000,0.9226,0.07740000000000002,
+tarde_hacia_el_norte,Inicio de la cola,12:30-14:30,2132,10000,0.2132,0.7867999999999999,
+tarde_hacia_el_norte,Fin de la cola,16:30-19:30,3468,10000,0.3468,0.6532,
+tarde_hacia_el_norte,La cola se disipa dentro del día,"cola final < 0,5 veh",10000,10000,1,0,
+tarde_hacia_el_norte,Todas salvo la descarga,,1381,10000,0.1381,0.8619,
+tarde_hacia_el_norte,Todas (calibración principal),,1369,10000,0.1369,0.8631,TRUE

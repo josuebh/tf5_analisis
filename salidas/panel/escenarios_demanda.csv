@@ -1,0 +1,4 @@
+escenario,crecimiento_anual,justificacion,fuente
+Sin crecimiento,0,"Cota baja. El tráfico anual en el cuello de Ermita Cruz Chica apenas creció entre 2019 y 2025 (+0,15 % anual), aunque en un cuello saturado el aforo mide lo que pasa, no lo que quiere pasar",IMD 2019-2025 del Cabildo de Tenerife (salidas/tablas/evolucion_imd_2019_2025.csv)
+Central,0.005,"Crecimiento del tráfico en las estaciones del corredor que todavía tienen margen: Bomberos La Laguna +0,50 % anual y Padre Anchieta +0,68 % anual entre 2019 y 2025",IMD 2019-2025 del Cabildo de Tenerife (salidas/tablas/evolucion_imd_2019_2025.csv)
+Alto,0.01,"Crecimiento de la población de Tenerife entre 2021 y 2025: de 930.570 a 966.469 habitantes, +0,95 % anual. Supone que los viajes por la TF-5 crecen como la población","INE, Censo anual de población, tabla 78749 (datos/poblacion_tenerife.csv)"

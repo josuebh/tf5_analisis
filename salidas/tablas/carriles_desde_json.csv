@@ -1,0 +1,25 @@
+estacion_id,sentido,carriles_principales,carriles_auxiliares,tipos_auxiliares,umbral_lento_kmh,descripcion
+82,ascendente,2,2,acceso,50,Tres de Mayo C. Lento BP; Tres de Mayo C. Rápido BP; Tres de Mayo Acceso Mercado; Tres de Mayo Acceso La Salle
+82,descendente,0,2,bus,Inf,BUs por TF-1; Carril Bus
+83,ascendente,4,1,salida,80,Tres de Mayo C. Salida; Tres de Mayo C. Lento; Tres de Mayo C. Medio-Lento; Tres de Mayo C. Medio-Rápido; Tres de Mayo C. Rápido
+83,descendente,3,0,,80,Tres de Mayo D. Rápido; Tres de Mayo D. Medio-Lento; Tres de Mayo D. Lento
+85,ascendente,4,0,,80,Residencia C. Lento; Residencia C. Medio-Lento; Residencia C. Medio-Rápido; Residencia C. Rápido
+85,descendente,3,0,,80,Residencia D. Rápido; Residencia D. Medio; Residencia D. Lento
+93,ascendente,4,0,,80,Al Campo  C. Lento; Al Campo  C. Medio Lento; Al Campo  C. Medio Rápido; Al Campo  C. Rápido
+93,descendente,4,0,,80,Al Campo  D. Rápido; Al Campo  D. Medio Rápido; Al Campo  D. Medio Lento; Al Campo  D. Lento
+97,ascendente,3,0,,80,Anchieta C. Lento; Anchieta C. Medio; Anchieta C. Rápido
+97,descendente,3,0,,80,Anchieta D. Rápido; Anchieta D. Medio; Anchieta D. Lento
+99,ascendente,3,0,,80,Los Rodeos C. Lento; Los Rodeos C. Medio; Los Rodeos C. Rápido
+99,descendente,4,0,,80,Los Rodeos D. Rápido; Los Rodeos D. Medio Rápido; Los Rodeos D. Medio Lento; Los Rodeos D. Lento
+103,ascendente,2,0,,80,Los Rodeos C. Lento; Los Rodeos C. Rápido
+103,descendente,2,0,,80,Los Rodeos D. Rápido; Los Rodeos D. Lento
+111,ascendente,2,0,,80,La Matanza C. Lento; La Matanza C. Rápido
+111,descendente,2,0,,80,La Matanza D. Rápido; La Matanza D. Lento
+123,ascendente,3,0,,80,La Orotava C. Lento; La Orotava C. Medio; La Orotava C. Rápido
+123,descendente,3,0,,80,La Orotava D. Rápido; La Orotava D. Medio; La Orotava D. Lento
+131,ascendente,1,0,,40,Los Realejos Creciente
+131,descendente,2,0,,40,Los Realejos Decreciente Rápido; Los Realejos Decreciente Lento
+136,ascendente,2,0,,40,El Pedregal C. Lento; El Pedregal C. Rápido
+136,descendente,1,0,,40,El Pedregal Decreciente
+138,ascendente,2,0,,40,El Amparo C. Lento; El Amparo C. Rápido
+138,descendente,1,0,,40,El Amparo Decreciente

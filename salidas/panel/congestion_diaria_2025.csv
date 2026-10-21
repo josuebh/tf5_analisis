@@ -1,0 +1,15 @@
+estacion_id,estacion,orden,sentido,dias,velocidad_utilizable,horas_media,horas_p25,horas_mediana,horas_p75,dias_sin_congestion,hora_inicio_tipica,hora_fin_tipica
+85,Hospital Residencia,3,ascendente,228,TRUE,0.04386,0,0,0,222,15,15
+93,Campus Guajara,4,ascendente,226,TRUE,2.185841,1,2,3,39,14,15
+97,Padre Anchieta,5,ascendente,41,FALSE,0,0,0,0,41,,
+99,Bomberos La Laguna,6,ascendente,224,TRUE,4.71875,3,4,6,0,13,16
+103,Ermita Cruz Chica,7,ascendente,227,TRUE,0.431718,0,0,0,173,17,20
+111,La Matanza,8,ascendente,228,FALSE,0,0,0,0,228,,
+123,La Orotava,9,ascendente,227,TRUE,0.035242,0,0,0,222,1,4
+85,Hospital Residencia,3,descendente,227,TRUE,0.017621,0,0,0,224,7,1
+93,Campus Guajara,4,descendente,226,TRUE,0.659292,0,1,1,106,7,7
+97,Padre Anchieta,5,descendente,41,FALSE,0,0,0,0,41,,
+99,Bomberos La Laguna,6,descendente,223,TRUE,1.004484,0,1,2,69,7,8
+103,Ermita Cruz Chica,7,descendente,226,TRUE,2.845133,2,3,3,10,6,8
+111,La Matanza,8,descendente,222,FALSE,0,0,0,0,222,,
+123,La Orotava,9,descendente,228,TRUE,0.188596,0,0,0,204,14,14

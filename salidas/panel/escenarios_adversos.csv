@@ -1,0 +1,109 @@
+caso,supuesto,escenario,etiqueta,reduccion_mediana,reduccion_p10,reduccion_p90,demora_vh_mediana,puesto,empate_con_la_primera
+manana_hacia_santa_cruz,Referencia (calibrado),tarificacion,Tarificación de la punta,0.610175,0.378028,0.987665,601.545912,1,TRUE
+manana_hacia_santa_cruz,Referencia (calibrado),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.484508,0.319625,0.731424,784.128093,2,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),tercer_carril_corto,Tercer carril (1er año),0.401982,0.222192,0.73495,879.460565,3,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.387126,0.24139,0.59397,935.746313,4,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),ramp_metering_corto,Regulación de accesos (1er año),0.336395,0.195627,0.546122,996.339178,5,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),tercer_carril_largo,Tercer carril (a 10 años),0.327954,0.178034,0.599199,984.510222,6,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),ramp_metering_largo,Regulación de accesos (a 10 años),0.277434,0.154905,0.45508,1117.132377,7,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),escalonamiento_corto,Escalonamiento horario (1er año),0.172622,0.104474,0.312254,1285.615939,8,FALSE
+manana_hacia_santa_cruz,Referencia (calibrado),base,Sin actuación,0,0,0,1541.209029,,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),tarificacion,Tarificación de la punta,0.610175,0.378028,0.987665,601.545912,1,TRUE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.602498,0.416749,0.859028,591.629981,2,TRUE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.602498,0.416749,0.859028,591.629981,2,TRUE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),tercer_carril_corto,Tercer carril (1er año),0.514389,0.291084,0.867786,730.118636,4,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),tercer_carril_largo,Tercer carril (a 10 años),0.514389,0.291084,0.867786,730.118636,4,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),ramp_metering_corto,Regulación de accesos (1er año),0.430888,0.251056,0.677198,843.98461,6,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),ramp_metering_largo,Regulación de accesos (a 10 años),0.430888,0.251056,0.677198,843.98461,6,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),escalonamiento_corto,Escalonamiento horario (1er año),0.249949,0.148172,0.467571,1170.094696,8,FALSE
+manana_hacia_santa_cruz,Sin demanda inducida (cota favorable),base,Sin actuación,0,0,0,1541.209029,,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),tarificacion,Tarificación de la punta,0.585976,0.376041,0.869788,612.281545,1,TRUE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),escalonamiento_corto,Escalonamiento horario (1er año),0.170805,0.103684,0.271022,1219.667405,2,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.170805,0.103684,0.271022,1219.667405,2,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.118401,0.064409,0.202807,1294.211603,4,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),ramp_metering_corto,Regulación de accesos (1er año),0,0,0,1476.31587,5,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),ramp_metering_largo,Regulación de accesos (a 10 años),0,0,0,1476.31587,5,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),tercer_carril_corto,Tercer carril (1er año),0,0,0,1476.31587,5,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),tercer_carril_largo,Tercer carril (a 10 años),0,0,0,1476.31587,5,FALSE
+manana_hacia_santa_cruz,Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos),base,Sin actuación,0,0,0,1476.31587,,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tarificacion,Tarificación de la punta,0.610175,0.378028,0.987665,601.545912,1,TRUE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",paquete_gestion_corto,Regulación + escalonamiento (1er año),0.419128,0.28252,0.632193,893.745017,2,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tercer_carril_corto,Tercer carril (1er año),0.359928,0.196943,0.655165,952.547198,3,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.3101,0.198236,0.487623,1061.526023,4,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",ramp_metering_corto,Regulación de accesos (1er año),0.300538,0.170628,0.481107,1071.914902,5,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tercer_carril_largo,Tercer carril (a 10 años),0.274273,0.14635600000000001,0.518769,1076.900361,6,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",ramp_metering_largo,Regulación de accesos (a 10 años),0.230442,0.128966,0.371972,1186.92931,7,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",escalonamiento_corto,Escalonamiento horario (1er año),0.138318,0.084506,0.244345,1317.88491,8,FALSE
+manana_hacia_santa_cruz,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",base,Sin actuación,0,0,0,1541.209029,,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,tarificacion,Tarificación de la punta,0.582973,0.372415,0.886704,662.783843,1,TRUE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,tercer_carril_corto,Tercer carril (1er año),0.412711,0.225609,0.753064,885.003917,2,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,tercer_carril_largo,Tercer carril (a 10 años),0.333216,0.181155,0.60831,1004.86166,3,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.317432,0.22092,0.46834,1057.614386,4,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.243909,0.157327,0.362345,1184.317158,5,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,ramp_metering_corto,Regulación de accesos (1er año),0.165839,0.101377,0.273328,1317.933421,6,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,escalonamiento_corto,Escalonamiento horario (1er año),0.162918,0.101617,0.252728,1324.628919,7,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,ramp_metering_largo,Regulación de accesos (a 10 años),0.133305,0.077912,0.216216,1372.617344,8,FALSE
+manana_hacia_santa_cruz,Caída de capacidad pequeña (4 %) con la misma descarga medida,base,Sin actuación,0,0,0,1579.654766,,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,tercer_carril_corto,Tercer carril (1er año),0.642049,0.525736,0.767441,1680.058191,1,TRUE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,tercer_carril_largo,Tercer carril (a 10 años),0.533516,0.402625,0.65091,2180.263269,2,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,tarificacion,Tarificación de la punta,0.385891,0.275879,0.498845,2935.561162,3,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.339207,0.247344,0.450122,3116.088889,4,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.29471,0.196511,0.398629,3337.10328,5,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,ramp_metering_corto,Regulación de accesos (1er año),0.280715,0.179761,0.39247,3404.352513,6,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,ramp_metering_largo,Regulación de accesos (a 10 años),0.248196,0.157112,0.354466,3548.226796,7,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,escalonamiento_corto,Escalonamiento horario (1er año),0.079699,0.049572,0.120512,4435.141312,8,FALSE
+manana_hacia_santa_cruz,Incidente: un carril cortado 30 min en lo más alto de la punta,base,Sin actuación,0,0,0,4827.401619,,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.718,0.340005,0.989273,522.053146,1,TRUE
+tarde_hacia_el_norte,Referencia (calibrado),tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.643751,0.29513,0.96178,662.936267,2,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.621014,0.376277,0.809698,755.255964,3,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),ramp_metering_corto,Regulación de accesos (1er año),0.548779,0.297675,0.744996,880.648244,4,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.546203,0.32556,0.727893,894.212839,5,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),ramp_metering_largo,Regulación de accesos (a 10 años),0.488466,0.260192,0.673629,1001.16348,6,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),tarificacion,Tarificación de la punta,0.469273,0.290689,1,974.036526,7,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),escalonamiento_corto,Escalonamiento horario (1er año),0.101725,0.057782,0.194066,1731.630198,8,FALSE
+tarde_hacia_el_norte,Referencia (calibrado),base,Sin actuación,0,0,0,1930.796105,,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.787769,0.389418,0.999241,383.581093,1,TRUE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.787769,0.389418,0.999241,383.581093,1,TRUE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.689275,0.434375,0.898555,616.512915,3,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.689275,0.434375,0.898555,616.512915,3,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),ramp_metering_corto,Regulación de accesos (1er año),0.612267,0.337118,0.814735,758.864264,5,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),ramp_metering_largo,Regulación de accesos (a 10 años),0.612267,0.337118,0.814735,758.864264,5,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),tarificacion,Tarificación de la punta,0.469273,0.290689,1,974.036526,7,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),escalonamiento_corto,Escalonamiento horario (1er año),0.126897,0.074122,0.24984,1667.410295,8,FALSE
+tarde_hacia_el_norte,Sin demanda inducida (cota favorable),base,Sin actuación,0,0,0,1930.796105,,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),tarificacion,Tarificación de la punta,0.469273,0.290689,1,974.036526,1,TRUE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),escalonamiento_corto,Escalonamiento horario (1er año),0.101725,0.057782,0.194066,1731.630198,2,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),paquete_gestion_corto,Regulación + escalonamiento (1er año),0.101725,0.057782,0.194066,1731.630198,2,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.076416,0.041425,0.144371,1775.241247,4,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),ramp_metering_corto,Regulación de accesos (1er año),0,0,0,1930.796105,5,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),ramp_metering_largo,Regulación de accesos (a 10 años),0,0,0,1930.796105,5,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0,0,0,1930.796105,5,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0,0,0,1930.796105,5,FALSE
+tarde_hacia_el_norte,Tramo siguiente sin holgura (La Matanza llena),base,Sin actuación,0,0,0,1930.796105,,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.67826,0.312466,0.973447,601.525325,1,TRUE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.580853,0.260262,0.902605,778.15491,2,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",paquete_gestion_corto,Regulación + escalonamiento (1er año),0.578369,0.347148,0.763324,835.917273,3,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",ramp_metering_corto,Regulación de accesos (1er año),0.514611,0.278532,0.703492,947.144372,4,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.497717,0.285987,0.67293,993.314692,5,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",tarificacion,Tarificación de la punta,0.469273,0.290689,1,974.036526,6,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",ramp_metering_largo,Regulación de accesos (a 10 años),0.445251,0.228987,0.619904,1088.796451,7,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",escalonamiento_corto,Escalonamiento horario (1er año),0.086783,0.049225,0.163031,1763.90886,8,FALSE
+tarde_hacia_el_norte,"Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años)",base,Sin actuación,0,0,0,1930.796105,,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.74238,0.394379,0.988287,548.665495,1,TRUE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.664176,0.335053,0.954845,739.44957,2,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,tarificacion,Tarificación de la punta,0.391928,0.260017,0.553722,1368.740141,3,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.3795,0.27564,0.490788,1425.723124,4,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.332182,0.230278,0.436454,1538.55063,5,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,ramp_metering_corto,Regulación de accesos (1er año),0.313933,0.205486,0.418351,1575.990274,6,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,ramp_metering_largo,Regulación de accesos (a 10 años),0.278016,0.176945,0.379236,1664.150429,7,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,escalonamiento_corto,Escalonamiento horario (1er año),0.075352,0.043766,0.122591,2083.649141,8,FALSE
+tarde_hacia_el_norte,Caída de capacidad pequeña (4 %) con la misma descarga medida,base,Sin actuación,0,0,0,2240.284108,,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.789119,0.663035,0.900878,1201.832337,1,TRUE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.707848,0.572754,0.840181,1690.904702,2,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.38755,0.24999,0.51977,3510.513472,3,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,ramp_metering_corto,Regulación de accesos (1er año),0.358253,0.215245,0.497675,3659.135931,4,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.356964,0.221413,0.482295,3692.214378,5,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,ramp_metering_largo,Regulación de accesos (a 10 años),0.333351,0.196093,0.464937,3822.885011,6,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,tarificacion,Tarificación de la punta,0.237045,0.157863,0.320981,4462.904514,7,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,escalonamiento_corto,Escalonamiento horario (1er año),0.042049,0.023042,0.065476,5668.300948,8,FALSE
+tarde_hacia_el_norte,Incidente: un carril cortado 30 min en lo más alto de la punta,base,Sin actuación,0,0,0,5903.762246,,FALSE

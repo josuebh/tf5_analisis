@@ -1,0 +1,223 @@
+caso,regla,n_validas,escenario,alternativa,mediana,p10,p90,descarga_mediana
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,tercer_carril_corto,Tercer carril (1er año),0.401982,0.222192,0.73495,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,tercer_carril_medio,Tercer carril (a 5 años),0.344198,0.188488,0.627403,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,tercer_carril_largo,Tercer carril (a 10 años),0.327954,0.178034,0.599199,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,ramp_metering_corto,Regulación de accesos (1er año),0.336395,0.195627,0.546122,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,ramp_metering_medio,Regulación de accesos (a 5 años),0.286708,0.16496,0.471678,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,ramp_metering_largo,Regulación de accesos (a 10 años),0.277434,0.154905,0.45508,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,escalonamiento_corto,Escalonamiento horario (1er año),0.172622,0.104474,0.312254,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,escalonamiento_medio,Escalonamiento horario (a 5 años),0.133625,0.074466,0.230428,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,escalonamiento_largo,Escalonamiento horario (a 10 años),0.119609,0.066413,0.218193,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,tarificacion,Tarificación de la punta,0.610175,0.378028,0.987665,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.484508,0.319625,0.731424,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.40431,0.260646,0.622001,3496.576862
+manana_hacia_santa_cruz,Aforos horarios 2025 (principal),378,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.387126,0.24139,0.59397,3496.576862
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,tercer_carril_corto,Tercer carril (1er año),0.547676,0.270064,0.944065,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,tercer_carril_medio,Tercer carril (a 5 años),0.501829,0.247597,0.904624,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,tercer_carril_largo,Tercer carril (a 10 años),0.489775,0.242893,0.888414,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,ramp_metering_corto,Regulación de accesos (1er año),0.395818,0.202868,0.711512,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,ramp_metering_medio,Regulación de accesos (a 5 años),0.352788,0.17601,0.668302,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,ramp_metering_largo,Regulación de accesos (a 10 años),0.339776,0.171707,0.651501,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,escalonamiento_corto,Escalonamiento horario (1er año),0.194236,0.089608,0.463774,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,escalonamiento_medio,Escalonamiento horario (a 5 años),0.161303,0.071454,0.392935,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,escalonamiento_largo,Escalonamiento horario (a 10 años),0.148311,0.066527,0.36624,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,tarificacion,Tarificación de la punta,0.824237,0.455508,1,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.548336,0.336289,0.890197,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.495056,0.293722,0.843844,3611.117743
+manana_hacia_santa_cruz,Aforos sin el horario de la cola,430,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.476292,0.278363,0.834166,3611.117743
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,tercer_carril_corto,Tercer carril (1er año),0.583795,0.301414,0.974549,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,tercer_carril_medio,Tercer carril (a 5 años),0.532552,0.268576,0.947923,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,tercer_carril_largo,Tercer carril (a 10 años),0.521503,0.260071,0.940274,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,ramp_metering_corto,Regulación de accesos (1er año),0.424014,0.212777,0.764536,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,ramp_metering_medio,Regulación de accesos (a 5 años),0.384484,0.189302,0.720254,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,ramp_metering_largo,Regulación de accesos (a 10 años),0.374076,0.182657,0.709227,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,escalonamiento_corto,Escalonamiento horario (1er año),0.178566,0.083543,0.426689,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,escalonamiento_medio,Escalonamiento horario (a 5 años),0.141791,0.065687,0.335167,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,escalonamiento_largo,Escalonamiento horario (a 10 años),0.131351,0.059602,0.318078,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,tarificacion,Tarificación de la punta,0.814463,0.459345,1,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.569759,0.351948,0.908447,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.514875,0.300302,0.85931,3575.292603
+manana_hacia_santa_cruz,Aforos: solo duración de la cola,951,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.496645,0.283889,0.841072,3575.292603
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,tercer_carril_corto,Tercer carril (1er año),0.505288,0.309662,0.95162,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,tercer_carril_medio,Tercer carril (a 5 años),0.437826,0.264647,0.881757,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,tercer_carril_largo,Tercer carril (a 10 años),0.414234,0.249166,0.860967,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,ramp_metering_corto,Regulación de accesos (1er año),0.355952,0.21893,0.551022,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,ramp_metering_medio,Regulación de accesos (a 5 años),0.294843,0.184163,0.464522,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,ramp_metering_largo,Regulación de accesos (a 10 años),0.282156,0.17386,0.447135,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,escalonamiento_corto,Escalonamiento horario (1er año),0.177565,0.104525,0.3588,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,escalonamiento_medio,Escalonamiento horario (a 5 años),0.135598,0.080395,0.279034,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,escalonamiento_largo,Escalonamiento horario (a 10 años),0.12484,0.072951,0.266842,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,tarificacion,Tarificación de la punta,0.641018,0.396462,0.996969,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.507544,0.317918,0.787755,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.425387,0.260302,0.68275,3537.712215
+manana_hacia_santa_cruz,Descarga como parámetro del modelo (p10-p90 del caudal horario con cola),140,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.396738,0.242966,0.633648,3537.712215
+manana_hacia_santa_cruz,Descarga: horas de cola plena de 2025 (p25-p75),0,,,,,,
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,tercer_carril_corto,Tercer carril (1er año),0.662497,0.367387,0.924955,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,tercer_carril_medio,Tercer carril (a 5 años),0.62808,0.324666,0.89040299999999994,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,tercer_carril_largo,Tercer carril (a 10 años),0.619101,0.315833,0.878509,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,ramp_metering_corto,Regulación de accesos (1er año),0.492544,0.262324,0.754173,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,ramp_metering_medio,Regulación de accesos (a 5 años),0.460876,0.234963,0.721722,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,ramp_metering_largo,Regulación de accesos (a 10 años),0.452451,0.227366,0.712129,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,escalonamiento_corto,Escalonamiento horario (1er año),0.08087,0.032461,0.196318,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,escalonamiento_medio,Escalonamiento horario (a 5 años),0.061991,0.024425,0.151037,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,escalonamiento_largo,Escalonamiento horario (a 10 años),0.056242,0.021824,0.137679,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,tarificacion,Tarificación de la punta,0.548015,0.329818,1,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.56448,0.370818,0.797886,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.521544,0.318612,0.751899,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 10-40 min,1523,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.508279,0.305107,0.742371,3459.914072
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,tercer_carril_corto,Tercer carril (1er año),0.671843,0.368264,0.964047,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,tercer_carril_medio,Tercer carril (a 5 años),0.625979,0.329106,0.929845,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,tercer_carril_largo,Tercer carril (a 10 años),0.612245,0.318426,0.91622,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,ramp_metering_corto,Regulación de accesos (1er año),0.499188,0.270653,0.784357,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,ramp_metering_medio,Regulación de accesos (a 5 años),0.457236,0.237333,0.745134,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,ramp_metering_largo,Regulación de accesos (a 10 años),0.448082,0.228465,0.728791,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,escalonamiento_corto,Escalonamiento horario (1er año),0.122832,0.042163,0.294456,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,escalonamiento_medio,Escalonamiento horario (a 5 años),0.09465,0.032165,0.227472,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,escalonamiento_largo,Escalonamiento horario (a 10 años),0.087323,0.029364,0.210909,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,tarificacion,Tarificación de la punta,0.719823,0.44608,1,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.609325,0.406282,0.855162,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.555348,0.360075,0.80166,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 5-20 min,1290,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.53877,0.341844,0.788275,3503.755748
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,tercer_carril_corto,Tercer carril (1er año),0.679099,0.380642,0.905248,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,tercer_carril_medio,Tercer carril (a 5 años),0.653809,0.345945,0.871219,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,tercer_carril_largo,Tercer carril (a 10 años),0.643657,0.334661,0.862569,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,ramp_metering_corto,Regulación de accesos (1er año),0.505889,0.26008,0.732035,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,ramp_metering_medio,Regulación de accesos (a 5 años),0.480454,0.240509,0.705864,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,ramp_metering_largo,Regulación de accesos (a 10 años),0.47064,0.23361,0.699138,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,escalonamiento_corto,Escalonamiento horario (1er año),0.059763,0.029496,0.135436,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,escalonamiento_medio,Escalonamiento horario (a 5 años),0.044685,0.021147,0.098212,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,escalonamiento_largo,Escalonamiento horario (a 10 años),0.040343,0.018584,0.088879,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,tarificacion,Tarificación de la punta,0.427458,0.279812,0.64489,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.554195,0.347355,0.75969,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.521668,0.306464,0.728756,3410.029942
+manana_hacia_santa_cruz,Prensa: espera máxima 20-60 min,693,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.512452,0.288165,0.720401,3410.029942
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,tercer_carril_corto,Tercer carril (1er año),0.672582,0.357177,0.944104,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,tercer_carril_medio,Tercer carril (a 5 años),0.636694,0.323362,0.915716,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,tercer_carril_largo,Tercer carril (a 10 años),0.624726,0.31359,0.903851,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,ramp_metering_corto,Regulación de accesos (1er año),0.505755,0.258564,0.781241,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,ramp_metering_medio,Regulación de accesos (a 5 años),0.471997,0.233061,0.748032,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,ramp_metering_largo,Regulación de accesos (a 10 años),0.460697,0.223335,0.738543,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,escalonamiento_corto,Escalonamiento horario (1er año),0.106279,0.035691,0.333181,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,escalonamiento_medio,Escalonamiento horario (a 5 años),0.081701,0.027018,0.259726,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,escalonamiento_largo,Escalonamiento horario (a 10 años),0.075017,0.024368,0.241947,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,tarificacion,Tarificación de la punta,0.648457,0.346611,1,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.598437,0.386555,0.862394,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.551955,0.341447,0.813583,3488.672923
+manana_hacia_santa_cruz,Sin calibrar (muestra aleatoria con cola),2249,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.539475,0.328348,0.800129,3488.672923
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.718,0.340005,0.989273,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.661101,0.301487,0.972638,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.643751,0.29513,0.96178,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,ramp_metering_corto,Regulación de accesos (1er año),0.548779,0.297675,0.744996,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,ramp_metering_medio,Regulación de accesos (a 5 años),0.502416,0.271679,0.690529,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,ramp_metering_largo,Regulación de accesos (a 10 años),0.488466,0.260192,0.673629,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,escalonamiento_corto,Escalonamiento horario (1er año),0.101725,0.057782,0.194066,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,escalonamiento_medio,Escalonamiento horario (a 5 años),0.081544,0.0451,0.15388,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,escalonamiento_largo,Escalonamiento horario (a 10 años),0.076416,0.041425,0.144371,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,tarificacion,Tarificación de la punta,0.469273,0.290689,1,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.621014,0.376277,0.809698,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.565256,0.33593,0.744707,3509.568063
+tarde_hacia_el_norte,Aforos horarios 2025 (principal),1369,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.546203,0.32556,0.727893,3509.568063
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.610713,0.298501,0.945435,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.580863,0.280758,0.908781,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.57084,0.275551,0.891154,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,ramp_metering_corto,Regulación de accesos (1er año),0.523129,0.271374,0.71299,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,ramp_metering_medio,Regulación de accesos (a 5 años),0.494105,0.255035,0.675179,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,ramp_metering_largo,Regulación de accesos (a 10 años),0.483865,0.251473,0.666135,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,escalonamiento_corto,Escalonamiento horario (1er año),0.086852,0.044226,0.172943,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,escalonamiento_medio,Escalonamiento horario (a 5 años),0.070929,0.035568,0.139151,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,escalonamiento_largo,Escalonamiento horario (a 10 años),0.067187,0.032985,0.133308,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,tarificacion,Tarificación de la punta,0.44567,0.263449,1,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.581984,0.353481,0.775102,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.544008,0.323264,0.729454,3475.842406
+tarde_hacia_el_norte,Aforos sin el horario de la cola,1388,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.53175,0.314492,0.714953,3475.842406
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.610931,0.296328,0.947837,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.580863,0.276841,0.910701,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.57084,0.272969,0.894824,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,ramp_metering_corto,Regulación de accesos (1er año),0.521586,0.26674,0.711209,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,ramp_metering_medio,Regulación de accesos (a 5 años),0.492707,0.249244,0.67389,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,ramp_metering_largo,Regulación de accesos (a 10 años),0.482182,0.244069,0.662949,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,escalonamiento_corto,Escalonamiento horario (1er año),0.087445,0.044315,0.173577,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,escalonamiento_medio,Escalonamiento horario (a 5 años),0.071663,0.035897,0.140132,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,escalonamiento_largo,Escalonamiento horario (a 10 años),0.067805,0.033101,0.134242,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,tarificacion,Tarificación de la punta,0.44567,0.264607,1,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.57944,0.352178,0.774508,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.542782,0.32115,0.729189,3478.577884
+tarde_hacia_el_norte,Aforos: solo duración de la cola,1416,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.530065,0.310221,0.714657,3478.577884
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.741952,0.372147,0.998501,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.685182,0.327266,0.988613,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.662174,0.312,0.983022,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,ramp_metering_corto,Regulación de accesos (1er año),0.539781,0.324714,0.707967,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,ramp_metering_medio,Regulación de accesos (a 5 años),0.495216,0.28723,0.652624,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,ramp_metering_largo,Regulación de accesos (a 10 años),0.482908,0.275589,0.642713,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,escalonamiento_corto,Escalonamiento horario (1er año),0.105019,0.064206,0.189174,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,escalonamiento_medio,Escalonamiento horario (a 5 años),0.086913,0.050659,0.153893,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,escalonamiento_largo,Escalonamiento horario (a 10 años),0.079594,0.046816,0.145438,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,tarificacion,Tarificación de la punta,0.500795,0.331478,1,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.616907,0.394183,0.779667,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.56506,0.35065,0.718756,3547.483211
+tarde_hacia_el_norte,Descarga medida como en el aforo (p25-p75 de las medianas diarias),248,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.545736,0.337468,0.704174,3547.483211
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.717038,0.383058,0.998971,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.657773,0.34461,0.996063,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.632789,0.328698,0.990856,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,ramp_metering_corto,Regulación de accesos (1er año),0.519332,0.324243,0.671459,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,ramp_metering_medio,Regulación de accesos (a 5 años),0.477927,0.29708,0.61387,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,ramp_metering_largo,Regulación de accesos (a 10 años),0.465902,0.288623,0.596615,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,escalonamiento_corto,Escalonamiento horario (1er año),0.116501,0.064161,0.190981,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,escalonamiento_medio,Escalonamiento horario (a 5 años),0.095808,0.052393,0.164422,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,escalonamiento_largo,Escalonamiento horario (a 10 años),0.091163,0.048049,0.153933,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,tarificacion,Tarificación de la punta,0.485331,0.325098,1,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.609031,0.395206,0.757245,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.550247,0.357342,0.701652,3596.133623
+tarde_hacia_el_norte,Descarga: horas de cola plena de 2025 (p25-p75),136,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.531572,0.350645,0.678944,3596.133623
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.609266,0.323081,0.894872,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.576309,0.3043,0.857417,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.567379,0.302603,0.848684,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,ramp_metering_corto,Regulación de accesos (1er año),0.520603,0.288447,0.700389,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,ramp_metering_medio,Regulación de accesos (a 5 años),0.492647,0.270708,0.662713,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,ramp_metering_largo,Regulación de accesos (a 10 años),0.48194,0.26189,0.652002,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,escalonamiento_corto,Escalonamiento horario (1er año),0.078756,0.039235,0.144717,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,escalonamiento_medio,Escalonamiento horario (a 5 años),0.065104,0.032871,0.120201,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,escalonamiento_largo,Escalonamiento horario (a 10 años),0.060863,0.030104,0.114547,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,tarificacion,Tarificación de la punta,0.409661,0.241503,1,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.573462,0.360458,0.748059,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.539013,0.332024,0.709687,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 10-40 min,1329,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.527154,0.32487,0.69671400000000006,3455.168619
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.637241,0.275846,0.981002,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.600326,0.262383,0.950158,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.587769,0.258183,0.944755,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,ramp_metering_corto,Regulación de accesos (1er año),0.523097,0.243001,0.736264,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,ramp_metering_medio,Regulación de accesos (a 5 años),0.489946,0.223873,0.697976,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,ramp_metering_largo,Regulación de accesos (a 10 años),0.478383,0.219314,0.684683,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,escalonamiento_corto,Escalonamiento horario (1er año),0.109198,0.056075,0.234399,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,escalonamiento_medio,Escalonamiento horario (a 5 años),0.089586,0.044683,0.190247,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,escalonamiento_largo,Escalonamiento horario (a 10 años),0.083797,0.041633,0.180394,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,tarificacion,Tarificación de la punta,0.519613,0.321503,1,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.602317,0.345684,0.82075,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.554075,0.313781,0.766016,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 5-20 min,1327,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.540398,0.299103,0.749362,3529.441329
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.609452,0.368076,0.830518,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.583962,0.34712,0.793373,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.577239,0.340759,0.782327,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,ramp_metering_corto,Regulación de accesos (1er año),0.544136,0.340617,0.695489,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,ramp_metering_medio,Regulación de accesos (a 5 años),0.523016,0.3255,0.656441,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,ramp_metering_largo,Regulación de accesos (a 10 años),0.515328,0.315311,0.650742,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,escalonamiento_corto,Escalonamiento horario (1er año),0.055688,0.030735,0.092288,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,escalonamiento_medio,Escalonamiento horario (a 5 años),0.045408,0.024543,0.072962,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,escalonamiento_largo,Escalonamiento horario (a 10 años),0.041922,0.022332,0.070864,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,tarificacion,Tarificación de la punta,0.309275,0.186705,0.435697,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.581902,0.387662,0.727233,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.554346,0.367733,0.687837,3358.210604
+tarde_hacia_el_norte,Prensa: espera máxima 20-60 min,405,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.545434,0.357097,0.675937,3358.210604
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",0.632192,0.302428,0.966617,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",0.598031,0.281371,0.940159,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",0.58714,0.27553,0.928084,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,ramp_metering_corto,Regulación de accesos (1er año),0.530059,0.267734,0.732604,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,ramp_metering_medio,Regulación de accesos (a 5 años),0.498794,0.252006,0.694197,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,ramp_metering_largo,Regulación de accesos (a 10 años),0.489872,0.2446,0.679844,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,escalonamiento_corto,Escalonamiento horario (1er año),0.094445,0.043981,0.237591,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,escalonamiento_medio,Escalonamiento horario (a 5 años),0.078471,0.035913,0.192131,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,escalonamiento_largo,Escalonamiento horario (a 10 años),0.073839,0.033141,0.183289,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,tarificacion,Tarificación de la punta,0.467217,0.265329,1,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,paquete_gestion_corto,Regulación + escalonamiento (1er año),0.600768,0.359691,0.820435,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),0.558506,0.329849,0.768607,3496.502266
+tarde_hacia_el_norte,Sin calibrar (muestra aleatoria con cola),1796,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),0.54644,0.32208,0.74987,3496.502266

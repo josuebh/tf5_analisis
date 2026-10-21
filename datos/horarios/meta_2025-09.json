@@ -1,0 +1,178 @@
+{
+ "mes": "2025-09",
+ "url": "https://datos.tenerife.es/ckan/dataset/94a021a2-1dea-4526-9e17-3290b3b9add3/resource/191acbc3-510d-4b72-98a6-9de44720a0d6/download/intensidad-de-trafico-diaria-en-septiembre-2025.txt",
+ "resource_id": "191acbc3-510d-4b72-98a6-9de44720a0d6",
+ "dataset_id": "94a021a2-1dea-4526-9e17-3290b3b9add3",
+ "size_ckan": 9963720,
+ "last_modified_ckan": "2025-10-14T23:04:49.933922",
+ "status": 200,
+ "last_modified_http": "Tue, 14 Oct 2025 23:04:50 GMT",
+ "descargado_utc": "2026-10-15T23:35:17.711Z",
+ "bytes_raw": 9963720,
+ "sha256_raw": "8144226092b558bbb7847540bfbddb4eb7218f75e67d2f23d304dbbdcf584aec",
+ "header": "estacion_id,estacion_nombre,carril_id,carril_descripcion,fecha,ligeros,pesados,rango1_vehiculos,rango2_vehiculos,rango3_vehiculos,rango4_vehiculos,rango5_vehiculos,rango6_vehiculos",
+ "lineas": 116607,
+ "nfields": {
+  "13": 116605
+ },
+ "estaciones_en_fichero": 37,
+ "filas_tf5": 44582,
+ "filas_tf5_malformadas": 0,
+ "fechas_formato_raro": 0,
+ "fechas_fuera_de_mes": 0,
+ "duplicados": 0,
+ "fecha_min": "2025-09-01 00:00:00",
+ "fecha_max": "2025-09-30 23:00:00",
+ "bytes_compact": 2154122,
+ "sha256_compact": "ac87a453b9f1b8cfbb48dda8c44a8ac187415d62cc61c019f4ccd6a692671daf",
+ "gz_bytes": 543006,
+ "b64_len": 724008,
+ "control": {
+  "82-": {
+   "filas": 1440,
+   "ligeros": 10705,
+   "pesados": 16429,
+   "rangos": 27097
+  },
+  "82+": {
+   "filas": 2880,
+   "ligeros": 647791,
+   "pesados": 5357,
+   "rangos": 653149
+  },
+  "83-": {
+   "filas": 2160,
+   "ligeros": 1385787,
+   "pesados": 11941,
+   "rangos": 1397720
+  },
+  "83+": {
+   "filas": 3600,
+   "ligeros": 1328023,
+   "pesados": 21485,
+   "rangos": 1349505
+  },
+  "85-": {
+   "filas": 2160,
+   "ligeros": 1532481,
+   "pesados": 18928,
+   "rangos": 1551408
+  },
+  "85+": {
+   "filas": 2880,
+   "ligeros": 1572663,
+   "pesados": 63267,
+   "rangos": 1635820
+  },
+  "93-": {
+   "filas": 2880,
+   "ligeros": 1440600,
+   "pesados": 9699,
+   "rangos": 1450291
+  },
+  "93+": {
+   "filas": 2880,
+   "ligeros": 1708835,
+   "pesados": 43803,
+   "rangos": 1752636
+  },
+  "97-": {
+   "filas": 1148,
+   "ligeros": 766187,
+   "pesados": 154583,
+   "rangos": 920770
+  },
+  "97+": {
+   "filas": 1134,
+   "ligeros": 907332,
+   "pesados": 49123,
+   "rangos": 956455
+  },
+  "99-": {
+   "filas": 2784,
+   "ligeros": 1695116,
+   "pesados": 62299,
+   "rangos": 1756953
+  },
+  "99+": {
+   "filas": 2112,
+   "ligeros": 1532481,
+   "pesados": 56211,
+   "rangos": 1588337
+  },
+  "103-": {
+   "filas": 1440,
+   "ligeros": 1352741,
+   "pesados": 34723,
+   "rangos": 1387464
+  },
+  "103+": {
+   "filas": 1440,
+   "ligeros": 1324689,
+   "pesados": 37909,
+   "rangos": 1362598
+  },
+  "111-": {
+   "filas": 1440,
+   "ligeros": 1041549,
+   "pesados": 47668,
+   "rangos": 1089063
+  },
+  "111+": {
+   "filas": 1440,
+   "ligeros": 1153051,
+   "pesados": 38427,
+   "rangos": 1191478
+  },
+  "123-": {
+   "filas": 2160,
+   "ligeros": 1086111,
+   "pesados": 27432,
+   "rangos": 1113543
+  },
+  "123+": {
+   "filas": 2160,
+   "ligeros": 955367,
+   "pesados": 32340,
+   "rangos": 987704
+  },
+  "131-": {
+   "filas": 1404,
+   "ligeros": 504778,
+   "pesados": 19740,
+   "rangos": 524291
+  },
+  "131+": {
+   "filas": 720,
+   "ligeros": 437197,
+   "pesados": 14506,
+   "rangos": 451617
+  },
+  "136-": {
+   "filas": 720,
+   "ligeros": 149282,
+   "pesados": 15549,
+   "rangos": 164831
+  },
+  "136+": {
+   "filas": 1440,
+   "ligeros": 159102,
+   "pesados": 15838,
+   "rangos": 174940
+  },
+  "138-": {
+   "filas": 720,
+   "ligeros": 114536,
+   "pesados": 11612,
+   "rangos": 126149
+  },
+  "138+": {
+   "filas": 1440,
+   "ligeros": 109702,
+   "pesados": 14283,
+   "rangos": 123985
+  }
+ },
+ "fichero_local": "tf5_horario_2025-09.csv.gz",
+ "sha256_gz_local": "8d2efdda49f6239f5f91ac7c71a0fdb8c7bb9cea5a4425bbe921b905166d8fee"
+}

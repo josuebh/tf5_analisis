@@ -1,0 +1,27 @@
+caso,escenario,alternativa,horizonte,p10,mediana,p90
+manana_hacia_santa_cruz,tercer_carril_corto,Tercer carril (1er año),corto,0.222192,0.401982,0.73495
+manana_hacia_santa_cruz,tercer_carril_medio,Tercer carril (a 5 años),medio,0.188488,0.344198,0.627403
+manana_hacia_santa_cruz,tercer_carril_largo,Tercer carril (a 10 años),largo,0.178034,0.327954,0.599199
+manana_hacia_santa_cruz,ramp_metering_corto,Regulación de accesos (1er año),corto,0.195627,0.336395,0.546122
+manana_hacia_santa_cruz,ramp_metering_medio,Regulación de accesos (a 5 años),medio,0.16496,0.286708,0.471678
+manana_hacia_santa_cruz,ramp_metering_largo,Regulación de accesos (a 10 años),largo,0.154905,0.277434,0.45508
+manana_hacia_santa_cruz,escalonamiento_corto,Escalonamiento horario (1er año),corto,0.104474,0.172622,0.312254
+manana_hacia_santa_cruz,escalonamiento_medio,Escalonamiento horario (a 5 años),medio,0.074466,0.133625,0.230428
+manana_hacia_santa_cruz,escalonamiento_largo,Escalonamiento horario (a 10 años),largo,0.066413,0.119609,0.218193
+manana_hacia_santa_cruz,tarificacion,Tarificación de la punta,neto,0.378028,0.610175,0.987665
+manana_hacia_santa_cruz,paquete_gestion_corto,Regulación + escalonamiento (1er año),corto,0.319625,0.484508,0.731424
+manana_hacia_santa_cruz,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),medio,0.260646,0.40431,0.622001
+manana_hacia_santa_cruz,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),largo,0.24139,0.387126,0.59397
+tarde_hacia_el_norte,tercer_carril_corto,"Tercer carril hacia el Norte, hipotético (1er año)",corto,0.340005,0.718,0.989273
+tarde_hacia_el_norte,tercer_carril_medio,"Tercer carril hacia el Norte, hipotético (a 5 años)",medio,0.301487,0.661101,0.972638
+tarde_hacia_el_norte,tercer_carril_largo,"Tercer carril hacia el Norte, hipotético (a 10 años)",largo,0.29513,0.643751,0.96178
+tarde_hacia_el_norte,ramp_metering_corto,Regulación de accesos (1er año),corto,0.297675,0.548779,0.744996
+tarde_hacia_el_norte,ramp_metering_medio,Regulación de accesos (a 5 años),medio,0.271679,0.502416,0.690529
+tarde_hacia_el_norte,ramp_metering_largo,Regulación de accesos (a 10 años),largo,0.260192,0.488466,0.673629
+tarde_hacia_el_norte,escalonamiento_corto,Escalonamiento horario (1er año),corto,0.057782,0.101725,0.194066
+tarde_hacia_el_norte,escalonamiento_medio,Escalonamiento horario (a 5 años),medio,0.0451,0.081544,0.15388
+tarde_hacia_el_norte,escalonamiento_largo,Escalonamiento horario (a 10 años),largo,0.041425,0.076416,0.144371
+tarde_hacia_el_norte,tarificacion,Tarificación de la punta,neto,0.290689,0.469273,1
+tarde_hacia_el_norte,paquete_gestion_corto,Regulación + escalonamiento (1er año),corto,0.376277,0.621014,0.809698
+tarde_hacia_el_norte,paquete_gestion_medio,Regulación + escalonamiento (a 5 años),medio,0.33593,0.565256,0.744707
+tarde_hacia_el_norte,paquete_gestion_largo,Regulación + escalonamiento (a 10 años),largo,0.32556,0.546203,0.727893

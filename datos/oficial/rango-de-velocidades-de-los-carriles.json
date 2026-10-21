@@ -1,0 +1,2541 @@
+{
+  "estaciones": [
+    {
+      "estacion_id": 1,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Refinería D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Refinería D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Refinería C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Refinería C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 11,
+      "carriles": [
+        {
+          "carril_id": -4,
+          "carril_descripcion": "Añaza D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Añaza D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Añaza D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Acceso de Añaza",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Salida a Añaza",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Añaza C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Añaza C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Añaza C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 21,
+      "carriles": [
+        {
+          "carril_id": -4,
+          "carril_descripcion": "Barranco Hondo D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Barranco Hondo D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Barranco Hondo D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Acceso de Barranco Hondo",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Salida a Barranco Hondo",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Barranco Hondo C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Barranco Hondo C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Barranco Hondo C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 27,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Güimar D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Güimar D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Güimar C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Güimar C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 29,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Túnel Güímar D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Túnel Güímar D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Túnel Güímar C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Túnel Güímar C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 41,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Porís D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Porís D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Porís C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Porís C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 45,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "San Isidro Decreciente Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "San Isidro Decreciente Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "San Isidro Decreciente Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "San Isidro Creciente Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "San Isidro Creciente Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "San Isidro Creciente Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 49,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Reina Sofía D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Reina Sofía D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Reina Sofía Acceso Aeropuerto",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Reina Sofía C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Reina Sofía C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 57,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Los Cristianos D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Los Cristianos D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Los Cristianos C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Los Cristianos C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 65,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Adeje D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Adeje D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Adeje D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Adeje C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Adeje C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Adeje C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 68,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "El Bicho D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "El Bicho D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "El Bicho C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "El Bicho C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 69,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "D. Rápido TF-2 a S/C",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Carrefour D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Carrefour D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Carrefour C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Carrefour C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 75,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Al Campo TF-2 D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Al Campo TF-2 D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Al Campo TF-2 C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Al Campo TF-2 C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 81,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Vía Penetración D. Acceso",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Vía Penetración D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Vía Penetración D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Vía Penetración C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Vía Penetración C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 82,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "BUs por TF-1",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Carril Bus",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Tres de Mayo C. Lento BP",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Tres de Mayo C. Rápido BP",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Tres de Mayo Acceso Mercado",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Tres de Mayo Acceso La Salle",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 83,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Tres de Mayo D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Tres de Mayo D. Medio-Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Tres de Mayo D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Tres de Mayo C. Salida",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Tres de Mayo C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Tres de Mayo C. Medio-Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Tres de Mayo C. Medio-Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 5,
+          "carril_descripcion": "Tres de Mayo C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 85,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Residencia D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Residencia D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Residencia D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Residencia C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Residencia C. Medio-Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Residencia C. Medio-Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Residencia C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 93,
+      "carriles": [
+        {
+          "carril_id": -4,
+          "carril_descripcion": "Al Campo  D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Al Campo  D. Medio Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Al Campo  D. Medio Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Al Campo  D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Al Campo  C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Al Campo  C. Medio Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Al Campo  C. Medio Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 4,
+          "carril_descripcion": "Al Campo  C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 97,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Anchieta D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Anchieta D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Anchieta D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Anchieta C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Anchieta C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Anchieta C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 99,
+      "carriles": [
+        {
+          "carril_id": -4,
+          "carril_descripcion": "Los Rodeos D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -3,
+          "carril_descripcion": "Los Rodeos D. Medio Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Los Rodeos D. Medio Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Los Rodeos D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Los Rodeos C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Los Rodeos C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "Los Rodeos C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 103,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Los Rodeos D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Los Rodeos D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Los Rodeos C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Los Rodeos C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 111,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "La Matanza D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "La Matanza D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "La Matanza C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "La Matanza C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 123,
+      "carriles": [
+        {
+          "carril_id": -3,
+          "carril_descripcion": "La Orotava D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -2,
+          "carril_descripcion": "La Orotava D. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "La Orotava D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "La Orotava C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "La Orotava C. Medio",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 3,
+          "carril_descripcion": "La Orotava C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 131,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Los Realejos Decreciente Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Los Realejos Decreciente Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Los Realejos Creciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 136,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "El Pedregal Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "El Pedregal C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "El Pedregal C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 138,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "El Amparo Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "El Amparo C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "El Amparo C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 139,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Icod de los Vinos Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Icod de los Vinos Creciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 140,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "San Andrés D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "San Andrés D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "San Andrés C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "San Andrés C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 159,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Vía de Ronda D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Vía de Ronda D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Vía de Ronda C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Vía de Ronda C.Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 171,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Tegueste (Pañuelas",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Tegueste (Pañuelas)",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 202,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Túnel de la TF-24 Decreciente TF-24",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Túnel de la TF-24 Decreciente Túnel",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Túnel de la TF-24 Creciente TF-24",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 272,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Cementerio D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Cementerio D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Cementerio C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Cementerio C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 90,
+              "rango3_max": 100,
+              "rango4_max": 110,
+              "rango5_max": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 279,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Garachico Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Garachico Creciente",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 285,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "ARMEÑIME DECRECIENTE",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "ARMEÑIME CRECIENTE",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 349,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Icod Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Icod Creciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 357,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Erjos TF-82 Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Erjos TF-82 Creciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 375,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Adeje TF-82 Santa Cruz",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Adeje TF-82 Santa Cruz",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 431,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Los Rodeos D. TF-152",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Los Rodeos C. TF-152",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 641,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Erjos TF-373 Decreciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Erjos TF-373 Creciente",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 773,
+      "carriles": [
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Cristianos D. TF-652",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Cristianos C. TF-652",
+          "rangos": [
+            {
+              "rango1_max": 50,
+              "rango2_max": 60,
+              "rango3_max": 70,
+              "rango4_max": 80,
+              "rango5_max": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 787,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Cristianos D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Cristianos D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Cristianos C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Cristianos C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 80,
+              "rango2_max": 100,
+              "rango3_max": 120,
+              "rango4_max": 140,
+              "rango5_max": 160
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "estacion_id": 901,
+      "carriles": [
+        {
+          "carril_id": -2,
+          "carril_descripcion": "Túnel Vía Litoral D. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": -1,
+          "carril_descripcion": "Túnel Vía Litoral D. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 1,
+          "carril_descripcion": "Túnel Vía Litoral C. Lento",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        },
+        {
+          "carril_id": 2,
+          "carril_descripcion": "Túnel Vía Litoral C. Rápido",
+          "rangos": [
+            {
+              "rango1_max": 40,
+              "rango2_max": 50,
+              "rango3_max": 60,
+              "rango4_max": 70,
+              "rango5_max": 80
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

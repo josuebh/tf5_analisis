@@ -1,0 +1,6 @@
+dia,registros_duplicados,carriles_con_duplicados,horas_duplicadas,horas_distintas,cambio_de_hora,laborable
+2024-10-27,0,0,,24,octubre (-1 h),FALSE
+2025-03-30,59,59,02,23,marzo (+1 h),FALSE
+2025-10-26,0,0,,24,octubre (-1 h),FALSE
+2026-01-27,0,0,,1,,TRUE
+2026-03-29,50,50,02,23,marzo (+1 h),FALSE

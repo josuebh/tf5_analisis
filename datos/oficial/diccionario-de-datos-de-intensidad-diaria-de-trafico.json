@@ -1,0 +1,88 @@
+{
+  "@context": "http://www.w3.org/ns/csvw",
+  "@type": "Table",
+  "dc:description": "Diccionario de datos",
+  "dc:creator": "Servicio Técnico de Carreteras y Movilidad",
+  "tableSchema": {
+    "columns": [
+      {
+        "name": "estacion_id",
+        "datatype": "numeric",
+        "title": "estacion_id",
+        "dc:description": "Identificador de la estación de aforo. Se utiliza para consultar datos de la estación en el conjunto Estaciones de aforo por tramos de la red de carreteras de Tenerife"
+      },
+      {
+        "name": "estacion_nombre",
+        "datatype": "text",
+        "title": "estacion_nombre",
+        "dc:description": "Nombre de la estación de aforo"
+      },
+      {
+        "name": "carril_id",
+        "datatype": "numeric",
+        "title": "carril_id",
+        "dc:description": "Carril de la carretera donde se obtiene la medición. Se indican con valores positivos los carriles con sentido creciente según los puntos kilométricos y con valores negativos los decrecientes, comenzando la numeración por el carril derecho en ambos casos. Valores:1,2,3...-1.-2,-3..."
+      },
+      {
+        "name": "carril_descripcion",
+        "datatype": "text",
+        "title": "carril_descripcion",
+        "dc:description": "Descripción del carril en cuestión"
+      },
+      {
+        "name": "fecha",
+        "datatype": "timestamp",
+        "title": "fecha",
+        "dc:description": "Fecha y hora de la medición del aforo de vehículos para la carretera y carril indicados"
+      },
+      {
+        "name": "ligeros",
+        "datatype": "numeric",
+        "title": "ligeros",
+        "dc:description": "Número de vehículos ligeros (menores de 6 metros) contabilizados en el aforo de tráfico"
+      },
+      {
+        "name": "pesados",
+        "datatype": "numeric",
+        "title": "pesados",
+        "dc:description": "Número de vehículos pesados (mayores de 6 metros) contabilizados en el aforo de tráfico"
+      },
+      {
+        "name": "rango1_vehiculos",
+        "datatype": "numeric",
+        "title": "rango1_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 1"
+      },
+      {
+        "name": "rango2_vehiculos",
+        "datatype": "numeric",
+        "title": "rango2_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 2"
+      },
+      {
+        "name": "rango3_vehiculos",
+        "datatype": "numeric",
+        "title": "rango3_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 3"
+      },
+      {
+        "name": "rango4_vehiculos",
+        "datatype": "numeric",
+        "title": "rango4_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 4"
+      },
+      {
+        "name": "rango5_vehiculos",
+        "datatype": "numeric",
+        "title": "rango5_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 5"
+      },
+      {
+        "name": "rango6_vehiculos",
+        "datatype": "numeric",
+        "title": "rango6_vehiculos",
+        "dc:description": "Número de vehículos (ligeros y pesados) contabilizados en el rango de velocidad 6"
+      }
+    ]
+  }
+}

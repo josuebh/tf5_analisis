@@ -1,0 +1,15 @@
+estacion_id,etiqueta,sentido,papel_en_el_modelo,base_noche_24_meses,base_noche_2025,horas_2025,horas_que_cambian
+85,Hospital Residencia,ascendente,descriptiva,0.089145,0.090001,5472,0
+85,Hospital Residencia,descendente,descriptiva,0.337035,0.335614,5448,0
+93,Campus Guajara,ascendente,descriptiva,0.366426,0.352549,5424,15
+93,Campus Guajara,descendente,tramo siguiente de la mañana: variantes de la capacidad libre,0.059028,0.037954,5424,0
+97,Padre Anchieta,ascendente,descriptiva,1,1,1296,0
+97,Padre Anchieta,descendente,descriptiva,1,1,1320,0
+99,Bomberos La Laguna,ascendente,cuello de la tarde: objetivos de calibración,0.178245,0.16772,5376,0
+99,Bomberos La Laguna,descendente,tramo siguiente de la mañana: variantes de la capacidad libre,0.174359,0.161915,5352,0
+103,Ermita Cruz Chica,ascendente,descriptiva,0.060666,0.070026,5448,0
+103,Ermita Cruz Chica,descendente,cuello de la mañana: objetivos de calibración,0.097912,0.095838,5424,0
+111,La Matanza,ascendente,tramo siguiente de la tarde: solo caudales (sin velocidad utilizable),0.763989,0.766799,5472,0
+111,La Matanza,descendente,descriptiva,0.812499,0.811917,5328,0
+123,La Orotava,ascendente,descriptiva,0.198999,0.19607,5448,0
+123,La Orotava,descendente,descriptiva,0.280813,0.273254,5472,0

@@ -1,0 +1,14 @@
+TF-5 — ANÁLISIS INTEGRAL Y MODELIZACIÓN PREDICTIVA DE LA CONGESTIÓN
+
+1. Extrae el ZIP completo conservando las carpetas.
+2. Abre panel/index.html en tu navegador. Funciona sin conexión y sin instalar R.
+3. README.md explica el estudio, los resultados y cómo reproducirlo en R;
+   docs/METODOLOGIA.md, el método, y docs/VALIDACION_Y_CALIDAD.md, los diez
+   criterios de calidad con sus comprobaciones.
+4. manifiesto_entrega.csv tiene la huella SHA-256 de cada fichero del paquete;
+   herramientas/comprobaciones/verificar_entrega.py la comprueba.
+
+Los datos son los oficiales del Cabildo de Tenerife (37 recursos, con las
+942.041 filas horarias incluidas y contrastadas con el portal). Los resultados
+futuros son escenarios bajo supuestos, con los márgenes y los datos faltantes
+declarados en el proyecto.

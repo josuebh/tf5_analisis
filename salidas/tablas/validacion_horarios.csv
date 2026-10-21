@@ -1,0 +1,166 @@
+regla,gravedad,estacion_id,etiqueta,sentido,mes,filas,detalle
+H1 rangos de velocidad != vehículos,info,82,Túnel 3 de Mayo,ascendente,,74,diferencia rangos - vehículos entre -1 y 1 (total -12)
+H1 rangos de velocidad != vehículos,info,82,Túnel 3 de Mayo,descendente,,172,diferencia rangos - vehículos entre -1 y 1 (total -46)
+H1 rangos de velocidad != vehículos,info,83,Somosierra,ascendente,,1556,diferencia rangos - vehículos entre -10 y 15 (total -37)
+H1 rangos de velocidad != vehículos,info,83,Somosierra,descendente,,9545,diferencia rangos - vehículos entre -10 y 10 (total -950)
+H1 rangos de velocidad != vehículos,info,85,Hospital Residencia,ascendente,,14265,diferencia rangos - vehículos entre -10 y 15 (total 393)
+H1 rangos de velocidad != vehículos,info,85,Hospital Residencia,descendente,,1401,diferencia rangos - vehículos entre -50 y 50 (total 587)
+H1 rangos de velocidad != vehículos,info,93,Campus Guajara,ascendente,,2403,diferencia rangos - vehículos entre -2 y 2 (total 519)
+H1 rangos de velocidad != vehículos,info,93,Campus Guajara,descendente,,1671,diferencia rangos - vehículos entre -2 y 3 (total 489)
+H1 rangos de velocidad != vehículos,info,97,Padre Anchieta,ascendente,,5,diferencia rangos - vehículos entre -1 y 1 (total -1)
+H1 rangos de velocidad != vehículos,info,97,Padre Anchieta,descendente,,11,diferencia rangos - vehículos entre -1 y 1 (total 5)
+H1 rangos de velocidad != vehículos,info,99,Bomberos La Laguna,ascendente,,5429,diferencia rangos - vehículos entre -2 y 2 (total 993)
+H1 rangos de velocidad != vehículos,info,99,Bomberos La Laguna,descendente,,6248,diferencia rangos - vehículos entre -2 y 2 (total 1.027)
+H1 rangos de velocidad != vehículos,info,103,Ermita Cruz Chica,ascendente,,3829,diferencia rangos - vehículos entre -100 y 55 (total -1.648)
+H1 rangos de velocidad != vehículos,info,103,Ermita Cruz Chica,descendente,,2001,diferencia rangos - vehículos entre -150 y 105 (total -1.968)
+H1 rangos de velocidad != vehículos,info,111,La Matanza,ascendente,,357,diferencia rangos - vehículos entre -100 y 55 (total 14)
+H1 rangos de velocidad != vehículos,info,111,La Matanza,descendente,,2883,diferencia rangos - vehículos entre -100 y 15 (total -734)
+H1 rangos de velocidad != vehículos,info,123,La Orotava,ascendente,,2528,diferencia rangos - vehículos entre -10 y 10 (total 432)
+H1 rangos de velocidad != vehículos,info,123,La Orotava,descendente,,295,diferencia rangos - vehículos entre -2 y 2 (total -14)
+H1 rangos de velocidad != vehículos,info,131,Bco. El Patronato,ascendente,,1936,diferencia rangos - vehículos entre -52 y 886 (total 2.544)
+H1 rangos de velocidad != vehículos,info,131,Bco. El Patronato,descendente,,3414,diferencia rangos - vehículos entre -24 y 1.474 (total 8.141)
+H1 rangos de velocidad != vehículos,info,136,El Pedregal,ascendente,,8,diferencia rangos - vehículos entre -1 y 1 (total -2)
+H1 rangos de velocidad != vehículos,info,136,El Pedregal,descendente,,1,diferencia rangos - vehículos entre 1 y 1 (total 1)
+H1 rangos de velocidad != vehículos,info,138,El Amparo,descendente,,1,diferencia rangos - vehículos entre 1 y 1 (total 1)
+H2 horas incompletas (> 10 % del mes),aviso,85,Hospital Residencia,ascendente,2026-09,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,85,Hospital Residencia,descendente,2026-09,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2024-09,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2024-10,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2024-11,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-01,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-02,672,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-03,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-04,295,solo 59% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-05,376,solo 49% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-06,333,solo 54% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-07,639,solo 14% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-08,355,solo 52% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-09,342,solo 52% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-10,622,solo 16% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-11,356,solo 51% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2025-12,580,solo 22% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2026-01,520,solo 30% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2026-02,170,solo 75% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2026-03,121,solo 84% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2026-04,86,solo 88% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,ascendente,2026-08,84,solo 89% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2024-09,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2024-10,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2024-11,720,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-01,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-02,672,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-03,744,solo 0% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-04,295,solo 59% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-05,376,solo 49% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-06,333,solo 54% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-07,639,solo 14% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-08,355,solo 52% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-09,342,solo 52% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-10,622,solo 16% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-11,356,solo 51% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2025-12,580,solo 22% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2026-01,520,solo 30% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2026-02,170,solo 75% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2026-03,121,solo 84% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2026-04,86,solo 88% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,97,Padre Anchieta,descendente,2026-08,84,solo 89% de las horas del mes con todos los carriles
+H2 horas incompletas (> 10 % del mes),aviso,131,Bco. El Patronato,descendente,2025-08,91,solo 88% de las horas del mes con todos los carriles
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2024-09,30,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2024-10,31,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2024-11,30,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-01,31,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-02,28,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-03,31,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-04,5,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-05,11,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-06,8,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-07,24,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-08,10,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-09,9,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-10,20,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-11,11,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2025-12,18,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2026-01,14,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2026-02,4,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2026-03,2,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2026-04,2,carril-días a cero: carriles -3
+H3 carril-día sin vehículos,aviso,97,Padre Anchieta,descendente,2026-08,2,carril-días a cero: carriles -3
+H4 registros duplicados,aviso,82,Túnel 3 de Mayo,ascendente,,4,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,82,Túnel 3 de Mayo,descendente,,2,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,83,Somosierra,ascendente,,10,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,83,Somosierra,descendente,,6,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,85,Hospital Residencia,ascendente,,8,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,85,Hospital Residencia,descendente,,6,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,93,Campus Guajara,ascendente,,8,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,93,Campus Guajara,descendente,,8,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,97,Padre Anchieta,ascendente,,3,fechas: 2026-03-29 02:00:00
+H4 registros duplicados,aviso,97,Padre Anchieta,descendente,,3,fechas: 2026-03-29 02:00:00
+H4 registros duplicados,aviso,99,Bomberos La Laguna,ascendente,,6,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,99,Bomberos La Laguna,descendente,,8,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,103,Ermita Cruz Chica,ascendente,,4,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,103,Ermita Cruz Chica,descendente,,4,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,111,La Matanza,ascendente,,4,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,111,La Matanza,descendente,,4,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,123,La Orotava,ascendente,,6,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,123,La Orotava,descendente,,6,"fechas: 2025-03-30 02:00:00, 2026-03-29 02:00:00"
+H4 registros duplicados,aviso,131,Bco. El Patronato,ascendente,,1,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,131,Bco. El Patronato,descendente,,2,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,136,El Pedregal,ascendente,,2,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,136,El Pedregal,descendente,,1,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,138,El Amparo,ascendente,,2,fechas: 2025-03-30 02:00:00
+H4 registros duplicados,aviso,138,El Amparo,descendente,,1,fechas: 2025-03-30 02:00:00
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2025-09,267,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2025-10,304,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2025-11,919,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2025-12,428,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-01,569,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-02,1260,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-03,1582,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-04,1603,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-05,1817,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-06,1797,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-07,1859,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-08,1651,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,ascendente,2026-09,1778,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2025-09,304,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2025-10,351,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2025-11,1052,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2025-12,482,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-01,653,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-02,1451,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-03,1799,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-04,1800,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-05,2006,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-06,1967,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-07,2035,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-08,1845,rangos de velocidad con valores negativos (se descartan las velocidades)
+H6 rangos negativos,error,97,Padre Anchieta,descendente,2026-09,1982,rangos de velocidad con valores negativos (se descartan las velocidades)
+H7 caudal implausible,aviso,83,Somosierra,descendente,,22,más de 2.600 veh/h en un carril
+H7 caudal implausible,aviso,85,Hospital Residencia,ascendente,,147,más de 2.600 veh/h en un carril
+H7 caudal implausible,aviso,93,Campus Guajara,ascendente,,30,más de 2.600 veh/h en un carril
+H7 caudal implausible,aviso,99,Bomberos La Laguna,ascendente,,1,más de 2.600 veh/h en un carril
+H7 caudal implausible,aviso,111,La Matanza,descendente,,67,más de 2.600 veh/h en un carril
+H8 media horaria != IMD oficial (> 10 %),aviso,82,Túnel 3 de Mayo,ascendente,2025,364,"media de 364 días completos = 13.993 veh/día frente a IMD 21.618 (-35,3%)"
+H8 media horaria != IMD oficial (> 10 %),aviso,83,Somosierra,ascendente,2025,364,"media de 364 días completos = 39.900 veh/día frente a IMD 44.356 (-10,0%)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-03,528,"carril -1: perfil horario distinto del habitual (distancia 0,17)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-04,480,"carril -3: perfil horario distinto del habitual (distancia 0,15)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-04,480,"carril -1: perfil horario distinto del habitual (distancia 0,19)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-05,480,"carril -3: perfil horario distinto del habitual (distancia 0,12)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-05,480,"carril -1: perfil horario distinto del habitual (distancia 0,19)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-06,528,"carril -3: perfil horario distinto del habitual (distancia 0,11)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-06,528,"carril -1: perfil horario distinto del habitual (distancia 0,18)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-07,552,"carril -3: perfil horario distinto del habitual (distancia 0,14)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-07,552,"carril -1: perfil horario distinto del habitual (distancia 0,20)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-09,528,"carril -3: perfil horario distinto del habitual (distancia 0,11)"
+H9 perfil horario anómalo en un carril,aviso,83,Somosierra,descendente,2026-09,528,"carril -1: perfil horario distinto del habitual (distancia 0,19)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2025-11,480,"carril 3: perfil horario distinto del habitual (distancia 0,14)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2025-12,504,"carril 3: perfil horario distinto del habitual (distancia 0,17)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-01,456,"carril 3: perfil horario distinto del habitual (distancia 0,15)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-02,456,"carril 3: perfil horario distinto del habitual (distancia 0,16)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-03,528,"carril 3: perfil horario distinto del habitual (distancia 0,31)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-04,480,"carril 3: perfil horario distinto del habitual (distancia 0,33)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-05,480,"carril 3: perfil horario distinto del habitual (distancia 0,32)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-06,528,"carril 3: perfil horario distinto del habitual (distancia 0,30)"
+H9 perfil horario anómalo en un carril,aviso,85,Hospital Residencia,ascendente,2026-07,552,"carril 3: perfil horario distinto del habitual (distancia 0,36)"
+H9 perfil horario anómalo en un carril,aviso,93,Campus Guajara,ascendente,2024-09,504,"carril 1: perfil horario distinto del habitual (distancia 0,18)"
+H9 perfil horario anómalo en un carril,aviso,93,Campus Guajara,ascendente,2024-11,480,"carril 1: perfil horario distinto del habitual (distancia 0,12)"

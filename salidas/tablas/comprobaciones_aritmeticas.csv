@@ -1,0 +1,8 @@
+comprobacion,resultado,detalle
+De 59 a 85 plazas por guagua = +44 %,CORRECTO,"(85-59)/59 = 44,1%"
+Pasar de 2 a 3 carriles sube la oferta un 33 %,ERRÓNEO,3/2 - 1 = 50% (el 33 % sería pasar de 3 a 4 carriles)
+"Peaje de 2 €: 5.500 x (-0,3 x 2/6) = -550 veh/h",CORRECTO,"La cuenta cuadra, pero los 5.500 veh/h, la elasticidad y los 6 € no tienen fuente"
+5.500 veh/h circulando por dos carriles de 4.000 veh/h de capacidad,INCOHERENTE,"Un aforo no puede medir más tráfico que la capacidad del tramo: es demanda, no flujo"
+Nivel F «cuando la densidad supera 2.200 vehículos por hora y carril»,ERRÓNEO,Mezcla unidades: la densidad se mide en veh/km/carril; 2.200 veh/h/carril es un flujo
+Ahorro mensual: 110 + 45 + 42 = 197 €; ~2.400 €/año,CORRECTO,197 x 12 = 2.364 €; los importes de partida son supuestos sin fuente
+El tren «multiplica por 15» el coste de cualquier obra en la TF-5,INCOHERENTE,"1.100/58,18 = 18,9; 1.100/6,2 = 177"

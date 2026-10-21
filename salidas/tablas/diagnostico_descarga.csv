@@ -1,0 +1,123 @@
+caso,bloque,grupo,fuente,n,p10,mediana,p90,nota
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,06 h,aforo 2025,207,0.016890102258144496,0.02072678331090175,0.024173381494859682,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,06 h,aforo 2025,207,3314.2,3580,3686.6000000000004,
+manana_hacia_santa_cruz,Por hora del día,06 h,aforo 2026,147,3330.8,3566,3684,
+manana_hacia_santa_cruz,Por hora del día,06 h,modelo (calibrado),378,3444.4405688487373,3515.2882581188815,3617.2846811672434,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,07 h,aforo 2025,205,0.017561662803648296,0.02194982896237172,0.027406234475906604,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,07 h,aforo 2025,205,3063,3370,3495.8,
+manana_hacia_santa_cruz,Por hora del día,07 h,aforo 2026,141,3072,3339,3471,
+manana_hacia_santa_cruz,Por hora del día,07 h,modelo (calibrado),378,3320.829810799279,3427.0197502853384,3461.143278452536,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,08 h,aforo 2025,145,0.02927316652421152,0.03447175231407597,0.03864040953865561,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,08 h,aforo 2025,145,2662.2,3062,3275.6,
+manana_hacia_santa_cruz,Por hora del día,08 h,aforo 2026,92,2512.3999999999996,3070,3299.5000000000005,
+manana_hacia_santa_cruz,Por hora del día,08 h,modelo (calibrado),378,3062.7467852977593,3109.842014302378,3176.9358494651124,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,09 h,aforo 2025,33,0.0356662962054828,0.0405449237755433,0.044410820904902955,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,09 h,aforo 2025,33,2661,3111,3421.2,
+manana_hacia_santa_cruz,Por hora del día,09 h,aforo 2026,33,2694,3153,3326,
+manana_hacia_santa_cruz,Por hora del día,09 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,10 h,aforo 2025,14,0.03140206652008693,0.037161964163208994,0.043527136755757506,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,10 h,aforo 2025,14,2741.7,2892,3362.5,
+manana_hacia_santa_cruz,Por hora del día,10 h,aforo 2026,10,2792.2000000000003,3093,3363.1,
+manana_hacia_santa_cruz,Por hora del día,10 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,11 h,aforo 2025,14,0.03178478725060278,0.03912930589697544,0.043914229086424825,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,11 h,aforo 2025,14,2745.4,3018.5,3335.9,
+manana_hacia_santa_cruz,Por hora del día,11 h,aforo 2026,4,2852.3999999999996,3259.5,3481.1,
+manana_hacia_santa_cruz,Por hora del día,11 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Parte de pesados en las horas con cola,12 h,aforo 2025,2,0.03962443009699825,0.040599430861968724,0.041574431626939204,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+manana_hacia_santa_cruz,Por hora del día,12 h,aforo 2025,2,2772.1,2860.5,2948.8999999999996,
+manana_hacia_santa_cruz,Por hora del día,12 h,aforo 2026,3,2754.3999999999996,2964,2981.6,
+manana_hacia_santa_cruz,Por hora del día,12 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+manana_hacia_santa_cruz,Por posición en la cola,inicio,aforo 2025,207,3303.6000000000004,3580,3686.6000000000004,
+manana_hacia_santa_cruz,Por posición en la cola,inicio,aforo 2026,137,3330.8,3582,3686.8,
+manana_hacia_santa_cruz,Por posición en la cola,inicio,modelo (calibrado),378,3444.4405688487373,3515.2882581188815,3617.2846811672434,
+manana_hacia_santa_cruz,Por posición en la cola,plena,aforo 2025,186,2678,3243,3458.5,
+manana_hacia_santa_cruz,Por posición en la cola,plena,aforo 2026,137,2615.2,3168,3403,
+manana_hacia_santa_cruz,Por posición en la cola,plena,modelo (calibrado),378,3320.829810799279,3427.0197502853384,3461.143278452536,
+manana_hacia_santa_cruz,Por posición en la cola,final,aforo 2025,207,2893,3218,3476,
+manana_hacia_santa_cruz,Por posición en la cola,final,aforo 2026,137,2959.4,3252,3467,
+manana_hacia_santa_cruz,Por posición en la cola,final,modelo (calibrado),378,3062.7467852977593,3109.842014302378,3176.9358494651124,
+manana_hacia_santa_cruz,Por posición en la cola,aislada,aforo 2025,20,2636.9,2997,3417.1000000000004,
+manana_hacia_santa_cruz,Por posición en la cola,aislada,aforo 2026,19,2929.2,3416,3574.2000000000003,
+manana_hacia_santa_cruz,Por posición en la cola,aislada,modelo (calibrado),0,,,,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"06 h, con cola abajo",aforo 2025,2,3467.6,3558,3648.4,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"06 h, sin cola abajo",aforo 2025,205,3312.8,3580,3687.4,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"06 h, con cola abajo",aforo 2026,0,,,,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"06 h, sin cola abajo",aforo 2026,147,3330.8,3566,3684,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"07 h, con cola abajo",aforo 2025,156,3061.5,3375.5,3491.5,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"07 h, sin cola abajo",aforo 2025,49,3116.6000000000004,3361,3500.4,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"07 h, con cola abajo",aforo 2026,92,3057.6,3309,3438,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"07 h, sin cola abajo",aforo 2026,49,3255.2000000000003,3403,3541.6,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"08 h, con cola abajo",aforo 2025,70,2563.3,2955.5,3232.5,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"08 h, sin cola abajo",aforo 2025,75,2817.2,3133,3305.4,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"08 h, con cola abajo",aforo 2026,61,2483,2981,3197,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"08 h, sin cola abajo",aforo 2026,31,2873,3200,3393,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"09 h, con cola abajo",aforo 2025,7,2430.4,3006,3225.2,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"09 h, sin cola abajo",aforo 2025,26,2761,3226.5,3424.5,
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"09 h, con cola abajo",aforo 2026,10,2394.1000000000004,2883.5,3173.3999999999996,Cola en Bomberos La Laguna o Campus Guajara en la misma hora
+manana_hacia_santa_cruz,Según haya cola aguas abajo,"09 h, sin cola abajo",aforo 2026,23,2970.7999999999997,3217,3347.6,
+manana_hacia_santa_cruz,Parámetro de descarga,previa (todas las combinaciones),modelo,20000,3326.6945201797644,3523.7511026708526,3723.2167846217553,El 33 % de la previa cumple la regla de la descarga (medida como en el aforo; 3.242-3.463 veh/h)
+manana_hacia_santa_cruz,Parámetro de descarga,"cumplen duración, inicio y fin (sin mirar la descarga)",modelo,1347,3466.064474052323,3575.8665529513655,3739.338992427125,
+manana_hacia_santa_cruz,Parámetro de descarga,aceptadas (calibración principal),modelo,378,3438.8836591382533,3496.5768620505505,3612.666737240569,
+manana_hacia_santa_cruz,Parámetro de descarga,"medida del día (mediana de sus horas con cola), 2025",aforo 2025,215,3096,3371,3511.3,
+manana_hacia_santa_cruz,Parámetro de descarga,"medida del día (mediana de sus horas con cola), 2026",aforo 2026,153,3110.3999999999996,3371.5,3530,
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,11 h,aforo 2025,2,0.038286770856262385,0.04292699391004476,0.04756721696382713,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,11 h,aforo 2025,2,2505.2,2614,2722.7999999999997,
+tarde_hacia_el_norte,Por hora del día,11 h,aforo 2026,1,2619,2619,2619,
+tarde_hacia_el_norte,Por hora del día,11 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,12 h,aforo 2025,3,0.03371246539001469,0.03783408538701839,0.03789126294955273,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,12 h,aforo 2025,3,2828.2,2881,3066.6000000000004,
+tarde_hacia_el_norte,Por hora del día,12 h,aforo 2026,9,2931.8,3117,3219,
+tarde_hacia_el_norte,Por hora del día,12 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,13 h,aforo 2025,124,0.026121317308880454,0.030658700435667475,0.03620856623456056,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,13 h,aforo 2025,124,3204.7,3434,3589.1,
+tarde_hacia_el_norte,Por hora del día,13 h,aforo 2026,107,3175.2,3386,3561.8,
+tarde_hacia_el_norte,Por hora del día,13 h,modelo (calibrado),392,3440.278871913214,3540.3317250594714,3630.340177603824,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,14 h,aforo 2025,219,0.020467549963648454,0.024223425477343973,0.027516671492160336,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,14 h,aforo 2025,219,3334.6,3650,3735.6000000000004,
+tarde_hacia_el_norte,Por hora del día,14 h,aforo 2026,160,3019.7000000000003,3527,3753.1,
+tarde_hacia_el_norte,Por hora del día,14 h,modelo (calibrado),1369,3411.9474145219806,3530.991579619621,3640.0601593886886,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,15 h,aforo 2025,219,0.02039819185002991,0.022979602375419572,0.025951872575835613,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,15 h,aforo 2025,219,3356.8,3700,3790.2,
+tarde_hacia_el_norte,Por hora del día,15 h,aforo 2026,158,3324.8,3572.5,3795.5,
+tarde_hacia_el_norte,Por hora del día,15 h,modelo (calibrado),1369,3402.192473211687,3509.5680628017462,3620.6694392099753,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,16 h,aforo 2025,216,0.01896354969255354,0.022617462326598947,0.02566651841847315,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,16 h,aforo 2025,216,3249.5,3598,3730.5,
+tarde_hacia_el_norte,Por hora del día,16 h,aforo 2026,142,3098.4,3412,3664.5,
+tarde_hacia_el_norte,Por hora del día,16 h,modelo (calibrado),1369,3400.565541565207,3488.409955664945,3575.166654294191,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,17 h,aforo 2025,98,0.016248097412480976,0.018558824502376954,0.021802575830795336,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,17 h,aforo 2025,98,2992.2,3307.5,3556.4,
+tarde_hacia_el_norte,Por hora del día,17 h,aforo 2026,67,2917.2,3269,3514.2,
+tarde_hacia_el_norte,Por hora del día,17 h,modelo (calibrado),720,3369.7489943478145,3427.124339531153,3488.89005868072,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,18 h,aforo 2025,67,0.015580362217064356,0.017999409855414577,0.020742334973813635,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,18 h,aforo 2025,67,2939.6000000000004,3151,3373.8,
+tarde_hacia_el_norte,Por hora del día,18 h,aforo 2026,42,2760.6000000000004,3110.5,3326.7000000000003,
+tarde_hacia_el_norte,Por hora del día,18 h,modelo (calibrado),281,3325.009346412606,3381.2981113733667,3424.115732657904,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,19 h,aforo 2025,39,0.012927756478593667,0.015708358032009484,0.01836267578751279,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,19 h,aforo 2025,39,2816.8,3112,3351.6000000000004,
+tarde_hacia_el_norte,Por hora del día,19 h,aforo 2026,44,2839.4,3114,3352.5,
+tarde_hacia_el_norte,Por hora del día,19 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,20 h,aforo 2025,35,0.010656274976959056,0.012696493349455865,0.015312735514965547,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,20 h,aforo 2025,35,2578.3999999999996,2982,3292.8,
+tarde_hacia_el_norte,Por hora del día,20 h,aforo 2026,24,2519.2,2912,3248.0999999999995,
+tarde_hacia_el_norte,Por hora del día,20 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Parte de pesados en las horas con cola,21 h,aforo 2025,3,0.011668388867243744,0.013807531380753139,0.014646371642910145,Fracción de vehículos de más de 6 m (pesados) en la estación de salida
+tarde_hacia_el_norte,Por hora del día,21 h,aforo 2025,3,2011.6000000000001,2154,2342.8,
+tarde_hacia_el_norte,Por hora del día,21 h,aforo 2026,2,2140.7000000000003,2247.5,2354.2999999999997,
+tarde_hacia_el_norte,Por hora del día,21 h,modelo (calibrado),0,,,,Caudal simulado en las horas que el aforo contaría con cola
+tarde_hacia_el_norte,Por posición en la cola,inicio,aforo 2025,235,3160.8,3515,3703.5999999999995,
+tarde_hacia_el_norte,Por posición en la cola,inicio,aforo 2026,171,3012,3390,3653,
+tarde_hacia_el_norte,Por posición en la cola,inicio,modelo (calibrado),1369,3423.250789137289,3540.343927304057,3649.6585636029017,
+tarde_hacia_el_norte,Por posición en la cola,plena,aforo 2025,534,3073.2999999999997,3631.5,3760.7,
+tarde_hacia_el_norte,Por posición en la cola,plena,aforo 2026,391,2941,3488,3753,
+tarde_hacia_el_norte,Por posición en la cola,plena,modelo (calibrado),2762,3391.6449184604667,3473.440919116461,3598.6637285768875,
+tarde_hacia_el_norte,Por posición en la cola,final,aforo 2025,235,3032.3999999999996,3478,3697.6,
+tarde_hacia_el_norte,Por posición en la cola,final,aforo 2026,171,2907,3367,3605,
+tarde_hacia_el_norte,Por posición en la cola,final,modelo (calibrado),1369,3364.8912892801222,3467.245397870949,3572.727607063584,
+tarde_hacia_el_norte,Por posición en la cola,aislada,aforo 2025,21,2915,3092,3316,
+tarde_hacia_el_norte,Por posición en la cola,aislada,aforo 2026,23,2916.8,3190,3373.2000000000003,
+tarde_hacia_el_norte,Por posición en la cola,aislada,modelo (calibrado),0,,,,
+tarde_hacia_el_norte,Parámetro de descarga,previa (todas las combinaciones),modelo,10000,3331.879115921993,3524.062867467558,3723.453803105577,El 92 % de la previa cumple la regla de la descarga (como parámetro; 3.061-3.744 veh/h)
+tarde_hacia_el_norte,Parámetro de descarga,"cumplen duración, inicio y fin (sin mirar la descarga)",modelo,1381,3402.3946739759704,3510.8543259900316,3623.683673861697,
+tarde_hacia_el_norte,Parámetro de descarga,aceptadas (calibración principal),modelo,1369,3402.1924732116872,3509.5680628017462,3620.6694392099757,
+tarde_hacia_el_norte,Parámetro de descarga,"medida del día (mediana de sus horas con cola), 2025",aforo 2025,222,3286.7000000000003,3587,3700.95,
+tarde_hacia_el_norte,Parámetro de descarga,"medida del día (mediana de sus horas con cola), 2026",aforo 2026,160,3180.9,3449,3653.3500000000004,

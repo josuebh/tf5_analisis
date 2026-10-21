@@ -1,0 +1,134 @@
+{
+ "mes": "2024-11",
+ "url": "https://datos.tenerife.es/ckan/dataset/e4cf320e-dda5-4b9a-bae3-ec3d6a252c80/resource/057aedca-ef1a-4b45-8846-355b489cf9f6/download/intensidad-de-trafico-diaria-en-noviembre-2024.txt",
+ "resource_id": "057aedca-ef1a-4b45-8846-355b489cf9f6",
+ "dataset_id": "e4cf320e-dda5-4b9a-bae3-ec3d6a252c80",
+ "size_ckan": 9529204,
+ "last_modified_ckan": "2025-06-19T15:09:15.197032",
+ "status": 200,
+ "last_modified_http": "Thu, 19 Jun 2025 15:09:15 GMT",
+ "descargado_utc": "2026-10-15T23:38:39.711Z",
+ "bytes_raw": 9529204,
+ "sha256_raw": "dbf334476c226c960b0f67a85406281c5b12fe30734f813fcab33edb1a095058",
+ "header": "estacion_id,estacion_nombre,carril_id,carril_descripcion,fecha,ligeros,pesados,rango1_vehiculos,rango2_vehiculos,rango3_vehiculos,rango4_vehiculos,rango5_vehiculos,rango6_vehiculos",
+ "lineas": 111527,
+ "nfields": {
+  "13": 111525
+ },
+ "estaciones_en_fichero": 36,
+ "filas_tf5": 31710,
+ "filas_tf5_malformadas": 0,
+ "fechas_formato_raro": 0,
+ "fechas_fuera_de_mes": 0,
+ "duplicados": 0,
+ "fecha_min": "2024-11-01 00:00:00",
+ "fecha_max": "2024-11-30 23:00:00",
+ "bytes_compact": 1558432,
+ "sha256_compact": "385e73382046b38c7b5b8af01b7cfb2cbd51b0f90c227deca8fa27d2efee1a37",
+ "gz_bytes": 413268,
+ "b64_len": 551024,
+ "control": {
+  "83-": {
+   "filas": 2160,
+   "ligeros": 1074917,
+   "pesados": 10304,
+   "rangos": 1085250
+  },
+  "83+": {
+   "filas": 3600,
+   "ligeros": 1366017,
+   "pesados": 22861,
+   "rangos": 1388885
+  },
+  "85-": {
+   "filas": 2160,
+   "ligeros": 1565995,
+   "pesados": 20909,
+   "rangos": 1586904
+  },
+  "85+": {
+   "filas": 2880,
+   "ligeros": 1561825,
+   "pesados": 60198,
+   "rangos": 1622161
+  },
+  "93-": {
+   "filas": 2880,
+   "ligeros": 1505570,
+   "pesados": 11668,
+   "rangos": 1517245
+  },
+  "93+": {
+   "filas": 2880,
+   "ligeros": 1653072,
+   "pesados": 62102,
+   "rangos": 1715177
+  },
+  "97-": {
+   "filas": 30,
+   "ligeros": 0,
+   "pesados": 0,
+   "rangos": 0
+  },
+  "99-": {
+   "filas": 2880,
+   "ligeros": 1715243,
+   "pesados": 60903,
+   "rangos": 1776147
+  },
+  "99+": {
+   "filas": 2160,
+   "ligeros": 1547355,
+   "pesados": 50498,
+   "rangos": 1597854
+  },
+  "103-": {
+   "filas": 1440,
+   "ligeros": 1337873,
+   "pesados": 39945,
+   "rangos": 1377811
+  },
+  "103+": {
+   "filas": 1440,
+   "ligeros": 1322453,
+   "pesados": 37600,
+   "rangos": 1360053
+  },
+  "111-": {
+   "filas": 1440,
+   "ligeros": 1087577,
+   "pesados": 51501,
+   "rangos": 1139010
+  },
+  "111+": {
+   "filas": 1440,
+   "ligeros": 1146181,
+   "pesados": 37966,
+   "rangos": 1184147
+  },
+  "123-": {
+   "filas": 2160,
+   "ligeros": 1094154,
+   "pesados": 27521,
+   "rangos": 1121680
+  },
+  "123+": {
+   "filas": 2160,
+   "ligeros": 1031355,
+   "pesados": 30088,
+   "rangos": 1061368
+  }
+ },
+ "estaciones": [
+  83,
+  85,
+  93,
+  97,
+  99,
+  103,
+  111,
+  123
+ ],
+ "fichero_local": "tf5_horario_2024-11.csv.gz",
+ "sha256_gz_local": "05a9e7b514446a418c7abe42dfed42a655fafd763bdd6e329f63038e6921fd46"
+}

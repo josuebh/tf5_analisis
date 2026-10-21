@@ -1,0 +1,15 @@
+estacion_id,sentido,horas_con_velocidad,base_noche,velocidad_fiable
+85,ascendente,1.0,0.08914533522531733,True
+85,descendente,1.0,0.33703496365906277,True
+93,ascendente,1.0,0.3664256004013126,True
+93,descendente,1.0,0.05902813899580943,True
+97,ascendente,0.21806260575296108,1.0,False
+97,descendente,0.2259963768115942,1.0,False
+99,ascendente,1.0,0.1782446036082601,True
+99,descendente,1.0,0.1743591567454143,True
+103,ascendente,1.0,0.060665989980681706,True
+103,descendente,1.0,0.09791153670770633,True
+111,ascendente,1.0,0.7639892894798722,False
+111,descendente,1.0,0.8124989793307676,False
+123,ascendente,1.0,0.19899891657638136,True
+123,descendente,1.0,0.28081261978047506,True

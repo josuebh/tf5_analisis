@@ -1,0 +1,46 @@
+caso,variante,hora,horas_con_cola,holgura_p10,holgura_mediana,holgura_p90,sin_holgura
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,6,207,0.083985,0.132926,0.220594,0
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,7,205,-0.048185,0.005727,0.097874,0.443902
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,8,145,0.083193,0.139391,0.25617,0
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),6,207,-0.014532,0.032237,0.118987,0.222222
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),7,205,-0.190476,-0.138739,-0.045072,0.946341
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),8,145,-0.065651,-0.007417,0.080326,0.551724
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",6,207,0.141587,0.19057,0.282651,0
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",7,205,0.013173,0.061184,0.163273,0.058537
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",8,145,0.149258,0.208035,0.323844,0
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),6,207,0.045992,0.093751,0.180198,0.004831
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),7,205,-0.09878,-0.048097,0.048952,0.785366
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),8,145,0.022113,0.082918,0.185406,0.034483
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),6,207,0.057516,0.110445,0.205373,0
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),7,205,-0.098085,-0.038108,0.061676,0.746341
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),8,145,0.025736,0.099541,0.207422,0.055172
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,6,207,0.033985,0.082926,0.170594,0.024155
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,7,205,-0.098185,-0.044273,0.047874,0.770732
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,8,145,0.033193,0.089391,0.20617,0.034483
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,6,207,0.081714,0.132763,0.217906,0.009662
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,7,205,-0.048185,0,0.049832,0.843902
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,8,145,0,0.040144,0.19182,0.482759
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",6,207,0.005362,0.052863,0.139186,0.082126
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",7,205,-0.135412,-0.084862,0.009554,0.887805
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",8,145,-0.018887,0.043434,0.141899,0.165517
+manana_hacia_santa_cruz,Holgura nula en todas las horas,6,207,0,0,0,1
+manana_hacia_santa_cruz,Holgura nula en todas las horas,7,205,0,0,0,1
+manana_hacia_santa_cruz,Holgura nula en todas las horas,8,145,0,0,0,1
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,14,219,0.035231,0.100024,0.160643,0.031963
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,15,219,-0.006268,0.027561,0.097947,0.136986
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,16,216,0.002593,0.038861,0.100603,0.078704
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),14,219,-7.56e-4,0.063812,0.12158,0.105023
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),15,219,-0.04177,-0.008693,0.059805,0.611872
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),16,216,-0.034884,0.001802,0.062265,0.490741
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",14,219,0.061952,0.126882,0.18891,0
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",15,219,0.02013,0.054876,0.12625,0.022831
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",16,216,0.030418,0.066739,0.136128,0.009259
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),14,219,0.035231,0.100024,0.160643,0.031963
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),15,219,-0.006268,0.027284,0.097947,0.146119
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),16,216,0.002593,0.03807,0.100603,0.078704
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,14,219,-0.014769,0.050024,0.110643,0.150685
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,15,219,-0.056268,-0.022439,0.047947,0.73516
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,16,216,-0.047407,-0.011139,0.050603,0.606481
+tarde_hacia_el_norte,Holgura nula en todas las horas,14,219,0,0,0,1
+tarde_hacia_el_norte,Holgura nula en todas las horas,15,219,0,0,0,1
+tarde_hacia_el_norte,Holgura nula en todas las horas,16,216,0,0,0,1

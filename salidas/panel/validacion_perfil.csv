@@ -1,0 +1,5 @@
+caso,comparado_con,horas,usado_en_calibracion,error_medio_absoluto,horas_dentro_p10_p90
+manana_hacia_santa_cruz,aforos 2025 (calibración),6 a 10 h (ventana de la punta),"no: en la ventana solo se fija el total de vehículos, no su reparto por horas",0.041664,0.25
+manana_hacia_santa_cruz,aforos 2026 (no usados),6 a 10 h (ventana de la punta),"no: en la ventana solo se fija el total de vehículos, no su reparto por horas",0.038664,0.25
+tarde_hacia_el_norte,aforos 2025 (calibración),13 a 18 h (ventana de la punta),"no: en la ventana solo se fija el total de vehículos, no su reparto por horas",0.022613,0.8
+tarde_hacia_el_norte,aforos 2026 (no usados),13 a 18 h (ventana de la punta),"no: en la ventana solo se fija el total de vehículos, no su reparto por horas",0.039097,0.8

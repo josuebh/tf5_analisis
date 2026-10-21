@@ -1,0 +1,33 @@
+propagacion,horario,pesados,medida_descarga,aceptadas,rmse_relativo_medio,peor_rmse_relativo,indicador_que_mas_empeora,sesgo_descarga,sesgo_descarga_referencia,mejora_sesgo_descarga,cobertura_ip_minima,referencia,admisible,elegida,caso
+TRUE,TRUE,TRUE,como_aforo,196,0.927674,1.00734,Caudal de las 06 h,93.29657,149.244741,0.374875,0.458098,FALSE,TRUE,TRUE,manana_hacia_santa_cruz
+TRUE,TRUE,FALSE,como_aforo,266,0.927893,1.013142,Caudal de las 06 h,80.929118,149.244741,0.457742,0.471594,FALSE,TRUE,FALSE,manana_hacia_santa_cruz
+FALSE,TRUE,TRUE,como_aforo,128,0.930333,1.010524,Caudal de las 06 h,111.8494,149.244741,0.250564,0.457706,FALSE,TRUE,FALSE,manana_hacia_santa_cruz
+FALSE,TRUE,FALSE,como_aforo,193,0.930824,1.024059,Caudal de las 06 h,96.716291,149.244741,0.351962,0.457706,FALSE,TRUE,FALSE,manana_hacia_santa_cruz
+TRUE,FALSE,TRUE,parametro,714,0.985022,1.024366,Caudal de las 08 h,117.592519,149.244741,0.212083,0.272207,FALSE,TRUE,FALSE,manana_hacia_santa_cruz
+TRUE,FALSE,FALSE,parametro,770,0.988669,1.069879,Caudal de las 08 h,116.070578,149.244741,0.22228,0.272207,FALSE,TRUE,FALSE,manana_hacia_santa_cruz
+TRUE,FALSE,TRUE,como_aforo,418,0.970676,1.140751,Caudal de las 08 h,56.315485,149.244741,0.622664,0.372097,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,FALSE,TRUE,como_aforo,301,0.974773,1.114019,Caudal de las 08 h,71.273406,149.244741,0.522439,0.330822,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+TRUE,TRUE,FALSE,parametro,558,0.978125,1.011692,Caudal de las 06 h,151.061791,149.244741,-0.012175,0.404504,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+TRUE,FALSE,FALSE,como_aforo,454,0.982847,1.20507,Caudal de las 08 h,60.455203,149.244741,0.594926,0.404112,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,FALSE,FALSE,como_aforo,326,0.98728,1.18514,Caudal de las 08 h,67.212625,149.244741,0.549648,0.330822,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+TRUE,TRUE,TRUE,parametro,476,0.987702,1.046725,Descarga del día (medida igual en el modelo y en el aforo),169.501362,149.244741,-0.135728,0.340866,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,TRUE,FALSE,parametro,555,0.995664,1.075275,Descarga del día (medida igual en el modelo y en el aforo),180.855889,149.244741,-0.211807,0.345104,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,FALSE,TRUE,parametro,662,0.998623,1.010899,Descarga del día (medida igual en el modelo y en el aforo),154.262139,149.244741,-0.033619,0.249058,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,FALSE,FALSE,parametro,696,1,1,Caudal de las 06 h,149.244741,149.244741,0,0.235562,TRUE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,TRUE,TRUE,parametro,484,1.003972,1.118693,Descarga del día (medida igual en el modelo y en el aforo),197.385428,149.244741,-0.322562,0.299984,FALSE,FALSE,FALSE,manana_hacia_santa_cruz
+FALSE,FALSE,TRUE,parametro,1542,0.994789,1.047024,Caudal de las 17 h,27.814671,28.18535,0.013151,0.31857,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,FALSE,FALSE,parametro,1386,1,1,Caudal de las 13 h,28.18535,28.18535,0,0.314297,TRUE,FALSE,TRUE,tarde_hacia_el_norte
+TRUE,FALSE,TRUE,parametro,1972,1.002674,1.085082,Caudal de las 17 h,34.336829,28.18535,-0.218251,0.256566,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,FALSE,FALSE,parametro,1826,1.008438,1.041753,Caudal de las 17 h,35.763698,28.18535,-0.268875,0.25202,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,FALSE,TRUE,como_aforo,1081,1.015492,1.30144,Fin de la cola,36.052683,28.18535,-0.279128,0.288384,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,FALSE,TRUE,como_aforo,1358,1.016043,1.30144,Fin de la cola,38.379876,28.18535,-0.361696,0.28411,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,FALSE,FALSE,como_aforo,1252,1.025181,1.30144,Fin de la cola,38.094484,28.18535,-0.35157,0.275019,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,FALSE,FALSE,como_aforo,968,1.027875,1.30144,Fin de la cola,36.425414,28.18535,-0.292353,0.288384,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,TRUE,TRUE,como_aforo,421,1.067462,1.30144,Fin de la cola,60.06811,28.18535,-1.131182,0.499495,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,TRUE,TRUE,como_aforo,367,1.069817,1.30144,Fin de la cola,64.731731,28.18535,-1.296645,0.530769,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,TRUE,FALSE,como_aforo,314,1.094606,1.473503,Caudal de las 13 h,69.482773,28.18535,-1.465209,0.490948,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,TRUE,TRUE,parametro,468,1.101912,1.334812,Horas de cola al día,65.860162,28.18535,-1.336681,0.561772,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,TRUE,TRUE,parametro,420,1.104576,1.334812,Horas de cola al día,73.044073,28.18535,-1.591562,0.566045,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,TRUE,FALSE,parametro,420,1.125238,1.421231,Caudal de las 13 h,68.908283,28.18535,-1.444826,0.557226,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+FALSE,TRUE,FALSE,parametro,366,1.127546,1.41072,Caudal de las 13 h,77.516768,28.18535,-1.75025,0.543862,FALSE,FALSE,FALSE,tarde_hacia_el_norte
+TRUE,TRUE,FALSE,como_aforo,374,1.12942,1.474215,Caudal de las 13 h,62.630578,28.18535,-1.222097,0.472766,FALSE,FALSE,FALSE,tarde_hacia_el_norte

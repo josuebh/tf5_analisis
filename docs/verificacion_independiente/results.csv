@@ -1,0 +1,201 @@
+item,station,direction,period,metric,value,definition
+1,,,,valid_station_direction_days,5759,"rows of dias_validos over 7 stations x 2 directions, 24 months"
+1,85.0,ascendente,2024-09..2026-09,valid_days,424,
+1,85.0,descendente,2024-09..2026-09,valid_days,432,
+1,93.0,ascendente,2024-09..2026-09,valid_days,451,
+1,93.0,descendente,2024-09..2026-09,valid_days,449,
+1,97.0,ascendente,2024-09..2026-09,valid_days,197,
+1,97.0,descendente,2024-09..2026-09,valid_days,184,
+1,99.0,ascendente,2024-09..2026-09,valid_days,453,
+1,99.0,descendente,2024-09..2026-09,valid_days,450,
+1,103.0,ascendente,2024-09..2026-09,valid_days,456,
+1,103.0,descendente,2024-09..2026-09,valid_days,453,
+1,111.0,ascendente,2024-09..2026-09,valid_days,455,
+1,111.0,descendente,2024-09..2026-09,valid_days,447,
+1,123.0,ascendente,2024-09..2026-09,valid_days,453,
+1,123.0,descendente,2024-09..2026-09,valid_days,455,
+aux,85.0,ascendente,all valid days,night_baseline_share_lt80,0.08914533522531733,
+aux,85.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,85.0,ascendente,all valid days,speed_reliable,True,
+aux,85.0,descendente,all valid days,night_baseline_share_lt80,0.33703496365906277,
+aux,85.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,85.0,descendente,all valid days,speed_reliable,True,
+aux,93.0,ascendente,all valid days,night_baseline_share_lt80,0.3664256004013126,
+aux,93.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,93.0,ascendente,all valid days,speed_reliable,True,
+aux,93.0,descendente,all valid days,night_baseline_share_lt80,0.05902813899580943,
+aux,93.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,93.0,descendente,all valid days,speed_reliable,True,
+aux,97.0,ascendente,all valid days,night_baseline_share_lt80,1.0,
+aux,97.0,ascendente,all valid days,share_valid_hours_with_speed,0.21806260575296108,
+aux,97.0,ascendente,all valid days,speed_reliable,False,
+aux,97.0,descendente,all valid days,night_baseline_share_lt80,1.0,
+aux,97.0,descendente,all valid days,share_valid_hours_with_speed,0.2259963768115942,
+aux,97.0,descendente,all valid days,speed_reliable,False,
+aux,99.0,ascendente,all valid days,night_baseline_share_lt80,0.1782446036082601,
+aux,99.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,99.0,ascendente,all valid days,speed_reliable,True,
+aux,99.0,descendente,all valid days,night_baseline_share_lt80,0.1743591567454143,
+aux,99.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,99.0,descendente,all valid days,speed_reliable,True,
+aux,103.0,ascendente,all valid days,night_baseline_share_lt80,0.060665989980681706,
+aux,103.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,103.0,ascendente,all valid days,speed_reliable,True,
+aux,103.0,descendente,all valid days,night_baseline_share_lt80,0.09791153670770633,
+aux,103.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,103.0,descendente,all valid days,speed_reliable,True,
+aux,111.0,ascendente,all valid days,night_baseline_share_lt80,0.7639892894798722,
+aux,111.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,111.0,ascendente,all valid days,speed_reliable,False,
+aux,111.0,descendente,all valid days,night_baseline_share_lt80,0.8124989793307676,
+aux,111.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,111.0,descendente,all valid days,speed_reliable,False,
+aux,123.0,ascendente,all valid days,night_baseline_share_lt80,0.19899891657638136,
+aux,123.0,ascendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,123.0,ascendente,all valid days,speed_reliable,True,
+aux,123.0,descendente,all valid days,night_baseline_share_lt80,0.28081261978047506,
+aux,123.0,descendente,all valid days,share_valid_hours_with_speed,1.0,
+aux,123.0,descendente,all valid days,speed_reliable,True,
+2,103.0,descendente,2025,dias,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,dias_con_velocidad,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,mediana,3.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,p25,2.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,p75,3.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,dias_sin_congestion,10,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,descendente,2025,horas_media,2.8451327433628317,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,dias,224,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,dias_con_velocidad,224,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,mediana,4.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,p25,3.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,p75,6.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,dias_sin_congestion,0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,ascendente,2025,horas_media,4.71875,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,dias,223,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,dias_con_velocidad,223,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,mediana,1.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,p25,0.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,p75,2.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,dias_sin_congestion,69,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,99.0,descendente,2025,horas_media,1.0044843049327354,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,dias,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,dias_con_velocidad,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,mediana,1.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,p25,0.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,p75,1.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,dias_sin_congestion,106,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,descendente,2025,horas_media,0.6592920353982301,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,dias,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,dias_con_velocidad,226,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,mediana,2.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,p25,1.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,p75,3.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,dias_sin_congestion,39,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,93.0,ascendente,2025,horas_media,2.185840707964602,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,dias,227,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,dias_con_velocidad,227,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,mediana,0.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,p25,0.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,p75,0.0,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,dias_sin_congestion,173,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+2,103.0,ascendente,2025,horas_media,0.43171806167400884,congested hour: share<80km/h >= 0.60 and >= base+0.30; forced FALSE if speed unreliable; stats over days with speed in all 24 h
+3,103.0,descendente,2025,dias,226,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,dias_con_cola,215,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,inicio_mediana,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,fin_mediana,9.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,horas_cola_mediana,3.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,inicio_p10,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,inicio_p90,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,fin_p10,8.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2025,fin_p90,10.599999999999994,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,dias,163,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,dias_con_cola,153,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,inicio_mediana,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,fin_mediana,9.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,horas_cola_mediana,3.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,inicio_p10,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,inicio_p90,6.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,fin_p10,8.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,103.0,descendente,2026,fin_p90,10.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,dias,224,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,dias_con_cola,224,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,inicio_mediana,13.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,fin_mediana,18.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,horas_cola_mediana,4.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,inicio_p10,13.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,inicio_p90,14.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,fin_p10,17.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2025,fin_p90,21.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,dias,165,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,dias_con_cola,160,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,inicio_mediana,13.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,fin_mediana,18.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,horas_cola_mediana,4.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,inicio_p10,13.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,inicio_p90,14.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,fin_p10,17.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+3,99.0,ascendente,2026,fin_p90,21.0,"valid days with speed in every hour of the window; start=min congested hour, end=max+1"
+4,,morning_103desc_own_congested_hours,2025,horas,643,"veh/h at 103 desc in its congested hours, 2025 (all hours)"
+4,,morning_103desc_own_congested_hours,2025,mediana,3337.0,"veh/h at 103 desc in its congested hours, 2025 (all hours)"
+4,,morning_103desc_own_congested_hours,2025,p10,2833.0,"veh/h at 103 desc in its congested hours, 2025 (all hours)"
+4,,morning_103desc_own_congested_hours,2025,p90,3631.6000000000004,"veh/h at 103 desc in its congested hours, 2025 (all hours)"
+4,,afternoon_103asc_when_99asc_congested,2025,horas,1046,"veh/h at 103 asc in hours when 99 asc congested, 2025 (103-asc valid days only)"
+4,,afternoon_103asc_when_99asc_congested,2025,mediana,3553.5,"veh/h at 103 asc in hours when 99 asc congested, 2025 (103-asc valid days only)"
+4,,afternoon_103asc_when_99asc_congested,2025,p10,3020.0,"veh/h at 103 asc in hours when 99 asc congested, 2025 (103-asc valid days only)"
+4,,afternoon_103asc_when_99asc_congested,2025,p90,3742.0,"veh/h at 103 asc in hours when 99 asc congested, 2025 (103-asc valid days only)"
+4,,morning_windowed_3_12,2025,horas,620,"as morning, congested hours restricted to 3-12 (validacion_modelo)"
+4,,morning_windowed_3_12,2025,mediana,3345.0,"as morning, congested hours restricted to 3-12 (validacion_modelo)"
+4,,morning_windowed_3_12,2025,p10,2853.8,"as morning, congested hours restricted to 3-12 (validacion_modelo)"
+4,,morning_windowed_3_12,2025,p90,3632.1,"as morning, congested hours restricted to 3-12 (validacion_modelo)"
+4,,afternoon_windowed_11_23,2025,horas,1025,"as afternoon, 99 asc congested hours restricted to 11-23 (validacion_modelo)"
+4,,afternoon_windowed_11_23,2025,mediana,3561.0,"as afternoon, 99 asc congested hours restricted to 11-23 (validacion_modelo)"
+4,,afternoon_windowed_11_23,2025,p10,3061.0,"as afternoon, 99 asc congested hours restricted to 11-23 (validacion_modelo)"
+4,,afternoon_windowed_11_23,2025,p90,3744.0,"as afternoon, 99 asc congested hours restricted to 11-23 (validacion_modelo)"
+5,93.0,descendente,teaching months 2024-25,mean_veh_hours_7_8_before,9050.380165289256,"sum of veh in hours 7 and 8 per valid day, mean over days"
+5,93.0,descendente,teaching months 2025-26,mean_veh_hours_7_8_after,8983.78813559322,
+5,93.0,descendente,teaching months 2024-25,days_before,121,
+5,93.0,descendente,teaching months 2025-26,days_after,118,
+5,99.0,descendente,teaching months 2024-25,mean_veh_hours_7_8_before,8672.302521008403,"sum of veh in hours 7 and 8 per valid day, mean over days"
+5,99.0,descendente,teaching months 2025-26,mean_veh_hours_7_8_after,8815.380165289256,
+5,99.0,descendente,teaching months 2024-25,days_before,119,
+5,99.0,descendente,teaching months 2025-26,days_after,121,
+5,103.0,descendente,teaching months 2024-25,mean_veh_hours_7_8_before,6283.727272727273,"sum of veh in hours 7 and 8 per valid day, mean over days"
+5,103.0,descendente,teaching months 2025-26,mean_veh_hours_7_8_after,6193.9,
+5,103.0,descendente,teaching months 2024-25,days_before,121,
+5,103.0,descendente,teaching months 2025-26,days_after,120,
+5,103.0,descendente,teaching months 2024-25,mean_congested_hours_5_11_before,2.925619834710744,days with reliable speed station and speed in all hours 5-11
+5,103.0,descendente,teaching months 2025-26,mean_congested_hours_5_11_after,3.058333333333333,
+5,103.0,descendente,teaching months 2024-25,days_cola_before,121,
+5,103.0,descendente,teaching months 2025-26,days_cola_after,120,
+6,99.0,descendente,2025-06,mean_congested_hours_5_11,1.05,valid days with speed in all hours 5-11
+6,99.0,descendente,2025-06,days,20,
+6,99.0,descendente,2025-07,mean_congested_hours_5_11,1.0,valid days with speed in all hours 5-11
+6,99.0,descendente,2025-07,days,23,
+6,99.0,descendente,2025-09,mean_congested_hours_5_11,0.9523809523809523,valid days with speed in all hours 5-11
+6,99.0,descendente,2025-09,days,21,
+6,99.0,descendente,2026-06,mean_congested_hours_5_11,0.6190476190476191,valid days with speed in all hours 5-11
+6,99.0,descendente,2026-06,days,21,
+6,99.0,descendente,2026-07,mean_congested_hours_5_11,0.0,valid days with speed in all hours 5-11
+6,99.0,descendente,2026-07,days,23,
+6,99.0,descendente,2026-09,mean_congested_hours_5_11,0.36363636363636365,valid days with speed in all hours 5-11
+6,99.0,descendente,2026-09,days,22,
+7,103.0,descendente,Jan-Sep excl. Aug,dias_2025,165,congested hours over all 24 h per valid day; Welch two-sided
+7,103.0,descendente,Jan-Sep excl. Aug,dias_2026,163,congested hours over all 24 h per valid day; Welch two-sided
+7,103.0,descendente,Jan-Sep excl. Aug,horas_cong_2025,2.6545454545454548,congested hours over all 24 h per valid day; Welch two-sided
+7,103.0,descendente,Jan-Sep excl. Aug,horas_cong_2026,2.8404907975460123,congested hours over all 24 h per valid day; Welch two-sided
+7,103.0,descendente,Jan-Sep excl. Aug,welch_p,0.2059233566314734,congested hours over all 24 h per valid day; Welch two-sided
+7,99.0,ascendente,Jan-Sep excl. Aug,dias_2025,161,congested hours over all 24 h per valid day; Welch two-sided
+7,99.0,ascendente,Jan-Sep excl. Aug,dias_2026,165,congested hours over all 24 h per valid day; Welch two-sided
+7,99.0,ascendente,Jan-Sep excl. Aug,horas_cong_2025,4.658385093167702,congested hours over all 24 h per valid day; Welch two-sided
+7,99.0,ascendente,Jan-Sep excl. Aug,horas_cong_2026,4.672727272727273,congested hours over all 24 h per valid day; Welch two-sided
+7,99.0,ascendente,Jan-Sep excl. Aug,welch_p,0.9415926524782285,congested hours over all 24 h per valid day; Welch two-sided
+8,97.0,ascendente,24 months,pct_hours_all_lanes,0.46942158207590307,hours with every principal lane reported / all calendar hours in the 24 months
+8,97.0,ascendente,24 months,pct_hours_usable_speed,0.11585505258344765,complete hours with no negative speed ranges and range sum > 0 / all calendar hours
+8,97.0,ascendente,24 months,valid_days,197,
+8,97.0,descendente,24 months,pct_hours_all_lanes,0.46942158207590307,hours with every principal lane reported / all calendar hours in the 24 months
+8,97.0,descendente,24 months,pct_hours_usable_speed,0.11254000914494741,complete hours with no negative speed ranges and range sum > 0 / all calendar hours
+8,97.0,descendente,24 months,valid_days,184,
+9,,,2025,top_station_2025,97 PADRE ANCHIETA,max imd_total among 2025 rows
+9,97.0,,2025,top_station_2025_imd_total,117791,
+9,103.0,ascendente,2025,veh_per_lane_per_day,22281.5,imd_ascendentes / carriles_tf5.csv lanes
+9,103.0,descendente,2025,veh_per_lane_per_day,22673.5,imd_descendentes / carriles_tf5.csv lanes
+10,,,2021-2025,population_cagr,0.009507896070023003,(P_last/P_first)^(1/(last-first)) - 1

@@ -1,0 +1,28 @@
+caso,variante,hora,horas_con_cola,holgura_p10,holgura_mediana,holgura_p90,sin_holgura
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,6,207,0.08398479993821906,0.13292623615239108,0.22059371557661295,0
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,7,205,-0.04818467881538282,0.005726520968693638,0.0978744476899588,0.44390243902439025
+manana_hacia_santa_cruz,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,8,145,0.08319267462800077,0.13939089481946598,0.25616982738454064,0
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),6,207,-0.014532148568277357,0.03223684210526323,0.11898671564788406,0.2222222222222222
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),7,205,-0.19047590851495466,-0.13873873873873876,-0.0450723499485511,0.9463414634146341
+manana_hacia_santa_cruz,Capacidad de abajo más baja (p95 de su caudal),8,145,-0.06565122860625268,-0.007416962270235361,0.08032557587968327,0.5517241379310345
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",6,207,0.1415871514782614,0.1905695855064511,0.28265075740076395,0
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",7,205,0.013173316737809151,0.06118383838384012,0.16327273417645224,0.05853658536585366
+manana_hacia_santa_cruz,"Capacidad de abajo más alta (p99,9 de su caudal)",8,145,0.14925840047768885,0.20803461789680133,0.3238437910835198,0
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),6,207,0.04599209011848036,0.0937506849315064,0.1801975015919821,0.004830917874396135
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),7,205,-0.09877995352299526,-0.04809748892171384,0.04895177783589826,0.7853658536585366
+manana_hacia_santa_cruz,Capacidad de abajo solo con horas sin cola en esa estación (p99),8,145,0.02211282972337818,0.082918498478187,0.1854060970550509,0.034482758620689655
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),6,207,0.057515628255332726,0.1104453665283538,0.20537317824912538,0
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),7,205,-0.09808548186294785,-0.038108108108108385,0.06167629116628293,0.7463414634146341
+manana_hacia_santa_cruz,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),8,145,0.025735974186303336,0.09954116498535526,0.2074217241057239,0.05517241379310345
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,6,207,0.033984799938219054,0.08292623615239107,0.17059371557661296,0.024154589371980676
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,7,205,-0.09818467881538281,-0.044273479031306365,0.0478744476899588,0.7707317073170732
+manana_hacia_santa_cruz,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,8,145,0.033192674628000775,0.08939089481946598,0.2061698273845407,0.034482758620689655
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,6,207,0.08171353355503377,0.13276315789473658,0.21790570579701007,0.00966183574879227
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,7,205,-0.04818467881538282,0,0.04983176638176547,0.8439024390243902
+manana_hacia_santa_cruz,Cuello desplazado: sin holgura en las horas con cola en la estación de abajo,8,145,0,0.04014384177404828,0.19182008365916087,0.4827586206896552
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",6,207,0.005362374074893862,0.052863436123347984,0.1391855175543651,0.0821256038647343
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",7,205,-0.1354115112008565,-0.08486238532110091,0.009553534454075226,0.8878048780487805
+manana_hacia_santa_cruz,"Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82)",8,145,-0.018886781349013913,0.04343434343434338,0.1418994593073505,0.16551724137931034
+manana_hacia_santa_cruz,Holgura nula en todas las horas,6,207,0,0,0,1
+manana_hacia_santa_cruz,Holgura nula en todas las horas,7,205,0,0,0,1
+manana_hacia_santa_cruz,Holgura nula en todas las horas,8,145,0,0,0,1

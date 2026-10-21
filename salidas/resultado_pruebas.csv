@@ -1,0 +1,73 @@
+file,test,nb,passed,failed,skipped,error,warning
+test_calidad_y_trazabilidad.R,la cola cumple los invariantes físicos minuto a minuto con demandas y capacidades variadas,182,182,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,"casos extremos: sin demanda, demanda baja, demanda que nunca se disipa y caída nula o máxima",21,21,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,"la forma reducida de los escenarios da lo mismo que escenarios_cuello(), con y sin propagación",12,12,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,la holgura es (capacidad de abajo - caudal de abajo) / caudal del cuello y las variantes la mueven como deben,11,11,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,el balance por tramos no tiene caudales negativos y mide bien unas entradas netas constantes,5,5,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,"las métricas de contraste (sesgo, error absoluto y cobertura) son las esperadas",8,8,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,"la procedencia de los datos es completa, íntegra y coincide con el catálogo del portal",13,13,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,las series con banderas no imputan nada y marcan solo los días válidos como usados,5,5,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,cada extracto horario conserva los totales del TXT original (sumas de control),1417,1417,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,la geometría enlaza cada estación-sentido del corredor con su fuente y su estado,5,5,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,las versiones fijadas se leen y se comparan con las instaladas,2,2,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,cada semilla del código figura en la tabla de semillas del Monte Carlo,2,2,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,el rango de los escenarios adversos de cada ficha no incluye la referencia ni la cota favorable,21,21,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,el comparador de ejecuciones funciona cuando todo es igual y cuando algo cambia,5,5,0,FALSE,FALSE,0
+test_calidad_y_trazabilidad.R,no regresión: las tablas de referencia se reproducen (solo tras una ejecución completa de main.R),397,397,0,FALSE,FALSE,0
+test_comparador_y_opciones.R,"las opciones de simulación se validan sin admitir NA, ceros ni decimales",9,9,0,FALSE,FALSE,0
+test_comparador_y_opciones.R,"el comparador rechaza datos perdidos, infinitos y columnas reordenadas",12,12,0,FALSE,FALSE,0
+test_comparador_y_opciones.R,el comparador trata igual los infinitos y los datos perdidos coincidentes y no oculta ficheros propios ausentes,12,12,0,FALSE,FALSE,0
+test_comparador_y_opciones.R,cada componente de las previsiones condicionadas lleva su condición de validez,14,14,0,FALSE,FALSE,0
+test_datos.R,el catálogo de carriles es el fichero oficial y se lee bien,6,6,0,FALSE,FALSE,0
+test_datos.R,los carriles del CSV del proyecto coinciden con el catálogo oficial,2,2,0,FALSE,FALSE,0
+test_datos.R,la copia de la IMD coincide valor a valor con las copias locales de los CSV oficiales,2,2,0,FALSE,FALSE,0
+test_datos.R,cada extracto horario coincide con su huella y sus metadatos,73,73,0,FALSE,FALSE,0
+test_datos.R,el calendario de festivos es válido,3,3,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,el perfil híbrido conserva los vehículos y respeta los aforos fuera de la ventana,47,47,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,la ventana de la punta va de la primera hora congestionada a una hora después de la última,1,1,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,la elasticidad a 5 años queda entre la del primer año y la de 10 años,4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,"con más demanda y la misma capacidad, la supresión reduce la joroba y nunca la aumenta",4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,un incidente solo reduce la capacidad durante el corte y aumenta la demora,4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,las alternativas de los tres horizontes van de menos a más demanda inducida,8,8,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,el horario de la cola usa la primera y la última hora congestionada,4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,se detectan los días con horas duplicadas o que faltan (cambio de hora),4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,las diferencias en diferencias recuperan un efecto conocido,2,2,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,la holgura del tramo siguiente baja si crece la demanda,2,2,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,la confianza combina los cuatro criterios con la regla publicada,3,3,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,las horas de cola se miden como en el aforo (>= 60 % de los vehículos de la hora con cola),4,4,0,FALSE,FALSE,0
+test_escenarios_y_prevision.R,"el tercer carril nunca empeora la situación y, sin límite aguas abajo, suma un carril",12,12,0,FALSE,FALSE,0
+test_horarios.R,el extractor lee un TXT oficial de 13 columnas con BOM,2,2,0,FALSE,FALSE,0
+test_horarios.R,"la validación horaria detecta duplicados, rangos negativos y detecta la cola inyectada",6,6,0,FALSE,FALSE,0
+test_horarios.R,la comparación entre periodos detecta un carril que cuenta mal solo en las horas comparadas,6,6,0,FALSE,FALSE,0
+test_horarios.R,la regla H9 señala un carril con perfil horario anómalo,3,3,0,FALSE,FALSE,0
+test_horarios.R,la sensibilidad al umbral de congestión responde al umbral,5,5,0,FALSE,FALSE,0
+test_horarios.R,la regla H2 señala un mes sin ningún registro en un sentido,2,2,0,FALSE,FALSE,0
+test_modelo.R,el perfil sintético conserva la IMD y respeta la cuota de la hora punta,54,54,0,FALSE,FALSE,0
+test_modelo.R,el perfil observado reparte cada hora y conserva el total,2,2,0,FALSE,FALSE,0
+test_modelo.R,la cola vectorizada coincide con un bucle minuto a minuto de referencia,20,20,0,FALSE,FALSE,0
+test_modelo.R,una capacidad constante en vector da lo mismo que un número,1,1,0,FALSE,FALSE,0
+test_modelo.R,la espera FIFO por cohortes reproduce el caso analítico de sobredemanda constante,1,1,0,FALSE,FALSE,0
+test_modelo.R,la demora total es el área bajo la cola (identidad de Little),2,2,0,FALSE,FALSE,0
+test_modelo.R,escalonar desplaza vehículos sin perder ninguno,3,3,0,FALSE,FALSE,0
+test_modelo.R,más capacidad nunca aumenta la demora y sin sobredemanda no hay cola,2,2,0,FALSE,FALSE,0
+test_modelo.R,el umbral del Bus-VAO es 1/carriles (invariancia de escala),3,3,0,FALSE,FALSE,0
+test_modelo.R,la holgura nula anula el efecto del tercer carril y la grande lo maximiza,2,2,0,FALSE,FALSE,0
+test_modelo.R,"sin holgura aguas abajo, ni el tercer carril ni la regulación de accesos reducen la demora",6,6,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,"con propagación, un tramo siguiente que admite menos frena la situación actual y anula la ganancia de las alternativas",6,6,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,la especificación de la descarga se aplica igual en todas las alternativas y conserva los vehículos,6,6,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,el factor horario de la descarga solo baja después de la hora de referencia,9,9,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,las mitades de la validación cruzada alternan semanas de 2025 y dejan 2026 aparte,1,1,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,el intervalo predictivo cubre lo esperado y las métricas son las de su definición,3,3,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,la regla de elección solo adopta una variante que mejora la descarga sin empeorar otros indicadores,3,3,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,"los cuellos en serie conservan los vehículos, limitan la salida y bloquean los ramales al rebosar",15,15,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,escalonar no pierde vehículos ni cerca del borde del día,3,3,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,las diferencias emparejadas se calculan combinación a combinación,5,5,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,la reponderación con la misma previa no cambia nada,2,2,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,cada cálculo que usa el número de carriles tiene fuente o supuesto explícito,2,2,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,cada campo de los ficheros oficiales tiene definición oficial y destino en el proyecto,3,3,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,"los días atípicos se clasifican con su motivo (puentes, Navidad, Semana Santa, cambio de hora)",4,4,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,"cada gráfico tiene tipo de resultado, horizonte, hipótesis e incertidumbre",4,4,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,las comprobaciones numéricas del modelo se cumplen,1,1,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,la tabla de validación tiene cinco indicadores por sentido y agrupa las dos filas de la descarga,5,5,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,los recursos de 2025 coinciden con los del catálogo nacional (datos.gob.es),3,3,0,FALSE,FALSE,0
+test_validacion_y_restricciones.R,las métricas por alternativa dan percentiles de la demora distintos de la mediana,3,3,0,FALSE,FALSE,0

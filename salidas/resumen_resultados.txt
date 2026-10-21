@@ -1,0 +1,526 @@
+Ejecución: 2026-10-21 00:15 · R 4.3.3
+Versiones de R y de los paquetes: las fijadas en entorno/versiones_paquetes.csv.
+== 1. IMD oficial y validación ==
+Filas TF-5: 111 (14 estaciones, 2018-2025).
+Errores de coherencia (ascendentes + descendentes != total): 0
+  R10 % de pesados inestable entre años   aviso   8 filas
+  R2 sin desglose por sentido              aviso  10 filas
+  R3 velocidad no medida (0)               aviso  10 filas
+  R4 velocidad media > 120 km/h            aviso   4 filas
+  R5 % de pesados atípico                 aviso   2 filas
+  R6 estación sin datos ese año          error   1 filas
+  R7 salto interanual > 15 %               aviso   2 filas
+  R8 velocidad idéntica en otro año      info    4 filas
+  R9 asimetría extrema entre sentidos     info    8 filas
+Contraste con las copias locales de los CSV oficiales (datos/oficial; huellas en manifiesto_oficiales.json): 555 valores, 0 diferencias.
+== 2. Qué dicen los aforos anuales ==
+Máximo 2025: Padre Anchieta, 117.791 veh/día.
+  Campus Guajara       2019: 113.107  2025: 105.230  (-7,0%; -1,20% anual)
+  Padre Anchieta       2019: 113.108  2025: 117.791  (+4,1%; +0,68% anual)
+  Bomberos La Laguna   2019: 105.985  2025: 109.228  (+3,1%; +0,50% anual)
+  Ermita Cruz Chica    2019:  89.091  2025:  89.910  (+0,9%; +0,15% anual)
+  La Matanza           2019:  74.950  2025:  75.223  (+0,4%; +0,06% anual)
+  La Orotava           2019:  69.360  2025:  70.026  (+1,0%; +0,16% anual)
+Población de Tenerife (INE, Censo anual, 1 de enero): 930.570 (2021) -> 966.469 (2025): 0,95% anual.
+Viajeros TITSA 2025 vs 2019: +90% (x1,90).
+== 3. Carriles y margen de capacidad (k crítico) ==
+Catálogo oficial de carriles (JSON, 42 estaciones, 179 carriles): coincide con carriles_tf5.csv en 14 de 14 sentidos.
+  Túnel 3 de Mayo hacia Santa Cruz solo afora carriles bus (BUs por TF-1; Carril Bus): explica su asimetría extrema (regla R9).
+  Hospital Residencia  ascendente  4 carriles  IMD  51.871  por carril 12.968  k_crit 15,0%
+  Campus Guajara       ascendente  4 carriles  IMD  58.109  por carril 14.527  k_crit 13,4%
+  Padre Anchieta       ascendente  3 carriles  IMD  59.286  por carril 19.762  k_crit 9,9%
+  Bomberos La Laguna   ascendente  3 carriles  IMD  51.486  por carril 17.162  k_crit 11,4%
+  Ermita Cruz Chica    ascendente  2 carriles  IMD  44.563  por carril 22.282  k_crit 8,8%
+  La Matanza           ascendente  2 carriles  IMD  38.791  por carril 19.396  k_crit 10,1%
+  La Orotava           ascendente  3 carriles  IMD  33.673  por carril 11.224  k_crit 17,4%
+  Hospital Residencia  descendente 3 carriles  IMD  51.049  por carril 17.016  k_crit 11,5%
+  Campus Guajara       descendente 4 carriles  IMD  47.121  por carril 11.780  k_crit 16,6%
+  Padre Anchieta       descendente 3 carriles  IMD  58.505  por carril 19.502  k_crit 10,0%
+  Bomberos La Laguna   descendente 4 carriles  IMD  57.742  por carril 14.436  k_crit 13,5%
+  Ermita Cruz Chica    descendente 2 carriles  IMD  45.347  por carril 22.674  k_crit 8,6%
+  La Matanza           descendente 2 carriles  IMD  36.432  por carril 18.216  k_crit 10,7%
+  La Orotava           descendente 3 carriles  IMD  36.353  por carril 12.118  k_crit 16,1%
+== 4. Aforos horarios por carril ==
+Registros horarios TF-5: 942.041 filas, 24 meses (2024-09 a 2026-09), de los extractos de los TXT oficiales (huella SHA-256 de cada TXT registrada al descargarlo).
+  H1 rangos de velocidad != vehículos       info    23 casos, 60.033 filas
+  H2 horas incompletas (> 10 % del mes)      aviso   43 casos, 19.977 filas
+  H3 carril-día sin vehículos              aviso   20 casos, 321 filas
+  H4 registros duplicados                    aviso   24 casos, 109 filas
+  H6 rangos negativos                        error   26 casos, 33.561 filas
+  H7 caudal implausible                      aviso    5 casos, 267 filas
+  H8 media horaria != IMD oficial (> 10 %)   aviso    2 casos, 728 filas
+  H9 perfil horario anómalo en un carril    aviso   22 casos, 11.112 filas
+Días laborables válidos (24 h completas, no festivos, sin agosto, total >= 85 % de la mediana del mes): 5.759 estación-sentido-días.
+  Velocidad no utilizable en Padre Anchieta (ascendente): rangos de velocidad con valores negativos o ausentes.
+  Velocidad no utilizable en Padre Anchieta (descendente): rangos de velocidad con valores negativos o ausentes.
+  Velocidad no utilizable en La Matanza (ascendente): de madrugada ya va a menos de 80 km/h la mayoría: el indicador no detecta la cola.
+  Velocidad no utilizable en La Matanza (descendente): de madrugada ya va a menos de 80 km/h la mayoría: el indicador no detecta la cola.
+Cobertura de los aforos horarios (24 meses; horas con todos los carriles y con velocidades utilizables):
+  Hospital Residencia  ascendente  95,3% de horas completas, 95,3% con velocidad, 424 días laborables válidos
+  Hospital Residencia  descendente 95,3% de horas completas, 95,3% con velocidad, 432 días laborables válidos
+  Campus Guajara       ascendente  99,6% de horas completas, 99,6% con velocidad, 451 días laborables válidos
+  Campus Guajara       descendente 99,6% de horas completas, 99,6% con velocidad, 449 días laborables válidos
+  Padre Anchieta       ascendente  46,9% de horas completas, 11,6% con velocidad, 197 días laborables válidos
+  Padre Anchieta       descendente 46,9% de horas completas, 11,3% con velocidad, 184 días laborables válidos
+  Bomberos La Laguna   ascendente  99,3% de horas completas, 99,3% con velocidad, 453 días laborables válidos
+  Bomberos La Laguna   descendente 99,3% de horas completas, 99,3% con velocidad, 450 días laborables válidos
+  Ermita Cruz Chica    ascendente  99,4% de horas completas, 99,4% con velocidad, 456 días laborables válidos
+  Ermita Cruz Chica    descendente 99,6% de horas completas, 99,6% con velocidad, 453 días laborables válidos
+  La Matanza           ascendente  99,7% de horas completas, 99,7% con velocidad, 455 días laborables válidos
+  La Matanza           descendente 99,4% de horas completas, 99,4% con velocidad, 447 días laborables válidos
+  La Orotava           ascendente  99,7% de horas completas, 99,7% con velocidad, 453 días laborables válidos
+  La Orotava           descendente 99,7% de horas completas, 99,7% con velocidad, 455 días laborables válidos
+  27-10-2024 (fin de semana): marcas horarias distintas: 24; registros duplicados: 0; cambio de hora de octubre (-1 h)
+  30-03-2025 (fin de semana): marcas horarias distintas: 23; registros duplicados: 59 (hora 02); cambio de hora de marzo (+1 h)
+  26-10-2025 (fin de semana): marcas horarias distintas: 24; registros duplicados: 0; cambio de hora de octubre (-1 h)
+  27-01-2026 (laborable): marcas horarias distintas: 1; registros duplicados: 0
+  29-03-2026 (fin de semana): marcas horarias distintas: 23; registros duplicados: 50 (hora 02); cambio de hora de marzo (+1 h)
+Horas congestionadas por día laborable de 2025, en todo el día (>= 60 % de vehículos a menos de 80 km/h y 30 puntos más que de madrugada):
+  Campus Guajara       ascendente  media 2,2 h, mediana 2 (p25-p75 1-3); 39 de 226 días sin cola; suele empezar a las 14 h
+  Bomberos La Laguna   ascendente  media 4,7 h, mediana 4 (p25-p75 3-6); 0 de 224 días sin cola; suele empezar a las 13 h
+  Ermita Cruz Chica    ascendente  media 0,4 h, mediana 0 (p25-p75 0-0); 173 de 227 días sin cola; suele empezar a las 17 h
+  Campus Guajara       descendente media 0,7 h, mediana 1 (p25-p75 0-1); 106 de 226 días sin cola; suele empezar a las 07 h
+  Bomberos La Laguna   descendente media 1,0 h, mediana 1 (p25-p75 0-2); 69 de 223 días sin cola; suele empezar a las 07 h
+  Ermita Cruz Chica    descendente media 2,8 h, mediana 3 (p25-p75 2-3); 10 de 226 días sin cola; suele empezar a las 06 h
+Sensibilidad a la definición de hora congestionada (mediana de horas de cola por día laborable; vehículos lentos >= umbral y + puntos sobre la madrugada):
+  Ermita Cruz Chica    descendente 50% y +20: 3,0 h, 3 días sin cola · 60% y +30: 3,0 h, 10 días sin cola · 70% y +40: 3,0 h, 12 días sin cola
+  Bomberos La Laguna   ascendente  50% y +20: 5,0 h, 0 días sin cola · 60% y +30: 4,0 h, 0 días sin cola · 70% y +40: 4,0 h, 1 día sin cola
+Horas con cola fuera de la ventana de cada caso (no cuentan para la descarga): mañana 23 (mediana 2.857 veh/h); tarde 21.
+Descarga con cola: mañana hacia Santa Cruz 3.345 veh/h (p10-p90 2.854-3.632); tarde hacia el Norte 3.561 (3.061-3.744).
+Horario de la cola por día laborable (hora en que empieza la primera hora congestionada y acaba la última):
+  Mañana hacia Santa Cruz (Ermita Cruz Chica), 2025: empieza a las 06:00 (p10-p90 06:00-06:00) y acaba a las 09:00 (08:00-10:36); 215 de 226 días con cola
+  Mañana hacia Santa Cruz (Ermita Cruz Chica), 2026: empieza a las 06:00 (p10-p90 06:00-06:00) y acaba a las 09:00 (08:00-10:00); 153 de 163 días con cola
+  Tarde hacia el Norte (Bomberos La Laguna), 2025: empieza a las 13:00 (p10-p90 13:00-14:00) y acaba a las 18:00 (17:00-21:00); 224 de 224 días con cola
+  Tarde hacia el Norte (Bomberos La Laguna), 2026: empieza a las 13:00 (p10-p90 13:00-14:00) y acaba a las 18:00 (17:00-21:00); 160 de 165 días con cola
+Punta de 7 a 9 h, oct-nov 2025 frente a oct-nov 2024 (primeros meses de los horarios escalonados de la ULL):
+  Hospital Residencia  ascendente     741 veh/día (IC 95 %: 299 a 1.182; p = 0,001) · NO COMPARABLE: el reparto entre carriles cambia 4,1 puntos
+  Campus Guajara       ascendente    -241 veh/día (IC 95 %: -549 a 67; p = 0,123) · NO COMPARABLE: el reparto entre carriles cambia 4,3 puntos
+  Bomberos La Laguna   ascendente     136 veh/día (IC 95 %: 51 a 221; p = 0,002)
+  Ermita Cruz Chica    ascendente     213 veh/día (IC 95 %: 149 a 277; p < 0,001)
+  La Matanza           ascendente     139 veh/día (IC 95 %: 78 a 200; p < 0,001)
+  La Orotava           ascendente     -35 veh/día (IC 95 %: -186 a 115; p = 0,639)
+  Hospital Residencia  descendente    142 veh/día (IC 95 %: 35 a 249; p = 0,010)
+  Campus Guajara       descendente   -475 veh/día (IC 95 %: -640 a -310; p < 0,001)
+  Bomberos La Laguna   descendente    506 veh/día (IC 95 %: 312 a 699; p < 0,001)
+  Ermita Cruz Chica    descendente    -93 veh/día (IC 95 %: -270 a 83; p = 0,296)
+  La Matanza           descendente    169 veh/día (IC 95 %: -43 a 381; p = 0,117)
+  La Orotava           descendente    100 veh/día (IC 95 %: 45 a 155; p < 0,001)
+Ene-sep 2026 frente a ene-sep 2025 (sin agosto), horas congestionadas por día:
+  Campus Guajara       ascendente  2,02 -> 1,84 h/día (p = 0,292); punta 7-9 h -444 veh/día
+  Bomberos La Laguna   ascendente  4,66 -> 4,67 h/día (p = 0,942); punta 7-9 h -184 veh/día
+  Ermita Cruz Chica    ascendente  0,39 -> 0,58 h/día (p = 0,139); punta 7-9 h 30 veh/día
+  Campus Guajara       descendente 0,57 -> 0,80 h/día (p = 0,011); punta 7-9 h 185 veh/día
+  Bomberos La Laguna   descendente 1,01 -> 0,87 h/día (p = 0,223); punta 7-9 h -124 veh/día
+  Ermita Cruz Chica    descendente 2,65 -> 2,84 h/día (p = 0,206); punta 7-9 h -59 veh/día
+Horarios escalonados de la ULL, meses lectivos (oct-nov y feb-may) del curso 2025-26 frente al 2024-25, hacia Santa Cruz:
+  Campus Guajara       Vehículos de 7 a 9 h por día                 antes 9.050, después 8.984 (-67; IC 95 % -334 a 190); con julio como control: -538 (IC 95 % -1.015 a -127)
+  Campus Guajara       Parte del tráfico del día que pasa de 7 a 9 h antes 0,166, después 0,164 (-0,002; IC 95 % -0,005 a 0,003); con julio como control: -0,005 (IC 95 % -0,013 a 0,001)
+  Campus Guajara       Horas de cola por día (de 5 a 12 h)           antes 0,78, después 0,97 (0,19; IC 95 % -0,06 a 0,44); con julio como control: 0,28 (IC 95 % 0,00 a 0,58)
+  Bomberos La Laguna   Vehículos de 7 a 9 h por día                 antes 8.672, después 8.815 (143; IC 95 % -85 a 364); con julio como control: 220 (IC 95 % -291 a 592)
+  Bomberos La Laguna   Parte del tráfico del día que pasa de 7 a 9 h antes 0,138, después 0,140 (0,002; IC 95 % -0,001 a 0,005); con julio como control: 0,005 (IC 95 % -0,001 a 0,010)
+  Bomberos La Laguna   Horas de cola por día (de 5 a 12 h)           antes 1,17, después 1,05 (-0,12; IC 95 % -0,36 a 0,13); con julio como control: 0,88 (IC 95 % 0,51 a 1,27)
+  Ermita Cruz Chica    Vehículos de 7 a 9 h por día                 antes 6.284, después 6.194 (-90; IC 95 % -215 a 35); con julio como control: -395 (IC 95 % -710 a -124)
+  Ermita Cruz Chica    Parte del tráfico del día que pasa de 7 a 9 h antes 0,129, después 0,128 (-0,001; IC 95 % -0,003 a 0,002); con julio como control: -0,007 (IC 95 % -0,013 a -0,001)
+  Ermita Cruz Chica    Horas de cola por día (de 5 a 12 h)           antes 2,93, después 3,06 (0,13; IC 95 % -0,13 a 0,39); con julio como control: 0,65 (IC 95 % -0,26 a 1,44)
+  Con junio y julio como control: Campus Guajara, v: -357,75 (IC 95 % -864,37 a 69,78); Campus Guajara, cola: 0,21 (IC 95 % -0,22 a 0,62); Bomberos La Laguna, v: 136,74 (IC 95 % -222,40 a 482,07); Bomberos La Laguna, cola: 0,61 (IC 95 % 0,15 a 1,03); Ermita Cruz Chica, v: -130,78 (IC 95 % -367,28 a 89,43); Ermita Cruz Chica, cola: 0,18 (IC 95 % -0,50 a 0,88).
+  Aviso: junio y julio de 2026 son posteriores al cierre de los pasos de peatones de la glorieta del Padre Anchieta (20-05-2026), así que no son un control limpio.
+Horas de cola de la mañana hacia Santa Cruz después de abrir la pasarela del Padre Anchieta (mismo mes de 2025 entre paréntesis; asociación temporal, no un efecto demostrado):
+  Campus Guajara       2026-06: 0,62 h (0,57) · 2026-07: 0,00 h (0,09) · 2026-09: 0,10 h (0,23)
+  Bomberos La Laguna   2026-06: 0,62 h (1,05) · 2026-07: 0,00 h (1,00) · 2026-09: 0,36 h (0,95)
+  Ermita Cruz Chica    2026-06: 2,67 h (2,19) · 2026-07: 1,30 h (1,83) · 2026-09: 2,45 h (2,59)
+== 4b. Procedencia de los datos, calidad de las series, balance por tramos y geometría ==
+Procedencia: 24 ficheros horarios y 13 ficheros oficiales. Iguales (tamaño y fecha) al recurso de la instantánea del catálogo del portal del 16-10-2026: 24 y 13; copias íntegras (SHA-256): 24 y 13; totales de cada extracto = sumas de control registradas del TXT original: 24 de 24 meses.
+  Hueco registrado: Intensidad de tráfico diaria en diciembre 2024 (Intensidad diaria de tráfico de Tenerife (2024)). Publicado en el catálogo del 16-10-2026 pero NO incluido en el proyecto (hueco registrado)
+  Hueco registrado: Diccionario de datos de intensidad diaria de tráfico (Intensidad diaria de tráfico de Tenerife (2024)). Publicado en el catálogo del 16-10-2026 y no descargado: los datos de ese año se leen con el diccionario de 2025 (la cabecera de los 24 TXT es la misma)
+  Hueco registrado: Diccionario de datos de intensidad diaria de tráfico (Intensidad diaria de tráfico de Tenerife (2026)). Publicado en el catálogo del 16-10-2026 y no descargado: los datos de ese año se leen con el diccionario de 2025 (la cabecera de los 24 TXT es la misma)
+  Cabecera de los TXT horarios: la misma en todos los meses.
+  Las huellas prueban que las copias no han cambiado desde la descarga (integridad), no la autenticidad del origen. Esta ejecución de main.R no vuelve a descargar los originales; el contraste de los originales descargados con el portal está en docs/contraste_fuentes/.
+Conservación al sumar los carriles principales por estación, sentido y hora: diferencia de 0 vehículos.
+Serie depurada con banderas de calidad (horarios_corredor_con_banderas.csv.gz; los extractos originales no se tocan): 224.457 horas de estación y sentido; usadas en el análisis 138.216 (61,6%); imputadas: 0.
+Banderas de calidad en el corredor (horas marcadas de 224.457; se solapan): no_laborable 67.975 (30,3%); incompleta 523 (0,2%); sin_velocidad_utilizable 12.823 (5,7%); duplicado 26 (0,0%); negativos 12.429 (5,5%); caudal_implausible 0 (0,0%); agosto 19.435 (8,7%); cambio_de_hora 1.162 (0,5%); dia_no_valido 86.241 (38,4%); no_usada 86.241 (38,4%); imputada 0 (0,0%).
+Sensibilidad a la depuración de los días (2025; horas de cola por día laborable en la ventana del caso, de 3 a 13 h hacia Santa Cruz y de 11 a 24 h hacia el Norte, y descarga mediana):
+  Principal (día completo, >= 85 % de la mediana del mes, sin agosto) · Ermita Cruz Chica (descendente): 226 días, mediana 3,0 h (media 2,74), descarga 3.345 veh/h; horas imputadas 0,0%
+  Principal (día completo, >= 85 % de la mediana del mes, sin agosto) · Bomberos La Laguna (ascendente): 224 días, mediana 4,0 h (media 4,62), descarga 3.561 veh/h; horas imputadas 0,0%
+  Sin filtro del tráfico diario · Ermita Cruz Chica (descendente): 231 días, mediana 3,0 h (media 2,72), descarga 3.344 veh/h; horas imputadas 0,0%
+  Sin filtro del tráfico diario · Bomberos La Laguna (ascendente): 230 días, mediana 4,0 h (media 4,53), descarga 3.557 veh/h; horas imputadas 0,0%
+  Filtro del tráfico diario estricto (>= 95 %) · Ermita Cruz Chica (descendente): 219 días, mediana 3,0 h (media 2,74), descarga 3.359 veh/h; horas imputadas 0,0%
+  Filtro del tráfico diario estricto (>= 95 %) · Bomberos La Laguna (ascendente): 215 días, mediana 4,0 h (media 4,63), descarga 3.576 veh/h; horas imputadas 0,0%
+  Con agosto · Ermita Cruz Chica (descendente): 246 días, mediana 3,0 h (media 2,53), descarga 3.345 veh/h; horas imputadas 0,0%
+  Con agosto · Bomberos La Laguna (ascendente): 243 días, mediana 4,0 h (media 4,57), descarga 3.557 veh/h; horas imputadas 0,0%
+  Imputando horas a las que les falta un carril: método A, proporcional · Ermita Cruz Chica (descendente): 226 días, mediana 3,0 h (media 2,74), descarga 3.345 veh/h; horas imputadas 0,0%
+  Imputando horas a las que les falta un carril: método A, proporcional · Bomberos La Laguna (ascendente): 224 días, mediana 4,0 h (media 4,62), descarga 3.561 veh/h; horas imputadas 0,0%
+  Imputando horas a las que les falta un carril: método B, mediana de la misma hora y mes · Ermita Cruz Chica (descendente): 226 días, mediana 3,0 h (media 2,74), descarga 3.345 veh/h; horas imputadas 0,0%
+  Imputando horas a las que les falta un carril: método B, mediana de la misma hora y mes · Bomberos La Laguna (ascendente): 224 días, mediana 4,0 h (media 4,62), descarga 3.561 veh/h; horas imputadas 0,0%
+Balance entre estaciones (pares consecutivos y Ermita Cruz Chica -> Campus Guajara; días laborables con las 24 h en las dos; diferencia de caudal = entradas - salidas por los ramales):
+  ascendente  Bomberos La Laguna -> Ermita Cruz Chica: -7.694 veh/día (p10-p90 -9.386 a -5.162; CV 0,23; 387 días; caudales negativos: 0). Balance estable de un día a otro: entradas netas regulares (la estabilidad no prueba que los dos aforos sean exactos)
+  ascendente  Campus Guajara -> Padre Anchieta: -1.474 veh/día (p10-p90 -8.183 a 5.731; CV 3,39; 193 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  ascendente  Ermita Cruz Chica -> La Matanza: -6.679 veh/día (p10-p90 -7.392 a -5.132; CV 0,18; 389 días; caudales negativos: 0). Balance estable de un día a otro: entradas netas regulares (la estabilidad no prueba que los dos aforos sean exactos)
+  ascendente  Hospital Residencia -> Campus Guajara: 4.025 veh/día (p10-p90 -3.756 a 8.189; CV 1,48; 353 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  ascendente  La Matanza -> La Orotava: -3.904 veh/día (p10-p90 -6.976 a -2.228; CV 0,45; 388 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  ascendente  Padre Anchieta -> Bomberos La Laguna: -6.035 veh/día (p10-p90 -10.210 a -1.073; CV 0,63; 194 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  descendente Bomberos La Laguna -> Padre Anchieta: -2.335 veh/día (p10-p90 -7.583 a 1.830; CV 1,40; 179 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  descendente Campus Guajara -> Hospital Residencia: 3.969 veh/día (p10-p90 2.443 a 5.621; CV 0,37; 363 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  descendente Ermita Cruz Chica -> Bomberos La Laguna: 14.125 veh/día (p10-p90 12.648 a 15.763; CV 0,11; 384 días; caudales negativos: 0). Balance estable de un día a otro: entradas netas regulares (la estabilidad no prueba que los dos aforos sean exactos)
+  descendente Ermita Cruz Chica -> Campus Guajara: 5.349 veh/día (p10-p90 3.004 a 7.746; CV 0,35; 384 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+  descendente La Matanza -> Ermita Cruz Chica: 8.516 veh/día (p10-p90 6.860 a 10.783; CV 0,24; 379 días; caudales negativos: 0). Balance estable de un día a otro: entradas netas regulares (la estabilidad no prueba que los dos aforos sean exactos)
+  descendente La Orotava -> La Matanza: 82 veh/día (p10-p90 -1.819 a 2.072; CV no aplica; 381 días; caudales negativos: 0). Entradas y salidas casi se compensan: no se puede separar cada ramal
+  descendente Padre Anchieta -> Campus Guajara: -5.946 veh/día (p10-p90 -9.603 a -1.756; CV 0,61; 180 días; caudales negativos: 0). Balance inestable: alguna de las dos estaciones cuenta mal parte del tiempo (o cambian los ramales)
+Geometría (catálogo de carriles de 2026 frente al inventario del PTEOSVAM de 2006): 8 estación-sentidos confirmados y 6 pendientes de confirmación: Campus Guajara hacia el Norte (4 aforados, 3 en el inventario); La Orotava hacia el Norte (3 aforados, 2 en el inventario); Campus Guajara hacia Santa Cruz (4 aforados, 3 en el inventario); Padre Anchieta hacia Santa Cruz (3 aforados, 2 en el inventario); Bomberos La Laguna hacia Santa Cruz (4 aforados, 3 en el inventario); La Orotava hacia Santa Cruz (3 aforados, 2 en el inventario).
+Uso de la geometría: 11 cálculos que dependen del número de carriles, todos con fuente o supuesto explícito: sí.
+Correspondencia de campos: 31 campos de los tres ficheros oficiales, cada uno con su definición del diccionario oficial y su nombre en el proyecto.
+Contraste con la publicación original (catálogo nacional datos.gob.es, consultado el 16-10-2026): 13 de 13 recursos de 2025 coinciden en URL, identificador, nombre y licencia; la fecha de modificación del conjunto difiere 1,0 h entre los dos catálogos.
+Días laborables de Ermita Cruz Chica (descendente): 453 usados y 49 excluidos (Agosto (vacaciones; fuera del análisis por diseño): 40; Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador): 9); de los usados, 38 marcados como posibles atípicos (puentes 4, Navidad 7, Semana Santa 6, punta anómala 27). Incidentes y obras: el Cabildo publica un registro de incidencias en carreteras que no se ha incorporado (matriz de lagunas, D09); lluvia: sin dato incorporado (D15).
+Días laborables de Bomberos La Laguna (ascendente): 453 usados y 49 excluidos (Agosto (vacaciones; fuera del análisis por diseño): 39; Día incompleto: faltan horas o algún carril (avería o corte del aforador): 2; Tráfico del día por debajo del 85 % de la mediana del mes (posible incidencia, festivo local o fallo del aforador): 8); de los usados, 44 marcados como posibles atípicos (puentes 4, Navidad 8, Semana Santa 6, punta anómala 30). Incidentes y obras: el Cabildo publica un registro de incidencias en carreteras que no se ha incorporado (matriz de lagunas, D09); lluvia: sin dato incorporado (D15).
+Sensibilidad a los días atípicos (2025; horas de cola media y descarga mediana):
+  Todos los días válidos (principal) · Ermita Cruz Chica (descendente): 226 días, 2,74 h de media, descarga 3.345 veh/h
+  Todos los días válidos (principal) · Bomberos La Laguna (ascendente): 224 días, 4,62 h de media, descarga 3.561 veh/h
+  Sin puentes, Navidad ni Semana Santa · Ermita Cruz Chica (descendente): 217 días, 2,77 h de media, descarga 3.358 veh/h
+  Sin puentes, Navidad ni Semana Santa · Bomberos La Laguna (ascendente): 214 días, 4,64 h de media, descarga 3.566 veh/h
+  Sin días con la punta anómala · Ermita Cruz Chica (descendente): 215 días, 2,73 h de media, descarga 3.364 veh/h
+  Sin días con la punta anómala · Bomberos La Laguna (ascendente): 205 días, 4,59 h de media, descarga 3.574 veh/h
+  Sin ningún día marcado · Ermita Cruz Chica (descendente): 207 días, 2,75 h de media, descarga 3.367 veh/h
+  Sin ningún día marcado · Bomberos La Laguna (ascendente): 196 días, 4,60 h de media, descarga 3.578 veh/h
+Perfil híbrido: ventana de la punta 06-10 h (mañana hacia Santa Cruz) y 13-18 h (tarde hacia el Norte); fuera de ella la demanda es el caudal aforado.
+  Punta elástica (joroba) de la mañana: 3.893 veh de 12.894 aforados en la ventana (8,0% del día).
+  Punta elástica (joroba) de la tarde: 2.278 veh de 17.392 aforados en la ventana (4,7% del día).
+== 5. Caso 1: Los Rodeos-Guamasa hacia Santa Cruz (tercer carril) ==
+Holgura estimada del tramo siguiente (Bomberos/Campus Guajara) en las 643 horas con cola: mediana 12,1% (p10-p90 -1,1% a 32,7%); sin holgura en el 14% de las horas.
+  a las 06 h: mediana 13,3% (p10-p90 8,4% a 22,1%), sin holgura el 0% de los días
+  a las 07 h: mediana 0,6% (p10-p90 -4,8% a 9,8%), sin holgura el 44% de los días
+  a las 08 h: mediana 13,9% (p10-p90 8,3% a 25,6%), sin holgura el 0% de los días
+  después de abrir la pasarela (jun, jul y sep de 2026), a las 06 h: mediana 17,5%, sin holgura el 0% de los días (55 horas con cola)
+  después de abrir la pasarela (jun, jul y sep de 2026), a las 07 h: mediana 2,5%, sin holgura el 26% de los días (53 horas con cola)
+  después de abrir la pasarela (jun, jul y sep de 2026), a las 08 h: mediana 15,9%, sin holgura el 0% de los días (22 horas con cola)
+Especificación de la descarga de la mañana (elegida por validación cruzada en 2025 entre 16 variantes): propagación de la cola del tramo siguiente + descarga dependiente de la hora + mezcla de pesados; descarga calibrada medida igual que en el aforo.
+  Factor de la descarga por hora (frente a las 07 h): 08 h 0,908, 09 h 0,923.
+Ermita Cruz Chica (Los Rodeos-Guamasa), hacia Santa Cruz: 48.857 veh/día laborable en 2 carriles
+Objetivos de calibración: cola de 1,5-3,5 h/día que empieza entre las 05:30 y las 06:30 y acaba entre las 07:30 y las 09:30; descarga medida como en el aforo de 3.242-3.463 veh/h. Combinaciones compatibles: 378 de 20.000 (1,9%).
+  Situación actual simulada: espera máxima 15,8 min (p10-p90 8,8-25,3), espera media en la hora punta 7,2 min, cola 3,1 h (de 06:08 a 09:17).
+  Medida como en los aforos (horas enteras con >= 60 % de vehículos en cola): 3,0 h, de las 06 a las 09 h (mediana).
+  Tercer carril (1er año)                    mediana  40%  (p10  22%, p90  73%)
+  Tercer carril (a 5 años)                   mediana  34%  (p10  19%, p90  63%)
+  Tercer carril (a 10 años)                  mediana  33%  (p10  18%, p90  60%)
+  Regulación de accesos (1er año)            mediana  34%  (p10  20%, p90  55%)
+  Regulación de accesos (a 5 años)           mediana  29%  (p10  16%, p90  47%)
+  Regulación de accesos (a 10 años)          mediana  28%  (p10  15%, p90  46%)
+  Escalonamiento horario (1er año)           mediana  17%  (p10  10%, p90  31%)
+  Escalonamiento horario (a 5 años)          mediana  13%  (p10   7%, p90  23%)
+  Escalonamiento horario (a 10 años)         mediana  12%  (p10   7%, p90  22%)
+  Tarificación de la punta                   mediana  61%  (p10  38%, p90  99%)
+  Regulación + escalonamiento (1er año)      mediana  48%  (p10  32%, p90  73%)
+  Regulación + escalonamiento (a 5 años)     mediana  40%  (p10  26%, p90  62%)
+  Regulación + escalonamiento (a 10 años)    mediana  39%  (p10  24%, p90  59%)
+Parámetros que más pesan en el resultado del tercer carril a 10 años (rho de Spearman):
+  holgura_aguas_abajo      +0.74
+  sigma_punta              +0.45
+  c_carril                 -0.31
+  caida_capacidad          +0.17
+Tercer carril según la holgura de abajo: con 0 % (paso por Padre Anchieta con 2 carriles efectivos) 0% el 1er año; con 15 % 69%.
+Sensibilidad de la holgura del tramo siguiente (mañana; holgura mediana a las 7 h y tercer carril el 1er año, mediana y p10-p90):
+  Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos: 0,6% a las 7 h; tercer carril 41% (23%-73%); cola de 3,1 h hoy (en el rango medido en 2025 en el 95% de las combinaciones) y 2,4 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Capacidad de abajo más baja (p95 de su caudal): -13,9% a las 7 h; tercer carril 10% (2%-31%); cola de 4,8 h hoy (en el rango medido en 2025 en el 6% de las combinaciones) y 4,1 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Capacidad de abajo más alta (p99,9 de su caudal): 6,1% a las 7 h; tercer carril 61% (36%-95%); cola de 2,9 h hoy (en el rango medido en 2025 en el 92% de las combinaciones) y 1,9 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Capacidad de abajo solo con horas sin cola en esa estación (p99): -4,8% a las 7 h; tercer carril 27% (8%-54%); cola de 3,5 h hoy (en el rango medido en 2025 en el 50% de las combinaciones) y 2,9 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar): -3,8% a las 7 h; tercer carril 31% (10%-60%); cola de 3,4 h hoy (en el rango medido en 2025 en el 55% de las combinaciones) y 2,8 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Ramales desconocidos: salidas del 5 % del caudal después del punto crítico: -4,4% a las 7 h; tercer carril 24% (5%-51%); cola de 3,5 h hoy (en el rango medido en 2025 en el 53% de las combinaciones) y 2,9 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Cuello desplazado: sin holgura en las horas con cola en la estación de abajo: 0,0% a las 7 h; tercer carril 35% (18%-66%); cola de 3,1 h hoy (en el rango medido en 2025 en el 94% de las combinaciones) y 2,6 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Carriles del inventario de 2006 en Campus Guajara y Bomberos La Laguna (cota baja: 3/3 x 1.850 x 0,82): -8,5% a las 7 h; tercer carril 12% (1%-40%); cola de 4,0 h hoy (en el rango medido en 2025 en el 17% de las combinaciones) y 3,4 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+  Holgura nula en todas las horas: 0,0% a las 7 h; tercer carril 0% (0%-0%); cola de 3,1 h hoy (en el rango medido en 2025 en el 90% de las combinaciones) y 3,1 h con el tercer carril, marcada por el tramo siguiente en el 100% de sus minutos (cuello desplazado)
+== 6. Caso 2: regreso hacia el Norte (cuello de Bomberos-Ermita Cruz Chica, de 3 a 2 carriles) ==
+Holgura de La Matanza (2 carriles) hacia el Norte en las 1.044 horas con cola en Bomberos: mediana 9,4% (p10-p90 1,1% a 27,1%).
+  a las 14 h: mediana 10,0% (p10-p90 3,5% a 16,1%), sin holgura el 3% de los días
+  a las 15 h: mediana 2,8% (p10-p90 -0,6% a 9,8%), sin holgura el 14% de los días
+  a las 16 h: mediana 3,9% (p10-p90 0,3% a 10,1%), sin holgura el 8% de los días
+Especificación de la descarga de la tarde (elegida por validación cruzada en 2025 entre 16 variantes): descarga constante; descarga calibrada como parámetro del modelo.
+Ermita Cruz Chica, hacia el Norte: 48.151 veh/día laborable en 2 carriles (la cola se forma en Bomberos La Laguna, con 3)
+Objetivos de calibración: cola de 2,5-6,5 h/día que empieza entre las 12:30 y las 14:30 y acaba entre las 16:30 y las 19:30; descarga (parámetro) de 3.061-3.744 veh/h. Combinaciones compatibles: 1369 de 10.000 (13,7%).
+  Situación actual simulada: espera máxima 14,1 min (p10-p90 8,4-20,5), espera media en la hora punta 6,0 min, cola 4,0 h (de 13:47 a 17:39).
+  Medida como en los aforos (horas enteras con >= 60 % de vehículos en cola): 4,0 h, de las 14 a las 18 h (mediana).
+  Tercer carril hacia el Norte, hipotético (1er año)   mediana  72%  (p10  34%, p90  99%)
+  Tercer carril hacia el Norte, hipotético (a 5 años)  mediana  66%  (p10  30%, p90  97%)
+  Tercer carril hacia el Norte, hipotético (a 10 años) mediana  64%  (p10  30%, p90  96%)
+  Regulación de accesos (1er año)                      mediana  55%  (p10  30%, p90  74%)
+  Regulación de accesos (a 5 años)                     mediana  50%  (p10  27%, p90  69%)
+  Regulación de accesos (a 10 años)                    mediana  49%  (p10  26%, p90  67%)
+  Escalonamiento horario (1er año)                     mediana  10%  (p10   6%, p90  19%)
+  Escalonamiento horario (a 5 años)                    mediana   8%  (p10   5%, p90  15%)
+  Escalonamiento horario (a 10 años)                   mediana   8%  (p10   4%, p90  14%)
+  Tarificación de la punta                             mediana  47%  (p10  29%, p90 100%)
+  Regulación + escalonamiento (1er año)                mediana  62%  (p10  38%, p90  81%)
+  Regulación + escalonamiento (a 5 años)               mediana  57%  (p10  34%, p90  74%)
+  Regulación + escalonamiento (a 10 años)              mediana  55%  (p10  33%, p90  73%)
+Tercer carril hipotético hacia el Norte según la holgura de La Matanza: con 0 % 0% el 1er año; con 50 % (si La Matanza tuviera 3 carriles, tercer carril continuo hasta La Orotava) 100%.
+Sensibilidad de la holgura de La Matanza (tarde; holgura mediana a las 15 h y tercer carril hipotético el 1er año):
+  Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos: 2,8% a las 15 h; tercer carril 71% (33%-100%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  Capacidad de abajo más baja (p95 de su caudal): -0,9% a las 15 h; tercer carril 48% (11%-94%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  Capacidad de abajo más alta (p99,9 de su caudal): 5,5% a las 15 h; tercer carril 82% (50%-100%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar): 2,7% a las 15 h; tercer carril 71% (32%-100%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  Ramales desconocidos: salidas del 5 % del caudal después del punto crítico: -2,2% a las 15 h; tercer carril 39% (8%-90%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  Holgura nula en todas las horas: 0,0% a las 15 h; tercer carril 0% (0%-0%); cola de hoy en el rango medido en 2025 en el 98% de las combinaciones
+  (La Matanza no tiene velocidad utilizable: no se puede saber si su tramo tiene cola, así que no hay variante de cuello desplazado hacia el Norte.)
+== 7. Bus-VAO en Padre Anchieta, hacia el Norte (3 carriles -> 2 + 1 reservado) ==
+Padre Anchieta hacia el Norte: 62.957 veh/día laborable (media de 54 días válidos de 2025; la estación pasó meses sin datos). Sin velocidades fiables: perfil sintético calibrado con una espera de 10-40 min (franja supuesta que cubre las cifras de la prensa: 15-20 min, Atlántico Hoy 24-11-2025; 40 min en un día con incidente, COPE 20-10-2021).
+Para que el tráfico general no vaya peor debe pasar al carril reservado el 33% de los vehículos (p10-p90: 33%-33%);
+  para que su espera en la hora punta baje a la mitad, el 38% (p10-p90: 36%-40%). 412 combinaciones calibradas (espera máxima actual de 10-40 min, franja supuesta a partir de la prensa).
+== Validación del modelo ==
+  manana_hacia_santa_cruz: 378 de 20.000 combinaciones aceptadas (1,9%). Lo que más estrecha la calibración: t0_punta (66%), sigma_punta (36%), caida_capacidad (29%).
+  tarde_hacia_el_norte: 1.369 de 10.000 combinaciones aceptadas (13,7%). Lo que más estrecha la calibración: t0_punta (54%), sigma_punta (34%), caida_capacidad (25%).
+  Reducciones del 100 %: son simulaciones en las que la alternativa elimina la cola (demora cero), no un tope del cálculo:
+    manana_hacia_santa_cruz · Tarificación de la punta: elimina la cola en el 6% de las simulaciones
+    tarde_hacia_el_norte · Tercer carril (1er año): elimina la cola en el 9% de las simulaciones
+    tarde_hacia_el_norte · Tercer carril (a 5 años): elimina la cola en el 6% de las simulaciones
+    tarde_hacia_el_norte · Tarificación de la punta: elimina la cola en el 22% de las simulaciones
+  Estabilidad (bootstrap de las simulaciones calibradas): error típico de la mediana de 0,1 a 2,0 puntos; del p10, hasta 1,5; del p90, hasta 3,5.
+  manana_hacia_santa_cruz · Horas de cola al día (mediana): 2025 3,00, 2026 3,00; modelo 3,00 (p10-p90 3,00-3,00); error de la mediana 0,00 en 2025 y 0,00 en 2026 · 2026 dentro de la banda
+  manana_hacia_santa_cruz · Inicio de la cola (mediana): 2025 6,00, 2026 6,00; modelo 6,00 (p10-p90 6,00-6,00); error de la mediana 0,00 en 2025 y 0,00 en 2026 · 2026 dentro de la banda
+  manana_hacia_santa_cruz · Fin de la cola (mediana): 2025 9,00, 2026 9,00; modelo 9,00 (p10-p90 9,00-9,00); error de la mediana 0,00 en 2025 y 0,00 en 2026 · 2026 dentro de la banda
+  manana_hacia_santa_cruz · Caudal de descarga con cola (mediana): 2025 3.345,00, 2026 3.338,50; modelo 3.496,58 (p10-p90 3.438,88-3.612,67); error de la mediana 151,58 en 2025 y 158,08 en 2026 · 2026 FUERA de la banda (a 100,38 del límite)
+  manana_hacia_santa_cruz · Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias): 2025 3.371,00, 2026 3.371,50; modelo 3.419,09 (p10-p90 3.317,16-3.456,54); error de la mediana 48,09 en 2025 y 47,59 en 2026 · 2026 dentro de la banda
+  tarde_hacia_el_norte · Horas de cola al día (mediana): 2025 4,00, 2026 4,00; modelo 4,00 (p10-p90 3,00-5,00); error de la mediana 0,00 en 2025 y 0,00 en 2026 · 2026 dentro de la banda
+  tarde_hacia_el_norte · Inicio de la cola (mediana): 2025 13,00, 2026 13,00; modelo 14,00 (p10-p90 13,00-14,00); error de la mediana 1,00 en 2025 y 1,00 en 2026 · 2026 dentro de la banda
+  tarde_hacia_el_norte · Fin de la cola (mediana): 2025 18,00, 2026 18,00; modelo 18,00 (p10-p90 17,00-19,00); error de la mediana 0,00 en 2025 y 0,00 en 2026 · 2026 dentro de la banda
+  tarde_hacia_el_norte · Caudal de descarga con cola (mediana): 2025 3.561,00, 2026 3.423,50; modelo 3.509,57 (p10-p90 3.402,19-3.620,67); error de la mediana -51,43 en 2025 y 86,07 en 2026 · 2026 dentro de la banda
+  tarde_hacia_el_norte · Caudal en las horas con cola, medido igual en el modelo y en el aforo (mediana de las medianas diarias): 2025 3.587,00, 2026 3.449,00; modelo 3.509,57 (p10-p90 3.402,19-3.620,67); error de la mediana -77,43 en 2025 y 60,57 en 2026 · 2026 dentro de la banda
+  Control: validacion_modelo.csv tiene 10 filas de indicadores (5 por sentido). Fuera de la banda en 2026: 1 fila, de 1 fenómeno (manana_hacia_santa_cruz: descarga con cola).
+  manana_hacia_santa_cruz · caudal hora a hora de 6 a 10 h (ventana de la punta) frente a aforos 2025 (calibración): error medio 4,2%; 25% de las horas dentro de la banda p10-p90
+  manana_hacia_santa_cruz · caudal hora a hora de 6 a 10 h (ventana de la punta) frente a aforos 2026 (no usados): error medio 3,9%; 25% de las horas dentro de la banda p10-p90
+  tarde_hacia_el_norte · caudal hora a hora de 13 a 18 h (ventana de la punta) frente a aforos 2025 (calibración): error medio 2,3%; 80% de las horas dentro de la banda p10-p90
+  tarde_hacia_el_norte · caudal hora a hora de 13 a 18 h (ventana de la punta) frente a aforos 2026 (no usados): error medio 3,9%; 80% de las horas dentro de la banda p10-p90
+Validación día a día (sesgo = modelo - aforo; banda de parámetros = un día típico; intervalo predictivo del 80 % = banda + variabilidad de un día a otro y error de observación de 2025):
+  manana_hacia_santa_cruz · Horas de cola al día · 2025 (calibración): 226 observaciones; sesgo 0,26 (9,4%); MAE 0,73 (26,8%); RMSE 1,14; dentro de la banda de parámetros 47%; dentro del intervalo predictivo 87%
+  manana_hacia_santa_cruz · Horas de cola al día · 2026 (validación, no usado): 163 observaciones; sesgo 0,36 (13,7%); MAE 0,93 (35,1%); RMSE 1,31; dentro de la banda de parámetros 37%; dentro del intervalo predictivo 79%
+  manana_hacia_santa_cruz · Inicio de la cola · 2025 (calibración): 215 observaciones; sesgo -0,05; MAE 0,05; RMSE 0,28; dentro de la banda de parámetros 96%; dentro del intervalo predictivo 96%
+  manana_hacia_santa_cruz · Inicio de la cola · 2026 (validación, no usado): 153 observaciones; sesgo -0,10; MAE 0,10; RMSE 0,65; dentro de la banda de parámetros 96%; dentro del intervalo predictivo 96%
+  manana_hacia_santa_cruz · Fin de la cola · 2025 (calibración): 215 observaciones; sesgo -0,04; MAE 0,71; RMSE 1,13; dentro de la banda de parámetros 49%; dentro del intervalo predictivo 91%
+  manana_hacia_santa_cruz · Fin de la cola · 2026 (validación, no usado): 153 observaciones; sesgo 0,05; MAE 0,81; RMSE 1,17; dentro de la banda de parámetros 39%; dentro del intervalo predictivo 90%
+  manana_hacia_santa_cruz · Descarga del día frente al parámetro del modelo · 2025 (calibración): 215 observaciones; sesgo 172,40 (5,2%); MAE 187,17 (5,6%); RMSE 273,27; dentro de la banda de parámetros 29%; dentro del intervalo predictivo 79%
+  manana_hacia_santa_cruz · Descarga del día frente al parámetro del modelo · 2026 (validación, no usado): 153 observaciones; sesgo 161,37 (4,8%); MAE 177,71 (5,3%); RMSE 233,21; dentro de la banda de parámetros 31%; dentro del intervalo predictivo 76%
+  manana_hacia_santa_cruz · Descarga del día medida igual en el modelo y en el aforo · 2025 (calibración): 215 observaciones; sesgo 94,92 (2,9%); MAE 149,33 (4,5%); RMSE 232,30; dentro de la banda de parámetros 35%; dentro del intervalo predictivo 85%
+  manana_hacia_santa_cruz · Descarga del día medida igual en el modelo y en el aforo · 2026 (validación, no usado): 153 observaciones; sesgo 83,88 (2,5%); MAE 142,48 (4,3%); RMSE 188,10; dentro de la banda de parámetros 31%; dentro del intervalo predictivo 88%
+  manana_hacia_santa_cruz · Descarga en las horas de cola plena · 2025 (calibración): 140 observaciones; sesgo 215,14 (6,7%); MAE 235,69 (7,3%); RMSE 370,57; dentro de la banda de parámetros 36%; dentro del intervalo predictivo 84%
+  manana_hacia_santa_cruz · Descarga en las horas de cola plena · 2026 (validación, no usado): 92 observaciones; sesgo 260,10 (8,2%); MAE 265,64 (8,4%); RMSE 363,20; dentro de la banda de parámetros 28%; dentro del intervalo predictivo 82%
+  manana_hacia_santa_cruz · Caudal de cada hora de 6 a 10 h (ventana de la punta) · 2025 (calibración): 904 observaciones; sesgo 4,75 (0,1%); MAE 208,54 (6,5%); RMSE 301,22; dentro de la banda de parámetros 27%; dentro del intervalo predictivo 73%
+  manana_hacia_santa_cruz · Caudal de cada hora de 6 a 10 h (ventana de la punta) · 2026 (validación, no usado): 652 observaciones; sesgo 18,09 (0,6%); MAE 202,24 (6,3%); RMSE 289,32; dentro de la banda de parámetros 27%; dentro del intervalo predictivo 75%
+  tarde_hacia_el_norte · Horas de cola al día · 2025 (calibración): 224 observaciones; sesgo -0,62 (-13,5%); MAE 1,29 (27,8%); RMSE 1,70; dentro de la banda de parámetros 72%; dentro del intervalo predictivo 93%
+  tarde_hacia_el_norte · Horas de cola al día · 2026 (validación, no usado): 165 observaciones; sesgo -0,58 (-12,7%); MAE 1,30 (28,3%); RMSE 1,88; dentro de la banda de parámetros 68%; dentro del intervalo predictivo 90%
+  tarde_hacia_el_norte · Inicio de la cola · 2025 (calibración): 224 observaciones; sesgo 0,57; MAE 0,61; RMSE 0,84; dentro de la banda de parámetros 97%; dentro del intervalo predictivo 98%
+  tarde_hacia_el_norte · Inicio de la cola · 2026 (validación, no usado): 160 observaciones; sesgo 0,73; MAE 0,73; RMSE 0,93; dentro de la banda de parámetros 94%; dentro del intervalo predictivo 94%
+  tarde_hacia_el_norte · Fin de la cola · 2025 (calibración): 224 observaciones; sesgo -0,34; MAE 1,25; RMSE 1,57; dentro de la banda de parámetros 77%; dentro del intervalo predictivo 98%
+  tarde_hacia_el_norte · Fin de la cola · 2026 (validación, no usado): 160 observaciones; sesgo -0,34; MAE 1,38; RMSE 1,68; dentro de la banda de parámetros 62%; dentro del intervalo predictivo 99%
+  tarde_hacia_el_norte · Descarga del día frente al parámetro del modelo · 2025 (calibración): 222 observaciones; sesgo -25,94 (-0,7%); MAE 150,37 (4,3%); RMSE 196,25; dentro de la banda de parámetros 38%; dentro del intervalo predictivo 73%
+  tarde_hacia_el_norte · Descarga del día frente al parámetro del modelo · 2026 (validación, no usado): 160 observaciones; sesgo 86,93 (2,5%); MAE 162,18 (4,7%); RMSE 232,95; dentro de la banda de parámetros 51%; dentro del intervalo predictivo 80%
+  tarde_hacia_el_norte · Descarga del día medida igual en el modelo y en el aforo · 2025 (calibración): 222 observaciones; sesgo -25,94 (-0,7%); MAE 150,37 (4,3%); RMSE 196,25; dentro de la banda de parámetros 38%; dentro del intervalo predictivo 73%
+  tarde_hacia_el_norte · Descarga del día medida igual en el modelo y en el aforo · 2026 (validación, no usado): 160 observaciones; sesgo 86,93 (2,5%); MAE 162,18 (4,7%); RMSE 232,95; dentro de la banda de parámetros 51%; dentro del intervalo predictivo 80%
+  tarde_hacia_el_norte · Descarga en las horas de cola plena · 2025 (calibración): 217 observaciones; sesgo -78,44 (-2,2%); MAE 189,67 (5,3%); RMSE 223,53; dentro de la banda de parámetros 22%; dentro del intervalo predictivo 43%
+  tarde_hacia_el_norte · Descarga en las horas de cola plena · 2026 (validación, no usado): 151 observaciones; sesgo 37,71 (1,1%); MAE 196,98 (5,7%); RMSE 268,28; dentro de la banda de parámetros 38%; dentro del intervalo predictivo 64%
+  tarde_hacia_el_norte · Caudal de cada hora de 13 a 18 h (ventana de la punta) · 2025 (calibración): 1.135 observaciones; sesgo -0,60 (0,0%); MAE 180,26 (5,2%); RMSE 239,74; dentro de la banda de parámetros 43%; dentro del intervalo predictivo 66%
+  tarde_hacia_el_norte · Caudal de cada hora de 13 a 18 h (ventana de la punta) · 2026 (validación, no usado): 825 observaciones; sesgo 120,85 (3,6%); MAE 220,04 (6,6%); RMSE 313,57; dentro de la banda de parámetros 46%; dentro del intervalo predictivo 71%
+Elección de la especificación (manana_hacia_santa_cruz): propagación de la cola del tramo siguiente + descarga dependiente de la hora + mezcla de pesados; descarga calibrada medida igual que en el aforo. Variantes admisibles: 6 de 15. Sesgo absoluto de la descarga del día fuera de muestra (media de las dos mitades de 2025): 93 veh/h con la elegida y 149 con la referencia; RMSE relativo medio 0,928.
+  2026 (prueba final) · Horas de cola al día: sesgo 0,36 (referencia 0,36); RMSE 1,31 (1,31); intervalo predictivo 79% (88%)
+  2026 (prueba final) · Inicio de la cola: sesgo -0,10 (referencia -0,10); RMSE 0,65 (0,65); intervalo predictivo 96% (96%)
+  2026 (prueba final) · Fin de la cola: sesgo 0,05 (referencia 0,05); RMSE 1,17 (1,17); intervalo predictivo 90% (92%)
+  2026 (prueba final) · Descarga del día (medida igual en el modelo y en el aforo): sesgo 87,67 (referencia 136,73); RMSE 189,82 (216,89); intervalo predictivo 88% (86%)
+  2026 (prueba final) · Caudal de las 06 h: sesgo 5,16 (referencia 0,36); RMSE 217,40 (217,34); intervalo predictivo 77% (78%)
+  2026 (prueba final) · Caudal de las 07 h: sesgo 179,15 (referencia 228,56); RMSE 338,92 (367,44); intervalo predictivo 87% (87%)
+  2026 (prueba final) · Caudal de las 08 h: sesgo 83,25 (referencia 171,57); RMSE 307,76 (342,38); intervalo predictivo 75% (84%)
+  2026 (prueba final) · Caudal de las 09 h: sesgo -209,61 (referencia -349,15); RMSE 287,62 (400,86); intervalo predictivo 58% (25%)
+Elección de la especificación (tarde_hacia_el_norte): descarga constante; descarga calibrada como parámetro del modelo. Variantes admisibles: 0 de 15. Sesgo absoluto de la descarga del día fuera de muestra (media de las dos mitades de 2025): 28 veh/h con la elegida y 28 con la referencia; RMSE relativo medio 1,000.
+  2026 (prueba final) · Horas de cola al día: sesgo -0,58 (referencia -0,58); RMSE 1,88 (1,88); intervalo predictivo 90% (90%)
+  2026 (prueba final) · Inicio de la cola: sesgo 0,73 (referencia 0,73); RMSE 0,93 (0,93); intervalo predictivo 94% (94%)
+  2026 (prueba final) · Fin de la cola: sesgo -0,34 (referencia -0,34); RMSE 1,68 (1,68); intervalo predictivo 99% (99%)
+  2026 (prueba final) · Descarga del día (medida igual en el modelo y en el aforo): sesgo 86,93 (referencia 86,93); RMSE 232,95 (232,95); intervalo predictivo 80% (80%)
+  2026 (prueba final) · Caudal de las 13 h: sesgo 178,99 (referencia 178,99); RMSE 327,23 (327,23); intervalo predictivo 86% (86%)
+  2026 (prueba final) · Caudal de las 14 h: sesgo 86,33 (referencia 86,33); RMSE 345,52 (345,52); intervalo predictivo 47% (47%)
+  2026 (prueba final) · Caudal de las 15 h: sesgo -20,01 (referencia -20,01); RMSE 280,76 (280,76); intervalo predictivo 60% (60%)
+  2026 (prueba final) · Caudal de las 16 h: sesgo 127,97 (referencia 127,97); RMSE 263,92 (263,92); intervalo predictivo 78% (78%)
+  2026 (prueba final) · Caudal de las 17 h: sesgo 230,98 (referencia 230,98); RMSE 341,61 (341,61); intervalo predictivo 82% (82%)
+Diagnóstico de la descarga de la mañana (mediana del caudal en las horas con cola; aforo 2025 / modelo):
+  06 h: aforo 3.580 (207 horas); modelo 3.515
+  07 h: aforo 3.370 (205 horas); modelo 3.427
+  08 h: aforo 3.062 (145 horas); modelo 3.110
+  09 h: aforo 3.111 (33 horas); modelo sin horas con cola
+  10 h: aforo 2.892 (14 horas); modelo sin horas con cola
+  11 h: aforo 3.018 (14 horas); modelo sin horas con cola
+  inicio: aforo 3.580 (207 horas); modelo 3.515
+  plena: aforo 3.243 (186 horas); modelo 3.427
+  final: aforo 3.218 (207 horas); modelo 3.110
+  aislada: aforo 2.997 (20 horas); modelo sin horas con cola
+  06 h, sin cola abajo: 3.580 veh/h (205 horas)
+  07 h, con cola abajo: 3.376 veh/h (156 horas)
+  07 h, sin cola abajo: 3.361 veh/h (49 horas)
+  08 h, con cola abajo: 2.956 veh/h (70 horas)
+  08 h, sin cola abajo: 3.133 veh/h (75 horas)
+  09 h, sin cola abajo: 3.226 veh/h (26 horas)
+  previa (todas las combinaciones): mediana 3.524 (p10-p90 3.327-3.723). El 33 % de la previa cumple la regla de la descarga (medida como en el aforo; 3.242-3.463 veh/h)
+  cumplen duración, inicio y fin (sin mirar la descarga): mediana 3.576 (p10-p90 3.466-3.739)
+  aceptadas (calibración principal): mediana 3.497 (p10-p90 3.439-3.613)
+  medida del día (mediana de sus horas con cola), 2025: mediana 3.371 (p10-p90 3.096-3.511)
+  medida del día (mediana de sus horas con cola), 2026: mediana 3.372 (p10-p90 3.110-3.530)
+Monte Carlo: combinaciones que pasa cada regla de calibración (sobre las 20.000 simuladas por la mañana y 10.000 por la tarde; el resto se descarta):
+  manana_hacia_santa_cruz · Duración de la cola (horas como el aforo) (1,5-3,5 h): pasan 6.420 (32,1%); se descarta el 67,9%
+  manana_hacia_santa_cruz · Caudal de descarga (3.242-3.463 veh/h (medida como en el aforo)): pasan 6.512 (32,6%); se descarta el 67,4%
+  manana_hacia_santa_cruz · Inicio de la cola (05:30-06:30): pasan 2.167 (10,8%); se descarta el 89,2%
+  manana_hacia_santa_cruz · Fin de la cola (07:30-09:30): pasan 4.188 (20,9%); se descarta el 79,1%
+  manana_hacia_santa_cruz · La cola se disipa dentro del día (cola final < 0,5 veh): pasan 20.000 (100,0%); se descarta el 0,0%
+  manana_hacia_santa_cruz · Todas salvo la descarga: pasan 1.347 (6,7%); se descarta el 93,3%
+  manana_hacia_santa_cruz · Todas (calibración principal): pasan 378 (1,9%); se descarta el 98,1%
+  tarde_hacia_el_norte · Duración de la cola (horas como el aforo) (2,5-6,5 h): pasan 4.753 (47,5%); se descarta el 52,5%
+  tarde_hacia_el_norte · Caudal de descarga (3.061-3.744 veh/h (parámetro)): pasan 9.226 (92,3%); se descarta el 7,7%
+  tarde_hacia_el_norte · Inicio de la cola (12:30-14:30): pasan 2.132 (21,3%); se descarta el 78,7%
+  tarde_hacia_el_norte · Fin de la cola (16:30-19:30): pasan 3.468 (34,7%); se descarta el 65,3%
+  tarde_hacia_el_norte · La cola se disipa dentro del día (cola final < 0,5 veh): pasan 10.000 (100,0%); se descarta el 0,0%
+  tarde_hacia_el_norte · Todas salvo la descarga: pasan 1.381 (13,8%); se descarta el 86,2%
+  tarde_hacia_el_norte · Todas (calibración principal): pasan 1.369 (13,7%); se descarta el 86,3%
+  manana_hacia_santa_cruz · tercer carril el 1er año con el filtro (calibrado) 40% (banda de parámetros p10-p90 22%-73%) y sin filtro (2.249 combinaciones al azar con cola) 67% (36%-94%)
+  tarde_hacia_el_norte · tercer carril el 1er año con el filtro (calibrado) 72% (banda de parámetros p10-p90 34%-99%) y sin filtro (1.796 combinaciones al azar con cola) 63% (30%-97%)
+  Población: los percentiles describen las combinaciones de parámetros compatibles con los aforos de 2025 en cada cuello, con previas triangulares independientes; no son probabilidades de lo que pasará en la TF-5 ni intervalos predictivos.
+  Otras semillas (manana_hacia_santa_cruz): aceptadas 378 / 385 / 399; tercer carril el 1er año 40,2% / 41,3% / 43,0%; regulación + escalonamiento 48,5% / 48,7% / 51,0%.
+  Otras semillas (tarde_hacia_el_norte): aceptadas 1369 / 1384 / 1345; tercer carril el 1er año 71,8% / 71,0% / 72,2%; regulación + escalonamiento 62,1% / 60,8% / 60,9%.
+  Previa «Uniformes en el mismo rango» (manana_hacia_santa_cruz; tamaño efectivo 36 de 378): tercer carril 39,8%; regulación + escalonamiento 40,5%.
+  Previa «Más demanda inducida (moda de las elasticidades en su extremo)» (manana_hacia_santa_cruz; tamaño efectivo 61 de 378): tercer carril 36,0%; regulación + escalonamiento 43,7%.
+  Previa «Regulación menos eficaz (moda de la eficacia en el mínimo)» (manana_hacia_santa_cruz; tamaño efectivo 158 de 378): tercer carril 40,3%; regulación + escalonamiento 45,3%.
+  Previa «Caída de capacidad más pequeña (moda en el mínimo)» (manana_hacia_santa_cruz; tamaño efectivo 271 de 378): tercer carril 39,1%; regulación + escalonamiento 45,3%.
+  Previa «Pesados con más peso (moda de la equivalencia en 3,5)» (manana_hacia_santa_cruz; tamaño efectivo 243 de 378): tercer carril 40,4%; regulación + escalonamiento 48,9%.
+  Previa «Uniformes en el mismo rango» (tarde_hacia_el_norte; tamaño efectivo 24 de 1.369): tercer carril 57,7%; regulación + escalonamiento 52,0%.
+  Previa «Más demanda inducida (moda de las elasticidades en su extremo)» (tarde_hacia_el_norte; tamaño efectivo 117 de 1.369): tercer carril 74,2%; regulación + escalonamiento 60,8%.
+  Previa «Regulación menos eficaz (moda de la eficacia en el mínimo)» (tarde_hacia_el_norte; tamaño efectivo 382 de 1.369): tercer carril 70,0%; regulación + escalonamiento 57,8%.
+  Previa «Caída de capacidad más pequeña (moda en el mínimo)» (tarde_hacia_el_norte; tamaño efectivo 659 de 1.369): tercer carril 71,0%; regulación + escalonamiento 57,0%.
+  Correlaciones que crea la calibración (manana_hacia_santa_cruz; Spearman en las aceptadas, previa ~0): c_carril-caida_capacidad +0.69; sigma_punta-t0_punta -0.51; c_carril-holgura_aguas_abajo -0.34.
+  Correlaciones que crea la calibración (tarde_hacia_el_norte; Spearman en las aceptadas, previa ~0): c_carril-caida_capacidad +0.53; sigma_punta-t0_punta -0.32; c_carril-sigma_punta -0.29.
+Indicadores de demora de la situación actual (todos simulados; mediana y p10-p90):
+  manana_hacia_santa_cruz · Demora total (vehículos·hora por día laborable): 1.541,2 (896,6-2.395,0)
+  manana_hacia_santa_cruz · Espera media en la hora punta (minutos por vehículo): 7,2 (3,3-12,6)
+  manana_hacia_santa_cruz · Espera máxima (minutos): 15,8 (8,8-25,3)
+  manana_hacia_santa_cruz · Duración de la cola (horas por día): 3,1 (2,7-3,4)
+  manana_hacia_santa_cruz · Horas de cola como las cuenta el aforo (horas enteras por día): 3,0 (3,0-3,0)
+  manana_hacia_santa_cruz · Cola máxima (vehículos): 899,3 (495,9-1.459,7)
+  manana_hacia_santa_cruz · Longitud equivalente de la cola máxima (km): 3,2 (1,8-5,2)
+  tarde_hacia_el_norte · Demora total (vehículos·hora por día laborable): 1.930,8 (953,5-3.284,4)
+  tarde_hacia_el_norte · Espera media en la hora punta (minutos por vehículo): 6,0 (2,9-9,4)
+  tarde_hacia_el_norte · Espera máxima (minutos): 14,1 (8,4-20,5)
+  tarde_hacia_el_norte · Duración de la cola (horas por día): 4,0 (2,9-5,4)
+  tarde_hacia_el_norte · Horas de cola como las cuenta el aforo (horas enteras por día): 4,0 (3,0-5,0)
+  tarde_hacia_el_norte · Cola máxima (vehículos): 826,9 (503,0-1.185,7)
+  tarde_hacia_el_norte · Longitud equivalente de la cola máxima (km): 2,0 (1,2-2,8)
+Diferencia emparejada tercer carril - (regulación + escalonamiento), el 1er año (puntos; mediana, banda p10-p90 y parte de las combinaciones en que el tercer carril reduce más):
+  manana_hacia_santa_cruz: -8,0 (-18,6 a 11,0; error de muestreo 0,9); el tercer carril reduce más en el 26% de las combinaciones. Depende de los parámetros: la banda p10-p90 de la diferencia cruza el 0.
+  tarde_hacia_el_norte: 6,1 (-7,9 a 28,3; error de muestreo 0,5); el tercer carril reduce más en el 66% de las combinaciones. Depende de los parámetros: la banda p10-p90 de la diferencia cruza el 0.
+Tercer carril de la mañana en serie con el tramo siguiente (almacenamiento entre los dos y entradas de los ramales; 1er año, mediana de 200 combinaciones):
+  almacenamiento 0 veh (0,0 km): reducción 39% (banda 23%-73%) frente a 39% en el modelo principal; cola remanente máxima 0 veh; rebose 143 min; espera en los ramales 20,7 veh·h (hoy 0,6)
+  almacenamiento 420 veh (1,0 km): reducción 32% (banda 15%-73%) frente a 39% en el modelo principal; cola remanente máxima 420 veh; rebose 66 min; espera en los ramales 11,8 veh·h (hoy 0,0)
+  almacenamiento 840 veh (2,0 km): reducción 32% (banda 15%-73%) frente a 39% en el modelo principal; cola remanente máxima 634 veh; rebose 0 min; espera en los ramales 0,0 veh·h (hoy 0,0)
+  almacenamiento 1.680 veh (4,0 km): reducción 32% (banda 15%-73%) frente a 39% en el modelo principal; cola remanente máxima 634 veh; rebose 0 min; espera en los ramales 0,0 veh·h (hoy 0,0)
+== 8. Previsión: evolución sin actuar, alternativas en 2030 y escenarios adversos ==
+  manana_hacia_santa_cruz, 2030, +0,0 %/año: 3,0 h de cola (media; p10-p90 3,0-3,0) si toda la demanda nueva va a la punta; 3,0 h (3,0-3,0) si se adapta (2025: 3,0 h)
+  manana_hacia_santa_cruz, 2035, +0,0 %/año: 3,0 h de cola (media; p10-p90 3,0-3,0) si toda la demanda nueva va a la punta; 3,0 h (3,0-3,0) si se adapta (2025: 3,0 h)
+  manana_hacia_santa_cruz, 2030, +0,5 %/año: 4,1 h de cola (media; p10-p90 3,0-5,0) si toda la demanda nueva va a la punta; 3,8 h (3,0-4,0) si se adapta (2025: 3,0 h)
+  manana_hacia_santa_cruz, 2035, +0,5 %/año: 5,5 h de cola (media; p10-p90 4,0-6,0) si toda la demanda nueva va a la punta; 5,0 h (4,0-6,0) si se adapta (2025: 3,0 h)
+  manana_hacia_santa_cruz, 2030, +1,0 %/año: 5,5 h de cola (media; p10-p90 4,0-6,0) si toda la demanda nueva va a la punta; 5,0 h (4,0-6,0) si se adapta (2025: 3,0 h)
+  manana_hacia_santa_cruz, 2035, +1,0 %/año: 11,6 h de cola (media; p10-p90 8,0-13,0) si toda la demanda nueva va a la punta; 10,6 h (6,0-13,0) si se adapta (2025: 3,0 h)
+  tarde_hacia_el_norte, 2030, +0,0 %/año: 4,0 h de cola (media; p10-p90 3,0-5,0) si toda la demanda nueva va a la punta; 4,0 h (3,0-5,0) si se adapta (2025: 4,0 h)
+  tarde_hacia_el_norte, 2035, +0,0 %/año: 4,0 h de cola (media; p10-p90 3,0-5,0) si toda la demanda nueva va a la punta; 4,0 h (3,0-5,0) si se adapta (2025: 4,0 h)
+  tarde_hacia_el_norte, 2030, +0,5 %/año: 5,2 h de cola (media; p10-p90 4,0-7,0) si toda la demanda nueva va a la punta; 5,0 h (3,0-7,0) si se adapta (2025: 4,0 h)
+  tarde_hacia_el_norte, 2035, +0,5 %/año: 6,5 h de cola (media; p10-p90 5,0-8,0) si toda la demanda nueva va a la punta; 6,1 h (4,0-8,0) si se adapta (2025: 4,0 h)
+  tarde_hacia_el_norte, 2030, +1,0 %/año: 6,4 h de cola (media; p10-p90 5,0-8,0) si toda la demanda nueva va a la punta; 6,1 h (4,0-8,0) si se adapta (2025: 4,0 h)
+  tarde_hacia_el_norte, 2035, +1,0 %/año: 8,2 h de cola (media; p10-p90 7,0-9,0) si toda la demanda nueva va a la punta; 7,9 h (7,0-9,0) si se adapta (2025: 4,0 h)
+  Mañana, 2030, +0,5 %/año: 4,1 h de cola con el supuesto principal y 5,4 h si la descarga reducida se mantuviera el resto del día
+  Mañana, 2035, +0,5 %/año: 5,5 h de cola con el supuesto principal y 10,9 h si la descarga reducida se mantuviera el resto del día
+  Mañana, 2030, +1,0 %/año: 5,5 h de cola con el supuesto principal y 10,9 h si la descarga reducida se mantuviera el resto del día
+  Mañana, 2035, +1,0 %/año: 11,6 h de cola con el supuesto principal y 14,9 h si la descarga reducida se mantuviera el resto del día
+Alternativas en 2030 (demanda +0,5 %/año desde 2025; tercer carril en servicio hacia 2029-2030):
+  manana_hacia_santa_cruz · Tercer carril (1er año): 40% (p10-p90 22%-68%)
+  manana_hacia_santa_cruz · Regulación de accesos (1er año): 34% (p10-p90 20%-53%)
+  manana_hacia_santa_cruz · Escalonamiento horario (1er año): 14% (p10-p90 9%-22%)
+  manana_hacia_santa_cruz · Tarificación de la punta: 58% (p10-p90 38%-96%)
+  manana_hacia_santa_cruz · Regulación + escalonamiento (1er año): 46% (p10-p90 32%-64%)
+  tarde_hacia_el_norte · Tercer carril hacia el Norte, hipotético (1er año): 71% (p10-p90 37%-96%)
+  tarde_hacia_el_norte · Regulación de accesos (1er año): 55% (p10-p90 32%-71%)
+  tarde_hacia_el_norte · Escalonamiento horario (1er año): 7% (p10-p90 4%-12%)
+  tarde_hacia_el_norte · Tarificación de la punta: 40% (p10-p90 26%-60%)
+  tarde_hacia_el_norte · Regulación + escalonamiento (1er año): 60% (p10-p90 39%-75%)
+Tercer carril según el año en que entre en servicio (reducción el 1er año, mediana; crecimiento central / alto):
+  2029: 39% / 41%; horas de cola sin actuar ese año 3,9 / 5,0
+  2030: 40% / 44%; horas de cola sin actuar ese año 4,1 / 5,7
+  2031: 40% / 46%; horas de cola sin actuar ese año 4,4 / 6,3
+  2032: 41% / 49%; horas de cola sin actuar ese año 4,7 / 7,0
+Alternativas en 2030 según el crecimiento de la demanda (0 % / 0,5 % / 1 % anual; mediana):
+  manana_hacia_santa_cruz · Tercer carril (1er año): 40% (22%-73%) / 40% (22%-68%) / 44% (21%-69%)
+  manana_hacia_santa_cruz · Regulación de accesos (1er año): 34% (20%-55%) / 34% (20%-53%) / 39% (20%-56%)
+  manana_hacia_santa_cruz · Regulación + escalonamiento (1er año): 48% (32%-73%) / 46% (32%-64%) / 48% (31%-64%)
+  manana_hacia_santa_cruz · Tarificación de la punta: 61% (38%-99%) / 58% (38%-96%) / 58% (40%-78%)
+  tarde_hacia_el_norte · Tercer carril hacia el Norte, hipotético (1er año): 72% (34%-99%) / 71% (37%-96%) / 71% (42%-94%)
+  tarde_hacia_el_norte · Regulación de accesos (1er año): 55% (30%-74%) / 55% (32%-71%) / 56% (35%-70%)
+  tarde_hacia_el_norte · Regulación + escalonamiento (1er año): 62% (38%-81%) / 60% (39%-75%) / 59% (40%-74%)
+  tarde_hacia_el_norte · Tarificación de la punta: 47% (29%-100%) / 40% (26%-60%) / 34% (22%-48%)
+Comprobación: la referencia de los escenarios adversos reproduce la mediana del modelo en 16 de 16 alternativas (diferencia máxima 0,00 puntos).
+Escenarios adversos (alternativa con mayor reducción mediana el 1er año en cada supuesto):
+  manana_hacia_santa_cruz · Referencia (calibrado): 1.º Tarificación de la punta (61%); 2.º Regulación + escalonamiento (1er año) (48%)
+  manana_hacia_santa_cruz · Sin demanda inducida (cota favorable): empatadas a menos de 2 puntos: Tarificación de la punta (61%), Regulación + escalonamiento (1er año) (60%), Regulación + escalonamiento (a 10 años) (60%)
+  manana_hacia_santa_cruz · Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos): 1.º Tarificación de la punta (59%); 2.º Escalonamiento horario (1er año) (17%)
+  manana_hacia_santa_cruz · Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años): 1.º Tarificación de la punta (61%); 2.º Regulación + escalonamiento (1er año) (42%)
+  manana_hacia_santa_cruz · Caída de capacidad pequeña (4 %) con la misma descarga medida: 1.º Tarificación de la punta (58%); 2.º Tercer carril (1er año) (41%)
+  manana_hacia_santa_cruz · Incidente: un carril cortado 30 min en lo más alto de la punta: 1.º Tercer carril (1er año) (64%); 2.º Tercer carril (a 10 años) (53%)
+  tarde_hacia_el_norte · Referencia (calibrado): 1.º Tercer carril hacia el Norte, hipotético (1er año) (72%); 2.º Tercer carril hacia el Norte, hipotético (a 10 años) (64%)
+  tarde_hacia_el_norte · Sin demanda inducida (cota favorable): empatadas a menos de 2 puntos: Tercer carril hacia el Norte, hipotético (1er año) (79%), Tercer carril hacia el Norte, hipotético (a 10 años) (79%)
+  tarde_hacia_el_norte · Tramo siguiente sin holgura (La Matanza llena): 1.º Tarificación de la punta (47%); 2.º Escalonamiento horario (1er año) (10%)
+  tarde_hacia_el_norte · Demanda inducida alta (elasticidades -0,5 el 1er año y -1,0 a 10 años): 1.º Tercer carril hacia el Norte, hipotético (1er año) (68%); 2.º Tercer carril hacia el Norte, hipotético (a 10 años) (58%)
+  tarde_hacia_el_norte · Caída de capacidad pequeña (4 %) con la misma descarga medida: 1.º Tercer carril hacia el Norte, hipotético (1er año) (74%); 2.º Tercer carril hacia el Norte, hipotético (a 10 años) (66%)
+  tarde_hacia_el_norte · Incidente: un carril cortado 30 min en lo más alto de la punta: 1.º Tercer carril hacia el Norte, hipotético (1er año) (79%); 2.º Tercer carril hacia el Norte, hipotético (a 10 años) (71%)
+Transporte público: reducción de la demora si una parte de la punta pasa a la guagua o al tranvía (sin rebote; 1er año; 10 años):
+  manana_hacia_santa_cruz · 2% de la punta (78 veh/día): 11%; 9%; 7%
+  manana_hacia_santa_cruz · 5% de la punta (195 veh/día): 26%; 21%; 17%
+  manana_hacia_santa_cruz · 10% de la punta (389 veh/día): 48%; 39%; 32%
+  manana_hacia_santa_cruz · 15% de la punta (584 veh/día): 67%; 56%; 46%
+  tarde_hacia_el_norte · 2% de la punta (46 veh/día): 8%; 6%; 6%
+  tarde_hacia_el_norte · 5% de la punta (114 veh/día): 19%; 16%; 14%
+  tarde_hacia_el_norte · 10% de la punta (228 veh/día): 36%; 31%; 27%
+  tarde_hacia_el_norte · 15% de la punta (342 veh/día): 53%; 46%; 39%
+Previsiones condicionadas: 78 filas (crecimiento exógeno, cambio de red, gestión, transporte público y demanda inducida), todas con p10-p90 y condición de validez.
+Confianza de cada alternativa (evidencia, mecanismo, conducta y robustez en escenarios adversos):
+  manana_hacia_santa_cruz · Tercer carril Guamasa-Aeropuerto Norte (hacia Santa Cruz): 40% el 1er año, 33% a 10 años; peor supuesto Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos) (0%); confianza MEDIA
+  tarde_hacia_el_norte · Tercer carril hacia el Norte en Los Rodeos-Guamasa (hipotético): 72% el 1er año, 64% a 10 años; peor supuesto Tramo siguiente sin holgura (La Matanza llena) (0%); confianza MEDIA
+  manana_hacia_santa_cruz · Regulación de accesos (semáforos en los ramales): 34% el 1er año, 28% a 10 años; peor supuesto Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos) (0%); confianza BAJA
+  tarde_hacia_el_norte · Regulación de accesos (semáforos en los ramales): 55% el 1er año, 49% a 10 años; peor supuesto Tramo siguiente sin holgura (La Matanza llena) (0%); confianza BAJA
+  manana_hacia_santa_cruz · Escalonamiento de horarios (ULL, Administración, colegios): 17% el 1er año, 12% a 10 años; peor supuesto Incidente: un carril cortado 30 min en lo más alto de la punta (8%); confianza MEDIA
+  tarde_hacia_el_norte · Escalonamiento de horarios (ULL, Administración, colegios): 10% el 1er año, 8% a 10 años; peor supuesto Incidente: un carril cortado 30 min en lo más alto de la punta (4%); confianza MEDIA
+  manana_hacia_santa_cruz · Tarificación de la punta: 61% el 1er año, no aplica a 10 años; peor supuesto Incidente: un carril cortado 30 min en lo más alto de la punta (39%); confianza BAJA
+  tarde_hacia_el_norte · Tarificación de la punta: 47% el 1er año, no aplica a 10 años; peor supuesto Incidente: un carril cortado 30 min en lo más alto de la punta (24%); confianza BAJA
+  manana_hacia_santa_cruz · Regulación de accesos + escalonamiento: 48% el 1er año, 39% a 10 años; peor supuesto Tramo siguiente sin holgura (Padre Anchieta con 2 carriles efectivos) (17%); confianza BAJA
+  tarde_hacia_el_norte · Regulación de accesos + escalonamiento: 62% el 1er año, 55% a 10 años; peor supuesto Tramo siguiente sin holgura (La Matanza llena) (10%); confianza BAJA
+Registro de fuentes: 72 entradas (37 ficheros oficiales con su huella SHA-256 y 35 fuentes documentales, sin copia guardada).
+Ficha de cada alternativa (reducción simulada de la demora; mediana y p10-p90 el 1er año; a 10 años; 2030 con crecimiento 0-1 %; escenarios adversos):
+  manana_hacia_santa_cruz · Tercer carril Guamasa-Aeropuerto Norte (hacia Santa Cruz) · Los Rodeos-Guamasa (Ermita Cruz Chica), hacia Santa Cruz · Punta de mañana de los días laborables (6 a 9 h): 1er año 40% (22%-73%); 10 años 33%; 2030 40%-44%; adversos 0%-64%; confianza media. Supuesto clave: Que el tramo siguiente (La Laguna) admita más caudal en la punta: holgura estimada hora a hora con los aforos de 2025; demanda inducida con elasticidades de la literatura. Limitación: La holgura es una estimación indirecta (sin aforos de ramales; la capacidad de abajo sale de los caudales de la misma punta): con holgura nula el tercer carril no reduce nada
+  tarde_hacia_el_norte · Tercer carril hacia el Norte en Los Rodeos-Guamasa (hipotético) · Los Rodeos-Guamasa hacia el Norte, donde se pasa de 3 a 2 carriles · Tarde de los días laborables (13 a 18 h): 1er año 72% (34%-99%); 10 años 64%; 2030 71%-72%; adversos 0%-79%; confianza media. Supuesto clave: Que La Matanza (2 carriles) admita más caudal: holgura estimada con los aforos de 2025. Limitación: Obra no proyectada; La Matanza no tiene velocidad utilizable, así que no se puede ver si su tramo se satura
+  manana_hacia_santa_cruz · Regulación de accesos (semáforos en los ramales) · Accesos situados antes de cada cuello · Puntas de mañana y de tarde: 1er año 34% (20%-55%); 10 años 28%; 2030 34%-39%; adversos 0%-30%; confianza baja. Supuesto clave: La regulación evita una parte (50-100 %) de la caída de capacidad y el tramo siguiente admite ese caudal. Limitación: La caída de capacidad no se puede medir con datos horarios y la eficacia viene de Minneapolis y Melbourne: con caída pequeña o con el tramo siguiente lleno rinde poco
+  tarde_hacia_el_norte · Regulación de accesos (semáforos en los ramales) · Accesos situados antes de cada cuello · Puntas de mañana y de tarde: 1er año 55% (30%-74%); 10 años 49%; 2030 55%-56%; adversos 0%-51%; confianza baja. Supuesto clave: La regulación evita una parte (50-100 %) de la caída de capacidad y el tramo siguiente admite ese caudal. Limitación: La caída de capacidad no se puede medir con datos horarios y la eficacia viene de Minneapolis y Melbourne: con caída pequeña o con el tramo siguiente lleno rinde poco
+  manana_hacia_santa_cruz · Escalonamiento de horarios (ULL, Administración, colegios) · Todo el corredor · Puntas de mañana y de tarde: 1er año 17% (10%-31%); 10 años 12%; 2030 12%-17%; adversos 8%-17%; confianza media. Supuesto clave: Un 3-15 % de la joroba de la punta se desplaza 30-90 min (ancla local: unos 500 vehículos al día de la ULL, según el Cabildo). Limitación: Los aforos no muestran una reducción significativa con los horarios de la ULL; depende de acuerdos con centros de estudio y empresas
+  tarde_hacia_el_norte · Escalonamiento de horarios (ULL, Administración, colegios) · Todo el corredor · Puntas de mañana y de tarde: 1er año 10% (6%-19%); 10 años 8%; 2030 5%-10%; adversos 4%-10%; confianza media. Supuesto clave: Un 3-15 % de la joroba de la punta se desplaza 30-90 min (ancla local: unos 500 vehículos al día de la ULL, según el Cabildo). Limitación: Los aforos no muestran una reducción significativa con los horarios de la ULL; depende de acuerdos con centros de estudio y empresas
+  manana_hacia_santa_cruz · Tarificación de la punta · Todo el corredor · Puntas de mañana y de tarde: 1er año 61% (38%-99%); 10 años no aplica; 2030 58%-61%; adversos 39%-61%; confianza baja. Supuesto clave: La demanda de la punta baja un 5-22 % (efecto neto observado en Estocolmo, Londres, Gotemburgo y Nueva York). Limitación: Sin experiencia local ni alternativa viaria; exige cambiar la ley y la presidencia del Cabildo la descartó
+  tarde_hacia_el_norte · Tarificación de la punta · Todo el corredor · Puntas de mañana y de tarde: 1er año 47% (29%-100%); 10 años no aplica; 2030 34%-47%; adversos 24%-47%; confianza baja. Supuesto clave: La demanda de la punta baja un 5-22 % (efecto neto observado en Estocolmo, Londres, Gotemburgo y Nueva York). Limitación: Sin experiencia local ni alternativa viaria; exige cambiar la ley y la presidencia del Cabildo la descartó
+  manana_hacia_santa_cruz · Regulación de accesos + escalonamiento · Accesos antes de cada cuello y todo el corredor · Puntas de mañana y de tarde: 1er año 48% (32%-73%); 10 años 39%; 2030 46%-48%; adversos 17%-42%; confianza baja. Supuesto clave: Los supuestos de la regulación de accesos y del escalonamiento a la vez. Limitación: Hereda las incertidumbres de las dos medidas; sin piloto en Tenerife
+  tarde_hacia_el_norte · Regulación de accesos + escalonamiento · Accesos antes de cada cuello y todo el corredor · Puntas de mañana y de tarde: 1er año 62% (38%-81%); 10 años 55%; 2030 59%-62%; adversos 10%-58%; confianza baja. Supuesto clave: Los supuestos de la regulación de accesos y del escalonamiento a la vez. Limitación: Hereda las incertidumbres de las dos medidas; sin piloto en Tenerife
+== 9. Proyectos y verificación de afirmaciones ==
+Veredictos (53 afirmaciones): Confirmado = 19; Parcialmente cierto = 16; No verificado = 7; Falso o erróneo = 11
+  [CORRECTO] De 59 a 85 plazas por guagua = +44 %
+  [ERRÓNEO] Pasar de 2 a 3 carriles sube la oferta un 33 %
+  [CORRECTO] Peaje de 2 €: 5.500 x (-0,3 x 2/6) = -550 veh/h
+  [INCOHERENTE] 5.500 veh/h circulando por dos carriles de 4.000 veh/h de capacidad
+  [ERRÓNEO] Nivel F «cuando la densidad supera 2.200 vehículos por hora y carril»
+  [CORRECTO] Ahorro mensual: 110 + 45 + 42 = 197 €; ~2.400 €/año
+  [INCOHERENTE] El tren «multiplica por 15» el coste de cualquier obra en la TF-5
+== 10. Comprobaciones numéricas del modelo ==
+  [M01] Identidad: área bajo la cola = suma de esperas de las llegadas (perfil sintético): 4.967,4 frente a 4.967,4 veh·h (diferencia 0,00%)
+  [M02] Espera de cada cohorte (curvas acumuladas, FIFO) frente a la aproximación cola / descarga: diferencia máxima 0,22 min por vehículo; espera máxima 35,60 frente a 35,60 min
+  [M03] Demora media de la parte elástica de la punta frente a todas las llegadas de la hora punta: 17,1 frente a 17,2 min/veh; día completo: 6,6 min/veh
+  [M04] Conservación: la demanda simulada suma la IMD del sentido (perfil sintético): suma = 45.347 veh frente a IMD 45.347 (error 0)
+  [M05] Escalonamiento: vehículos que se pierden al desplazar la punta (también cerca del borde del día): 0 y 1.1e-16
+  [M06] Tramo siguiente que limita (holgura 0%): el tercer carril y la regulación no añaden caudal con cola: diferencia máxima de la descarga con cola 0 veh/h
+  [M07] Tramo siguiente que limita (holgura -5%): el tercer carril y la regulación no añaden caudal con cola: diferencia máxima de la descarga con cola 0 veh/h
+  [M08] Dos cuellos en serie: llegadas = salidas + colas en cada minuto; sin almacenamiento equivale a un cuello con la capacidad menor: error de conservación máximo 7.3e-12 veh; diferencia de cola con un solo cuello 0 veh
+  [M09] Conservación con el perfil de cada combinación calibrada (mañana): error relativo máximo de la demanda 0; llegadas - salidas - cola final: máximo 0 veh (378 combinaciones)
+  [M10] Cola y salidas no negativas, salidas por debajo de la capacidad y cola disipada al final del día (mañana): mínimo de cola y salidas 0; exceso máximo de las salidas sobre la capacidad 0 veh/min; combinaciones con cola al final del día: 0
+  [M11] Conservación con el perfil de cada combinación calibrada (tarde): error relativo máximo de la demanda 2.2e-16; llegadas - salidas - cola final: máximo 0 veh (1369 combinaciones)
+  [M12] Cola y salidas no negativas, salidas por debajo de la capacidad y cola disipada al final del día (tarde): mínimo de cola y salidas 0; exceso máximo de las salidas sobre la capacidad 0 veh/min; combinaciones con cola al final del día: 0
+  [M13] Bus-VAO: umbral de equilibrio frente a 1/carriles: 33,3% frente a 1/3 = 33,3%
+Gráficos: 23 generados; 23 con su tipo de resultado, horizonte, hipótesis e incertidumbre en graficos_metadatos.csv.
+Entradas sin cambios durante la ejecución: los 109 ficheros de main.R, R/, tests/, entorno/, renv.lock y datos/ tienen la misma huella al empezar y al acabar.

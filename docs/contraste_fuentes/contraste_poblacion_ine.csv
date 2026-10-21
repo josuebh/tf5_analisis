@@ -1,0 +1,16 @@
+anio,campo,valor_proyecto,valor_ine,coincide,url
+2021,poblacion,930570,930570,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2021,hombres,456395,456395,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2021,mujeres,474175,474175,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2022,poblacion,934448,934448,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2022,hombres,457997,457997,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2022,mujeres,476451,476451,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2023,poblacion,948815,948815,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2023,hombres,464354,464354,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2023,mujeres,484461,484461,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2024,poblacion,959189,959189,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2024,hombres,469351,469351,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2024,mujeres,489838,489838,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2025,poblacion,966469,966469,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2025,hombres,472897,472897,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv
+2025,mujeres,493572,493572,True,https://www.ine.es/jaxiPx/files/tpx/es/csv_bdsc/78749.csv

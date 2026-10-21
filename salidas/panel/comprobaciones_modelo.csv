@@ -1,0 +1,14 @@
+id,comprobacion,valor,resultado,cumple
+M01,Identidad: área bajo la cola = suma de esperas de las llegadas (perfil sintético),1.18325e-7,"4.967,4 frente a 4.967,4 veh·h (diferencia 0,00%)",TRUE
+M02,"Espera de cada cohorte (curvas acumuladas, FIFO) frente a la aproximación cola / descarga",0.216791,"diferencia máxima 0,22 min por vehículo; espera máxima 35,60 frente a 35,60 min",TRUE
+M03,Demora media de la parte elástica de la punta frente a todas las llegadas de la hora punta,-0.112837,"17,1 frente a 17,2 min/veh; día completo: 6,6 min/veh",TRUE
+M04,Conservación: la demanda simulada suma la IMD del sentido (perfil sintético),0,suma = 45.347 veh frente a IMD 45.347 (error 0),TRUE
+M05,Escalonamiento: vehículos que se pierden al desplazar la punta (también cerca del borde del día),1.11022e-16,0 y 1.1e-16,TRUE
+M06,Tramo siguiente que limita (holgura 0%): el tercer carril y la regulación no añaden caudal con cola,0,diferencia máxima de la descarga con cola 0 veh/h,TRUE
+M07,Tramo siguiente que limita (holgura -5%): el tercer carril y la regulación no añaden caudal con cola,0,diferencia máxima de la descarga con cola 0 veh/h,TRUE
+M08,Dos cuellos en serie: llegadas = salidas + colas en cada minuto; sin almacenamiento equivale a un cuello con la capacidad menor,7.27596e-12,error de conservación máximo 7.3e-12 veh; diferencia de cola con un solo cuello 0 veh,TRUE
+M09,Conservación con el perfil de cada combinación calibrada (mañana),0,error relativo máximo de la demanda 0; llegadas - salidas - cola final: máximo 0 veh (378 combinaciones),TRUE
+M10,"Cola y salidas no negativas, salidas por debajo de la capacidad y cola disipada al final del día (mañana)",-0,mínimo de cola y salidas 0; exceso máximo de las salidas sobre la capacidad 0 veh/min; combinaciones con cola al final del día: 0,TRUE
+M11,Conservación con el perfil de cada combinación calibrada (tarde),2.22045e-16,error relativo máximo de la demanda 2.2e-16; llegadas - salidas - cola final: máximo 0 veh (1369 combinaciones),TRUE
+M12,"Cola y salidas no negativas, salidas por debajo de la capacidad y cola disipada al final del día (tarde)",-0,mínimo de cola y salidas 0; exceso máximo de las salidas sobre la capacidad 0 veh/min; combinaciones con cola al final del día: 0,TRUE
+M13,Bus-VAO: umbral de equilibrio frente a 1/carriles,0.333447,"33,3% frente a 1/3 = 33,3%",TRUE

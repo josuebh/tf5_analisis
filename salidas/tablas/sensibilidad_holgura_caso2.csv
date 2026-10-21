@@ -1,0 +1,19 @@
+caso,variante,hora,horas_con_cola,holgura_p10,holgura_mediana,holgura_p90,sin_holgura
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,14,219,0.0352314656397466,0.10002444323737092,0.16064328502350664,0.0319634703196347
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,15,219,-0.00626818544192711,0.02756078224101488,0.09794695105989988,0.136986301369863
+tarde_hacia_el_norte,Principal: capacidad de abajo = p99 de su caudal; entradas netas de los aforos,16,216,0.0025925490541176544,0.03886130433992707,0.10060290869104749,0.0787037037037037
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),14,219,-7.563479200432184e-4,0.06381238069266426,0.12157980510640022,0.1050228310502283
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),15,219,-0.041770278356157056,-0.008693289866884002,0.059804704957996925,0.6118721461187214
+tarde_hacia_el_norte,Capacidad de abajo más baja (p95 de su caudal),16,216,-0.034883598682960426,0.0018021351736947633,0.06226458245402866,0.49074074074074076
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",14,219,0.06195233011250441,0.1268817204301076,0.18890984326691573,0
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",15,219,0.02013034979470696,0.05487639228470531,0.1262498837627047,0.0228310502283105
+tarde_hacia_el_norte,"Capacidad de abajo más alta (p99,9 de su caudal)",16,216,0.03041849805154151,0.06673941964848029,0.13612787143582372,0.009259259259259259
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),14,219,0.0352314656397466,0.10002444323737092,0.16064328502350664,0.0319634703196347
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),15,219,-0.00626818544192711,0.027284270536408473,0.09794695105989988,0.1461187214611872
+tarde_hacia_el_norte,Ramales: entradas un 10 % mayores (demanda que hoy no consigue entrar),16,216,0.0025925490541176544,0.038070104837508945,0.10060290869104749,0.0787037037037037
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,14,219,-0.014768534360253405,0.050024443237370916,0.11064328502350665,0.1506849315068493
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,15,219,-0.05626818544192712,-0.022439217758985122,0.04794695105989987,0.7351598173515982
+tarde_hacia_el_norte,Ramales desconocidos: salidas del 5 % del caudal después del punto crítico,16,216,-0.04740745094588235,-0.011138695660072931,0.050602908691047485,0.6064814814814815
+tarde_hacia_el_norte,Holgura nula en todas las horas,14,219,0,0,0,1
+tarde_hacia_el_norte,Holgura nula en todas las horas,15,219,0,0,0,1
+tarde_hacia_el_norte,Holgura nula en todas las horas,16,216,0,0,0,1

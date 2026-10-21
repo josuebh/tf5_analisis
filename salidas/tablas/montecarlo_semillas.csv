@@ -1,0 +1,22 @@
+semilla,funcion,uso
+2026,simular_montecarlo(),Muestreo de los parámetros de los dos casos (y cuantil de la holgura)
+99,selector_calibraciones(),Submuestra uniforme de 3.000 combinaciones con la que se resumen las reglas de la sensibilidad y la regla «sin calibrar»
+7,simular_montecarlo() del Bus-VAO,Muestreo del perfil sintético de Padre Anchieta
+11,grafico_bus_vao(),Submuestra de 300 combinaciones para la curva del Bus-VAO
+5,curva_holgura(),Submuestra de 300 combinaciones para la curva del tercer carril según la holgura
+8,salidas_por_hora(),Submuestra de 300 combinaciones para el caudal hora a hora
+21,evolucion_demanda(),Submuestra (si N_PREVISION < combinaciones calibradas)
+22,alternativas_futuro(),Submuestra (si N_PREVISION < combinaciones calibradas)
+23,escenarios_adversos(),Submuestra (si N_PREVISION < combinaciones calibradas)
+24,curva_trasvase_tp(),Submuestra (si N_PREVISION < combinaciones calibradas)
+31,estabilidad_percentiles(),Bootstrap de las simulaciones calibradas
+3,did_ull(),Bootstrap por bloques de semanas
+41,validacion_diaria() (simulado_por_combinacion()),Submuestra (si N_PREVISION < combinaciones calibradas)
+51,sensibilidad_holgura(),Submuestra de 300 combinaciones calibradas
+61,validacion_modelo(),Bootstrap por bloques de días del intervalo del 95 % de la mediana aforada en 2026
+2027,replicar_semillas(),Repetición completa del Monte Carlo con otra semilla (auditoría)
+2028,replicar_semillas(),Repetición completa del Monte Carlo con otra semilla (auditoría)
+52026,anadir_equivalencia_pesados(),"Equivalencia de los pesados (semilla del caso + 50.000: 52.026 en la calibración y en la rejilla de especificaciones; 52.027 y 52.028 en las repeticiones), solo si la especificación la usa"
+71,intervalo_predictivo(),Submuestra de 400 combinaciones para el intervalo predictivo
+81,diferencias_emparejadas(),Bootstrap del error de la diferencia emparejada mediana
+91,cola_remanente(),Submuestra de 200 combinaciones calibradas para los cuellos en serie
